@@ -9,6 +9,17 @@ Guía educativa autocontenida sobre **programación estructurada** con PSeInt.
 - Ejercicios autocorregibles en la misma página.
 - Autoevaluación teórica y actividad final con Parte A y Parte B.
 - Panel de progreso con guardado automático en el navegador.
+- **Evaluación en línea** (12 consignas, 10 puntos) con clave del docente.
+
+## Evaluación en línea
+
+La evaluación se rinde en:
+
+`https://miusuariohoy.github.io/Python1/evaluacion-pseint.html`
+
+Se entra con la clave que da el docente. Al corregir, la nota y el detalle de las
+respuestas se guardan automáticamente en el repositorio privado `inform`, junto
+con apellido, nombre, curso, día y hora.
 
 ## Uso
 
