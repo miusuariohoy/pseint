@@ -50,8 +50,10 @@ window.CONFIG.PUNTOS_EJERCICIO = 1;
                /\bfinsi\b/.test(codigo);
     }
 
+    /* Algoritmo y Proceso son equivalentes en PSeInt. */
     function cierraAlgoritmo(codigo) {
-        return /algoritmo\s+\w+/.test(codigo) && /finalgoritmo/.test(codigo);
+        return /\b(algoritmo|proceso)\s+\w+/.test(codigo) &&
+               /\b(finalgoritmo|finproceso)\b/.test(codigo);
     }
 
     /* Busca un Si con la condición indicada y un incremento +1 dentro del bloque. */
@@ -79,7 +81,7 @@ window.CONFIG.PUNTOS_EJERCICIO = 1;
 
         /* Actividad 1 · Variables + Leer + condicional. */
         c1: [
-            { d: 'Empieza con Algoritmo y cierra con FinAlgoritmo', f: function (c) { return cierraAlgoritmo(c); } },
+            { d: 'Empieza con Algoritmo (o Proceso) y cierra con FinAlgoritmo (o FinProceso)', f: function (c) { return cierraAlgoritmo(c); } },
             { d: 'Declara nombre como Caracter', f: function (c) { return declaracionTexto(c, 'nombre'); } },
             { d: 'Declara edad como Entero', f: function (c) { return declaracion(c, 'edad', 'entero'); } },
             { d: 'Lee el nombre y la edad', f: function (c) { return leeDos(c, 'nombre', 'edad'); } },
@@ -96,7 +98,7 @@ window.CONFIG.PUNTOS_EJERCICIO = 1;
 
         /* Actividad 2 · Mientras fijo de 10 vueltas + condicional + dos contadores. */
         c2: [
-            { d: 'Empieza con Algoritmo y cierra con FinAlgoritmo', f: function (c) { return cierraAlgoritmo(c); } },
+            { d: 'Empieza con Algoritmo (o Proceso) y cierra con FinAlgoritmo (o FinProceso)', f: function (c) { return cierraAlgoritmo(c); } },
             { d: 'Declara edad, mayores, menores e i como Entero', f: function (c) {
                 return ['edad', 'mayores', 'menores', 'i'].every(function (n) {
                     return declaracion(c, n, 'entero');
@@ -114,8 +116,9 @@ window.CONFIG.PUNTOS_EJERCICIO = 1;
             { d: 'Lee una edad dentro del Mientras', f: function (c) {
                 return /mientras[\s\S]*?\bleer\s+edad\b[\s\S]*?\bfinmientras\b/.test(c);
             } },
-            { d: 'Usa Si/Sino y cuenta en mayores cuando edad > 16', f: function (c) {
-                var condicion = '(?:\\(?\\s*edad\\s*>\\s*16\\s*\\)?|' +
+            { d: 'Usa Si/Sino y cuenta en mayores según la edad (16 o más)', f: function (c) {
+                var condicion = '(?:\\(?\\s*edad\\s*>=\\s*16\\s*\\)?|' +
+                                '\\(?\\s*edad\\s*>\\s*16\\s*\\)?|' +
                                 '\\(?\\s*16\\s*<\\s*edad\\s*\\)?|' +
                                 '\\(?\\s*edad\\s*>=\\s*17\\s*\\)?)';
                 return usaSiCompleto(c) && incrementaDentroDeSi(c, condicion);
@@ -143,7 +146,7 @@ window.CONFIG.PUNTOS_EJERCICIO = 1;
             { d: 'Incluye el parámetro nombre en el mensaje', f: function (c) {
                 return /escribir[^\n]*\bnombre\b/.test(c);
             } },
-            { d: 'Empieza con Algoritmo y cierra con FinAlgoritmo', f: function (c) { return cierraAlgoritmo(c); } },
+            { d: 'Empieza con Algoritmo (o Proceso) y cierra con FinAlgoritmo (o FinProceso)', f: function (c) { return cierraAlgoritmo(c); } },
             { d: 'Llama a Saludar("Ana") desde el algoritmo principal', f: function (c) {
                 return /saludar\s*\(\s*["']ana["']\s*\)/.test(c) && cierraAlgoritmo(c);
             } }

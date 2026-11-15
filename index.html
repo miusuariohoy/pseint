@@ -1498,10 +1498,10 @@
             { d: 'Muestra el saludo con Escribir', f: function (c) { return /\bescribir\b/.test(c); } },
             { d: 'Llama al subproceso desde el algoritmo', f: function (c) { var m = c.match(/\bsubproceso\s+(\w+)/); if (!m) return false; var n = m[1]; var re = new RegExp('\\b' + n + '\\b', 'g'); return (c.match(re) || []).length >= 2; } },
             { d: 'Usa el nombre "Ana" en la llamada', f: function (c) { return /\bana\b/.test(c); } },
-            { d: 'Usa Algoritmo … FinAlgoritmo', f: function (c) { return /\balgoritmo\b/.test(c) && /\bfinalgoritmo\b/.test(c); } }
+            { d: 'Usa Algoritmo … FinAlgoritmo (o Proceso … FinProceso)', f: function (c) { return (/\balgoritmo\b/.test(c) && /\bfinalgoritmo\b/.test(c)) || (/\bproceso\b/.test(c) && /\bfinproceso\b/.test(c)); } }
         ],
         kiosco: [
-            { d: 'Usa Algoritmo … FinAlgoritmo', f: function (c) { return /\balgoritmo\b/.test(c) && /\bfinalgoritmo\b/.test(c); } },
+            { d: 'Usa Algoritmo … FinAlgoritmo (o Proceso … FinProceso)', f: function (c) { return (/\balgoritmo\b/.test(c) && /\bfinalgoritmo\b/.test(c)) || (/\bproceso\b/.test(c) && /\bfinproceso\b/.test(c)); } },
             { d: 'Define un SubProceso para el encabezado', f: function (c) { return /\bsubproceso\b/.test(c) && /\bfinsubproceso\b/.test(c); } },
             { d: 'Llama al subproceso desde el algoritmo', f: function (c) { var m = c.match(/\bsubproceso\s+(\w+)/); if (!m) return false; var re = new RegExp('\\b' + m[1] + '\\b', 'g'); return (c.match(re) || []).length >= 2; } },
             { d: 'Pregunta cuántos productos se cargan (Escribir + Leer)', f: function (c) { return /\bescribir\b/.test(c) && /\bleer\b/.test(c); } },
@@ -1513,7 +1513,7 @@
             { d: 'Muestra el total sin descuento, el final y los productos caros', f: function (c) { return (c.match(/\bescribir\b/g) || []).length >= 3; } }
         ],
         notas: [
-            { d: 'Usa Algoritmo … FinAlgoritmo', f: function (c) { return /\balgoritmo\b/.test(c) && /\bfinalgoritmo\b/.test(c); } },
+            { d: 'Usa Algoritmo … FinAlgoritmo (o Proceso … FinProceso)', f: function (c) { return (/\balgoritmo\b/.test(c) && /\bfinalgoritmo\b/.test(c)) || (/\bproceso\b/.test(c) && /\bfinproceso\b/.test(c)); } },
             { d: 'Declara las variables con Definir … Como', f: function (c) { return /\bdefinir\b[^\n]*\bcomo\b/.test(c); } },
             { d: 'Crea un SubProceso con parámetros', f: function (c) { return /\bsubproceso\s+\w+\s*\(\s*\w+/.test(c) && /\bfinsubproceso\b/.test(c); } },
             { d: 'Llama al subproceso desde el algoritmo', f: function (c) { var m = c.match(/\bsubproceso\s+(\w+)/); if (!m) return false; var re = new RegExp('\\b' + m[1] + '\\b', 'g'); return (c.match(re) || []).length >= 2; } },
