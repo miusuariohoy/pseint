@@ -11,15 +11,16 @@ Guía educativa autocontenida sobre **programación estructurada** con PSeInt.
 - Panel de progreso con guardado automático en el navegador.
 - **Evaluación en línea** (12 consignas, 10 puntos) con clave del docente.
 
-## Evaluación en línea
+## Evaluación y recuperatorio en línea
 
-La evaluación se rinde en:
+El portal de exámenes está en:
 
-`https://miusuariohoy.github.io/Python1/evaluacion-pseint.html`
+`https://miusuariohoy.github.io/pseint/examenes/`
 
-Se entra con la clave que da el docente. Al corregir, la nota y el detalle de las
-respuestas se guardan automáticamente en el repositorio privado `inform`, junto
-con apellido, nombre, curso, día y hora.
+Desde ahí se accede a la **evaluación** y al **recuperatorio** (12 consignas y
+10 puntos cada uno). Se entra con la clave que da el docente. Al corregir, la nota
+y el detalle de las respuestas se guardan automáticamente en el repositorio
+privado `inform`, junto con apellido, nombre, curso, día y hora.
 
 ## Uso
 
