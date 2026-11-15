@@ -347,20 +347,61 @@
         <article class="card">
             <h3><span class="num">1</span> Programación Estructurada</h3>
             <p class="concept">
-                <strong>Es una forma de escribir programas usando solo tres estructuras de control:</strong>
-                <strong>secuencia</strong> (una instrucción tras otra),
-                <strong>selección</strong> (decidir con condiciones) e
-                <strong>iteración</strong> (repetir con bucles).
-                Se usa porque evita el desorden y hace que el código sea fácil de leer, mantener y corregir.
+                Un programa <strong>estructurado</strong> se construye combinando solo
+                <strong>tres estructuras de control</strong>. No usa saltos arbitrarios como
+                <code class="inline">GOTO</code>: cada bloque tiene un único punto de entrada y un único
+                punto de salida, y el programa se puede leer de arriba hacia abajo.
             </p>
+            <ul class="explain">
+                <li><strong>Secuencia:</strong> las instrucciones se ejecutan una después de otra, en el orden escrito.</li>
+                <li><strong>Selección:</strong> el programa elige un camino según una condición
+                    (<code class="inline">Si … Entonces … Sino … FinSi</code>).</li>
+                <li><strong>Iteración:</strong> un bloque se repite mientras se cumpla una condición
+                    (<code class="inline">Mientras</code>) o una cantidad fija de veces
+                    (<code class="inline">Para</code>).</li>
+            </ul>
             <div class="syntax">
-                <span class="syntax-label">Esquema mental</span>
-                Secuencia  →  Selección  →  Iteración
+                <span class="syntax-label">Las tres se combinan</span>
+                Secuencia + Selección + Iteración
             </div>
+            <pre><code><span class="kw">Algoritmo</span> TresEstructuras
+    <span class="kw">Definir</span> numero, i <span class="kw">Como</span> Entero;
+    numero &lt;- 5;                          <span class="cmt">// Secuencia: guardamos un valor</span>
+    <span class="kw">Escribir</span> <span class="str">"Comienza el algoritmo"</span>;  <span class="cmt">// Secuencia: mostramos un mensaje</span>
+
+    <span class="kw">Si</span> numero &gt; 0 <span class="kw">Entonces</span>             <span class="cmt">// Selección: elegimos un camino</span>
+        <span class="kw">Escribir</span> <span class="str">"El número es positivo"</span>;
+    <span class="kw">Sino</span>
+        <span class="kw">Escribir</span> <span class="str">"El número no es positivo"</span>;
+    <span class="kw">FinSi</span>
+
+    <span class="kw">Para</span> i &lt;- 1 <span class="kw">Hasta</span> 3 <span class="kw">Con Paso</span> 1 <span class="kw">Hacer</span>  <span class="cmt">// Iteración: repetimos 3 veces</span>
+        <span class="kw">Escribir</span> <span class="str">"Vuelta "</span>, i;
+    <span class="kw">FinPara</span>
+<span class="kw">FinAlgoritmo</span></code></pre>
+            <ul class="explain">
+                <li><strong>Secuencia:</strong> la asignación y los <code class="inline">Escribir</code> se ejecutan en orden.</li>
+                <li><strong>Selección:</strong> el <code class="inline">Si</code> muestra un mensaje u otro según
+                    <code class="inline">numero &gt; 0</code>.</li>
+                <li><strong>Iteración:</strong> el <code class="inline">Para</code> repite el mensaje tres veces,
+                    con <code class="inline">i</code> de 1 a 3.</li>
+            </ul>
             <div class="exercise">
-                <h4>✍️ Ejercicio: tu primer algoritmo</h4>
-                <p class="ex-goal">Escribí un algoritmo llamado <code class="inline">HolaMundo</code> que <strong>declare</strong> una variable de tipo Caracter, le <strong>asigne</strong> tu nombre y lo <strong>muestre</strong> en pantalla.</p>
-                <textarea class="code-input" id="in-estructura" spellcheck="false" placeholder="Algoritmo HolaMundo&#10;    // escribí tu código acá&#10;FinAlgoritmo"></textarea>
+                <h4>✍️ Actividad: combiná las tres estructuras</h4>
+                <p class="ex-goal">
+                    Escribí un algoritmo llamado <code class="inline">TresEstructuras</code> que:
+                    <strong>(1)</strong> muestre un mensaje de inicio (<strong>secuencia</strong>);
+                    <strong>(2)</strong> guarde un número en una variable y use
+                    <code class="inline">Si … Entonces … Sino … FinSi</code> para mostrar si es positivo o no
+                    (<strong>selección</strong>);
+                    <strong>(3)</strong> repita un mensaje 3 veces con
+                    <code class="inline">Para … Hasta … Con Paso … Hacer … FinPara</code>
+                    (<strong>iteración</strong>).
+                </p>
+                <p class="ex-goal" style="font-size:.85rem;">
+                    💡 Podés guiarte con el ejemplo de arriba, pero cambiá el mensaje y el número.
+                </p>
+                <textarea class="code-input" id="in-estructura" spellcheck="false" placeholder="Algoritmo TresEstructuras&#10;    Definir ...&#10;    // Secuencia&#10;    ...&#10;    // Selección&#10;    Si ... Entonces&#10;    Sino&#10;    FinSi&#10;    // Iteración&#10;    Para ... Hasta ... Con Paso ... Hacer&#10;    FinPara&#10;FinAlgoritmo"></textarea>
                 <div class="ex-actions">
                     <button class="btn btn-primary" onclick="corregir('estructura')">✅ Corregir</button>
                     <button class="btn btn-ghost" onclick="limpiar('estructura')">Limpiar</button>
@@ -1315,9 +1356,13 @@
     var EJERCICIOS = {
         estructura: [
             { d: 'Usa Algoritmo … FinAlgoritmo', f: function (c) { return /\balgoritmo\b/.test(c) && /\bfinalgoritmo\b/.test(c); } },
-            { d: 'Declara una variable con Definir … Como Caracter', f: function (c) { return /definir[^\n]*\bcomo\s+caracter/.test(c); } },
-            { d: 'Asigna un valor con la flecha &lt;-', f: function (c) { return (c.match(/<-/g) || []).length >= 1; } },
-            { d: 'Muestra el nombre con Escribir', f: function (c) { return /\bescribir\b/.test(c); } }
+            { d: 'Declara variables con Definir … Como Entero', f: function (c) { return /definir[^\n]*\bcomo\s+entero/.test(c); } },
+            { d: 'Asigna el número con la flecha &lt;-', f: function (c) { return /[a-z_]\w*\s*<-\s*-?\d+/.test(c); } },
+            { d: 'Muestra un mensaje con Escribir (secuencia)', f: function (c) { return /\bescribir\b/.test(c); } },
+            { d: 'Usa Si … Entonces … Sino … FinSi', f: function (c) { return /\bsi\b[^\n]*\bentonces\b/.test(c) && /\bsino\b/.test(c) && balanced(c, /\bsi\b/, /\bfinsi\b/); } },
+            { d: 'Compara el número con 0 (positivo o no)', f: function (c) { return /(>\s*0)|(0\s*<)/.test(c); } },
+            { d: 'Repite con Para … Hasta … Con Paso … Hacer', f: function (c) { return /\bpara\b/.test(c) && /\bhasta\b/.test(c) && /\bcon\s+paso\b/.test(c) && /\bhacer\b/.test(c); } },
+            { d: 'Cierra el Para con FinPara', f: function (c) { return balanced(c, /\bpara\b/, /\bfinpara\b/); } }
         ],
         variables: [
             { d: 'Declara una variable como Caracter', f: function (c) { return /definir[^\n]*\bcomo\s+caracter/.test(c); } },
