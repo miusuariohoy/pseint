@@ -347,10 +347,24 @@
         <article class="card">
             <h3><span class="num">1</span> Programación Estructurada</h3>
             <p class="concept">
-                Un programa <strong>estructurado</strong> se construye combinando solo
-                <strong>tres estructuras de control</strong>. No usa saltos arbitrarios como
-                <code class="inline">GOTO</code>: cada bloque tiene un único punto de entrada y un único
-                punto de salida, y el programa se puede leer de arriba hacia abajo.
+                <strong>Programar</strong> es escribir una lista ordenada de instrucciones para que una
+                computadora resuelva un problema. La computadora no adivina: hace exactamente lo que
+                le indicamos, paso por paso.
+            </p>
+            <div class="note">
+                <strong>🍳 Ejemplo cotidiano:</strong> una receta de cocina es un algoritmo.
+                Tiene datos (ingredientes), pasos en orden (<strong>secuencia</strong>), decisiones
+                (“si hay café, serví café; si no, serví té”) y repeticiones
+                (“revolvé hasta que hierva”).
+            </div>
+            <div class="syntax">
+                <span class="syntax-label">Idea clave</span>
+                Programar = dar instrucciones ordenadas para resolver un problema
+            </div>
+            <p class="concept">
+                Cuando el programa se arma combinando solo <strong>tres estructuras de control</strong>,
+                hablamos de <strong>programación estructurada</strong>. Así el código queda ordenado,
+                se lee de arriba hacia abajo y es más fácil de corregir.
             </p>
             <ul class="explain">
                 <li><strong>Secuencia:</strong> las instrucciones se ejecutan una después de otra, en el orden escrito.</li>
@@ -364,49 +378,44 @@
                 <span class="syntax-label">Las tres se combinan</span>
                 Secuencia + Selección + Iteración
             </div>
-            <pre><code><span class="kw">Algoritmo</span> TresEstructuras
-    <span class="kw">Definir</span> numero, i <span class="kw">Como</span> Entero;
-    numero &lt;- 5;                          <span class="cmt">// Secuencia: guardamos un valor</span>
-    <span class="kw">Escribir</span> <span class="str">"Comienza el algoritmo"</span>;  <span class="cmt">// Secuencia: mostramos un mensaje</span>
-
-    <span class="kw">Si</span> numero &gt; 0 <span class="kw">Entonces</span>             <span class="cmt">// Selección: elegimos un camino</span>
-        <span class="kw">Escribir</span> <span class="str">"El número es positivo"</span>;
+            <p class="concept">La receta del desayuno, escrita como algoritmo:</p>
+            <pre><code><span class="kw">Algoritmo</span> PrepararDesayuno
+    <span class="kw">Definir</span> hayCafe <span class="kw">Como</span> Logico;
+    <span class="kw">Definir</span> i <span class="kw">Como</span> Entero;
+    hayCafe &lt;- Verdadero;
+    <span class="kw">Escribir</span> <span class="str">"Poner agua a calentar"</span>;          <span class="cmt">// Secuencia</span>
+    <span class="kw">Si</span> hayCafe <span class="kw">Entonces</span>                        <span class="cmt">// Selección</span>
+        <span class="kw">Escribir</span> <span class="str">"Servir café"</span>;
     <span class="kw">Sino</span>
-        <span class="kw">Escribir</span> <span class="str">"El número no es positivo"</span>;
+        <span class="kw">Escribir</span> <span class="str">"Servir té"</span>;
     <span class="kw">FinSi</span>
-
-    <span class="kw">Para</span> i &lt;- 1 <span class="kw">Hasta</span> 3 <span class="kw">Con Paso</span> 1 <span class="kw">Hacer</span>  <span class="cmt">// Iteración: repetimos 3 veces</span>
-        <span class="kw">Escribir</span> <span class="str">"Vuelta "</span>, i;
+    <span class="kw">Para</span> i &lt;- 1 <span class="kw">Hasta</span> 2 <span class="kw">Con Paso</span> 1 <span class="kw">Hacer</span>       <span class="cmt">// Iteración</span>
+        <span class="kw">Escribir</span> <span class="str">"Untar una tostada"</span>;
     <span class="kw">FinPara</span>
 <span class="kw">FinAlgoritmo</span></code></pre>
             <ul class="explain">
-                <li><strong>Secuencia:</strong> la asignación y los <code class="inline">Escribir</code> se ejecutan en orden.</li>
-                <li><strong>Selección:</strong> el <code class="inline">Si</code> muestra un mensaje u otro según
-                    <code class="inline">numero &gt; 0</code>.</li>
-                <li><strong>Iteración:</strong> el <code class="inline">Para</code> repite el mensaje tres veces,
-                    con <code class="inline">i</code> de 1 a 3.</li>
+                <li><strong>Secuencia:</strong> primero se calienta el agua y después se sirve la bebida.</li>
+                <li><strong>Selección:</strong> el <code class="inline">Si</code> elige café o té según
+                    <code class="inline">hayCafe</code>.</li>
+                <li><strong>Iteración:</strong> el <code class="inline">Para</code> repite dos veces el untado
+                    de tostadas.</li>
             </ul>
-            <div class="exercise">
-                <h4>✍️ Actividad: combiná las tres estructuras</h4>
-                <p class="ex-goal">
-                    Escribí un algoritmo llamado <code class="inline">TresEstructuras</code> que:
-                    <strong>(1)</strong> muestre un mensaje de inicio (<strong>secuencia</strong>);
-                    <strong>(2)</strong> guarde un número en una variable y use
-                    <code class="inline">Si … Entonces … Sino … FinSi</code> para mostrar si es positivo o no
-                    (<strong>selección</strong>);
-                    <strong>(3)</strong> repita un mensaje 3 veces con
-                    <code class="inline">Para … Hasta … Con Paso … Hacer … FinPara</code>
-                    (<strong>iteración</strong>).
-                </p>
-                <p class="ex-goal" style="font-size:.85rem;">
-                    💡 Podés guiarte con el ejemplo de arriba, pero cambiá el mensaje y el número.
-                </p>
-                <textarea class="code-input" id="in-estructura" spellcheck="false" placeholder="Algoritmo TresEstructuras&#10;    Definir ...&#10;    // Secuencia&#10;    ...&#10;    // Selección&#10;    Si ... Entonces&#10;    Sino&#10;    FinSi&#10;    // Iteración&#10;    Para ... Hasta ... Con Paso ... Hacer&#10;    FinPara&#10;FinAlgoritmo"></textarea>
-                <div class="ex-actions">
-                    <button class="btn btn-primary" onclick="corregir('estructura')">✅ Corregir</button>
-                    <button class="btn btn-ghost" onclick="limpiar('estructura')">Limpiar</button>
+            <div class="exercise" id="quiz-estructura">
+                <h4>✍️ Ejercitación: una pregunta</h4>
+                <div class="quiz-question" data-correct="0">
+                    <p class="q-text">¿Qué es programar?</p>
+                    <ul class="options-list">
+                        <li data-index="0">A) Escribir instrucciones ordenadas para que una computadora resuelva un problema.</li>
+                        <li data-index="1">B) Encender la computadora y usar programas ya instalados.</li>
+                        <li data-index="2">C) Copiar código de internet sin entender qué hace.</li>
+                        <li data-index="3">D) Armar las partes físicas de la computadora.</li>
+                    </ul>
+                    <div class="feedback"><strong>✔ Correcta: A.</strong> Programar es dar instrucciones ordenadas. La computadora las ejecuta paso a paso; no decide por su cuenta.</div>
                 </div>
-                <div class="result" id="res-estructura"></div>
+                <div class="ex-actions">
+                    <button class="btn btn-primary" onclick="calificarPregunta('quiz-estructura')">✅ Comprobar respuesta</button>
+                    <button class="btn btn-ghost" onclick="reiniciarPregunta('quiz-estructura')">🔄 Reintentar</button>
+                </div>
             </div>
         </article>
 
@@ -821,7 +830,7 @@
             </div>
             <ul class="progress-list" id="progreso-lista"></ul>
             <div class="ex-actions">
-                <button class="btn btn-ghost" onclick="reiniciarTodo()">🔄 Reiniciar los 9 ejercicios</button>
+                <button class="btn btn-ghost" onclick="reiniciarTodo()">🔄 Reiniciar los 9 temas</button>
             </div>
         </div>
     </section>
@@ -1331,6 +1340,83 @@
         banner.style.display = 'none';
         banner.textContent = '';
     }
+
+    /* ---------- Pregunta de ejercitación del tema 1 ---------- */
+    function calificarPregunta(contenedorId) {
+        var cont = document.getElementById(contenedorId);
+        if (!cont) return;
+        var q = cont.querySelector('.quiz-question');
+        if (!q) return;
+
+        var indiceCorrecto = parseInt(q.dataset.correct, 10);
+        var opciones = q.querySelectorAll('li');
+        var seleccionada = q.querySelector('li.selected');
+        var indiceSeleccionado = seleccionada ? parseInt(seleccionada.dataset.index, 10) : null;
+
+        opciones.forEach(function (o) {
+            o.classList.remove('correct', 'incorrect', 'selected');
+        });
+        opciones[indiceCorrecto].classList.add('correct');
+
+        if (indiceSeleccionado !== null && indiceSeleccionado !== indiceCorrecto) {
+            opciones[indiceSeleccionado].classList.add('incorrect');
+        }
+
+        q.querySelector('.feedback').style.display = 'block';
+        q.classList.add('graded');
+
+        var acierto = indiceSeleccionado === indiceCorrecto;
+        cont.dataset.answered = '1';
+        cont.dataset.pct = acierto ? '100' : '0';
+        try {
+            localStorage.setItem('pseint_quiz_' + contenedorId, JSON.stringify({
+                seleccion: indiceSeleccionado,
+                pct: acierto ? 100 : 0
+            }));
+        } catch (e) {}
+        if (typeof window.actualizarResumen === 'function') window.actualizarResumen();
+    }
+
+    function reiniciarPregunta(contenedorId) {
+        var cont = document.getElementById(contenedorId);
+        if (!cont) return;
+        var q = cont.querySelector('.quiz-question');
+        if (q) {
+            q.classList.remove('graded');
+            q.querySelectorAll('li').forEach(function (o) {
+                o.classList.remove('correct', 'incorrect', 'selected');
+            });
+            q.querySelector('.feedback').style.display = 'none';
+        }
+        delete cont.dataset.answered;
+        delete cont.dataset.pct;
+        try { localStorage.removeItem('pseint_quiz_' + contenedorId); } catch (e) {}
+        if (typeof window.actualizarResumen === 'function') window.actualizarResumen();
+    }
+
+    (function restaurarPregunta() {
+        var cont = document.getElementById('quiz-estructura');
+        if (!cont) return;
+        var raw = null;
+        try { raw = localStorage.getItem('pseint_quiz_quiz-estructura'); } catch (e) { return; }
+        if (!raw) return;
+        var data = null;
+        try { data = JSON.parse(raw); } catch (e) { return; }
+        var q = cont.querySelector('.quiz-question');
+        if (!q) return;
+        var opciones = q.querySelectorAll('li');
+        if (typeof data.seleccion === 'number' && opciones[data.seleccion]) {
+            opciones[data.seleccion].classList.add('selected');
+        }
+        cont.dataset.answered = '1';
+        cont.dataset.pct = data.pct === 100 ? '100' : '0';
+        if (data.pct === 100) {
+            var indiceCorrecto = parseInt(q.dataset.correct, 10);
+            if (opciones[indiceCorrecto]) opciones[indiceCorrecto].classList.add('correct');
+            q.querySelector('.feedback').style.display = 'block';
+            q.classList.add('graded');
+        }
+    })();
 </script>
 
 <script>
@@ -1354,16 +1440,6 @@
     }
 
     var EJERCICIOS = {
-        estructura: [
-            { d: 'Usa Algoritmo … FinAlgoritmo', f: function (c) { return /\balgoritmo\b/.test(c) && /\bfinalgoritmo\b/.test(c); } },
-            { d: 'Declara variables con Definir … Como Entero', f: function (c) { return /definir[^\n]*\bcomo\s+entero/.test(c); } },
-            { d: 'Asigna el número con la flecha &lt;-', f: function (c) { return /[a-z_]\w*\s*<-\s*-?\d+/.test(c); } },
-            { d: 'Muestra un mensaje con Escribir (secuencia)', f: function (c) { return /\bescribir\b/.test(c); } },
-            { d: 'Usa Si … Entonces … Sino … FinSi', f: function (c) { return /\bsi\b[^\n]*\bentonces\b/.test(c) && /\bsino\b/.test(c) && balanced(c, /\bsi\b/, /\bfinsi\b/); } },
-            { d: 'Compara el número con 0 (positivo o no)', f: function (c) { return /(>\s*0)|(0\s*<)/.test(c); } },
-            { d: 'Repite con Para … Hasta … Con Paso … Hacer', f: function (c) { return /\bpara\b/.test(c) && /\bhasta\b/.test(c) && /\bcon\s+paso\b/.test(c) && /\bhacer\b/.test(c); } },
-            { d: 'Cierra el Para con FinPara', f: function (c) { return balanced(c, /\bpara\b/, /\bfinpara\b/); } }
-        ],
         variables: [
             { d: 'Declara una variable como Caracter', f: function (c) { return /definir[^\n]*\bcomo\s+caracter/.test(c); } },
             { d: 'Declara una variable como Entero', f: function (c) { return /definir[^\n]*\bcomo\s+entero/.test(c); } },
@@ -1527,8 +1603,12 @@
         var completos = 0;
         var iniciados = 0;
         lista.innerHTML = TEMAS.map(function (t) {
-            var el = document.getElementById('in-' + t.id);
-            var valor = el ? el.value.trim() : '';
+            var el = document.getElementById('in-' + t.id) || document.getElementById('quiz-' + t.id);
+            var valor = '';
+            if (el) {
+                if (typeof el.value === 'string') valor = el.value.trim();
+                else if (el.dataset.answered === '1') valor = '1';
+            }
             var pct = el && el.dataset.pct !== undefined ? parseInt(el.dataset.pct, 10) : null;
             var clase, estado;
             if (pct === 100) {
@@ -1543,7 +1623,8 @@
                 clase = 'todo';
                 estado = 'Sin empezar';
             }
-            return '<li><a href="#in-' + t.id + '">' + t.nombre + '</a>' +
+            var anchorId = document.getElementById('in-' + t.id) ? 'in-' + t.id : 'quiz-' + t.id;
+            return '<li><a href="#' + anchorId + '">' + t.nombre + '</a>' +
                 '<span class="pill ' + clase + '">' + estado + '</span></li>';
         }).join('');
 
@@ -1556,12 +1637,15 @@
     };
 
     window.reiniciarTodo = function () {
-        if (!confirm('¿Borrar tus respuestas de los 9 ejercicios de los temas?')) return;
+        if (!confirm('¿Borrar tus respuestas de los 9 temas?')) return;
         TEMAS.forEach(function (t) {
             var el = document.getElementById('in-' + t.id);
             var res = document.getElementById('res-' + t.id);
             if (el) { el.value = ''; delete el.dataset.pct; }
             if (res) { res.classList.remove('show'); res.innerHTML = ''; }
+            if (document.getElementById('quiz-' + t.id) && typeof reiniciarPregunta === 'function') {
+                reiniciarPregunta('quiz-' + t.id);
+            }
             try { localStorage.removeItem('pseint_ej_' + t.id); } catch (e) {}
         });
         window.actualizarResumen();
