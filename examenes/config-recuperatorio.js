@@ -53,15 +53,18 @@ window.CONFIG.PUNTOS_EJERCICIO = 1;
         return /algoritmo\s+\w+/.test(codigo) && /finalgoritmo/.test(codigo);
     }
 
-    function declaraDosEnteros(codigo, a, b) {
-        return new RegExp('definir\\s+[^;\\n]*\\b' + a + '\\b[^;\\n]*como\\s+entero').test(codigo) &&
-               new RegExp('definir\\s+[^;\\n]*\\b' + b + '\\b[^;\\n]*como\\s+entero').test(codigo);
-    }
-
     function incrementaDentroDeSi(codigo, condicion) {
         var re = new RegExp(
             'si\\s+' + condicion +
             '[\\s\\S]*?\\b([a-z_][a-z0-9_]*)\\s*<-\\s*\\1\\s*\\+\\s*1' +
+            '[\\s\\S]*?finsi'
+        );
+        return re.test(codigo);
+    }
+
+    function incrementaDentroDeSino(codigo, nombre) {
+        var re = new RegExp(
+            'sino[\\s\\S]*?\\b' + nombre + '\\s*<-\\s*' + nombre + '\\s*\\+\\s*1' +
             '[\\s\\S]*?finsi'
         );
         return re.test(codigo);
@@ -88,57 +91,58 @@ window.CONFIG.PUNTOS_EJERCICIO = 1;
             } }
         ],
 
-        /* Actividad 2 · Mientras + condicional + contador. */
+        /* Actividad 2 · Mientras fijo de 10 vueltas + condicional + dos contadores. */
         c2: [
             { d: 'Empieza con Algoritmo y cierra con FinAlgoritmo', f: function (c) { return cierraAlgoritmo(c); } },
-            { d: 'Declara nota como Real', f: function (c) { return declaracion(c, 'nota', 'real'); } },
-            { d: 'Declara un contador entero (aprobadas, contador, total o cantidad)', f: function (c) {
-                return /definir\s+[^;\n]*\b(aprobadas|contador|total|cantidad)\b[^;\n]*como\s+entero/.test(c);
+            { d: 'Declara edad, mayores, menores e i como Entero', f: function (c) {
+                return ['edad', 'mayores', 'menores', 'i'].every(function (n) {
+                    return declaracion(c, n, 'entero');
+                });
             } },
-            { d: 'Inicializa el contador en 0', f: function (c) {
-                return /\b(aprobadas|contador|total|cantidad)\s*<-\s*0/.test(c);
+            { d: 'Inicializa mayores y menores en 0', f: function (c) {
+                return /\bmayores\s*<-\s*0/.test(c) && /\bmenores\s*<-\s*0/.test(c);
             } },
-            { d: 'Lee una nota antes del Mientras', f: function (c) {
-                return /\bleer\s+nota\b[\s\S]*?\bmientras\b/.test(c);
+            { d: 'Inicializa el contador i en 1', f: function (c) {
+                return /\bi\s*<-\s*1\b/.test(c);
             } },
-            { d: 'Repite con Mientras nota <> -1', f: function (c) {
-                return /mientras\s*\(?\s*nota\s*(<>|!=)\s*-1\s*\)?/.test(c) ||
-                       /mientras\s*\(?\s*nota\s*>=\s*0\s*\)?/.test(c);
+            { d: 'Repite con Mientras i <= 10', f: function (c) {
+                return /mientras\s*\(?\s*i\s*(?:<=\s*10|<\s*11)\s*\)?/.test(c);
             } },
-            { d: 'Cuenta solo las notas de 6 o más', f: function (c) {
-                return incrementaDentroDeSi(c, '\\(?\\s*nota\\s*>=\\s*6\\s*\\)?');
+            { d: 'Lee una edad dentro del Mientras', f: function (c) {
+                return /mientras[\s\S]*?\bleer\s+edad\b[\s\S]*?\bfinmientras\b/.test(c);
             } },
-            { d: 'Vuelve a leer dentro del bucle y muestra el contador', f: function (c) {
-                return /mientras[\s\S]*?\bleer\s+nota\b[\s\S]*?\bfinmientras\b/.test(c) &&
-                       /escribir\s+[^;\n]*(aprobadas|contador|total|cantidad)/.test(c);
+            { d: 'Usa Si/Sino y cuenta en mayores cuando edad > 16', f: function (c) {
+                var condicion = '(?:\\(?\\s*edad\\s*>\\s*16\\s*\\)?|' +
+                                '\\(?\\s*16\\s*<\\s*edad\\s*\\)?|' +
+                                '\\(?\\s*edad\\s*>=\\s*17\\s*\\)?)';
+                return usaSiCompleto(c) && incrementaDentroDeSi(c, condicion);
+            } },
+            { d: 'Cuenta en menores la rama del Sino', f: function (c) {
+                return incrementaDentroDeSino(c, 'menores');
+            } },
+            { d: 'Incrementa i y cierra con FinMientras', f: function (c) {
+                return /\bi\s*<-\s*i\s*\+\s*1\b/.test(c) && /finmientras/.test(c);
+            } },
+            { d: 'Muestra los totales de mayores y menores', f: function (c) {
+                return /escribir[^;\n]*mayores/.test(c) && /escribir[^;\n]*menores/.test(c);
             } }
         ],
 
-        /* Actividad 3 · Subproceso + Mientras + acumulador. */
+        /* Actividad 3 · SubProceso simple con parámetro y llamada. */
         c3: [
-            { d: 'Declara SubProceso SumarPares(limite)', f: function (c) {
-                return /subproceso\s+sumarpares\s*\(\s*\w+\s*\)/.test(c);
+            { d: 'Declara SubProceso Saludar(nombre)', f: function (c) {
+                return /subproceso\s+saludar\s*\(\s*nombre\s*\)/.test(c);
             } },
             { d: 'Cierra el subproceso con FinSubProceso', f: function (c) { return /finsubproceso/.test(c); } },
-            { d: 'Declara i y suma como Entero', f: function (c) { return declaraDosEnteros(c, 'i', 'suma'); } },
-            { d: 'Inicializa suma en 0 e i en 2', f: function (c) {
-                return /suma\s*<-\s*0/.test(c) && /\bi\s*<-\s*2/.test(c);
+            { d: 'Muestra "Hola" con Escribir', f: function (c) {
+                return /escribir[^\n]*hola/.test(c);
             } },
-            { d: 'Repite con Mientras i <= limite', f: function (c) {
-                return /mientras\s*\(?\s*i\s*<=\s*limite\s*\)?/.test(c);
+            { d: 'Incluye el parámetro nombre en el mensaje', f: function (c) {
+                return /escribir[^\n]*\bnombre\b/.test(c);
             } },
-            { d: 'Acumula suma <- suma + i', f: function (c) {
-                return /suma\s*<-\s*suma\s*\+\s*i/.test(c);
-            } },
-            { d: 'Avanza de 2 en 2 con i <- i + 2', f: function (c) {
-                return /\bi\s*<-\s*i\s*\+\s*2/.test(c);
-            } },
-            { d: 'Muestra el total con Escribir', f: function (c) {
-                return /escribir\s+[^;\n]*suma/.test(c);
-            } },
-            { d: 'Cierra el Mientras con FinMientras', f: function (c) { return /finmientras/.test(c); } },
-            { d: 'Llama a SumarPares(10) desde el algoritmo principal', f: function (c) {
-                return /sumarpares\s*\(\s*10\s*\)/.test(c) && cierraAlgoritmo(c);
+            { d: 'Empieza con Algoritmo y cierra con FinAlgoritmo', f: function (c) { return cierraAlgoritmo(c); } },
+            { d: 'Llama a Saludar("Ana") desde el algoritmo principal', f: function (c) {
+                return /saludar\s*\(\s*["']ana["']\s*\)/.test(c) && cierraAlgoritmo(c);
             } }
         ]
     };

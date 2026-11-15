@@ -122,13 +122,13 @@
                 </thead>
                 <tbody>
                     <tr><td>Algoritmos y programación estructurada</td><td>Parte A · pregunta 1</td></tr>
-                    <tr><td>Variables y tipos de datos</td><td>Parte A · pregunta 2; Parte C · actividades 1 y 3</td></tr>
-                    <tr><td>Leer / Escribir</td><td>Parte A · pregunta 3; Parte C · actividades 1 y 2</td></tr>
+                    <tr><td>Variables y tipos de datos</td><td>Parte A · pregunta 2; Parte C · actividades 1 y 2</td></tr>
+                    <tr><td>Leer / Escribir</td><td>Parte A · pregunta 3; Parte C · actividades 1, 2 y 3</td></tr>
                     <tr><td>Condicionales</td><td>Parte B · pregunta 6; Parte C · actividades 1 y 2</td></tr>
-                    <tr><td>Mientras</td><td>Parte B · pregunta 7; Parte C · actividades 2 y 3</td></tr>
+                    <tr><td>Mientras</td><td>Parte B · pregunta 7; Parte C · actividad 2</td></tr>
                     <tr><td>Para</td><td>Parte B · preguntas 8 y 9</td></tr>
                     <tr><td>Contador</td><td>Parte A · pregunta 5; Parte C · actividad 2</td></tr>
-                    <tr><td>Acumulador</td><td>Parte C · actividad 3</td></tr>
+                    <tr><td>Acumulador</td><td>Parte A · pregunta 5 (se distingue de contador)</td></tr>
                     <tr><td>Subprocesos</td><td>Parte B · pregunta 9; Parte C · actividad 3</td></tr>
                 </tbody>
             </table>
@@ -294,8 +294,8 @@ FinAlgoritmo</code></pre>
                     <tr><td>Entrada y salida</td><td><code>Leer precio;</code> · <code>Escribir precio;</code></td></tr>
                     <tr><td>Condicional completo</td><td><code>Si ... Entonces ... Sino ... FinSi</code></td></tr>
                     <tr><td>Bucle completo</td><td><code>Mientras ... Hacer ... FinMientras</code></td></tr>
-                    <tr><td>Contador o acumulador inicializado</td><td><code>aprobadas &lt;- 0;</code> · <code>suma &lt;- 0;</code></td></tr>
-                    <tr><td>Subproceso con parámetro y llamada</td><td><code>SubProceso SumarPares(limite)</code> · <code>SumarPares(10);</code></td></tr>
+                    <tr><td>Contadores inicializados</td><td><code>mayores &lt;- 0;</code> · <code>menores &lt;- 0;</code></td></tr>
+                    <tr><td>Subproceso con parámetro y llamada</td><td><code>SubProceso Saludar(nombre)</code> · <code>Saludar("Ana");</code></td></tr>
                 </tbody>
             </table>
 
@@ -303,7 +303,7 @@ FinAlgoritmo</code></pre>
             <ul class="checklist">
                 <li>Declaré todas las variables con su tipo.</li>
                 <li>Cerré cada <code>Si</code>, <code>Mientras</code>, <code>Para</code> y <code>SubProceso</code>.</li>
-                <li>Inicialicé contadores y acumuladores antes de usarlos.</li>
+                <li>Inicialicé los contadores antes de usarlos.</li>
                 <li>Probé mentalmente el algoritmo con un caso chico.</li>
                 <li>Revisé que las salidas coincidan con lo pedido.</li>
             </ul>
@@ -352,63 +352,60 @@ FinAlgoritmo</code></pre>
 
         <article class="pregunta codigo" data-ejercicio="c2">
             <p class="enunciado"><span class="num-preg">11</span>
-                Leé notas hasta que se ingrese <code>-1</code>. Contá cuántas notas son
-                <strong>aprobadas</strong> (6 o más) y mostrá el total.
-                Usá <code>Mientras</code>.</p>
+                Pedí exactamente <strong>10 edades</strong> usando un <code>Mientras</code>.
+                Contá cuántas son <strong>mayores de 16</strong> y cuántas <strong>no</strong>.
+                Mostrá los dos totales. Usá <code>mayores</code>, <code>menores</code> e
+                <code>i</code> como contador.</p>
             <p class="tema-lista"><span class="tema-tag verde">Mientras</span><span class="tema-tag verde">Condicional</span><span class="tema-tag verde">Contador</span></p>
             <details class="pista">
                 <summary>Ver pista</summary>
-                <p>Inicializá un contador en 0 antes del bucle. Leé la primera nota antes del <code>Mientras</code> y volvé a leerla al final de cada vuelta. Dentro del bucle, usá un <code>Si</code> para incrementar el contador solo cuando la nota sea 6 o más.</p>
+                <p>Inicializá <code>mayores</code>, <code>menores</code> e <code>i</code> antes del bucle (<code>i</code> en 1). Repetí mientras <code>i &lt;= 10</code>: leé la edad, usá <code>Si … Entonces … Sino … FinSi</code> para decidir en qué contador sumar y, al final de cada vuelta, incrementá <code>i &lt;- i + 1;</code>.</p>
             </details>
-            <textarea class="editor" id="c2" spellcheck="false" placeholder="Algoritmo ContarAprobadas&#10;    Definir ...&#10;    contador &lt;- 0;&#10;    Leer ...&#10;    Mientras ... Hacer&#10;        Si ... Entonces&#10;        FinSi&#10;        Leer ...&#10;    FinMientras&#10;    Escribir ...&#10;FinAlgoritmo"></textarea>
+            <textarea class="editor" id="c2" spellcheck="false" placeholder="Algoritmo ContarEdades&#10;    Definir ...&#10;    mayores &lt;- 0;&#10;    menores &lt;- 0;&#10;    i &lt;- 1;&#10;    Mientras i &lt;= 10 Hacer&#10;        Leer ...&#10;        Si ... Entonces&#10;        Sino&#10;        FinSi&#10;        i &lt;- i + 1;&#10;    FinMientras&#10;    Escribir ...&#10;FinAlgoritmo"></textarea>
             <div class="resultado-codigo" id="res-c2"></div>
             <details class="solucion">
                 <summary>Ver una solución de referencia</summary>
-                <pre><code>Algoritmo ContarAprobadas
-    Definir nota Como Real;
-    Definir aprobadas Como Entero;
-    aprobadas &lt;- 0;
-    Escribir "Ingresá una nota (-1 para terminar):";
-    Leer nota;
-    Mientras nota &lt;&gt; -1 Hacer
-        Si nota &gt;= 6 Entonces
-            aprobadas &lt;- aprobadas + 1;
+                <pre><code>Algoritmo ContarEdades
+    Definir edad, mayores, menores, i Como Entero;
+    mayores &lt;- 0;
+    menores &lt;- 0;
+    i &lt;- 1;
+    Mientras i &lt;= 10 Hacer
+        Escribir "Ingresá una edad:";
+        Leer edad;
+        Si edad &gt; 16 Entonces
+            mayores &lt;- mayores + 1;
+        Sino
+            menores &lt;- menores + 1;
         FinSi
-        Escribir "Ingresá otra nota (-1 para terminar):";
-        Leer nota;
+        i &lt;- i + 1;
     FinMientras
-    Escribir "Aprobadas: ", aprobadas;
+    Escribir "Mayores de 16: ", mayores;
+    Escribir "No mayores de 16: ", menores;
 FinAlgoritmo</code></pre>
             </details>
         </article>
 
         <article class="pregunta codigo" data-ejercicio="c3">
             <p class="enunciado"><span class="num-preg">12</span>
-                Creá un <strong>SubProceso</strong> llamado <code>SumarPares(limite)</code> que sume
-                los números pares del <code>2</code> al <code>limite</code> usando un <code>Mientras</code>
-                y muestre el total. Llamalo desde el algoritmo principal con <code>limite = 10</code>.</p>
-            <p class="tema-lista"><span class="tema-tag verde">SubProceso</span><span class="tema-tag verde">Mientras</span><span class="tema-tag verde">Acumulador</span></p>
+                Creá un <strong>SubProceso</strong> llamado <code>Saludar(nombre)</code> que
+                reciba un nombre y muestre <code>Hola, &lt;nombre&gt;</code>. Llamalo desde el
+                algoritmo principal con <code>"Ana"</code>.</p>
+            <p class="tema-lista"><span class="tema-tag verde">SubProceso</span><span class="tema-tag verde">Leer / Escribir</span></p>
             <details class="pista">
                 <summary>Ver pista</summary>
-                <p>El subproceso recibe un parámetro. Declará <code>i</code> y <code>suma</code> como enteros, inicializá <code>suma</code> en 0 e <code>i</code> en 2. Repetí con <code>Mientras i &lt;= limite Hacer</code>, acumulá <code>suma &lt;- suma + i;</code> y avanzá con <code>i &lt;- i + 2;</code>. Al final, llamá a <code>SumarPares(10);</code> desde el <code>Algoritmo</code> principal.</p>
+                <p>Declará <code>SubProceso Saludar(nombre)</code> y cerralo con <code>FinSubProceso</code>. Dentro, mostrá el saludo con <code>Escribir "Hola, ", nombre;</code>. En el algoritmo principal, llamá a <code>Saludar("Ana");</code>.</p>
             </details>
-            <textarea class="editor" id="c3" spellcheck="false" placeholder="SubProceso SumarPares(limite)&#10;    Definir ...&#10;    i &lt;- 2;&#10;    suma &lt;- 0;&#10;    Mientras ... Hacer&#10;    FinMientras&#10;    Escribir ...&#10;FinSubProceso&#10;&#10;Algoritmo SumaParesHastaDiez&#10;    SumarPares(10);&#10;FinAlgoritmo"></textarea>
+            <textarea class="editor" id="c3" spellcheck="false" placeholder="SubProceso Saludar(nombre)&#10;    Escribir ...&#10;FinSubProceso&#10;&#10;Algoritmo Saludo&#10;    Saludar(&quot;Ana&quot;);&#10;FinAlgoritmo"></textarea>
             <div class="resultado-codigo" id="res-c3"></div>
             <details class="solucion">
                 <summary>Ver una solución de referencia</summary>
-                <pre><code>SubProceso SumarPares(limite)
-    Definir i, suma Como Entero;
-    i &lt;- 2;
-    suma &lt;- 0;
-    Mientras i &lt;= limite Hacer
-        suma &lt;- suma + i;
-        i &lt;- i + 2;
-    FinMientras
-    Escribir "Total: ", suma;
+                <pre><code>SubProceso Saludar(nombre)
+    Escribir "Hola, ", nombre;
 FinSubProceso
 
-Algoritmo SumaParesHastaDiez
-    SumarPares(10);
+Algoritmo Saludo
+    Saludar("Ana");
 FinAlgoritmo</code></pre>
             </details>
         </article>
