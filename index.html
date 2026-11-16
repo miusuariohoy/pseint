@@ -152,6 +152,7 @@
         .topic-panel{padding:.8rem 1.5rem 1.5rem;}
         .topic-panel[hidden]{display:none;}
         .topic-panel-ejercicio .exercise{margin-top:0;}
+        .topic-panel-ejercicio .exercise + .exercise{margin-top:1.2rem;}
         .card.topic.closed .topic-tabs,
         .card.topic.closed .topic-panel{display:none;}
         /* ---------- Quiz ---------- */
@@ -182,7 +183,7 @@
         .btn-ghost{background:#e2e8f0;color:#334155;}
         .btn-ghost:hover{background:#cbd5e1;}
         .quiz-actions{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.2rem;}
-        #score-banner, #score-parteA{
+        #score-banner, #score-parteA, #score-identificacion{
             display:none;margin-top:1.2rem;padding:1rem;border-radius:10px;
             text-align:center;font-weight:700;font-size:1.05rem;
         }
@@ -287,7 +288,7 @@
             .topic-panel{padding:.7rem 1.1rem 1.2rem;}
         }
         @media print{
-            nav.sumario, .quiz-actions, .btn, #score-banner, #score-parteA{display:none !important;}
+            nav.sumario, .quiz-actions, .btn, #score-banner, #score-parteA, #score-identificacion{display:none !important;}
             body{background:#fff;}
             .card{box-shadow:none;break-inside:avoid;}
             .topic-tabs, .chevron{display:none !important;}
@@ -313,6 +314,7 @@
     <a href="#quiz">📝 Autoevaluación</a>
     <a href="#desafio">🏆 Desafío</a>
     <a href="#solucion">💻 Solución</a>
+    <a href="#identificacion">🔎 Identificación</a>
     <a href="#entrega">📤 Actividad final</a>
     <a href="examenes/index.html">✅ Evaluación</a>
 </nav>
@@ -324,8 +326,8 @@
         <p style="margin:.3rem 0 .9rem;font-size:.95rem;">
             Cuando termines de estudiar, rendí la evaluación en línea: <strong>12 consignas</strong>,
             <strong>10 puntos</strong> y corrección automática. Incluye los 9 temas de esta guía
-            (algoritmos, variables, Leer/Escribir, condicionales, Mientras, Para, contador,
-            acumulador y subprocesos). Si no aprobás o querés mejorar la nota, tenés también el
+            (algoritmos, variables, Leer/Escribir, condicionales, contador, acumulador, Para,
+            Mientras y subprocesos). Si no aprobás o querés mejorar la nota, tenés también el
             <strong>recuperatorio</strong> con la misma estructura. La clave te la da el docente.
         </p>
         <a class="btn btn-primary" style="display:inline-block;text-decoration:none;"
@@ -337,10 +339,12 @@
         <h2 class="section-title">SECCIÓN 1 · Contenido Explicativo</h2>
         <p class="section-sub">
             Los temas están ordenados en <strong>secuencia de aprendizaje</strong>: primero entender el programa,
-            luego guardar datos, interactuar, decidir, repetir, contar y finalmente modularizar.
+            luego guardar datos, interactuar, decidir, contar, acumular, repetir y finalmente modularizar.
             <strong>Tocá un tema</strong> para abrirlo y usá las pestañas
             <strong>📘 Teoría</strong> y <strong>✍️ Ejercitación</strong>.
-            Cada ejercicio se corrige al instante en esta página, sin descargar nada.
+            Cada tema tiene <strong>al menos dos actividades</strong> y todas se corrigen al instante en esta
+            página, sin descargar nada. Al final hay una <strong>actividad de identificación</strong> de estructuras,
+            comandos, variables, constantes, entrada/salida, declaración y tipos de datos.
         </p>
 
         <!-- 1 -->
@@ -401,7 +405,7 @@
                     de tostadas.</li>
             </ul>
             <div class="exercise" id="quiz-estructura">
-                <h4>✍️ Ejercitación: una pregunta</h4>
+                <h4>✍️ Actividad 1: ¿qué es programar?</h4>
                 <div class="quiz-question" data-correct="0">
                     <p class="q-text">¿Qué es programar?</p>
                     <ul class="options-list">
@@ -415,6 +419,23 @@
                 <div class="ex-actions">
                     <button class="btn btn-primary" onclick="calificarPregunta('quiz-estructura')">✅ Comprobar respuesta</button>
                     <button class="btn btn-ghost" onclick="reiniciarPregunta('quiz-estructura')">🔄 Reintentar</button>
+                </div>
+            </div>
+            <div class="exercise" id="quiz-estructura-2">
+                <h4>✍️ Actividad 2: reconocer estructuras</h4>
+                <div class="quiz-question" data-correct="2">
+                    <p class="q-text">¿Cuál de estas opciones es una <strong>estructura de iteración</strong> (repetición)?</p>
+                    <ul class="options-list">
+                        <li data-index="0">A) <code class="inline">Si … Entonces … FinSi</code></li>
+                        <li data-index="1">B) <code class="inline">Definir edad Como Entero;</code></li>
+                        <li data-index="2">C) <code class="inline">Para … Hasta … Con Paso … Hacer … FinPara</code></li>
+                        <li data-index="3">D) <code class="inline">Escribir "Hola";</code></li>
+                    </ul>
+                    <div class="feedback"><strong>✔ Correcta: C.</strong> <code class="inline">Para</code> repite un bloque una cantidad de veces; <code class="inline">Si</code> elige un camino, y <code class="inline">Definir</code> y <code class="inline">Escribir</code> son declaración y salida.</div>
+                </div>
+                <div class="ex-actions">
+                    <button class="btn btn-primary" onclick="calificarPregunta('quiz-estructura-2')">✅ Comprobar respuesta</button>
+                    <button class="btn btn-ghost" onclick="reiniciarPregunta('quiz-estructura-2')">🔄 Reintentar</button>
                 </div>
             </div>
         </article>
@@ -498,7 +519,7 @@
                     la variable existe, pero todavía no tiene un valor elegido por vos.</li>
             </ul>
             <div class="exercise">
-                <h4>✍️ Ejercicio: tres variables</h4>
+                <h4>✍️ Actividad 1: tres variables</h4>
                 <p class="ex-goal">Declará tres variables: <code class="inline">nombre</code> (Caracter), <code class="inline">edad</code> (Entero) y <code class="inline">altura</code> (Real). Asignales un valor a cada una y mostralas con <code class="inline">Escribir</code>.</p>
                 <textarea class="code-input" id="in-variables" spellcheck="false" placeholder="Algoritmo MisDatos&#10;    // escribí tu código acá&#10;FinAlgoritmo"></textarea>
                 <div class="ex-actions">
@@ -506,6 +527,16 @@
                     <button class="btn btn-ghost" onclick="limpiar('variables')">Limpiar</button>
                 </div>
                 <div class="result" id="res-variables"></div>
+            </div>
+            <div class="exercise">
+                <h4>✍️ Actividad 2: declarar una constante</h4>
+                <p class="ex-goal">En PSeInt no hay una palabra especial para las constantes: se usa una variable a la que se le asigna un valor una sola vez y no se modifica. Declará <code class="inline">PI</code> como <code class="inline">Real</code>, asignale <code class="inline">3.1416</code> y mostrala con <code class="inline">Escribir</code>.</p>
+                <textarea class="code-input" id="in-variables-2" spellcheck="false" placeholder="Algoritmo MiConstante&#10;    // escribí tu código acá&#10;FinAlgoritmo"></textarea>
+                <div class="ex-actions">
+                    <button class="btn btn-primary" onclick="corregir('variables-2')">✅ Corregir</button>
+                    <button class="btn btn-ghost" onclick="limpiar('variables-2')">Limpiar</button>
+                </div>
+                <div class="result" id="res-variables-2"></div>
             </div>
         </article>
 
@@ -571,7 +602,7 @@
                 <li><strong>Olvidar el punto y coma</strong> al final de cada instrucción.</li>
             </ul>
             <div class="exercise">
-                <h4>✍️ Ejercicio: pedir y mostrar</h4>
+                <h4>✍️ Actividad 1: pedir y mostrar</h4>
                 <p class="ex-goal">Pedile al usuario su ciudad y mostrá el mensaje <strong>Vivís en &lt;ciudad&gt;</strong>. Usá <code class="inline">Leer</code> para capturar el dato y luego <code class="inline">Escribir</code> para mostrarlo.</p>
                 <textarea class="code-input" id="in-leerescribir" spellcheck="false" placeholder="Algoritmo MiCiudad&#10;    // escribí tu código acá&#10;FinAlgoritmo"></textarea>
                 <div class="ex-actions">
@@ -579,6 +610,16 @@
                     <button class="btn btn-ghost" onclick="limpiar('leerescribir')">Limpiar</button>
                 </div>
                 <div class="result" id="res-leerescribir"></div>
+            </div>
+            <div class="exercise">
+                <h4>✍️ Actividad 2: sumar dos números leídos</h4>
+                <p class="ex-goal">Declará dos variables <code class="inline">Entero</code>, pedí dos números con <code class="inline">Escribir</code>, capturalos con <code class="inline">Leer</code> y mostrá el resultado de la suma.</p>
+                <textarea class="code-input" id="in-leerescribir-2" spellcheck="false" placeholder="Algoritmo SumarDosNumeros&#10;    // escribí tu código acá&#10;FinAlgoritmo"></textarea>
+                <div class="ex-actions">
+                    <button class="btn btn-primary" onclick="corregir('leerescribir-2')">✅ Corregir</button>
+                    <button class="btn btn-ghost" onclick="limpiar('leerescribir-2')">Limpiar</button>
+                </div>
+                <div class="result" id="res-leerescribir-2"></div>
             </div>
         </article>
 
@@ -674,7 +715,7 @@
                     anidá un nuevo <code class="inline">Si</code>.</li>
             </ul>
             <div class="exercise">
-                <h4>✍️ Ejercicio: mayor o menor de edad</h4>
+                <h4>✍️ Actividad 1: mayor o menor de edad</h4>
                 <p class="ex-goal">Leé la edad de una persona. Si es <strong>mayor o igual a 18</strong>, mostrá <em>"Mayor de edad"</em>; si no, mostrá <em>"Menor de edad"</em>. Usá <code class="inline">Si … Entonces … Sino … FinSi</code>.</p>
                 <textarea class="code-input" id="in-condicional" spellcheck="false" placeholder="Algoritmo EdadPersona&#10;    // escribí tu código acá&#10;FinAlgoritmo"></textarea>
                 <div class="ex-actions">
@@ -683,137 +724,267 @@
                 </div>
                 <div class="result" id="res-condicional"></div>
             </div>
+            <div class="exercise">
+                <h4>✍️ Actividad 2: positivo, negativo o cero</h4>
+                <p class="ex-goal">Leé un número. Si es <strong>mayor a 0</strong>, mostrá <em>"Positivo"</em>; si es <strong>menor a 0</strong>, mostrá <em>"Negativo"</em>; si es <strong>igual a 0</strong>, mostrá <em>"Cero"</em>. Usá <code class="inline">Si</code> anidados y cerrá cada uno con <code class="inline">FinSi</code>.</p>
+                <textarea class="code-input" id="in-condicional-2" spellcheck="false" placeholder="Algoritmo PositivoNegativoCero&#10;    // escribí tu código acá&#10;FinAlgoritmo"></textarea>
+                <div class="ex-actions">
+                    <button class="btn btn-primary" onclick="corregir('condicional-2')">✅ Corregir</button>
+                    <button class="btn btn-ghost" onclick="limpiar('condicional-2')">Limpiar</button>
+                </div>
+                <div class="result" id="res-condicional-2"></div>
+            </div>
         </article>
 
         <!-- 5 -->
         <article class="card">
-            <h3><span class="num">5</span> Bucle Mientras</h3>
+            <h3><span class="num">5</span> Contador</h3>
             <p class="concept">
-                El bucle <strong>Mientras</strong> repite un bloque de instrucciones <strong>mientras</strong>
-                una condición sea verdadera. La condición se revisa <strong>antes</strong> de cada vuelta:
-                si es falsa desde el principio, el bloque no se ejecuta ninguna vez. Se usa cuando
-                <strong>no sabemos de antemano cuántas vueltas</strong> hará el programa (menús, validaciones,
-                leer hasta que el usuario decida salir).
+                Un <strong>contador</strong> es una <strong>variable</strong> que aumenta o disminuye siempre en una
+                <strong>cantidad fija</strong> (normalmente 1). Sirve para responder
+                <strong>cuántas veces</strong> ocurre algo: cuántos aprobaron, cuántos productos se cargaron,
+                cuántos números cumplen una condición.
             </p>
+            <div class="note">
+                <strong>📦 Es una variable:</strong> por eso primero se <strong>declara</strong> indicando su tipo
+                (<code class="inline">Definir c Como Entero;</code>) y después se le <strong>define su valor inicial</strong>
+                (<code class="inline">c &lt;- 0;</code>). Sin declaración no existe; sin valor inicial no se sabe desde
+                qué número empezar a contar.
+            </div>
             <div class="syntax">
-                <span class="syntax-label">Sintaxis</span>
-                Mientras condición Hacer<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;// instrucciones que se repiten<br>
-                FinMientras
+                <span class="syntax-label">Fórmula clásica</span>
+                contador &lt;- contador + 1;
             </div>
-            <div class="note">
-                <strong>🔁 Idea clave:</strong> todo <code class="inline">Mientras</code> necesita tres piezas
-                coordinadas: <strong>inicializar</strong> la variable antes del bucle,
-                <strong>evaluar</strong> una condición que en algún momento se vuelva falsa y
-                <strong>actualizar</strong> esa variable dentro del bucle. Si falta la actualización,
-                el bucle nunca termina (<strong>bucle infinito</strong>).
-            </div>
-            <p class="concept">
-                Ejemplo con un menú: el programa sigue mostrando opciones hasta que el usuario escriba 0.
-                Como no sabemos cuántas veces va a elegir, usamos <code class="inline">Mientras</code>.
-            </p>
-            <pre><code><span class="kw">Algoritmo</span> EjemploMientras
-    <span class="kw">Definir</span> opcion <span class="kw">Como</span> Entero;
-    opcion &lt;- 1;
-    <span class="kw">Mientras</span> opcion &lt;&gt; 0 <span class="kw">Hacer</span>
-        <span class="kw">Escribir</span> <span class="str">"Para salir presioná 0; para continuar, cualquier número:"</span>;
-        <span class="kw">Leer</span> opcion;
-    <span class="kw">FinMientras</span>
-    <span class="kw">Escribir</span> <span class="str">"Programa finalizado."</span>;
+            <p class="concept"><strong>Todo contador se usa en estos pasos:</strong></p>
+            <ul class="explain">
+                <li><strong>1. Declarar la variable:</strong> <code class="inline">Definir c Como Entero;</code>.</li>
+                <li><strong>2. Definir el valor inicial antes de contar:</strong> <code class="inline">c &lt;- 0;</code>
+                    (0 es lo habitual para contar ocurrencias).</li>
+                <li><strong>3. Incrementar cuando ocurre el evento que querés contar:</strong>
+                    <code class="inline">c &lt;- c + 1;</code>.</li>
+                <li><strong>4. Mostrar el resultado:</strong> <code class="inline">Escribir "Total: ", c;</code>.</li>
+            </ul>
+            <pre><code><span class="kw">Algoritmo</span> EjemploContador
+    <span class="kw">Definir</span> c <span class="kw">Como</span> Entero;
+    c &lt;- 0;          <span class="cmt">// Valor inicial: todavía no conté nada</span>
+    c &lt;- c + 1;      <span class="cmt">// Ahora vale 1</span>
+    c &lt;- c + 1;      <span class="cmt">// Ahora vale 2</span>
+    <span class="kw">Escribir</span> <span class="str">"Contador: "</span>, c;
 <span class="kw">FinAlgoritmo</span></code></pre>
             <ul class="explain">
-                <li><strong>Línea 3:</strong> inicializamos <code class="inline">opcion</code> en 1 para que la
-                    condición sea verdadera la primera vez y el bucle entre.</li>
-                <li><strong>Línea 4:</strong> revisa si <code class="inline">opcion</code> es distinto de 0.
-                    Como vale 1, entra al bloque.</li>
-                <li><strong>Línea 6:</strong> pide un nuevo valor. Ese <code class="inline">Leer</code> es lo que
-                    permite que la condición cambie: cuando el usuario escribe 0, el bucle termina.</li>
-                <li><strong>Línea 8:</strong> se ejecuta una sola vez, cuando el bucle ya terminó.</li>
+                <li><strong>Línea 2:</strong> declaramos la variable <code class="inline">c</code> como
+                    <code class="inline">Entero</code>.</li>
+                <li><strong>Línea 3:</strong> le damos el valor inicial 0: “todavía no conté nada”.</li>
+                <li><strong>Líneas 4 y 5:</strong> sumamos 1 al valor actual. Primero pasa a 1 y después a 2.</li>
+                <li><strong>Línea 6:</strong> mostramos el total acumulado en el contador.</li>
             </ul>
+            <p class="concept">
+                También se puede contar solo los casos que cumplen una condición. Acá no hay bucles:
+                se usan tres condicionales y el contador aumenta únicamente cuando la condición es verdadera.
+            </p>
+            <pre><code><span class="kw">Algoritmo</span> ContarAprobados
+    <span class="kw">Definir</span> nota1, nota2, nota3, aprobados <span class="kw">Como</span> Entero;
+    nota1 &lt;- 8;
+    nota2 &lt;- 4;
+    nota3 &lt;- 10;
+    aprobados &lt;- 0;                 <span class="cmt">// 1) valor inicial</span>
 
-            <p class="concept"><strong>Las dos formas válidas de contar del 1 al 5</strong></p>
-            <p class="concept">
-                La inicialización depende de <strong>dónde pongas el incremento</strong>. Las dos versiones
-                muestran <code class="inline">1 2 3 4 5</code>; elegí la que te resulte más clara.
-            </p>
-            <span class="example-label">Opción 1 · Contador en 0, incremento al principio</span>
-            <pre><code><span class="kw">Algoritmo</span> ContarConCero
-    <span class="kw">Definir</span> c <span class="kw">Como</span> Entero;
-    c &lt;- 0;                 <span class="cmt">// arranca en 0</span>
-    <span class="kw">Mientras</span> c &lt; 5 <span class="kw">Hacer</span>    <span class="cmt">// se repite mientras c sea menor que 5</span>
-        c &lt;- c + 1;         <span class="cmt">// primero incrementa: 1, 2, 3, 4, 5</span>
-        <span class="kw">Escribir</span> c;         <span class="cmt">// después muestra el valor</span>
-    <span class="kw">FinMientras</span>
+    <span class="kw">Si</span> nota1 &gt;= 6 <span class="kw">Entonces</span>
+        aprobados &lt;- aprobados + 1; <span class="cmt">// 2) contar si cumple</span>
+    <span class="kw">FinSi</span>
+
+    <span class="kw">Si</span> nota2 &gt;= 6 <span class="kw">Entonces</span>
+        aprobados &lt;- aprobados + 1;
+    <span class="kw">FinSi</span>
+
+    <span class="kw">Si</span> nota3 &gt;= 6 <span class="kw">Entonces</span>
+        aprobados &lt;- aprobados + 1;
+    <span class="kw">FinSi</span>
+
+    <span class="kw">Escribir</span> <span class="str">"Aprobados: "</span>, aprobados;   <span class="cmt">// 3) mostrar</span>
 <span class="kw">FinAlgoritmo</span></code></pre>
-            <span class="example-label alt">Opción 2 · Contador en 1, incremento al final</span>
-            <pre><code><span class="kw">Algoritmo</span> ContarConUno
-    <span class="kw">Definir</span> c <span class="kw">Como</span> Entero;
-    c &lt;- 1;                 <span class="cmt">// arranca en 1</span>
-    <span class="kw">Mientras</span> c &lt;= 5 <span class="kw">Hacer</span>   <span class="cmt">// se repite mientras c no supere 5</span>
-        <span class="kw">Escribir</span> c;         <span class="cmt">// muestra 1, 2, 3, 4, 5</span>
-        c &lt;- c + 1;         <span class="cmt">// incrementa al final de cada vuelta</span>
-    <span class="kw">FinMientras</span>
-<span class="kw">FinAlgoritmo</span></code></pre>
+            <ul class="explain">
+                <li><code class="inline">aprobados</code> empieza en 0 y aumenta de a 1 por cada nota que llega a 6.</li>
+                <li>Al terminar los tres <code class="inline">Si</code>, el contador contiene la cantidad total.</li>
+                <li>Más adelante, cuando veas los bucles, vas a repetir este mismo incremento dentro de un
+                    <code class="inline">Para</code> o un <code class="inline">Mientras</code> para contar muchos datos.</li>
+            </ul>
             <div class="note">
-                <strong>⚠️ Cuidado con la condición:</strong> si arrancás en 0, incrementás <em>antes</em> de mostrar
-                y usás <code class="inline">Mientras c &lt;= 5</code>, el contador llega a 6 y se muestra
-                <code class="inline">1 2 3 4 5 6</code>. Para mostrar exactamente hasta 5, la condición debe ser
-                <code class="inline">c &lt; 5</code> (o <code class="inline">c &lt;= 4</code>). En cambio, si arrancás
-                en 1 e incrementás al final, <code class="inline">c &lt;= 5</code> es la condición correcta.
-                <br><br>
-                Las dos inicializaciones son válidas: <strong>0 o 1</strong>. Lo que no puede faltar es que la
-                condición y el incremento estén en el lugar correcto.
+                <strong>💡 ¿0 o 1?</strong> Si tu objetivo es <strong>contar ocurrencias</strong>
+                (cuántos hay), empezá en <strong>0</strong>. Si querés <strong>numerar</strong> elementos
+                (1.º, 2.º, 3.º…), podés empezar en 1 y decidir si incrementás antes o después de mostrar.
+                Para un conteo, arrancar en 1 suma uno de más y el resultado queda mal.
             </div>
-            <p class="concept"><strong>Ejemplo de bucle infinito (para reconocerlo):</strong></p>
-            <pre><code><span class="kw">Algoritmo</span> BucleInfinito
-    <span class="kw">Definir</span> c <span class="kw">Como</span> Entero;
-    c &lt;- 0;
-    <span class="kw">Mientras</span> c &lt; 5 <span class="kw">Hacer</span>
-        <span class="kw">Escribir</span> c;      <span class="cmt">// falta c &lt;- c + 1: c nunca cambia</span>
-    <span class="kw">FinMientras</span>
-<span class="kw">FinAlgoritmo</span></code></pre>
+            <p class="concept"><strong>Contador vs. acumulador (diferencia clave):</strong></p>
             <ul class="explain">
-                <li>La condición <code class="inline">c &lt; 5</code> siempre da verdadero porque
-                    <code class="inline">c</code> queda en 0 para siempre.</li>
-                <li>El programa se queda mostrando <code class="inline">0</code> sin parar. La solución es
-                    <strong>actualizar el contador dentro del bucle</strong>.</li>
+                <li><strong>Contador:</strong> suma siempre lo mismo, generalmente 1.
+                    <code class="inline">c &lt;- c + 1;</code></li>
+                <li><strong>Acumulador:</strong> suma un valor que cambia en cada operación.
+                    <code class="inline">total &lt;- total + precio;</code></li>
+                <li>El contador responde <em>“¿cuántos?”</em>; el acumulador responde <em>“¿cuánto suman?”</em>.</li>
             </ul>
-            <p class="concept"><strong>¿Cuándo usar Mientras y cuándo Para?</strong></p>
+            <p class="concept"><strong>Errores comunes con contadores:</strong></p>
             <ul class="explain">
-                <li><strong>Mientras:</strong> no sabés cuántas vueltas serán (menú, leer hasta 0, validar un dato
-                    hasta que sea correcto).</li>
-                <li><strong>Para:</strong> sabés la cantidad exacta de vueltas (mostrar del 1 al 10, recorrer 5 productos).</li>
-            </ul>
-            <p class="concept"><strong>Errores comunes con Mientras:</strong></p>
-            <ul class="explain">
-                <li><strong>No incrementar</strong> la variable dentro del bucle → bucle infinito.</li>
-                <li><strong>Incrementar fuera del bucle</strong> (antes o después del <code class="inline">FinMientras</code>)
-                    → la condición nunca cambia.</li>
-                <li><strong>Inicializar dentro del bucle</strong> → el contador vuelve siempre al mismo valor.</li>
-                <li><strong>Olvidar <code class="inline">Hacer</code></strong> o el <code class="inline">FinMientras</code>.</li>
-                <li><strong>Usar <code class="inline">=</code> en la condición</strong> cuando querés comparar;
-                    recordá que <code class="inline">=</code> compara y <code class="inline">&lt;-</code> asigna.</li>
+                <li><strong>No declarar la variable</strong> antes de usarla.</li>
+                <li><strong>Olvidar el valor inicial:</strong> en PSeInt estricto no podés sumar sobre una variable
+                    sin valor base.</li>
+                <li><strong>Reiniciar el contador</strong> en medio del conteo: se pierde lo que ya se contó.</li>
+                <li><strong>Incrementar fuera del condicional</strong> cuando solo querés contar algunos casos:
+                    termina contando todos.</li>
+                <li><strong>Mostrar el contador antes de terminar</strong> cuando querés el total final: mostralo al final.</li>
             </ul>
             <div class="exercise">
-                <h4>✍️ Ejercicio: contar hasta 5</h4>
-                <p class="ex-goal">Mostrá los números del <strong>1 al 5</strong> usando un bucle <code class="inline">Mientras</code>. Podés inicializar el contador en <strong>0</strong> (incrementando al principio) o en <strong>1</strong> (incrementando al final). No olvides <strong>incrementar</strong> la variable dentro del bucle para que no se repita infinitamente.</p>
-                <textarea class="code-input" id="in-mientras" spellcheck="false" placeholder="Algoritmo ContarHastaCinco&#10;    // escribí tu código acá&#10;FinAlgoritmo"></textarea>
+                <h4>✍️ Actividad 1: contador sin bucles</h4>
+                <p class="ex-goal">Declará un contador como <code class="inline">Entero</code>, definí su valor inicial en <strong>0</strong>, incrementalo <strong>3 veces</strong> (sin usar <code class="inline">Para</code> ni <code class="inline">Mientras</code>) y mostrá el valor final con <code class="inline">Escribir</code>.</p>
+                <textarea class="code-input" id="in-contador" spellcheck="false" placeholder="Algoritmo MiContador&#10;    // escribí tu código acá&#10;FinAlgoritmo"></textarea>
                 <div class="ex-actions">
-                    <button class="btn btn-primary" onclick="corregir('mientras')">✅ Corregir</button>
-                    <button class="btn btn-ghost" onclick="limpiar('mientras')">Limpiar</button>
+                    <button class="btn btn-primary" onclick="corregir('contador')">✅ Corregir</button>
+                    <button class="btn btn-ghost" onclick="limpiar('contador')">Limpiar</button>
                 </div>
-                <div class="result" id="res-mientras"></div>
+                <div class="result" id="res-contador"></div>
+            </div>
+            <div class="exercise">
+                <h4>✍️ Actividad 2: contar aprobados sin bucles</h4>
+                <p class="ex-goal">Sin bucles: asigná <code class="inline">nota1 &lt;- 8;</code>, <code class="inline">nota2 &lt;- 4;</code> y <code class="inline">nota3 &lt;- 10;</code>. Con <strong>tres <code class="inline">Si</code></strong>, contá cuántas notas son <strong>mayores o iguales a 6</strong> y mostrá el total.</p>
+                <textarea class="code-input" id="in-contador-2" spellcheck="false" placeholder="Algoritmo ContarAprobados&#10;    // escribí tu código acá&#10;FinAlgoritmo"></textarea>
+                <div class="ex-actions">
+                    <button class="btn btn-primary" onclick="corregir('contador-2')">✅ Corregir</button>
+                    <button class="btn btn-ghost" onclick="limpiar('contador-2')">Limpiar</button>
+                </div>
+                <div class="result" id="res-contador-2"></div>
             </div>
         </article>
 
         <!-- 6 -->
         <article class="card">
-            <h3><span class="num">6</span> Bucle Para (For)</h3>
+            <h3><span class="num">6</span> Acumulador</h3>
+            <p class="concept">
+                Un <strong>acumulador</strong> es una <strong>variable</strong> que va <strong>sumando valores
+                variables</strong>. Se usa para calcular <strong>totales</strong>: el total de una caja, la suma de
+                notas, los gastos del mes, los puntos de un juego. La diferencia con el contador es que el valor
+                que se suma <strong>no es fijo</strong>: puede ser el precio de cada producto o la nota de cada alumno.
+            </p>
+            <div class="note">
+                <strong>📦 Es una variable:</strong> también se <strong>declara</strong> con su tipo
+                (<code class="inline">Definir total Como Real;</code>) y se le <strong>define un valor inicial</strong>
+                (<code class="inline">total &lt;- 0;</code>). Si no se declara, PSeInt no sabe qué tipo de dato va a
+                guardar; si no se inicializa, no hay una base para empezar a sumar.
+            </div>
+            <div class="syntax">
+                <span class="syntax-label">Fórmula clásica</span>
+                acumulador &lt;- acumulador + variable_o_valor;
+            </div>
+            <p class="concept"><strong>El acumulador se usa en estos pasos:</strong></p>
+            <ul class="explain">
+                <li><strong>1. Declarar la variable:</strong> <code class="inline">Definir total Como Real;</code>.</li>
+                <li><strong>2. Definir el valor inicial en 0</strong> para las sumas
+                    (en 1 solo si vas a multiplicar).</li>
+                <li><strong>3. Acumular el valor</strong> de cada operación al total anterior.</li>
+                <li><strong>4. Mostrar o usar el total</strong> cuando ya terminaste de sumar.</li>
+            </ul>
+            <pre><code><span class="kw">Algoritmo</span> EjemploAcumulador
+    <span class="kw">Definir</span> suma, precio <span class="kw">Como</span> Real;
+    suma &lt;- 0;              <span class="cmt">// Valor inicial obligatorio</span>
+    precio &lt;- 15.50;
+    suma &lt;- suma + precio;  <span class="cmt">// Suma el precio variable</span>
+    <span class="kw">Escribir</span> <span class="str">"Total acumulado: "</span>, suma;
+<span class="kw">FinAlgoritmo</span></code></pre>
+            <ul class="explain">
+                <li><strong>Línea 2:</strong> declaramos <code class="inline">suma</code> y
+                    <code class="inline">precio</code> como <code class="inline">Real</code>.</li>
+                <li><strong>Línea 3:</strong> el acumulador arranca limpio en 0.</li>
+                <li><strong>Línea 5:</strong> suma el contenido de <code class="inline">precio</code> (15.50) a lo
+                    que ya tenía <code class="inline">suma</code>.</li>
+                <li><strong>Línea 6:</strong> muestra el total acumulado.</li>
+            </ul>
+            <p class="concept">
+                Ejemplo sin bucles: una caja que suma los precios de <strong>tres productos</strong>.
+            </p>
+            <pre><code><span class="kw">Algoritmo</span> TotalDeCaja
+    <span class="kw">Definir</span> precio1, precio2, precio3, total <span class="kw">Como</span> Real;
+    precio1 &lt;- 150.50;
+    precio2 &lt;- 200;
+    precio3 &lt;- 99.99;
+    total &lt;- 0;                         <span class="cmt">// 1) valor inicial</span>
+    total &lt;- total + precio1;           <span class="cmt">// 2) acumular</span>
+    total &lt;- total + precio2;
+    total &lt;- total + precio3;
+    <span class="kw">Escribir</span> <span class="str">"Total a pagar: $"</span>, total;   <span class="cmt">// 3) mostrar</span>
+<span class="kw">FinAlgoritmo</span></code></pre>
+            <ul class="explain">
+                <li>Cada línea suma un precio distinto al total anterior.</li>
+                <li>Al terminar, <code class="inline">total</code> contiene la suma de los tres precios.</li>
+                <li>El acumulador <strong>no</strong> se reinicia entre sumas: si lo hacés, solo guardarías el
+                    último precio.</li>
+                <li>Más adelante, cuando veas los bucles, vas a repetir la suma dentro de un <code class="inline">Para</code>
+                    o un <code class="inline">Mientras</code> para acumular muchos datos.</li>
+            </ul>
+            <p class="concept">
+                <strong>Contador y acumulador juntos:</strong> para calcular un promedio necesitás las dos cosas.
+            </p>
+            <pre><code><span class="kw">Algoritmo</span> PromedioDeNotas
+    <span class="kw">Definir</span> nota1, nota2, nota3, suma, promedio <span class="kw">Como</span> Real;
+    nota1 &lt;- 7;
+    nota2 &lt;- 8;
+    nota3 &lt;- 9;
+    suma &lt;- 0;                          <span class="cmt">// acumulador</span>
+    suma &lt;- suma + nota1;
+    suma &lt;- suma + nota2;
+    suma &lt;- suma + nota3;
+    promedio &lt;- suma / 3;               <span class="cmt">// el 3 es la cantidad de notas</span>
+    <span class="kw">Escribir</span> <span class="str">"Promedio: "</span>, promedio;
+<span class="kw">FinAlgoritmo</span></code></pre>
+            <ul class="explain">
+                <li><code class="inline">suma</code> acumula el total de las notas.</li>
+                <li>El promedio se calcula <strong>después</strong> de sumar: total dividido la cantidad de valores.</li>
+                <li>Si la cantidad de notas fuera variable, usarías además un contador
+                    (<code class="inline">cantidad &lt;- cantidad + 1</code>) y dividirías por
+                    <code class="inline">cantidad</code> en lugar de por 3.</li>
+            </ul>
+            <div class="note">
+                <strong>💡 Regla práctica:</strong> inicializá en <strong>0</strong> cuando sumás y en
+                <strong>1</strong> cuando multiplicás. Un acumulador de suma que arranca en 1 da todos los
+                resultados corridos en uno.
+            </div>
+            <p class="concept"><strong>Errores comunes con acumuladores:</strong></p>
+            <ul class="explain">
+                <li><strong>No declarar la variable</strong> o no indicar su tipo.</li>
+                <li><strong>Inicializar en 1 una suma:</strong> el total queda siempre uno de más.</li>
+                <li><strong>Reiniciar el acumulador</strong> en medio de las sumas: se pierde todo lo sumado antes.</li>
+                <li><strong>Acumular la variable equivocada:</strong> sumar una nota repetida o sumar el contador
+                    en lugar del valor.</li>
+                <li><strong>Dividir por cero</strong> al calcular un promedio cuando no se ingresó ningún valor.</li>
+            </ul>
+            <div class="exercise">
+                <h4>✍️ Actividad 1: acumulador sin bucles</h4>
+                <p class="ex-goal">Declará un acumulador como <code class="inline">Real</code>, definí su valor inicial en <strong>0</strong> y sumale tres precios: <strong>150.50</strong>, <strong>200</strong> y <strong>99.99</strong>. Mostrá el total con <code class="inline">Escribir</code>. No uses <code class="inline">Para</code> ni <code class="inline">Mientras</code>.</p>
+                <textarea class="code-input" id="in-acumulador" spellcheck="false" placeholder="Algoritmo TotalDeCaja&#10;    // escribí tu código acá&#10;FinAlgoritmo"></textarea>
+                <div class="ex-actions">
+                    <button class="btn btn-primary" onclick="corregir('acumulador')">✅ Corregir</button>
+                    <button class="btn btn-ghost" onclick="limpiar('acumulador')">Limpiar</button>
+                </div>
+                <div class="result" id="res-acumulador"></div>
+            </div>
+            <div class="exercise">
+                <h4>✍️ Actividad 2: promedio sin bucles</h4>
+                <p class="ex-goal">Sin bucles: asigná <code class="inline">nota1 &lt;- 7;</code>, <code class="inline">nota2 &lt;- 8;</code> y <code class="inline">nota3 &lt;- 9;</code>. Acumulá las tres notas, calculá el promedio dividiendo por <strong>3</strong> y mostralo.</p>
+                <textarea class="code-input" id="in-acumulador-2" spellcheck="false" placeholder="Algoritmo PromedioNotas&#10;    // escribí tu código acá&#10;FinAlgoritmo"></textarea>
+                <div class="ex-actions">
+                    <button class="btn btn-primary" onclick="corregir('acumulador-2')">✅ Corregir</button>
+                    <button class="btn btn-ghost" onclick="limpiar('acumulador-2')">Limpiar</button>
+                </div>
+                <div class="result" id="res-acumulador-2"></div>
+            </div>
+        </article>
+
+        <!-- 7 -->
+        <article class="card">
+            <h3><span class="num">7</span> Bucle Para (For)</h3>
             <p class="concept">
                 El bucle <strong>Para</strong> repite un bloque un <strong>número exacto y conocido</strong> de veces.
-                A diferencia de <code class="inline">Mientras</code>, acá declaramos en la misma línea dónde empieza
-                el contador, dónde termina y de cuánto en cuánto avanza. PSeInt se encarga solo de inicializar,
-                avanzar y cortar.
+                En la misma línea se indica dónde empieza el contador, dónde termina y de cuánto en cuánto avanza.
+                PSeInt se encarga solo de inicializar, avanzar y cortar. Es el bucle que vas a usar cuando ya sabés
+                cuántas vueltas necesita el programa (por ejemplo, mostrar del 1 al 10).
             </p>
             <div class="syntax">
                 <span class="syntax-label">Sintaxis</span>
@@ -863,8 +1034,8 @@
             <div class="note">
                 <strong>⚠️ No modifiques la variable del bucle por dentro.</strong> Si dentro de un
                 <code class="inline">Para i &lt;- 1 Hasta 5</code> escribís <code class="inline">i &lt;- i + 2</code>,
-                el control del bucle se rompe y puede saltarse vueltas o no terminar nunca. Para eso existe
-                <code class="inline">Mientras</code>, donde el control es manual.
+                el control del bucle se rompe y puede saltarse vueltas o no terminar nunca. Para el control manual
+                existe otro bucle, <code class="inline">Mientras</code>, que vas a ver en el tema siguiente.
             </div>
             <p class="concept"><strong>Errores comunes con Para:</strong></p>
             <ul class="explain">
@@ -879,7 +1050,7 @@
                     se declara antes, con <code class="inline">Definir</code>.</li>
             </ul>
             <div class="exercise">
-                <h4>✍️ Ejercicio: pares del 2 al 10</h4>
+                <h4>✍️ Actividad 1: pares del 2 al 10</h4>
                 <p class="ex-goal">Mostrá los números <strong>pares del 2 al 10</strong> usando un bucle <code class="inline">Para</code>. Podés usar <code class="inline">Con Paso 2</code> o recorrer todo y filtrar con <code class="inline">Si</code> + <code class="inline">MOD</code>.</p>
                 <textarea class="code-input" id="in-para" spellcheck="false" placeholder="Algoritmo NumerosPares&#10;    // escribí tu código acá&#10;FinAlgoritmo"></textarea>
                 <div class="ex-actions">
@@ -888,204 +1059,162 @@
                 </div>
                 <div class="result" id="res-para"></div>
             </div>
-        </article>
-
-        <!-- 7 -->
-        <article class="card">
-            <h3><span class="num">7</span> Contador</h3>
-            <p class="concept">
-                Un <strong>contador</strong> es una variable que aumenta o disminuye siempre en una
-                <strong>cantidad fija</strong> (normalmente 1). Sirve para responder
-                <strong>cuántas veces</strong> ocurre algo: cuántos aprobaron, cuántos productos se cargaron,
-                cuántos números pares hay.
-            </p>
-            <div class="syntax">
-                <span class="syntax-label">Fórmula clásica</span>
-                contador &lt;- contador + 1;
-            </div>
-            <p class="concept"><strong>Todo contador se usa en tres pasos:</strong></p>
-            <ul class="explain">
-                <li><strong>1. Inicializar antes del bucle:</strong> <code class="inline">c &lt;- 0;</code>
-                    (o en 1 si vas a numerar elementos, no contarlos).</li>
-                <li><strong>2. Incrementar dentro del bucle</strong>, cuando ocurre el evento que querés contar:
-                    <code class="inline">c &lt;- c + 1;</code>.</li>
-                <li><strong>3. Usar el resultado después del bucle:</strong>
-                    <code class="inline">Escribir "Total: ", c;</code>.</li>
-            </ul>
-            <pre><code><span class="kw">Algoritmo</span> EjemploContador
-    <span class="kw">Definir</span> c <span class="kw">Como</span> Entero;
-    c &lt;- 0;          <span class="cmt">// Inicialización obligatoria</span>
-    c &lt;- c + 1;      <span class="cmt">// Ahora vale 1</span>
-    c &lt;- c + 1;      <span class="cmt">// Ahora vale 2</span>
-    <span class="kw">Escribir</span> <span class="str">"Contador: "</span>, c;
-<span class="kw">FinAlgoritmo</span></code></pre>
-            <ul class="explain">
-                <li><strong>Línea 3:</strong> el conteo empieza en 0: “todavía no conté nada”.</li>
-                <li><strong>Líneas 4 y 5:</strong> sumamos 1 al valor actual. Primero pasa a 1 y después a 2.</li>
-                <li><strong>Línea 6:</strong> mostramos el total acumulado en el contador.</li>
-            </ul>
-            <p class="concept">
-                En un programa real, el incremento va <strong>dentro de un bucle</strong> y muchas veces
-                <strong>dentro de un condicional</strong>, para contar solo los casos que cumplen algo:
-            </p>
-            <pre><code><span class="kw">Algoritmo</span> ContarPares
-    <span class="kw">Definir</span> i, pares <span class="kw">Como</span> Entero;
-    pares &lt;- 0;                         <span class="cmt">// 1) inicializar</span>
-    <span class="kw">Para</span> i &lt;- 1 <span class="kw">Hasta</span> 10 <span class="kw">Con Paso</span> 1 <span class="kw">Hacer</span>
-        <span class="kw">Si</span> i MOD 2 = 0 <span class="kw">Entonces</span>
-            pares &lt;- pares + 1;         <span class="cmt">// 2) contar solo si es par</span>
-        <span class="kw">FinSi</span>
-    <span class="kw">FinPara</span>
-    <span class="kw">Escribir</span> <span class="str">"Cantidad de pares: "</span>, pares;   <span class="cmt">// 3) mostrar</span>
-<span class="kw">FinAlgoritmo</span></code></pre>
-            <ul class="explain">
-                <li><code class="inline">MOD</code> devuelve el resto de la división. Si
-                    <code class="inline">i MOD 2 = 0</code>, el número es par.</li>
-                <li>El contador <code class="inline">pares</code> aumenta solo cuando la condición se cumple.
-                    Al terminar el <code class="inline">Para</code>, contiene la cantidad total.</li>
-            </ul>
-            <div class="note">
-                <strong>💡 ¿0 o 1?</strong> Si tu objetivo es <strong>contar ocurrencias</strong>
-                (cuántos hay), empezá en <strong>0</strong>. Si querés <strong>numerar</strong> elementos
-                (1.º, 2.º, 3.º…), podés empezar en 1 y decidir si incrementás antes o después de mostrar.
-                Para un conteo, arrancar en 1 suma uno de más y el resultado queda mal.
-            </div>
-            <p class="concept"><strong>Contador vs. acumulador (diferencia clave):</strong></p>
-            <ul class="explain">
-                <li><strong>Contador:</strong> suma siempre lo mismo, generalmente 1.
-                    <code class="inline">c &lt;- c + 1;</code></li>
-                <li><strong>Acumulador:</strong> suma un valor que cambia en cada vuelta.
-                    <code class="inline">total &lt;- total + precio;</code></li>
-                <li>El contador responde <em>“¿cuántos?”</em>; el acumulador responde <em>“¿cuánto suman?”</em>.</li>
-            </ul>
-            <p class="concept"><strong>Errores comunes con contadores:</strong></p>
-            <ul class="explain">
-                <li><strong>Inicializar dentro del bucle:</strong> el contador vuelve a 0 en cada vuelta y el total
-                    nunca crece.</li>
-                <li><strong>Incrementar fuera del condicional</strong> cuando solo querés contar algunos casos:
-                    termina contando todas las vueltas.</li>
-                <li><strong>Olvidar la inicialización:</strong> en PSeInt estricto no podés sumar sobre una variable
-                    sin valor base.</li>
-                <li><strong>Mostrar el contador dentro del bucle</strong> cuando querés el total final: mostralo
-                    después del <code class="inline">FinPara</code> o <code class="inline">FinMientras</code>.</li>
-            </ul>
             <div class="exercise">
-                <h4>✍️ Ejercicio: contar mayores a 5</h4>
-                <p class="ex-goal">Recorré los números del <strong>1 al 10</strong> y contá cuántos son <strong>mayores a 5</strong>. Mostrá el resultado final con <code class="inline">Escribir</code>.</p>
-                <textarea class="code-input" id="in-contador" spellcheck="false" placeholder="Algoritmo ContarMayores&#10;    // escribí tu código acá&#10;FinAlgoritmo"></textarea>
+                <h4>✍️ Actividad 2: cuenta regresiva</h4>
+                <p class="ex-goal">Mostrá una cuenta regresiva del <strong>5 al 1</strong> usando un bucle <code class="inline">Para</code> con <code class="inline">Con Paso -1</code>. Al terminar, mostrá <em>"¡Despegue!"</em> con <code class="inline">Escribir</code>.</p>
+                <textarea class="code-input" id="in-para-2" spellcheck="false" placeholder="Algoritmo CuentaRegresiva&#10;    // escribí tu código acá&#10;FinAlgoritmo"></textarea>
                 <div class="ex-actions">
-                    <button class="btn btn-primary" onclick="corregir('contador')">✅ Corregir</button>
-                    <button class="btn btn-ghost" onclick="limpiar('contador')">Limpiar</button>
+                    <button class="btn btn-primary" onclick="corregir('para-2')">✅ Corregir</button>
+                    <button class="btn btn-ghost" onclick="limpiar('para-2')">Limpiar</button>
                 </div>
-                <div class="result" id="res-contador"></div>
+                <div class="result" id="res-para-2"></div>
             </div>
         </article>
 
         <!-- 8 -->
         <article class="card">
-            <h3><span class="num">8</span> Acumulador</h3>
+            <h3><span class="num">8</span> Bucle Mientras</h3>
             <p class="concept">
-                Un <strong>acumulador</strong> es una variable que va <strong>sumando valores variables</strong>
-                en cada vuelta. Se usa para calcular <strong>totales</strong>: el total de una caja, la suma de
-                notas, los gastos del mes, los puntos de un juego. La diferencia con el contador es que el valor
-                que se suma <strong>no es fijo</strong>: puede ser el precio de cada producto o la nota de cada alumno.
+                El bucle <strong>Mientras</strong> repite un bloque de instrucciones <strong>mientras</strong>
+                una condición sea verdadera. La condición se revisa <strong>antes</strong> de cada vuelta:
+                si es falsa desde el principio, el bloque no se ejecuta ninguna vez. Se puede usar de dos formas:
             </p>
+            <ul class="explain">
+                <li><strong>Repetición por condición:</strong> no sabemos de antemano cuántas vueltas habrá; el bucle
+                    termina cuando la condición deja de cumplirse (un menú hasta elegir 0, una validación hasta
+                    ingresar un dato correcto, leer hasta que el usuario decida salir).</li>
+                <li><strong>Repetición fija con contador:</strong> sabemos cuántas vueltas queremos, pero elegimos
+                    controlarlas a mano con un contador: lo inicializamos antes, lo comparamos en la condición y lo
+                    incrementamos dentro del bucle para contar exactamente, por ejemplo, del 1 al 5.</li>
+            </ul>
             <div class="syntax">
-                <span class="syntax-label">Fórmula clásica</span>
-                acumulador &lt;- acumulador + variable_o_valor;
+                <span class="syntax-label">Sintaxis</span>
+                Mientras condición Hacer<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;// instrucciones que se repiten<br>
+                FinMientras
             </div>
-            <p class="concept"><strong>El acumulador también se usa en tres pasos:</strong></p>
-            <ul class="explain">
-                <li><strong>1. Inicializar en 0 antes del bucle</strong> para las sumas
-                    (en 1 solo si vas a multiplicar).</li>
-                <li><strong>2. Acumular dentro del bucle:</strong> sumar el valor de esta vuelta al total anterior.</li>
-                <li><strong>3. Mostrar o usar el total después del bucle.</strong></li>
-            </ul>
-            <pre><code><span class="kw">Algoritmo</span> EjemploAcumulador
-    <span class="kw">Definir</span> suma, precio <span class="kw">Como</span> Real;
-    suma &lt;- 0;              <span class="cmt">// Inicialización obligatoria</span>
-    precio &lt;- 15.50;
-    suma &lt;- suma + precio;  <span class="cmt">// Suma el precio variable</span>
-    <span class="kw">Escribir</span> <span class="str">"Total acumulado: "</span>, suma;
-<span class="kw">FinAlgoritmo</span></code></pre>
-            <ul class="explain">
-                <li><strong>Línea 3:</strong> el acumulador arranca limpio en 0.</li>
-                <li><strong>Línea 5:</strong> suma el contenido de <code class="inline">precio</code> (15.50) a lo
-                    que ya tenía <code class="inline">suma</code>.</li>
-                <li><strong>Línea 6:</strong> muestra el total acumulado.</li>
-            </ul>
-            <p class="concept">
-                Ejemplo completo: una caja que suma los precios de <strong>tres productos</strong>.
-            </p>
-            <pre><code><span class="kw">Algoritmo</span> TotalDeCaja
-    <span class="kw">Definir</span> i <span class="kw">Como</span> Entero;
-    <span class="kw">Definir</span> precio, total <span class="kw">Como</span> Real;
-    total &lt;- 0;                         <span class="cmt">// 1) acumulador en 0</span>
-    <span class="kw">Para</span> i &lt;- 1 <span class="kw">Hasta</span> 3 <span class="kw">Con Paso</span> 1 <span class="kw">Hacer</span>
-        <span class="kw">Escribir</span> <span class="str">"Precio del producto "</span>, i, <span class="str">":"</span>;
-        <span class="kw">Leer</span> precio;
-        total &lt;- total + precio;        <span class="cmt">// 2) acumular el valor leído</span>
-    <span class="kw">FinPara</span>
-    <span class="kw">Escribir</span> <span class="str">"Total a pagar: $"</span>, total;   <span class="cmt">// 3) mostrar el total</span>
-<span class="kw">FinAlgoritmo</span></code></pre>
-            <ul class="explain">
-                <li>En cada vuelta se lee un precio distinto y se suma al total anterior.</li>
-                <li>Al terminar el <code class="inline">Para</code>, <code class="inline">total</code> contiene
-                    la suma de los tres precios.</li>
-                <li>El acumulador <strong>no</strong> se reinicia dentro del bucle: si lo hacés, solo guardarías el
-                    último precio.</li>
-            </ul>
-            <p class="concept">
-                <strong>Contador y acumulador juntos:</strong> para calcular un promedio necesitás las dos cosas.
-            </p>
-            <pre><code><span class="kw">Algoritmo</span> PromedioDeNotas
-    <span class="kw">Definir</span> i <span class="kw">Como</span> Entero;
-    <span class="kw">Definir</span> nota, suma, promedio <span class="kw">Como</span> Real;
-    suma &lt;- 0;                          <span class="cmt">// acumulador</span>
-    <span class="kw">Para</span> i &lt;- 1 <span class="kw">Hasta</span> 4 <span class="kw">Con Paso</span> 1 <span class="kw">Hacer</span>
-        <span class="kw">Escribir</span> <span class="str">"Nota "</span>, i, <span class="str">":"</span>;
-        <span class="kw">Leer</span> nota;
-        suma &lt;- suma + nota;             <span class="cmt">// acumula el valor</span>
-    <span class="kw">FinPara</span>
-    promedio &lt;- suma / 4;               <span class="cmt">// el 4 es la cantidad de notas</span>
-    <span class="kw">Escribir</span> <span class="str">"Promedio: "</span>, promedio;
-<span class="kw">FinAlgoritmo</span></code></pre>
-            <ul class="explain">
-                <li><code class="inline">suma</code> acumula el total de las notas.</li>
-                <li>El promedio se calcula <strong>después</strong> del bucle: total dividido la cantidad de valores.</li>
-                <li>Si la cantidad de vueltas fuera variable, usarías además un contador
-                    (<code class="inline">cantidad &lt;- cantidad + 1</code>) y dividirías por
-                    <code class="inline">cantidad</code> en lugar de por 4.</li>
-            </ul>
             <div class="note">
-                <strong>💡 Regla práctica:</strong> inicializá en <strong>0</strong> cuando sumás y en
-                <strong>1</strong> cuando multiplicás. Un acumulador de suma que arranca en 1 da todos los
-                resultados corridos en uno.
+                <strong>🔁 Idea clave:</strong> todo <code class="inline">Mientras</code> necesita tres piezas
+                coordinadas: <strong>inicializar</strong> la variable antes del bucle,
+                <strong>evaluar</strong> una condición que en algún momento se vuelva falsa y
+                <strong>actualizar</strong> esa variable dentro del bucle. Si falta la actualización,
+                el bucle nunca termina (<strong>bucle infinito</strong>).
             </div>
-            <p class="concept"><strong>Errores comunes con acumuladores:</strong></p>
+            <p class="concept">
+                Ejemplo con un menú: el programa sigue mostrando opciones hasta que el usuario escriba 0.
+                Como no sabemos cuántas veces va a elegir, usamos <code class="inline">Mientras</code>.
+            </p>
+            <pre><code><span class="kw">Algoritmo</span> EjemploMientras
+    <span class="kw">Definir</span> opcion <span class="kw">Como</span> Entero;
+    opcion &lt;- 1;
+    <span class="kw">Mientras</span> opcion &lt;&gt; 0 <span class="kw">Hacer</span>
+        <span class="kw">Escribir</span> <span class="str">"Para salir presioná 0; para continuar, cualquier número:"</span>;
+        <span class="kw">Leer</span> opcion;
+    <span class="kw">FinMientras</span>
+    <span class="kw">Escribir</span> <span class="str">"Programa finalizado."</span>;
+<span class="kw">FinAlgoritmo</span></code></pre>
             <ul class="explain">
-                <li><strong>Inicializar en 1 una suma:</strong> el total queda siempre uno de más.</li>
-                <li><strong>Reiniciar el acumulador dentro del bucle:</strong> se pierde todo lo sumado antes.</li>
-                <li><strong>Acumular la variable equivocada:</strong> sumar el contador <code class="inline">i</code>
-                    en lugar del precio o la nota.</li>
-                <li><strong>Dividir por cero</strong> al calcular un promedio cuando no se ingresó ningún valor.</li>
-                <li><strong>Mostrar el total dentro del bucle:</strong> estarías mostrando subtotales, no el total final.</li>
+                <li><strong>Línea 3:</strong> inicializamos <code class="inline">opcion</code> en 1 para que la
+                    condición sea verdadera la primera vez y el bucle entre.</li>
+                <li><strong>Línea 4:</strong> revisa si <code class="inline">opcion</code> es distinto de 0.
+                    Como vale 1, entra al bloque.</li>
+                <li><strong>Línea 6:</strong> pide un nuevo valor. Ese <code class="inline">Leer</code> es lo que
+                    permite que la condición cambie: cuando el usuario escribe 0, el bucle termina.</li>
+                <li><strong>Línea 8:</strong> se ejecuta una sola vez, cuando el bucle ya terminó.</li>
+            </ul>
+
+            <p class="concept"><strong>Repetición fija con contador: las dos formas de contar del 1 al 5</strong></p>
+            <p class="concept">
+                Acá el número de vueltas es <strong>fijo</strong> (5), pero el control lo hace el contador
+                <code class="inline">c</code>. La inicialización depende de <strong>dónde pongas el incremento</strong>.
+                Las dos versiones muestran <code class="inline">1 2 3 4 5</code>; elegí la que te resulte más clara.
+            </p>
+            <span class="example-label">Opción 1 · Contador en 0, incremento al principio</span>
+            <pre><code><span class="kw">Algoritmo</span> ContarConCero
+    <span class="kw">Definir</span> c <span class="kw">Como</span> Entero;
+    c &lt;- 0;                 <span class="cmt">// arranca en 0</span>
+    <span class="kw">Mientras</span> c &lt; 5 <span class="kw">Hacer</span>    <span class="cmt">// se repite mientras c sea menor que 5</span>
+        c &lt;- c + 1;         <span class="cmt">// primero incrementa: 1, 2, 3, 4, 5</span>
+        <span class="kw">Escribir</span> c;         <span class="cmt">// después muestra el valor</span>
+    <span class="kw">FinMientras</span>
+<span class="kw">FinAlgoritmo</span></code></pre>
+            <span class="example-label alt">Opción 2 · Contador en 1, incremento al final</span>
+            <pre><code><span class="kw">Algoritmo</span> ContarConUno
+    <span class="kw">Definir</span> c <span class="kw">Como</span> Entero;
+    c &lt;- 1;                 <span class="cmt">// arranca en 1</span>
+    <span class="kw">Mientras</span> c &lt;= 5 <span class="kw">Hacer</span>   <span class="cmt">// se repite mientras c no supere 5</span>
+        <span class="kw">Escribir</span> c;         <span class="cmt">// muestra 1, 2, 3, 4, 5</span>
+        c &lt;- c + 1;         <span class="cmt">// incrementa al final de cada vuelta</span>
+    <span class="kw">FinMientras</span>
+<span class="kw">FinAlgoritmo</span></code></pre>
+            <div class="note">
+                <strong>⚠️ Cuidado con la condición:</strong> si arrancás en 0, incrementás <em>antes</em> de mostrar
+                y usás <code class="inline">Mientras c &lt;= 5</code>, el contador llega a 6 y se muestra
+                <code class="inline">1 2 3 4 5 6</code>. Para mostrar exactamente hasta 5, la condición debe ser
+                <code class="inline">c &lt; 5</code> (o <code class="inline">c &lt;= 4</code>). En cambio, si arrancás
+                en 1 e incrementás al final, <code class="inline">c &lt;= 5</code> es la condición correcta.
+                <br><br>
+                Las dos inicializaciones son válidas: <strong>0 o 1</strong>. Lo que no puede faltar es que la
+                condición y el incremento estén en el lugar correcto.
+            </div>
+            <p class="concept"><strong>Ejemplo de bucle infinito (para reconocerlo):</strong></p>
+            <pre><code><span class="kw">Algoritmo</span> BucleInfinito
+    <span class="kw">Definir</span> c <span class="kw">Como</span> Entero;
+    c &lt;- 0;
+    <span class="kw">Mientras</span> c &lt; 5 <span class="kw">Hacer</span>
+        <span class="kw">Escribir</span> c;      <span class="cmt">// falta c &lt;- c + 1: c nunca cambia</span>
+    <span class="kw">FinMientras</span>
+<span class="kw">FinAlgoritmo</span></code></pre>
+            <ul class="explain">
+                <li>La condición <code class="inline">c &lt; 5</code> siempre da verdadero porque
+                    <code class="inline">c</code> queda en 0 para siempre.</li>
+                <li>El programa se queda mostrando <code class="inline">0</code> sin parar. La solución es
+                    <strong>actualizar el contador dentro del bucle</strong>.</li>
+            </ul>
+            <p class="concept"><strong>¿Cuándo usar Mientras y cuándo Para?</strong></p>
+            <ul class="explain">
+                <li><strong>Mientras por condición:</strong> no sabés cuántas vueltas serán (menú, leer hasta 0,
+                    validar un dato hasta que sea correcto).</li>
+                <li><strong>Mientras por contador:</strong> sabés cuántas vueltas querés, pero preferís controlar
+                    el contador y el incremento a mano.</li>
+                <li><strong>Para:</strong> sabés la cantidad exacta de vueltas y querés que PSeInt maneje el
+                    contador automáticamente (mostrar del 1 al 10, recorrer 5 productos).</li>
+            </ul>
+            <p class="concept"><strong>Errores comunes con Mientras:</strong></p>
+            <ul class="explain">
+                <li><strong>No incrementar</strong> la variable dentro del bucle → bucle infinito.</li>
+                <li><strong>Incrementar fuera del bucle</strong> (antes o después del <code class="inline">FinMientras</code>)
+                    → la condición nunca cambia.</li>
+                <li><strong>Inicializar dentro del bucle</strong> → el contador vuelve siempre al mismo valor.</li>
+                <li><strong>Olvidar <code class="inline">Hacer</code></strong> o el <code class="inline">FinMientras</code>.</li>
+                <li><strong>Usar <code class="inline">=</code> en la condición</strong> cuando querés comparar;
+                    recordá que <code class="inline">=</code> compara y <code class="inline">&lt;-</code> asigna.</li>
             </ul>
             <div class="exercise">
-                <h4>✍️ Ejercicio: sumar del 1 al 10</h4>
-                <p class="ex-goal">Sumá los números del <strong>1 al 10</strong> usando un <strong>acumulador</strong> y mostrá el total final. Recordá inicializar el acumulador en <code class="inline">0</code>.</p>
-                <textarea class="code-input" id="in-acumulador" spellcheck="false" placeholder="Algoritmo SumaTotal&#10;    // escribí tu código acá&#10;FinAlgoritmo"></textarea>
+                <h4>✍️ Actividad 1: repetición fija (contar hasta 5)</h4>
+                <p class="ex-goal">Mostrá los números del <strong>1 al 5</strong> usando un bucle <code class="inline">Mientras</code>. Podés inicializar el contador en <strong>0</strong> (incrementando al principio) o en <strong>1</strong> (incrementando al final). No olvides <strong>incrementar</strong> la variable dentro del bucle para que no se repita infinitamente.</p>
+                <textarea class="code-input" id="in-mientras" spellcheck="false" placeholder="Algoritmo ContarHastaCinco&#10;    // escribí tu código acá&#10;FinAlgoritmo"></textarea>
                 <div class="ex-actions">
-                    <button class="btn btn-primary" onclick="corregir('acumulador')">✅ Corregir</button>
-                    <button class="btn btn-ghost" onclick="limpiar('acumulador')">Limpiar</button>
+                    <button class="btn btn-primary" onclick="corregir('mientras')">✅ Corregir</button>
+                    <button class="btn btn-ghost" onclick="limpiar('mientras')">Limpiar</button>
                 </div>
-                <div class="result" id="res-acumulador"></div>
+                <div class="result" id="res-mientras"></div>
+            </div>
+            <div class="exercise">
+                <h4>✍️ Actividad 2: repetición por condición (validar una edad)</h4>
+                <p class="ex-goal">Pedí una edad y repetí con <code class="inline">Mientras</code> mientras sea <strong>menor a 0 o mayor a 120</strong>. Dentro del bucle, mostrá un mensaje de error y volvé a <code class="inline">Leer</code> la edad. Al salir, mostrá la edad válida. Usá <code class="inline">Mientras … Hacer … FinMientras</code>.</p>
+                <textarea class="code-input" id="in-mientras-2" spellcheck="false" placeholder="Algoritmo ValidarEdad&#10;    // escribí tu código acá&#10;FinAlgoritmo"></textarea>
+                <div class="ex-actions">
+                    <button class="btn btn-primary" onclick="corregir('mientras-2')">✅ Corregir</button>
+                    <button class="btn btn-ghost" onclick="limpiar('mientras-2')">Limpiar</button>
+                </div>
+                <div class="result" id="res-mientras-2"></div>
             </div>
         </article>
 
         <!-- 9 -->
         <article class="card">
-            <h3><span class="num">9</span> Subprocesos / Procedimientos</h3>
+            <h3><span class="num">9</span> Subprocesos / Funciones</h3>
             <p class="concept">
                 Un <strong>subproceso</strong> es un bloque de código con nombre propio que realiza una tarea específica.
                 El <strong>procedimiento</strong> es un subproceso que <strong>NO devuelve un valor</strong>:
@@ -1132,8 +1261,27 @@
                     coincidir con palabras reservadas.</li>
             </ul>
 
-            <!-- Ejemplo A -->
-            <span class="example-label">Ejemplo A · Sin parámetros</span>
+            <p class="concept">
+                Hay dos formas de escribir un subproceso según si recibe datos o no:
+            </p>
+            <ul class="explain">
+                <li><strong>Sin parámetros:</strong> no recibe datos; siempre hace la misma tarea (mostrar un
+                    encabezado, un menú fijo). Se llama con paréntesis vacíos:
+                    <code class="inline">MostrarEncabezado();</code>.</li>
+                <li><strong>Con parámetros:</strong> recibe uno o varios datos entre paréntesis y trabaja con ellos;
+                    el mismo subproceso sirve para valores distintos. Se llama pasando los valores:
+                    <code class="inline">Saludar("Ana");</code>.</li>
+            </ul>
+
+            <p class="concept"><strong>A. Subprocesos sin parámetros</strong></p>
+            <p class="concept">
+                Se usan cuando la tarea es siempre igual y no necesita datos externos. El encabezado termina en el
+                nombre del subproceso, sin paréntesis con parámetros. Pueden usar variables globales, pero lo más
+                claro es que solo muestren o hagan una acción fija.
+            </p>
+
+            <!-- Ejemplo 1 -->
+            <span class="example-label">Ejemplo 1 · Sin parámetros</span>
             <p style="font-size:.92rem;margin:0 0 .5rem;">
                 Sirve para tareas fijas y repetitivas, como mostrar un encabezado o un menú.
             </p>
@@ -1152,8 +1300,15 @@
                 <li><strong>Línea 8:</strong> al llamarlo con <code class="inline">MostrarEncabezado();</code>, se ejecutan sus 3 líneas internas.</li>
             </ul>
 
-            <!-- Ejemplo B -->
-            <span class="example-label alt">Ejemplo B · Con un parámetro</span>
+            <p class="concept"><strong>B. Subprocesos con parámetros</strong></p>
+            <p class="concept">
+                Se usan cuando el subproceso necesita datos para trabajar. Los parámetros se escriben entre
+                paréntesis en el encabezado y se comportan como variables locales: reciben una copia del valor que
+                se pasa en la llamada. Puede haber uno o varios, separados por comas.
+            </p>
+
+            <!-- Ejemplo 2 -->
+            <span class="example-label alt">Ejemplo 2 · Con un parámetro</span>
             <p style="font-size:.92rem;margin:0 0 .5rem;">
                 El parámetro permite que el mismo procedimiento sirva para distintos datos.
             </p>
@@ -1172,8 +1327,8 @@
                 <li><strong>Línea 8:</strong> el valor de <code class="inline">usuario</code> se copia dentro de <code class="inline">nombre</code> y se usa en el procedimiento.</li>
             </ul>
 
-            <!-- Ejemplo C -->
-            <span class="example-label alt2">Ejemplo C · Con varios parámetros</span>
+            <!-- Ejemplo 3 -->
+            <span class="example-label alt2">Ejemplo 3 · Con varios parámetros</span>
             <p style="font-size:.92rem;margin:0 0 .5rem;">
                 Ideal para tareas que combinan datos, como calcular e imprimir un recibo.
             </p>
@@ -1194,8 +1349,8 @@
                 <li><strong>Líneas 9 y 10:</strong> reutilizamos el mismo procedimiento con datos distintos. Eso es modularizar.</li>
             </ul>
 
-            <!-- Ejemplo D -->
-            <span class="example-label alt3">Ejemplo D · Programa completo</span>
+            <!-- Ejemplo 4 -->
+            <span class="example-label alt3">Ejemplo 4 · Programa completo</span>
             <p style="font-size:.92rem;margin:0 0 .5rem;">
                 Un programa real combina varios procedimientos y los llama desde el algoritmo principal.
             </p>
@@ -1240,6 +1395,19 @@
                 <li><strong>Línea 21:</strong> el algoritmo principal <em>orquesta</em> las llamadas; no repite el código de cada acción.</li>
                 <li><strong>Línea 23:</strong> el bucle mantiene el menú activo hasta elegir 0.</li>
             </ul>
+
+            <div class="note">
+                <strong>🔍 Sin parámetros vs. con parámetros:</strong>
+                <ul>
+                    <li><strong>Sin parámetros:</strong> <code class="inline">SubProceso MostrarMenu</code> siempre
+                        muestra lo mismo.</li>
+                    <li><strong>Con parámetros:</strong> <code class="inline">SubProceso Saludar(nombre)</code> cambia
+                        según el dato recibido.</li>
+                    <li><strong>Llamada:</strong> <code class="inline">MostrarMenu();</code> no lleva datos;
+                        <code class="inline">Saludar("Ana");</code> sí.</li>
+                    <li>Los parámetros son <strong>locales</strong>: existen solo dentro del subproceso.</li>
+                </ul>
+            </div>
 
             <div class="note">
                 <strong>💡 Diferencia rápida:</strong> un <strong>procedimiento</strong> hace algo y no devuelve nada.
@@ -1296,7 +1464,17 @@
                 <li><strong>Llamar a una función como si fuera procedimiento</strong> o ignorar el valor que devuelve.</li>
             </ul>
             <div class="exercise">
-                <h4>✍️ Ejercicio: saludar con un subproceso</h4>
+                <h4>✍️ Actividad 1: subproceso sin parámetros</h4>
+                <p class="ex-goal">Creá un <code class="inline">SubProceso</code> sin parámetros llamado <code class="inline">MostrarEncabezado</code> que muestre tres líneas fijas con <code class="inline">Escribir</code> (por ejemplo, <em>"===="</em>, <em>"MENÚ"</em>, <em>"===="</em>). Llamalo desde el algoritmo principal.</p>
+                <textarea class="code-input" id="in-subproceso-sin" spellcheck="false" placeholder="SubProceso MostrarEncabezado&#10;    // escribí las tres líneas&#10;FinSubProceso&#10;&#10;Algoritmo DemoEncabezado&#10;    // llamá al subproceso&#10;FinAlgoritmo"></textarea>
+                <div class="ex-actions">
+                    <button class="btn btn-primary" onclick="corregir('subproceso-sin')">✅ Corregir</button>
+                    <button class="btn btn-ghost" onclick="limpiar('subproceso-sin')">Limpiar</button>
+                </div>
+                <div class="result" id="res-subproceso-sin"></div>
+            </div>
+            <div class="exercise">
+                <h4>✍️ Actividad 2: subproceso con parámetros</h4>
                 <p class="ex-goal">Creá un <code class="inline">SubProceso</code> llamado <code class="inline">MostrarSaludo(nombre)</code> que muestre <em>"Hola, &lt;nombre&gt;"</em>. Llamalo desde el algoritmo principal pasando el valor <strong>"Ana"</strong>.</p>
                 <textarea class="code-input" id="in-subproceso" spellcheck="false" placeholder="SubProceso MostrarSaludo(nombre)&#10;    // escribí tu código acá&#10;FinSubProceso&#10;&#10;Algoritmo SaludoDemo&#10;    // llamá al subproceso&#10;FinAlgoritmo"></textarea>
                 <div class="ex-actions">
@@ -1321,6 +1499,142 @@
                 <button class="btn btn-ghost" onclick="reiniciarTodo()">🔄 Reiniciar los 9 temas</button>
             </div>
         </div>
+    </section>
+
+    <!-- ================= ACTIVIDAD DE IDENTIFICACIÓN ================= -->
+    <section id="identificacion">
+        <h2 class="section-title">Actividad Final · Identificación de Conceptos</h2>
+        <p class="section-sub">
+            Reconocé <strong>estructuras</strong>, <strong>comandos</strong>, <strong>variables</strong>,
+            <strong>constantes</strong>, <strong>entrada y salida de datos</strong>,
+            <strong>declaración</strong> y <strong>tipos de datos</strong>.
+            Elegí una opción por pregunta y presioná <strong>Calificar identificación</strong>.
+        </p>
+
+        <article class="card delivery">
+            <h3>🔎 ¿Qué es cada cosa?</h3>
+            <div class="note" style="margin-top:0;">
+                <strong>Recordá la sintaxis estricta de PSeInt:</strong> las declaraciones terminan con
+                <code class="inline">;</code>, la asignación usa <code class="inline">&lt;-</code> y cada bloque se
+                cierra con su <code class="inline">Fin…</code> correspondiente.
+            </div>
+            <div id="identificacion-quiz" style="margin-top:1.1rem;">
+                <div class="quiz-question" data-correct="1">
+                    <p class="q-text">1. ¿Cuál de estas opciones es una <strong>estructura de selección</strong>?</p>
+                    <ul class="options-list">
+                        <li data-index="0">A) <code class="inline">Mientras … Hacer … FinMientras</code></li>
+                        <li data-index="1">B) <code class="inline">Si … Entonces … Sino … FinSi</code></li>
+                        <li data-index="2">C) <code class="inline">Para … Hasta … FinPara</code></li>
+                        <li data-index="3">D) <code class="inline">SubProceso … FinSubProceso</code></li>
+                    </ul>
+                    <div class="feedback"><strong>✔ Correcta: B.</strong> <code class="inline">Si</code> evalúa una condición y elige un camino; <code class="inline">Mientras</code> y <code class="inline">Para</code> repiten.</div>
+                </div>
+
+                <div class="quiz-question" data-correct="2">
+                    <p class="q-text">2. ¿Cuál de estas opciones es una <strong>estructura de repetición fija</strong>?</p>
+                    <ul class="options-list">
+                        <li data-index="0">A) <code class="inline">Si … Entonces … FinSi</code></li>
+                        <li data-index="1">B) <code class="inline">Definir edad Como Entero;</code></li>
+                        <li data-index="2">C) <code class="inline">Para … Hasta … Con Paso … Hacer … FinPara</code></li>
+                        <li data-index="3">D) <code class="inline">Escribir "Hola";</code></li>
+                    </ul>
+                    <div class="feedback"><strong>✔ Correcta: C.</strong> <code class="inline">Para</code> repite una cantidad conocida de veces; el <code class="inline">Si</code> elige y <code class="inline">Definir</code>/<code class="inline">Escribir</code> son declaración y salida.</div>
+                </div>
+
+                <div class="quiz-question" data-correct="1">
+                    <p class="q-text">3. ¿Cuál es el comando de <strong>salida de datos</strong> (mostrar en pantalla)?</p>
+                    <ul class="options-list">
+                        <li data-index="0">A) <code class="inline">Leer</code></li>
+                        <li data-index="1">B) <code class="inline">Escribir</code></li>
+                        <li data-index="2">C) <code class="inline">Definir</code></li>
+                        <li data-index="3">D) <code class="inline">Si</code></li>
+                    </ul>
+                    <div class="feedback"><strong>✔ Correcta: B.</strong> <code class="inline">Escribir</code> muestra datos; <code class="inline">Leer</code> los captura.</div>
+                </div>
+
+                <div class="quiz-question" data-correct="0">
+                    <p class="q-text">4. ¿Cuál es el comando de <strong>ingreso de datos</strong> (pedir al usuario)?</p>
+                    <ul class="options-list">
+                        <li data-index="0">A) <code class="inline">Leer</code></li>
+                        <li data-index="1">B) <code class="inline">Escribir</code></li>
+                        <li data-index="2">C) <code class="inline">Para</code></li>
+                        <li data-index="3">D) <code class="inline">FinSi</code></li>
+                    </ul>
+                    <div class="feedback"><strong>✔ Correcta: A.</strong> <code class="inline">Leer variable;</code> guarda lo que el usuario escribe en el teclado.</div>
+                </div>
+
+                <div class="quiz-question" data-correct="1">
+                    <p class="q-text">5. ¿Cuál de estas líneas es una <strong>declaración</strong> de variable?</p>
+                    <ul class="options-list">
+                        <li data-index="0">A) <code class="inline">edad &lt;- 20;</code></li>
+                        <li data-index="1">B) <code class="inline">Definir edad Como Entero;</code></li>
+                        <li data-index="2">C) <code class="inline">Escribir edad;</code></li>
+                        <li data-index="3">D) <code class="inline">Leer edad;</code></li>
+                    </ul>
+                    <div class="feedback"><strong>✔ Correcta: B.</strong> Declarar es crear la variable con su tipo. <code class="inline">edad &lt;- 20;</code> es una asignación.</div>
+                </div>
+
+                <div class="quiz-question" data-correct="0">
+                    <p class="q-text">6. ¿Cuál de estas líneas <strong>asigna un valor</strong> a una variable?</p>
+                    <ul class="options-list">
+                        <li data-index="0">A) <code class="inline">precio &lt;- 150.50;</code></li>
+                        <li data-index="1">B) <code class="inline">Definir precio Como Real;</code></li>
+                        <li data-index="2">C) <code class="inline">Escribir precio;</code></li>
+                        <li data-index="3">D) <code class="inline">Si precio &gt; 100 Entonces</code></li>
+                    </ul>
+                    <div class="feedback"><strong>✔ Correcta: A.</strong> La flecha <code class="inline">&lt;-</code> guarda el valor en la variable; <code class="inline">Definir</code> solo la declara.</div>
+                </div>
+
+                <div class="quiz-question" data-correct="1">
+                    <p class="q-text">7. ¿Cuál de estas afirmaciones describe una <strong>constante</strong>?</p>
+                    <ul class="options-list">
+                        <li data-index="0">A) Una variable que cambia en cada vuelta.</li>
+                        <li data-index="1">B) Un valor que se define una vez y no debe cambiar durante la ejecución.</li>
+                        <li data-index="2">C) Un comando que muestra datos en pantalla.</li>
+                        <li data-index="3">D) Un tipo de bucle que repite una cantidad fija de veces.</li>
+                    </ul>
+                    <div class="feedback"><strong>✔ Correcta: B.</strong> En PSeInt no hay una palabra especial para constantes: se usa una variable a la que se le asigna un valor una sola vez y no se modifica.</div>
+                </div>
+
+                <div class="quiz-question" data-correct="2">
+                    <p class="q-text">8. ¿Qué <strong>tipo de dato</strong> corresponde al valor <code class="inline">"Ana"</code>?</p>
+                    <ul class="options-list">
+                        <li data-index="0">A) Entero</li>
+                        <li data-index="1">B) Real</li>
+                        <li data-index="2">C) Caracter</li>
+                        <li data-index="3">D) Logico</li>
+                    </ul>
+                    <div class="feedback"><strong>✔ Correcta: C.</strong> El texto entre comillas es <code class="inline">Caracter</code>.</div>
+                </div>
+
+                <div class="quiz-question" data-correct="1">
+                    <p class="q-text">9. ¿Qué <strong>tipo de dato</strong> corresponde al valor <code class="inline">3.14</code>?</p>
+                    <ul class="options-list">
+                        <li data-index="0">A) Entero</li>
+                        <li data-index="1">B) Real</li>
+                        <li data-index="2">C) Caracter</li>
+                        <li data-index="3">D) Logico</li>
+                    </ul>
+                    <div class="feedback"><strong>✔ Correcta: B.</strong> Los números con decimales son <code class="inline">Real</code>.</div>
+                </div>
+
+                <div class="quiz-question" data-correct="3">
+                    <p class="q-text">10. ¿Qué <strong>tipo de dato</strong> corresponde al valor <code class="inline">Verdadero</code>?</p>
+                    <ul class="options-list">
+                        <li data-index="0">A) Entero</li>
+                        <li data-index="1">B) Real</li>
+                        <li data-index="2">C) Caracter</li>
+                        <li data-index="3">D) Logico</li>
+                    </ul>
+                    <div class="feedback"><strong>✔ Correcta: D.</strong> <code class="inline">Logico</code> solo admite <code class="inline">Verdadero</code> o <code class="inline">Falso</code>.</div>
+                </div>
+            </div>
+            <div class="quiz-actions">
+                <button class="btn btn-primary" onclick="calificarIdentificacion()">✅ Calificar identificación</button>
+                <button class="btn btn-ghost" onclick="reiniciarIdentificacion()">🔄 Reintentar</button>
+            </div>
+            <div id="score-identificacion"></div>
+        </article>
     </section>
 
     <!-- ================= SECCIÓN 2 ================= -->
@@ -1829,6 +2143,82 @@
         banner.textContent = '';
     }
 
+    /* ---------- Actividad de identificación (grupo de preguntas) ---------- */
+    function calificarGrupoIdentificacion() {
+        var cont = document.getElementById('identificacion-quiz');
+        var banner = document.getElementById('score-identificacion');
+        if (!cont || !banner) return;
+
+        var preguntas = cont.querySelectorAll('.quiz-question');
+        var correctas = 0;
+        var respondidas = 0;
+
+        preguntas.forEach(function (q) {
+            var indiceCorrecto = parseInt(q.dataset.correct, 10);
+            var opciones = q.querySelectorAll('li');
+            var seleccionada = q.querySelector('li.selected');
+            var indiceSeleccionado = seleccionada ? parseInt(seleccionada.dataset.index, 10) : null;
+
+            opciones.forEach(function (o) {
+                o.classList.remove('correct', 'incorrect', 'selected');
+            });
+            if (opciones[indiceCorrecto]) opciones[indiceCorrecto].classList.add('correct');
+
+            if (indiceSeleccionado !== null) {
+                respondidas++;
+                if (indiceSeleccionado === indiceCorrecto) {
+                    correctas++;
+                } else if (opciones[indiceSeleccionado]) {
+                    opciones[indiceSeleccionado].classList.add('incorrect');
+                }
+            }
+
+            var feedback = q.querySelector('.feedback');
+            if (feedback) feedback.style.display = 'block';
+            q.classList.add('graded');
+        });
+
+        var total = preguntas.length;
+        banner.style.display = 'block';
+        if (correctas === total) {
+            banner.style.background = 'var(--ok-bg)';
+            banner.style.color = '#14532d';
+            banner.textContent = '¡Perfecto! ' + correctas + '/' + total + ' respuestas correctas.';
+        } else if (correctas >= Math.ceil(total * 0.6)) {
+            banner.style.background = 'var(--ok-bg)';
+            banner.style.color = '#14532d';
+            banner.textContent = '¡Muy bien! ' + correctas + '/' + total + ' correctas. Revisá las marcadas en rojo.';
+        } else {
+            banner.style.background = 'var(--bad-bg)';
+            banner.style.color = '#7f1d1d';
+            banner.textContent = 'Obtuviste ' + correctas + '/' + total + '. Repasá la teoría y volvé a intentarlo.';
+        }
+        if (respondidas < total) {
+            banner.textContent += ' (Respondiste ' + respondidas + ' de ' + total + '.)';
+        }
+    }
+
+    function reiniciarGrupoIdentificacion() {
+        var cont = document.getElementById('identificacion-quiz');
+        var banner = document.getElementById('score-identificacion');
+        if (!cont) return;
+        cont.querySelectorAll('.quiz-question').forEach(function (q) {
+            q.classList.remove('graded');
+            q.querySelectorAll('li').forEach(function (o) {
+                o.classList.remove('correct', 'incorrect', 'selected');
+            });
+            var feedback = q.querySelector('.feedback');
+            if (feedback) feedback.style.display = 'none';
+        });
+        if (banner) {
+            banner.style.display = 'none';
+            banner.textContent = '';
+        }
+    }
+
+    window.calificarIdentificacion = calificarGrupoIdentificacion;
+    window.reiniciarIdentificacion = reiniciarGrupoIdentificacion;
+
     /* ---------- Pregunta de ejercitación del tema 1 ---------- */
     function calificarPregunta(contenedorId) {
         var cont = document.getElementById(contenedorId);
@@ -1882,28 +2272,29 @@
         if (typeof window.actualizarResumen === 'function') window.actualizarResumen();
     }
 
-    (function restaurarPregunta() {
-        var cont = document.getElementById('quiz-estructura');
-        if (!cont) return;
-        var raw = null;
-        try { raw = localStorage.getItem('pseint_quiz_quiz-estructura'); } catch (e) { return; }
-        if (!raw) return;
-        var data = null;
-        try { data = JSON.parse(raw); } catch (e) { return; }
-        var q = cont.querySelector('.quiz-question');
-        if (!q) return;
-        var opciones = q.querySelectorAll('li');
-        if (typeof data.seleccion === 'number' && opciones[data.seleccion]) {
-            opciones[data.seleccion].classList.add('selected');
-        }
-        cont.dataset.answered = '1';
-        cont.dataset.pct = data.pct === 100 ? '100' : '0';
-        if (data.pct === 100) {
-            var indiceCorrecto = parseInt(q.dataset.correct, 10);
-            if (opciones[indiceCorrecto]) opciones[indiceCorrecto].classList.add('correct');
-            q.querySelector('.feedback').style.display = 'block';
-            q.classList.add('graded');
-        }
+    (function restaurarPreguntas() {
+        document.querySelectorAll('#teoria .exercise[id^="quiz-"]').forEach(function (cont) {
+            var raw = null;
+            try { raw = localStorage.getItem('pseint_quiz_' + cont.id); } catch (e) { return; }
+            if (!raw) return;
+            var data = null;
+            try { data = JSON.parse(raw); } catch (e) { return; }
+            var q = cont.querySelector('.quiz-question');
+            if (!q) return;
+            var opciones = q.querySelectorAll('li');
+            if (typeof data.seleccion === 'number' && opciones[data.seleccion]) {
+                opciones[data.seleccion].classList.add('selected');
+            }
+            cont.dataset.answered = '1';
+            cont.dataset.pct = data.pct === 100 ? '100' : '0';
+            if (data.pct === 100) {
+                var indiceCorrecto = parseInt(q.dataset.correct, 10);
+                if (opciones[indiceCorrecto]) opciones[indiceCorrecto].classList.add('correct');
+                var feedback = q.querySelector('.feedback');
+                if (feedback) feedback.style.display = 'block';
+                q.classList.add('graded');
+            }
+        });
     })();
 </script>
 
@@ -1935,12 +2326,24 @@
             { d: 'Realiza al menos 3 asignaciones (&lt;-)', f: function (c) { return (c.match(/<-/g) || []).length >= 3; } },
             { d: 'Muestra los valores con Escribir', f: function (c) { return /\bescribir\b/.test(c); } }
         ],
+        'variables-2': [
+            { d: 'Declara PI como Real y cierra con punto y coma', f: function (c) { return /definir[^\n]*\bpi\b[^\n]*\bcomo\s+real\s*;/.test(c); } },
+            { d: 'Asigna 3.1416 a PI con &lt;- y punto y coma', f: function (c) { return /\bpi\s*<-\s*3\.1416\s*;/.test(c); } },
+            { d: 'Muestra el valor con Escribir', f: function (c) { return /\bescribir\b/.test(c); } }
+        ],
         leerescribir: [
             { d: 'Declara una variable como Caracter', f: function (c) { return /definir[^\n]*\bcomo\s+caracter/.test(c); } },
             { d: 'Muestra un mensaje al usuario con Escribir', f: function (c) { return /\bescribir\b/.test(c); } },
             { d: 'Captura el dato con Leer', f: function (c) { return /\bleer\b/.test(c); } },
             { d: 'Vuelve a mostrar un mensaje con el dato (2.º Escribir)', f: function (c) { return (c.match(/\bescribir\b/g) || []).length >= 2; } },
             { d: 'El mensaje final concatena una variable', f: function (c) { return /escribir[^\n]*,\s*[a-z_]\w*/.test(c); } }
+        ],
+        'leerescribir-2': [
+            { d: 'Declara al menos una variable entera con punto y coma', f: function (c) { return /definir[^\n]*\bcomo\s+entero\s*;/.test(c); } },
+            { d: 'Pide los datos con Escribir', f: function (c) { return /\bescribir\b/.test(c); } },
+            { d: 'Lee dos valores con Leer', f: function (c) { return (c.match(/\bleer\b/g) || []).length >= 2; } },
+            { d: 'Muestra la suma (Escribir con + o una variable suma)', f: function (c) { return /\bescribir\b/.test(c) && (/\bescribir[^\n]*\+/.test(c) || /[a-z_]\w*\s*<-\s*[a-z_]\w*\s*\+\s*[a-z_]\w*/.test(c)); } },
+            { d: 'Usa punto y coma en las instrucciones', f: function (c) { return /;/.test(c); } }
         ],
         condicional: [
             { d: 'Declara y lee una variable numérica', f: function (c) { return /definir[^\n]*\bcomo\s+(entero|real)/.test(c) && /\bleer\b/.test(c); } },
@@ -1950,6 +2353,14 @@
             { d: 'Compara con 18 (edad &gt;= 18 o 18 &lt;= edad)', f: function (c) { return /((>=|≥)\s*18)|(18\s*(<=|≤))/.test(c); } },
             { d: 'Muestra dos mensajes distintos (2 Escribir)', f: function (c) { return (c.match(/\bescribir\b/g) || []).length >= 2; } }
         ],
+        'condicional-2': [
+            { d: 'Declara y lee una variable numérica', f: function (c) { return /definir[^\n]*\bcomo\s+(entero|real)/.test(c) && /\bleer\b/.test(c); } },
+            { d: 'Compara si es mayor a 0', f: function (c) { return />\s*0/.test(c); } },
+            { d: 'Compara si es menor a 0', f: function (c) { return /(<\s*0)|(0\s*>)/.test(c); } },
+            { d: 'Incluye el caso igual a 0', f: function (c) { return /[^<>]=\s*0/.test(c); } },
+            { d: 'Cierra cada Si con FinSi', f: function (c) { return balanced(c, /\bsi\b/, /\bfinsi\b/); } },
+            { d: 'Muestra tres mensajes distintos (3 Escribir)', f: function (c) { return (c.match(/\bescribir\b/g) || []).length >= 3; } }
+        ],
         mientras: [
             { d: 'Declara una variable numérica', f: function (c) { return /definir[^\n]*\bcomo\s+(entero|real)/.test(c); } },
             { d: 'Inicializa el contador en 0 o en 1', f: function (c) { return /\b[a-z_]\w*\s*<-\s*[01]\b/.test(c); } },
@@ -1958,6 +2369,14 @@
             { d: 'Incrementa el contador dentro del bucle (x &lt;- x + 1)', f: function (c) { return /mientras[\s\S]*?\b([a-z_]\w*)\s*<-\s*\1\s*\+\s*1[\s\S]*?\bfinmientras\b/.test(c); } },
             { d: 'Muestra el número con Escribir', f: function (c) { return /\bescribir\b/.test(c); } }
         ],
+        'mientras-2': [
+            { d: 'Declara una variable numérica', f: function (c) { return /definir[^\n]*\bcomo\s+(entero|real)/.test(c); } },
+            { d: 'Lee la edad antes del bucle', f: function (c) { return /\bleer\b[\s\S]*\bmientras\b/.test(c); } },
+            { d: 'Usa Mientras con edad &lt; 0 o &gt; 120', f: function (c) { return /\bmientras\b[^\n]*(<\s*0|>\s*120|0\s*>|120\s*<)/.test(c); } },
+            { d: 'Vuelve a Leer dentro del bucle', f: function (c) { return /\bmientras\b[\s\S]*\bleer\b[\s\S]*\bfinmientras\b/.test(c); } },
+            { d: 'Cierra con FinMientras', f: function (c) { return balanced(c, /\bmientras\b/, /\bfinmientras\b/); } },
+            { d: 'Muestra un mensaje de error y la edad final (2 Escribir)', f: function (c) { return (c.match(/\bescribir\b/g) || []).length >= 2; } }
+        ],
         para: [
             { d: 'Usa Para … Hasta … Con Paso … Hacer', f: function (c) { return /\bpara\b/.test(c) && /\bhasta\b/.test(c) && /\bcon\s+paso\b/.test(c) && /\bhacer\b/.test(c); } },
             { d: 'Cierra con FinPara', f: function (c) { return balanced(c, /\bpara\b/, /\bfinpara\b/); } },
@@ -1965,20 +2384,52 @@
             { d: 'Genera solo pares (Con Paso 2 o Si + MOD)', f: function (c) { return /con\s+paso\s+2/.test(c) || (/\bsi\b/.test(c) && /(\bmod\b|%)/.test(c)); } },
             { d: 'Muestra los números con Escribir', f: function (c) { return /\bescribir\b/.test(c); } }
         ],
+        'para-2': [
+            { d: 'Usa Para … Hasta … Con Paso … Hacer', f: function (c) { return /\bpara\b/.test(c) && /\bhasta\b/.test(c) && /\bcon\s+paso\b/.test(c) && /\bhacer\b/.test(c); } },
+            { d: 'Empieza en 5 y termina en 1', f: function (c) { return /para\s+\w+\s*<-\s*5\s+hasta\s+1\b/.test(c); } },
+            { d: 'Usa Con Paso -1', f: function (c) { return /con\s+paso\s+-1\b/.test(c); } },
+            { d: 'Cierra con FinPara', f: function (c) { return balanced(c, /\bpara\b/, /\bfinpara\b/); } },
+            { d: 'Muestra los números con Escribir', f: function (c) { return /\bescribir\b/.test(c); } },
+            { d: 'Muestra "Despegue" al final', f: function (c) { return /\bdespegue\b/.test(c); } }
+        ],
         contador: [
-            { d: 'Declara una variable entera para el contador', f: function (c) { return /definir[^\n]*\bcomo\s+entero/.test(c); } },
-            { d: 'Inicializa el contador en 0', f: function (c) { return /\b[a-z_]\w*\s*<-\s*0\b/.test(c); } },
-            { d: 'Recorre del 1 al 10 con Para', f: function (c) { return /para\s+\w+\s*<-\s*1\s+hasta\s+10/.test(c) && balanced(c, /\bpara\b/, /\bfinpara\b/); } },
-            { d: 'Usa Si … FinSi para evaluar mayores a 5', f: function (c) { return /\bsi\b[^\n]*((>\s*5)|(>=\s*6))/.test(c) && balanced(c, /\bsi\b/, /\bfinsi\b/); } },
-            { d: 'Incrementa el contador con c &lt;- c + 1', f: function (c) { return /([a-z_]\w*)\s*<-\s*\1\s*\+\s*1/.test(c); } },
+            { d: 'Declara el contador como Entero y cierra con ;', f: function (c) { return /definir[^\n]*\bcomo\s+entero\s*;/.test(c); } },
+            { d: 'Inicializa el contador en 0', f: function (c) { return /\b[a-z_]\w*\s*<-\s*0\s*;/.test(c); } },
+            { d: 'Incrementa el mismo contador 3 veces (c &lt;- c + 1;)', f: function (c) { return (c.match(/([a-z_]\w*)\s*<-\s*\1\s*\+\s*1\s*;/g) || []).length >= 3; } },
+            { d: 'No usa bucles (ni Para ni Mientras)', f: function (c) { return !/\bpara\b/.test(c) && !/\bmientras\b/.test(c); } },
             { d: 'Muestra el resultado con Escribir', f: function (c) { return /\bescribir\b/.test(c); } }
         ],
-        acumulador: [
-            { d: 'Declara una variable numérica para el acumulador', f: function (c) { return /definir[^\n]*\bcomo\s+(entero|real)/.test(c); } },
-            { d: 'Inicializa el acumulador en 0', f: function (c) { return /\b[a-z_]\w*\s*<-\s*0\b/.test(c); } },
-            { d: 'Recorre del 1 al 10 con Para', f: function (c) { return /para\s+\w+\s*<-\s*1\s+hasta\s+10/.test(c) && balanced(c, /\bpara\b/, /\bfinpara\b/); } },
-            { d: 'Acumula con acum &lt;- acum + valor', f: function (c) { return /([a-z_]\w*)\s*<-\s*\1\s*\+/.test(c); } },
+        'contador-2': [
+            { d: 'Declara el contador como Entero y cierra con ;', f: function (c) { return /definir[^\n]*\bcomo\s+entero\s*;/.test(c); } },
+            { d: 'Inicializa el contador en 0', f: function (c) { return /\b[a-z_]\w*\s*<-\s*0\s*;/.test(c); } },
+            { d: 'Usa tres condicionales Si … FinSi', f: function (c) { return (c.match(/\bsi\b/g) || []).length >= 3 && balanced(c, /\bsi\b/, /\bfinsi\b/); } },
+            { d: 'Incrementa el contador 3 veces', f: function (c) { return (c.match(/([a-z_]\w*)\s*<-\s*\1\s*\+\s*1\s*;/g) || []).length >= 3; } },
+            { d: 'No usa bucles (ni Para ni Mientras)', f: function (c) { return !/\bpara\b/.test(c) && !/\bmientras\b/.test(c); } },
             { d: 'Muestra el total con Escribir', f: function (c) { return /\bescribir\b/.test(c); } }
+        ],
+        acumulador: [
+            { d: 'Declara el acumulador como Real y cierra con ;', f: function (c) { return /definir[^\n]*\bcomo\s+real\s*;/.test(c); } },
+            { d: 'Inicializa el acumulador en 0', f: function (c) { return /\b[a-z_]\w*\s*<-\s*0\s*;/.test(c); } },
+            { d: 'Incluye los tres precios (150.50, 200 y 99.99)', f: function (c) { return /150\.50\s*;/.test(c) && /\b200(\.0+)?\s*;/.test(c) && /99\.99\s*;/.test(c); } },
+            { d: 'Acumula al menos 3 veces (x &lt;- x + …)', f: function (c) { return (c.match(/([a-z_]\w*)\s*<-\s*\1\s*\+/g) || []).length >= 3; } },
+            { d: 'No usa bucles (ni Para ni Mientras)', f: function (c) { return !/\bpara\b/.test(c) && !/\bmientras\b/.test(c); } },
+            { d: 'Muestra el total con Escribir', f: function (c) { return /\bescribir\b/.test(c); } }
+        ],
+        'acumulador-2': [
+            { d: 'Declara el acumulador o el promedio como numérico', f: function (c) { return /definir[^\n]*\bcomo\s+(entero|real)\s*;/.test(c); } },
+            { d: 'Inicializa el acumulador en 0', f: function (c) { return /\b[a-z_]\w*\s*<-\s*0\s*;/.test(c); } },
+            { d: 'Incluye las tres notas (7, 8 y 9)', f: function (c) { return /7\s*;/.test(c) && /8\s*;/.test(c) && /9\s*;/.test(c); } },
+            { d: 'Acumula las tres notas', f: function (c) { return (c.match(/([a-z_]\w*)\s*<-\s*\1\s*\+/g) || []).length >= 3; } },
+            { d: 'Calcula el promedio dividiendo por 3', f: function (c) { return /[a-z_]\w*\s*<-\s*[a-z_]\w*\s*\/\s*3\s*;/.test(c); } },
+            { d: 'No usa bucles (ni Para ni Mientras)', f: function (c) { return !/\bpara\b/.test(c) && !/\bmientras\b/.test(c); } },
+            { d: 'Muestra el promedio con Escribir', f: function (c) { return /\bescribir\b/.test(c); } }
+        ],
+        'subproceso-sin': [
+            { d: 'Define un SubProceso … FinSubProceso', f: function (c) { return /\bsubproceso\b/.test(c) && /\bfinsubproceso\b/.test(c); } },
+            { d: 'El subproceso no recibe parámetros', f: function (c) { return /\bsubproceso\s+\w+\s*(\(\s*\))?\s*\n/.test(c) && !/\bsubproceso\s+\w+\s*\(\s*[a-z_]/.test(c); } },
+            { d: 'Muestra al menos 3 líneas con Escribir', f: function (c) { return (c.match(/\bescribir\b/g) || []).length >= 3; } },
+            { d: 'Llama al subproceso desde el algoritmo', f: function (c) { var m = c.match(/\bsubproceso\s+(\w+)/); if (!m) return false; var re = new RegExp('\\b' + m[1] + '\\b', 'g'); return (c.match(re) || []).length >= 2; } },
+            { d: 'Usa Algoritmo … FinAlgoritmo (o Proceso … FinProceso)', f: function (c) { return (/\balgoritmo\b/.test(c) && /\bfinalgoritmo\b/.test(c)) || (/\bproceso\b/.test(c) && /\bfinproceso\b/.test(c)); } }
         ],
         subproceso: [
             { d: 'Define un SubProceso … FinSubProceso', f: function (c) { return /\bsubproceso\b/.test(c) && /\bfinsubproceso\b/.test(c); } },
@@ -2071,16 +2522,89 @@
 
     /* ---------- Resumen de progreso de los 9 temas ---------- */
     var TEMAS = [
-        { id: 'estructura', nombre: '1. Programación Estructurada' },
-        { id: 'variables', nombre: '2. Variables' },
-        { id: 'leerescribir', nombre: '3. Leer y Escribir' },
-        { id: 'condicional', nombre: '4. Condicionales' },
-        { id: 'mientras', nombre: '5. Bucle Mientras' },
-        { id: 'para', nombre: '6. Bucle Para' },
-        { id: 'contador', nombre: '7. Contador' },
-        { id: 'acumulador', nombre: '8. Acumulador' },
-        { id: 'subproceso', nombre: '9. Subprocesos' }
+        {
+            nombre: '1. Programación Estructurada',
+            acts: [
+                { tipo: 'quiz', id: 'estructura' },
+                { tipo: 'quiz', id: 'estructura-2' }
+            ]
+        },
+        {
+            nombre: '2. Variables',
+            acts: [
+                { tipo: 'ejercicio', id: 'variables' },
+                { tipo: 'ejercicio', id: 'variables-2' }
+            ]
+        },
+        {
+            nombre: '3. Leer y Escribir',
+            acts: [
+                { tipo: 'ejercicio', id: 'leerescribir' },
+                { tipo: 'ejercicio', id: 'leerescribir-2' }
+            ]
+        },
+        {
+            nombre: '4. Condicionales',
+            acts: [
+                { tipo: 'ejercicio', id: 'condicional' },
+                { tipo: 'ejercicio', id: 'condicional-2' }
+            ]
+        },
+        {
+            nombre: '5. Contador',
+            acts: [
+                { tipo: 'ejercicio', id: 'contador' },
+                { tipo: 'ejercicio', id: 'contador-2' }
+            ]
+        },
+        {
+            nombre: '6. Acumulador',
+            acts: [
+                { tipo: 'ejercicio', id: 'acumulador' },
+                { tipo: 'ejercicio', id: 'acumulador-2' }
+            ]
+        },
+        {
+            nombre: '7. Bucle Para',
+            acts: [
+                { tipo: 'ejercicio', id: 'para' },
+                { tipo: 'ejercicio', id: 'para-2' }
+            ]
+        },
+        {
+            nombre: '8. Bucle Mientras',
+            acts: [
+                { tipo: 'ejercicio', id: 'mientras' },
+                { tipo: 'ejercicio', id: 'mientras-2' }
+            ]
+        },
+        {
+            nombre: '9. Subprocesos',
+            acts: [
+                { tipo: 'ejercicio', id: 'subproceso-sin' },
+                { tipo: 'ejercicio', id: 'subproceso' }
+            ]
+        }
     ];
+
+    function anclaActividad(act) {
+        return (act.tipo === 'quiz' ? 'quiz-' : 'in-') + act.id;
+    }
+
+    function estadoActividad(act) {
+        var el = document.getElementById(anclaActividad(act));
+        if (!el) return { pct: null, iniciada: false, medida: false };
+        var pct = el.dataset.pct !== undefined ? parseInt(el.dataset.pct, 10) : null;
+        var medida = pct !== null;
+        var iniciada;
+        if (act.tipo === 'quiz') {
+            iniciada = el.dataset.answered === '1';
+        } else {
+            iniciada = typeof el.value === 'string' && el.value.trim() !== '';
+        }
+        if (pct === null && iniciada) pct = 0;
+        return { pct: pct, iniciada: iniciada || pct !== null, medida: medida };
+    }
 
     window.actualizarResumen = function () {
         var lista = document.getElementById('progreso-lista');
@@ -2091,27 +2615,40 @@
         var completos = 0;
         var iniciados = 0;
         lista.innerHTML = TEMAS.map(function (t) {
-            var el = document.getElementById('in-' + t.id) || document.getElementById('quiz-' + t.id);
-            var valor = '';
-            if (el) {
-                if (typeof el.value === 'string') valor = el.value.trim();
-                else if (el.dataset.answered === '1') valor = '1';
-            }
-            var pct = el && el.dataset.pct !== undefined ? parseInt(el.dataset.pct, 10) : null;
+            var totalActs = t.acts.length;
+            var completas = 0;
+            var iniciadas = 0;
+            var medidas = 0;
+            var sumaPct = 0;
+            var primeraPendiente = null;
+
+            t.acts.forEach(function (a) {
+                var st = estadoActividad(a);
+                if (st.pct === 100) completas++;
+                else if (primeraPendiente === null) primeraPendiente = a;
+                if (st.iniciada) iniciadas++;
+                if (st.medida) medidas++;
+                sumaPct += st.pct === null ? 0 : st.pct;
+            });
+
+            var pct = Math.round(sumaPct / totalActs);
             var clase, estado;
-            if (pct === 100) {
+            if (completas === totalActs) {
                 completos++;
                 clase = 'done';
                 estado = 'Completo';
-            } else if (valor) {
+            } else if (iniciadas > 0) {
                 iniciados++;
                 clase = 'progress';
-                estado = pct !== null ? pct + ' %' : 'En progreso';
+                estado = medidas > 0
+                    ? completas + '/' + totalActs + ' · ' + pct + ' %'
+                    : 'En progreso';
             } else {
                 clase = 'todo';
                 estado = 'Sin empezar';
             }
-            var anchorId = document.getElementById('in-' + t.id) ? 'in-' + t.id : 'quiz-' + t.id;
+
+            var anchorId = anclaActividad(primeraPendiente || t.acts[0]);
             return '<li><a href="#' + anchorId + '">' + t.nombre + '</a>' +
                 '<span class="pill ' + clase + '">' + estado + '</span></li>';
         }).join('');
@@ -2125,16 +2662,24 @@
     };
 
     window.reiniciarTodo = function () {
-        if (!confirm('¿Borrar tus respuestas de los 9 temas?')) return;
+        if (!confirm('¿Borrar tus respuestas de las actividades de los 9 temas?')) return;
         TEMAS.forEach(function (t) {
-            var el = document.getElementById('in-' + t.id);
-            var res = document.getElementById('res-' + t.id);
-            if (el) { el.value = ''; delete el.dataset.pct; }
-            if (res) { res.classList.remove('show'); res.innerHTML = ''; }
-            if (document.getElementById('quiz-' + t.id) && typeof reiniciarPregunta === 'function') {
-                reiniciarPregunta('quiz-' + t.id);
-            }
-            try { localStorage.removeItem('pseint_ej_' + t.id); } catch (e) {}
+            t.acts.forEach(function (a) {
+                if (a.tipo === 'quiz') {
+                    if (typeof reiniciarPregunta === 'function') {
+                        reiniciarPregunta(anclaActividad(a));
+                    } else {
+                        var cont = document.getElementById(anclaActividad(a));
+                        if (cont) { delete cont.dataset.answered; delete cont.dataset.pct; }
+                    }
+                } else {
+                    var el = document.getElementById('in-' + a.id);
+                    var res = document.getElementById('res-' + a.id);
+                    if (el) { el.value = ''; delete el.dataset.pct; }
+                    if (res) { res.classList.remove('show'); res.innerHTML = ''; }
+                    try { localStorage.removeItem('pseint_ej_' + a.id); } catch (e) {}
+                }
+            });
         });
         window.actualizarResumen();
     };
@@ -2165,8 +2710,8 @@
 
     articulos.forEach(function (article, index) {
         var h3 = article.querySelector('h3');
-        var exercise = article.querySelector('.exercise');
-        if (!h3 || !exercise) return;
+        var exercises = Array.prototype.slice.call(article.querySelectorAll(':scope > .exercise'));
+        if (!h3 || !exercises.length) return;
 
         article.classList.add('topic');
 
@@ -2182,10 +2727,12 @@
 
         // Todo el contenido teórico va al primer panel
         Array.prototype.slice.call(article.children).forEach(function (child) {
-            if (child === h3 || child === exercise) return;
+            if (child === h3 || exercises.indexOf(child) !== -1) return;
             teoria.appendChild(child);
         });
-        practica.appendChild(exercise);
+        exercises.forEach(function (exercise) {
+            practica.appendChild(exercise);
+        });
 
         // Pestañas
         var tabs = document.createElement('div');
@@ -2249,24 +2796,29 @@
     });
 
     // Abrir un tema directamente en su pestaña de ejercitación
-    window.abrirEjercicio = function (id) {
-        var input = document.getElementById('in-' + id);
-        if (!input) return;
-        var article = input.closest('#teoria article.card');
+    function abrirActividad(anchorId) {
+        var el = document.getElementById(anchorId);
+        if (!el) return;
+        var article = el.closest('#teoria article.card');
         if (!article) return;
         if (article._setOpen) article._setOpen(true);
         if (article._setTab) article._setTab('ejercicio');
-        article.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        var objetivo = el.classList.contains('exercise') ? el : el.closest('.exercise') || el;
+        objetivo.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    window.abrirEjercicio = function (id) {
+        abrirActividad('in-' + id);
     };
 
-    // Los enlaces del resumen de progreso abren el ejercicio correspondiente
+    // Los enlaces del resumen de progreso abren la actividad correspondiente
     var lista = document.getElementById('progreso-lista');
     if (lista) {
         lista.addEventListener('click', function (e) {
-            var a = e.target.closest('a[href^="#in-"]');
+            var a = e.target.closest('a[href^="#in-"], a[href^="#quiz-"]');
             if (!a) return;
             e.preventDefault();
-            window.abrirEjercicio(a.getAttribute('href').slice(4));
+            abrirActividad(a.getAttribute('href').slice(1));
         });
     }
 })();
