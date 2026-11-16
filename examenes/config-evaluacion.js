@@ -25,8 +25,24 @@ window.CONFIG.PUNTOS_EJERCICIO = 1;
 
     /* ---------- Helpers de revisión estructural ---------- */
 
+    /* Acepta la variable dentro de un "Definir ... Como <tipo>", ya sea sola
+       o junto con otras, y tolera un error de tipeo menor en el nombre
+       (por ejemplo "menore" por "menores"). */
     function declaracion(codigo, nombre, tipo) {
-        return new RegExp('definir\\s+[^;\\n]*\\b' + nombre + '\\b[^;\\n]*como\\s+' + tipo).test(codigo);
+        var re = new RegExp('definir([^;\\n]*)como\\s+' + tipo, 'g');
+        var m;
+        while ((m = re.exec(codigo)) !== null) {
+            var nombres = m[1].split(',').map(function (s) {
+                return s.replace(/[^a-z0-9_]/g, '');
+            });
+            for (var k = 0; k < nombres.length; k++) {
+                var d = nombres[k];
+                if (d === nombre) return true;
+                if (nombre.length > 2 && Math.abs(d.length - nombre.length) <= 2 &&
+                    (d.indexOf(nombre) === 0 || nombre.indexOf(d) === 0)) return true;
+            }
+        }
+        return false;
     }
 
     function declaracionTexto(codigo, nombre) {
@@ -107,11 +123,11 @@ window.CONFIG.PUNTOS_EJERCICIO = 1;
             { d: 'Inicializa mayores y menores en 0', f: function (c) {
                 return /\bmayores\s*<-\s*0/.test(c) && /\bmenores\s*<-\s*0/.test(c);
             } },
-            { d: 'Inicializa el contador i en 1', f: function (c) {
-                return /\bi\s*<-\s*1\b/.test(c);
+            { d: 'Inicializa el contador i en 0 o en 1', f: function (c) {
+                return /\bi\s*<-\s*[01]\b/.test(c);
             } },
-            { d: 'Repite con Mientras i <= 10', f: function (c) {
-                return /mientras\s*\(?\s*i\s*(?:<=\s*10|<\s*11)\s*\)?/.test(c);
+            { d: 'Repite 10 vueltas con Mientras (i <= 10, i < 11, i < 10 o i <= 9)', f: function (c) {
+                return /mientras\s*\(?\s*i\s*(?:<=\s*10|<\s*11|<\s*10|<\s*=\s*9)\s*\)?/.test(c);
             } },
             { d: 'Lee una edad dentro del Mientras', f: function (c) {
                 return /mientras[\s\S]*?\bleer\s+edad\b[\s\S]*?\bfinmientras\b/.test(c);
