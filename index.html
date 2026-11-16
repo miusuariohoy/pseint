@@ -423,26 +423,79 @@
         <article class="card">
             <h3><span class="num">2</span> Variables</h3>
             <p class="concept">
-                Una <strong>variable</strong> es un contenedor en la memoria donde guardamos un dato que puede cambiar durante el programa.
-                En PSeInt hay que <strong>declarar su tipo</strong> antes de usarla.
+                Una <strong>variable</strong> es un espacio con nombre en la memoria donde guardamos un dato
+                que puede cambiar mientras el programa se ejecuta. Pensala como una <strong>caja rotulada</strong>:
+                el rótulo es el nombre, el contenido es el valor y el tipo indica qué clase de dato puede guardar.
             </p>
-            <p style="font-size:.9rem;margin:.4rem 0 0;">
-                Tipos habituales: <strong>Entero</strong>, <strong>Real</strong>,
-                <strong>Caracter</strong> (para texto) y <strong>Logico</strong>.
+            <div class="note">
+                <strong>📦 Ejemplo cotidiano:</strong> una caja rotulada <em>“edad”</em> solo acepta números enteros;
+                otra rotulada <em>“nombre”</em> acepta texto. Si intentás guardar <code class="inline">"Juan"</code>
+                en la caja de la edad, el programa se confunde: el dato no corresponde al tipo.
+            </div>
+            <p class="concept">
+                En PSeInt cada variable se <strong>declara antes de usarse</strong>, indicando su tipo:
             </p>
             <div class="syntax">
                 <span class="syntax-label">Sintaxis</span>
-                Definir nombre_variable Como Tipo_De_Dato;
+                Definir nombre_variable Como Tipo_De_Dato;<br>
+                Definir variable1, variable2 Como Tipo_De_Dato;
             </div>
-            <pre><code><span class="kw">Algoritmo</span> EjemploVariable
-    <span class="kw">Definir</span> edad <span class="kw">Como</span> Entero;   <span class="cmt">// Declara la variable para números enteros</span>
-    edad &lt;- 20;                    <span class="cmt">// Asigna el valor 20 a la variable</span>
-    <span class="kw">Escribir</span> <span class="str">"Tu edad es: "</span>, edad;
+            <p class="concept"><strong>Tipos de datos que vas a usar:</strong></p>
+            <ul class="explain">
+                <li><strong>Entero:</strong> números sin decimales, positivos, negativos o cero
+                    (<code class="inline">20</code>, <code class="inline">-3</code>, <code class="inline">0</code>).</li>
+                <li><strong>Real:</strong> números con parte decimal
+                    (<code class="inline">1.75</code>, <code class="inline">250.50</code>, <code class="inline">-0.5</code>).</li>
+                <li><strong>Caracter:</strong> texto entre comillas
+                    (<code class="inline">"Ana"</code>, <code class="inline">"Hola mundo"</code>, <code class="inline">"4to"</code>).</li>
+                <li><strong>Logico:</strong> solo dos valores posibles:
+                    <code class="inline">Verdadero</code> o <code class="inline">Falso</code>.</li>
+            </ul>
+            <p class="concept">
+                <strong>Declarar</strong> es crear la caja; <strong>asignar</strong> es guardar un valor dentro.
+                La asignación se escribe con la flecha <code class="inline">&lt;-</code>, no con
+                <code class="inline">=</code> (el <code class="inline">=</code> se usa para comparar).
+            </p>
+            <pre><code><span class="kw">Algoritmo</span> DatosPersonales
+    <span class="kw">Definir</span> nombre <span class="kw">Como</span> Caracter;
+    <span class="kw">Definir</span> edad <span class="kw">Como</span> Entero;
+    <span class="kw">Definir</span> altura <span class="kw">Como</span> Real;
+    <span class="kw">Definir</span> activo <span class="kw">Como</span> Logico;
+
+    nombre &lt;- <span class="str">"Ana"</span>;        <span class="cmt">// texto entre comillas</span>
+    edad &lt;- 20;             <span class="cmt">// número entero</span>
+    altura &lt;- 1.65;         <span class="cmt">// número real</span>
+    activo &lt;- Verdadero;    <span class="cmt">// valor lógico</span>
+
+    <span class="kw">Escribir</span> <span class="str">"Nombre: "</span>, nombre;
+    <span class="kw">Escribir</span> <span class="str">"Edad: "</span>, edad, <span class="str">" años"</span>;
+    <span class="kw">Escribir</span> <span class="str">"Altura: "</span>, altura, <span class="str">" m"</span>;
+    <span class="kw">Escribir</span> <span class="str">"Activo: "</span>, activo;
 <span class="kw">FinAlgoritmo</span></code></pre>
             <ul class="explain">
-                <li><strong>Línea 2:</strong> creamos el contenedor <code class="inline">edad</code>, apto solo para enteros.</li>
-                <li><strong>Línea 3:</strong> con la flecha de asignación (<code class="inline">&lt;-</code>) guardamos 20 dentro de <code class="inline">edad</code>.</li>
-                <li><strong>Línea 4:</strong> mostramos un mensaje combinando texto y el valor de la variable.</li>
+                <li><strong>Líneas 2 a 5:</strong> declaramos cuatro variables, cada una con el tipo que le corresponde.</li>
+                <li><strong>Líneas 7 a 10:</strong> con <code class="inline">&lt;-</code> guardamos un valor en cada caja.
+                    El texto va <strong>entre comillas</strong>; los números y los valores lógicos, no.</li>
+                <li><strong>Líneas 12 a 15:</strong> mostramos los valores combinando texto fijo con variables.</li>
+                <li>También podés declarar varias variables del mismo tipo en una línea:
+                    <code class="inline">Definir edad, cantidad Como Entero;</code>.</li>
+            </ul>
+            <div class="note">
+                <strong>🪪 Reglas para los nombres:</strong> no llevan espacios, no empiezan con un número y no pueden
+                coincidir con palabras reservadas del lenguaje (<code class="inline">Si</code>,
+                <code class="inline">Mientras</code>, <code class="inline">Escribir</code>, etc.).
+                En PSeInt no se distinguen mayúsculas de minúsculas: <code class="inline">Edad</code> y
+                <code class="inline">edad</code> son la misma variable. Usá nombres que expliquen qué guardan.
+            </div>
+            <p class="concept"><strong>Errores comunes con variables:</strong></p>
+            <ul class="explain">
+                <li><strong>Usar una variable sin declararla:</strong> PSeInt necesita saber de qué tipo es antes de usarla.</li>
+                <li><strong>Asignar con <code class="inline">=</code></strong> en lugar de <code class="inline">&lt;-</code>:
+                    <code class="inline">edad &lt;- 20;</code> guarda; <code class="inline">edad = 20</code> compara.</li>
+                <li><strong>Guardar un texto en una variable numérica</strong> o un decimal en una variable
+                    <code class="inline">Entero</code>.</li>
+                <li><strong>Confundir declarar con asignar:</strong> después de <code class="inline">Definir edad Como Entero;</code>
+                    la variable existe, pero todavía no tiene un valor elegido por vos.</li>
             </ul>
             <div class="exercise">
                 <h4>✍️ Ejercicio: tres variables</h4>
@@ -460,20 +513,62 @@
         <article class="card">
             <h3><span class="num">3</span> Leer y Escribir</h3>
             <p class="concept">
-                Son los comandos de <strong>Entrada/Salida</strong>.
-                <strong>Escribir</strong> muestra información en pantalla y
-                <strong>Leer</strong> pausa el programa para capturar un dato del teclado.
-                Son lo primero que necesitás para que un programa "hable" con el usuario.
+                Son los comandos de <strong>entrada y salida</strong>. <strong>Escribir</strong> muestra
+                información en pantalla (salida) y <strong>Leer</strong> pausa el programa para capturar
+                un dato escrito por el usuario (entrada). Son lo primero que necesitás para que un programa
+                se comunique con quien lo usa.
             </p>
+            <div class="syntax">
+                <span class="syntax-label">Salida</span>
+                Escribir "texto", variable, otra_variable;<br><br>
+                <span class="syntax-label">Entrada</span>
+                Leer variable;
+            </div>
+            <ul class="explain">
+                <li>El <strong>texto literal</strong> va entre comillas dobles: <code class="inline">"Hola"</code>.
+                    Las <strong>variables</strong> van sin comillas: <code class="inline">nombre</code>.</li>
+                <li>Las <strong>comas</strong> separan las partes que se muestran juntas en una misma línea.
+                    <code class="inline">Escribir</code> agrega un salto de línea al final.</li>
+                <li><strong>Leer</strong> no muestra ningún mensaje por sí solo: por eso antes se escribe una
+                    pregunta o indicación con <code class="inline">Escribir</code>.</li>
+                <li>El dato que se lee debe coincidir con el tipo de la variable: si <code class="inline">edad</code>
+                    es <code class="inline">Entero</code>, el usuario debe escribir un número entero.</li>
+            </ul>
             <pre><code><span class="kw">Algoritmo</span> EntradaSalida
     <span class="kw">Definir</span> nombre <span class="kw">Como</span> Caracter;
-    <span class="kw">Escribir</span> <span class="str">"Escribe tu nombre:"</span>;
+    <span class="kw">Definir</span> edad <span class="kw">Como</span> Entero;
+
+    <span class="kw">Escribir</span> <span class="str">"Escribí tu nombre:"</span>;
     <span class="kw">Leer</span> nombre;                       <span class="cmt">// Guarda lo que el usuario tipea</span>
-    <span class="kw">Escribir</span> <span class="str">"Hola, "</span>, nombre;
+
+    <span class="kw">Escribir</span> <span class="str">"Escribí tu edad:"</span>;
+    <span class="kw">Leer</span> edad;
+
+    <span class="kw">Escribir</span> <span class="str">"Hola, "</span>, nombre, <span class="str">". Tenés "</span>, edad, <span class="str">" años."</span>;
 <span class="kw">FinAlgoritmo</span></code></pre>
             <ul class="explain">
-                <li><strong>Línea 3:</strong> envía un mensaje visual al usuario.</li>
-                <li><strong>Línea 4:</strong> pausa la ejecución y guarda la respuesta del teclado en <code class="inline">nombre</code>.</li>
+                <li><strong>Línea 5:</strong> muestra la pregunta para que el usuario sepa qué escribir.</li>
+                <li><strong>Línea 6:</strong> pausa la ejecución y guarda la respuesta del teclado en
+                    <code class="inline">nombre</code>.</li>
+                <li><strong>Líneas 8 y 9:</strong> el mismo esquema para la edad: primero preguntar, después leer.</li>
+                <li><strong>Línea 11:</strong> combina texto fijo, variables y más texto. Las comas permiten
+                    armar una oración completa sin cortar la línea.</li>
+            </ul>
+            <div class="note">
+                <strong>💡 Tip:</strong> si querés mostrar algo sin saltar de línea, PSeInt permite
+                <code class="inline">Escribir Sin Saltar "..."</code>. Es útil para armar tablas o pedir un dato
+                en la misma línea. Para el apunte alcanza con <code class="inline">Escribir</code> y
+                <code class="inline">Leer</code>.
+            </div>
+            <p class="concept"><strong>Errores comunes con Leer y Escribir:</strong></p>
+            <ul class="explain">
+                <li><strong>Poner comillas en el <code class="inline">Leer</code>:</strong>
+                    <code class="inline">Leer "nombre"</code> está mal; se escribe <code class="inline">Leer nombre;</code>.</li>
+                <li><strong>Olvidar las comillas en un texto fijo:</strong> <code class="inline">Escribir Hola</code>
+                    se interpreta como una variable; lo correcto es <code class="inline">Escribir "Hola";</code>.</li>
+                <li><strong>Leer sin mostrar una indicación:</strong> el usuario ve una pantalla vacía y no sabe qué escribir.</li>
+                <li><strong>Leer un texto en una variable numérica</strong> o viceversa: el dato debe respetar el tipo.</li>
+                <li><strong>Olvidar el punto y coma</strong> al final de cada instrucción.</li>
             </ul>
             <div class="exercise">
                 <h4>✍️ Ejercicio: pedir y mostrar</h4>
@@ -491,17 +586,38 @@
         <article class="card">
             <h3><span class="num">4</span> Condicionales (Si–Entonces)</h3>
             <p class="concept">
-                Un <strong>condicional</strong> permite decidir: si la condición es verdadera se ejecuta un camino;
-                si es falsa (<strong>Sino</strong>), se ejecuta otro. Es el corazón de la <em>selección</em>.
+                Un <strong>condicional</strong> permite tomar decisiones: se evalúa una condición y, según sea
+                <strong>verdadera</strong> o <strong>falsa</strong>, se ejecuta un camino u otro. Es la estructura
+                de <strong>selección</strong>: el programa deja de ser una línea recta y elige.
             </p>
+            <div class="note">
+                <strong>🚦 Ejemplo cotidiano:</strong> “Si está lloviendo, llevá paraguas; si no, llevá gorra”.
+                La condición se revisa una vez y se elige <strong>un solo</strong> camino.
+            </div>
             <div class="syntax">
-                <span class="syntax-label">Sintaxis</span>
+                <span class="syntax-label">Sintaxis completa</span>
                 Si condición Entonces<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;// código si es verdadero<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;// instrucciones si la condición es verdadera<br>
                 Sino<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;// código si es falso<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;// instrucciones si la condición es falsa<br>
                 FinSi
             </div>
+            <p class="concept">
+                La <strong>condición</strong> es una expresión que da como resultado
+                <code class="inline">Verdadero</code> o <code class="inline">Falso</code>. Se arma con
+                <strong>operadores de comparación</strong>:
+            </p>
+            <ul class="explain">
+                <li><code class="inline">=</code> igual que (algunas versiones también aceptan
+                    <code class="inline">==</code>) &nbsp;·&nbsp; <code class="inline">&lt;&gt;</code> distinto de
+                    (algunas versiones también aceptan <code class="inline">!=</code>).</li>
+                <li><code class="inline">&gt;</code> mayor que &nbsp;·&nbsp; <code class="inline">&lt;</code> menor que.</li>
+                <li><code class="inline">&gt;=</code> mayor o igual que &nbsp;·&nbsp;
+                    <code class="inline">&lt;=</code> menor o igual que.</li>
+                <li>Se pueden combinar con los operadores lógicos <code class="inline">Y</code>,
+                    <code class="inline">O</code> y <code class="inline">NO</code>:
+                    <code class="inline">Si edad &gt;= 18 Y tieneEntrada Entonces</code>.</li>
+            </ul>
             <pre><code><span class="kw">Algoritmo</span> EjemploCondicional
     <span class="kw">Definir</span> nota <span class="kw">Como</span> Real;
     nota &lt;- 7.5;
@@ -512,8 +628,50 @@
     <span class="kw">FinSi</span>
 <span class="kw">FinAlgoritmo</span></code></pre>
             <ul class="explain">
-                <li><strong>Línea 4:</strong> evalúa si <code class="inline">nota</code> (7.5) es mayor o igual a 6.0.</li>
-                <li><strong>Línea 5:</strong> al ser verdadero, ejecuta esa línea y salta al final de la estructura.</li>
+                <li><strong>Línea 4:</strong> evalúa si <code class="inline">nota</code> (7.5) es mayor o igual a 6.0.
+                    El resultado es <code class="inline">Verdadero</code>.</li>
+                <li><strong>Línea 5:</strong> como la condición fue verdadera, se ejecuta esa línea y se salta el
+                    <code class="inline">Sino</code>.</li>
+                <li>Si la nota hubiera sido 4, la condición daría <code class="inline">Falso</code> y se ejecutaría
+                    solamente la línea del <code class="inline">Sino</code>.</li>
+            </ul>
+            <p class="concept">
+                El <code class="inline">Sino</code> es <strong>opcional</strong>: si solo querés hacer algo cuando
+                la condición se cumple, alcanza con <code class="inline">Si … Entonces … FinSi</code>.
+                Para elegir entre más de dos caminos, se anidan condicionales:
+            </p>
+            <pre><code><span class="kw">Algoritmo</span> ClasificarNota
+    <span class="kw">Definir</span> nota <span class="kw">Como</span> Real;
+    <span class="kw">Escribir</span> <span class="str">"Ingresá la nota:"</span>;
+    <span class="kw">Leer</span> nota;
+
+    <span class="kw">Si</span> nota &gt;= 9 <span class="kw">Entonces</span>
+        <span class="kw">Escribir</span> <span class="str">"Excelente"</span>;
+    <span class="kw">Sino</span>
+        <span class="kw">Si</span> nota &gt;= 6 <span class="kw">Entonces</span>
+            <span class="kw">Escribir</span> <span class="str">"Aprobado"</span>;
+        <span class="kw">Sino</span>
+            <span class="kw">Escribir</span> <span class="str">"Desaprobado"</span>;
+        <span class="kw">FinSi</span>
+    <span class="kw">FinSi</span>
+<span class="kw">FinAlgoritmo</span></code></pre>
+            <ul class="explain">
+                <li>Primero se pregunta si la nota es 9 o más. Si es así, muestra <em>“Excelente”</em> y no revisa el resto.</li>
+                <li>Si no, entra al <code class="inline">Sino</code> y hace una segunda pregunta: ¿es 6 o más?</li>
+                <li>Cada <code class="inline">Si</code> abierto necesita su propio <code class="inline">FinSi</code>.
+                    Por eso quedan dos <code class="inline">FinSi</code> al final.</li>
+            </ul>
+            <p class="concept"><strong>Errores comunes con condicionales:</strong></p>
+            <ul class="explain">
+                <li><strong>Olvidar <code class="inline">Entonces</code></strong> después de la condición.</li>
+                <li><strong>Olvidar <code class="inline">FinSi</code></strong> o cerrar menos bloques de los que se abrieron.</li>
+                <li><strong>Usar <code class="inline">=</code> para asignar</strong> dentro del condicional:
+                    para guardar se usa <code class="inline">&lt;-</code>; <code class="inline">=</code> solo compara.</li>
+                <li><strong>Poner punto y coma después de <code class="inline">Entonces</code></strong> o de
+                    <code class="inline">Sino</code>: no van.</li>
+                <li><strong>Confundir <code class="inline">Sino</code> con <code class="inline">Sino Si</code></strong>:
+                    en PSeInt el <code class="inline">Sino</code> no lleva condición; si necesitás otra pregunta,
+                    anidá un nuevo <code class="inline">Si</code>.</li>
             </ul>
             <div class="exercise">
                 <h4>✍️ Ejercicio: mayor o menor de edad</h4>
@@ -531,31 +689,114 @@
         <article class="card">
             <h3><span class="num">5</span> Bucle Mientras</h3>
             <p class="concept">
-                Repite un bloque <strong>mientras</strong> una condición sea verdadera.
-                Si la condición es falsa desde el inicio, <strong>el bucle nunca se ejecuta</strong>.
-                Útil cuando no sabemos cuántas vueltas hará el usuario.
+                El bucle <strong>Mientras</strong> repite un bloque de instrucciones <strong>mientras</strong>
+                una condición sea verdadera. La condición se revisa <strong>antes</strong> de cada vuelta:
+                si es falsa desde el principio, el bloque no se ejecuta ninguna vez. Se usa cuando
+                <strong>no sabemos de antemano cuántas vueltas</strong> hará el programa (menús, validaciones,
+                leer hasta que el usuario decida salir).
             </p>
             <div class="syntax">
                 <span class="syntax-label">Sintaxis</span>
                 Mientras condición Hacer<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;// código a repetir<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;// instrucciones que se repiten<br>
                 FinMientras
             </div>
+            <div class="note">
+                <strong>🔁 Idea clave:</strong> todo <code class="inline">Mientras</code> necesita tres piezas
+                coordinadas: <strong>inicializar</strong> la variable antes del bucle,
+                <strong>evaluar</strong> una condición que en algún momento se vuelva falsa y
+                <strong>actualizar</strong> esa variable dentro del bucle. Si falta la actualización,
+                el bucle nunca termina (<strong>bucle infinito</strong>).
+            </div>
+            <p class="concept">
+                Ejemplo con un menú: el programa sigue mostrando opciones hasta que el usuario escriba 0.
+                Como no sabemos cuántas veces va a elegir, usamos <code class="inline">Mientras</code>.
+            </p>
             <pre><code><span class="kw">Algoritmo</span> EjemploMientras
     <span class="kw">Definir</span> opcion <span class="kw">Como</span> Entero;
     opcion &lt;- 1;
-    <span class="kw">Mientras</span> opcion != 0 <span class="kw">Hacer</span>
-        <span class="kw">Escribir</span> <span class="str">"Para salir presiona 0, para continuar cualquier número:"</span>;
+    <span class="kw">Mientras</span> opcion &lt;&gt; 0 <span class="kw">Hacer</span>
+        <span class="kw">Escribir</span> <span class="str">"Para salir presioná 0; para continuar, cualquier número:"</span>;
         <span class="kw">Leer</span> opcion;
+    <span class="kw">FinMientras</span>
+    <span class="kw">Escribir</span> <span class="str">"Programa finalizado."</span>;
+<span class="kw">FinAlgoritmo</span></code></pre>
+            <ul class="explain">
+                <li><strong>Línea 3:</strong> inicializamos <code class="inline">opcion</code> en 1 para que la
+                    condición sea verdadera la primera vez y el bucle entre.</li>
+                <li><strong>Línea 4:</strong> revisa si <code class="inline">opcion</code> es distinto de 0.
+                    Como vale 1, entra al bloque.</li>
+                <li><strong>Línea 6:</strong> pide un nuevo valor. Ese <code class="inline">Leer</code> es lo que
+                    permite que la condición cambie: cuando el usuario escribe 0, el bucle termina.</li>
+                <li><strong>Línea 8:</strong> se ejecuta una sola vez, cuando el bucle ya terminó.</li>
+            </ul>
+
+            <p class="concept"><strong>Las dos formas válidas de contar del 1 al 5</strong></p>
+            <p class="concept">
+                La inicialización depende de <strong>dónde pongas el incremento</strong>. Las dos versiones
+                muestran <code class="inline">1 2 3 4 5</code>; elegí la que te resulte más clara.
+            </p>
+            <span class="example-label">Opción 1 · Contador en 0, incremento al principio</span>
+            <pre><code><span class="kw">Algoritmo</span> ContarConCero
+    <span class="kw">Definir</span> c <span class="kw">Como</span> Entero;
+    c &lt;- 0;                 <span class="cmt">// arranca en 0</span>
+    <span class="kw">Mientras</span> c &lt; 5 <span class="kw">Hacer</span>    <span class="cmt">// se repite mientras c sea menor que 5</span>
+        c &lt;- c + 1;         <span class="cmt">// primero incrementa: 1, 2, 3, 4, 5</span>
+        <span class="kw">Escribir</span> c;         <span class="cmt">// después muestra el valor</span>
+    <span class="kw">FinMientras</span>
+<span class="kw">FinAlgoritmo</span></code></pre>
+            <span class="example-label alt">Opción 2 · Contador en 1, incremento al final</span>
+            <pre><code><span class="kw">Algoritmo</span> ContarConUno
+    <span class="kw">Definir</span> c <span class="kw">Como</span> Entero;
+    c &lt;- 1;                 <span class="cmt">// arranca en 1</span>
+    <span class="kw">Mientras</span> c &lt;= 5 <span class="kw">Hacer</span>   <span class="cmt">// se repite mientras c no supere 5</span>
+        <span class="kw">Escribir</span> c;         <span class="cmt">// muestra 1, 2, 3, 4, 5</span>
+        c &lt;- c + 1;         <span class="cmt">// incrementa al final de cada vuelta</span>
+    <span class="kw">FinMientras</span>
+<span class="kw">FinAlgoritmo</span></code></pre>
+            <div class="note">
+                <strong>⚠️ Cuidado con la condición:</strong> si arrancás en 0, incrementás <em>antes</em> de mostrar
+                y usás <code class="inline">Mientras c &lt;= 5</code>, el contador llega a 6 y se muestra
+                <code class="inline">1 2 3 4 5 6</code>. Para mostrar exactamente hasta 5, la condición debe ser
+                <code class="inline">c &lt; 5</code> (o <code class="inline">c &lt;= 4</code>). En cambio, si arrancás
+                en 1 e incrementás al final, <code class="inline">c &lt;= 5</code> es la condición correcta.
+                <br><br>
+                Las dos inicializaciones son válidas: <strong>0 o 1</strong>. Lo que no puede faltar es que la
+                condición y el incremento estén en el lugar correcto.
+            </div>
+            <p class="concept"><strong>Ejemplo de bucle infinito (para reconocerlo):</strong></p>
+            <pre><code><span class="kw">Algoritmo</span> BucleInfinito
+    <span class="kw">Definir</span> c <span class="kw">Como</span> Entero;
+    c &lt;- 0;
+    <span class="kw">Mientras</span> c &lt; 5 <span class="kw">Hacer</span>
+        <span class="kw">Escribir</span> c;      <span class="cmt">// falta c &lt;- c + 1: c nunca cambia</span>
     <span class="kw">FinMientras</span>
 <span class="kw">FinAlgoritmo</span></code></pre>
             <ul class="explain">
-                <li><strong>Línea 4:</strong> revisa si <code class="inline">opcion</code> es distinto de 0. Como vale 1, entra al bucle.</li>
-                <li><strong>Línea 6:</strong> pide un nuevo valor. El bucle se repetirá hasta que el usuario escriba 0.</li>
+                <li>La condición <code class="inline">c &lt; 5</code> siempre da verdadero porque
+                    <code class="inline">c</code> queda en 0 para siempre.</li>
+                <li>El programa se queda mostrando <code class="inline">0</code> sin parar. La solución es
+                    <strong>actualizar el contador dentro del bucle</strong>.</li>
+            </ul>
+            <p class="concept"><strong>¿Cuándo usar Mientras y cuándo Para?</strong></p>
+            <ul class="explain">
+                <li><strong>Mientras:</strong> no sabés cuántas vueltas serán (menú, leer hasta 0, validar un dato
+                    hasta que sea correcto).</li>
+                <li><strong>Para:</strong> sabés la cantidad exacta de vueltas (mostrar del 1 al 10, recorrer 5 productos).</li>
+            </ul>
+            <p class="concept"><strong>Errores comunes con Mientras:</strong></p>
+            <ul class="explain">
+                <li><strong>No incrementar</strong> la variable dentro del bucle → bucle infinito.</li>
+                <li><strong>Incrementar fuera del bucle</strong> (antes o después del <code class="inline">FinMientras</code>)
+                    → la condición nunca cambia.</li>
+                <li><strong>Inicializar dentro del bucle</strong> → el contador vuelve siempre al mismo valor.</li>
+                <li><strong>Olvidar <code class="inline">Hacer</code></strong> o el <code class="inline">FinMientras</code>.</li>
+                <li><strong>Usar <code class="inline">=</code> en la condición</strong> cuando querés comparar;
+                    recordá que <code class="inline">=</code> compara y <code class="inline">&lt;-</code> asigna.</li>
             </ul>
             <div class="exercise">
                 <h4>✍️ Ejercicio: contar hasta 5</h4>
-                <p class="ex-goal">Mostrá los números del <strong>1 al 5</strong> usando un bucle <code class="inline">Mientras</code>. No olvides <strong>incrementar</strong> la variable dentro del bucle para que no se repita infinitamente.</p>
+                <p class="ex-goal">Mostrá los números del <strong>1 al 5</strong> usando un bucle <code class="inline">Mientras</code>. Podés inicializar el contador en <strong>0</strong> (incrementando al principio) o en <strong>1</strong> (incrementando al final). No olvides <strong>incrementar</strong> la variable dentro del bucle para que no se repita infinitamente.</p>
                 <textarea class="code-input" id="in-mientras" spellcheck="false" placeholder="Algoritmo ContarHastaCinco&#10;    // escribí tu código acá&#10;FinAlgoritmo"></textarea>
                 <div class="ex-actions">
                     <button class="btn btn-primary" onclick="corregir('mientras')">✅ Corregir</button>
@@ -569,15 +810,25 @@
         <article class="card">
             <h3><span class="num">6</span> Bucle Para (For)</h3>
             <p class="concept">
-                Repite un bloque un <strong>número exacto y conocido</strong> de veces.
-                Controla automáticamente el inicio, el fin y el paso del contador.
+                El bucle <strong>Para</strong> repite un bloque un <strong>número exacto y conocido</strong> de veces.
+                A diferencia de <code class="inline">Mientras</code>, acá declaramos en la misma línea dónde empieza
+                el contador, dónde termina y de cuánto en cuánto avanza. PSeInt se encarga solo de inicializar,
+                avanzar y cortar.
             </p>
             <div class="syntax">
                 <span class="syntax-label">Sintaxis</span>
                 Para variable &lt;- inicio Hasta fin Con Paso incremento Hacer<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;// código a repetir<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;// instrucciones que se repiten<br>
                 FinPara
             </div>
+            <ul class="explain">
+                <li><strong>inicio:</strong> primer valor que toma la variable.</li>
+                <li><strong>fin:</strong> último valor que puede tomar. El <code class="inline">Hasta</code> es
+                    <strong>inclusivo</strong>: si dice <code class="inline">Hasta 3</code>, se ejecuta también la vuelta 3.</li>
+                <li><strong>Con Paso:</strong> cuánto aumenta la variable en cada vuelta. Si se omite, PSeInt usa 1.</li>
+                <li>Con <strong>paso negativo</strong> el bucle cuenta hacia atrás:
+                    <code class="inline">Para i &lt;- 5 Hasta 1 Con Paso -1 Hacer</code>.</li>
+            </ul>
             <pre><code><span class="kw">Algoritmo</span> EjemploPara
     <span class="kw">Definir</span> i <span class="kw">Como</span> Entero;
     <span class="kw">Para</span> i &lt;- 1 <span class="kw">Hasta</span> 3 <span class="kw">Con Paso</span> 1 <span class="kw">Hacer</span>
@@ -585,8 +836,47 @@
     <span class="kw">FinPara</span>
 <span class="kw">FinAlgoritmo</span></code></pre>
             <ul class="explain">
-                <li><strong>Línea 3:</strong> inicializa <code class="inline">i</code> en 1, se detiene al superar 3 y avanza de 1 en 1.</li>
-                <li><strong>Línea 4:</strong> imprime el número de la iteración actual.</li>
+                <li><strong>Línea 3:</strong> <code class="inline">i</code> empieza en 1, se detiene al superar 3 y
+                    avanza de 1 en 1. Da exactamente 3 vueltas.</li>
+                <li><strong>Línea 4:</strong> muestra el número de la vuelta actual: 1, 2 y 3.</li>
+            </ul>
+            <p class="concept"><strong>Ejemplos útiles:</strong></p>
+            <pre><code><span class="kw">Algoritmo</span> TablaDelDos
+    <span class="kw">Definir</span> i <span class="kw">Como</span> Entero;
+    <span class="kw">Para</span> i &lt;- 1 <span class="kw">Hasta</span> 5 <span class="kw">Con Paso</span> 1 <span class="kw">Hacer</span>
+        <span class="kw">Escribir</span> <span class="str">"2 x "</span>, i, <span class="str">" = "</span>, 2 * i;
+    <span class="kw">FinPara</span>
+<span class="kw">FinAlgoritmo</span></code></pre>
+            <pre><code><span class="kw">Algoritmo</span> CuentaRegresiva
+    <span class="kw">Definir</span> i <span class="kw">Como</span> Entero;
+    <span class="kw">Para</span> i &lt;- 5 <span class="kw">Hasta</span> 1 <span class="kw">Con Paso</span> -1 <span class="kw">Hacer</span>
+        <span class="kw">Escribir</span> i;
+    <span class="kw">FinPara</span>
+    <span class="kw">Escribir</span> <span class="str">"¡Despegue!"</span>;
+<span class="kw">FinAlgoritmo</span></code></pre>
+            <ul class="explain">
+                <li><strong>Tabla del 2:</strong> la variable <code class="inline">i</code> también se puede usar
+                    dentro de una operación, no solo para mostrar.</li>
+                <li><strong>Cuenta regresiva:</strong> con <code class="inline">Con Paso -1</code> el contador baja
+                    de 5 a 1. El signo del paso debe acompañar la dirección.</li>
+            </ul>
+            <div class="note">
+                <strong>⚠️ No modifiques la variable del bucle por dentro.</strong> Si dentro de un
+                <code class="inline">Para i &lt;- 1 Hasta 5</code> escribís <code class="inline">i &lt;- i + 2</code>,
+                el control del bucle se rompe y puede saltarse vueltas o no terminar nunca. Para eso existe
+                <code class="inline">Mientras</code>, donde el control es manual.
+            </div>
+            <p class="concept"><strong>Errores comunes con Para:</strong></p>
+            <ul class="explain">
+                <li><strong>Olvidar <code class="inline">FinPara</code></strong> o el <code class="inline">Hacer</code>.</li>
+                <li><strong>Usar <code class="inline">Con Paso 0</code></strong>: el contador nunca avanza y el bucle
+                    se vuelve infinito.</li>
+                <li><strong>Esperar que <code class="inline">Hasta</code> no incluya el último valor</strong>:
+                    <code class="inline">Hasta 10</code> sí incluye el 10.</li>
+                <li><strong>Elegir mal el paso:</strong> para los pares del 2 al 10 conviene
+                    <code class="inline">Con Paso 2</code>; para contar de uno en uno, <code class="inline">Con Paso 1</code>.</li>
+                <li><strong>Repetir la declaración de la variable del bucle</strong> dentro del <code class="inline">Para</code>:
+                    se declara antes, con <code class="inline">Definir</code>.</li>
             </ul>
             <div class="exercise">
                 <h4>✍️ Ejercicio: pares del 2 al 10</h4>
@@ -604,13 +894,24 @@
         <article class="card">
             <h3><span class="num">7</span> Contador</h3>
             <p class="concept">
-                Un <strong>contador</strong> aumenta o disminuye su valor en una <strong>cantidad fija</strong> (normalmente 1).
-                Sirve para saber <strong>cuántas veces</strong> ocurre un evento. Se usa mucho dentro de bucles.
+                Un <strong>contador</strong> es una variable que aumenta o disminuye siempre en una
+                <strong>cantidad fija</strong> (normalmente 1). Sirve para responder
+                <strong>cuántas veces</strong> ocurre algo: cuántos aprobaron, cuántos productos se cargaron,
+                cuántos números pares hay.
             </p>
             <div class="syntax">
                 <span class="syntax-label">Fórmula clásica</span>
                 contador &lt;- contador + 1;
             </div>
+            <p class="concept"><strong>Todo contador se usa en tres pasos:</strong></p>
+            <ul class="explain">
+                <li><strong>1. Inicializar antes del bucle:</strong> <code class="inline">c &lt;- 0;</code>
+                    (o en 1 si vas a numerar elementos, no contarlos).</li>
+                <li><strong>2. Incrementar dentro del bucle</strong>, cuando ocurre el evento que querés contar:
+                    <code class="inline">c &lt;- c + 1;</code>.</li>
+                <li><strong>3. Usar el resultado después del bucle:</strong>
+                    <code class="inline">Escribir "Total: ", c;</code>.</li>
+            </ul>
             <pre><code><span class="kw">Algoritmo</span> EjemploContador
     <span class="kw">Definir</span> c <span class="kw">Como</span> Entero;
     c &lt;- 0;          <span class="cmt">// Inicialización obligatoria</span>
@@ -619,8 +920,54 @@
     <span class="kw">Escribir</span> <span class="str">"Contador: "</span>, c;
 <span class="kw">FinAlgoritmo</span></code></pre>
             <ul class="explain">
-                <li><strong>Línea 3:</strong> el conteo empieza en 0.</li>
-                <li><strong>Líneas 4 y 5:</strong> sumamos 1 a su propio valor actual, de forma consecutiva.</li>
+                <li><strong>Línea 3:</strong> el conteo empieza en 0: “todavía no conté nada”.</li>
+                <li><strong>Líneas 4 y 5:</strong> sumamos 1 al valor actual. Primero pasa a 1 y después a 2.</li>
+                <li><strong>Línea 6:</strong> mostramos el total acumulado en el contador.</li>
+            </ul>
+            <p class="concept">
+                En un programa real, el incremento va <strong>dentro de un bucle</strong> y muchas veces
+                <strong>dentro de un condicional</strong>, para contar solo los casos que cumplen algo:
+            </p>
+            <pre><code><span class="kw">Algoritmo</span> ContarPares
+    <span class="kw">Definir</span> i, pares <span class="kw">Como</span> Entero;
+    pares &lt;- 0;                         <span class="cmt">// 1) inicializar</span>
+    <span class="kw">Para</span> i &lt;- 1 <span class="kw">Hasta</span> 10 <span class="kw">Con Paso</span> 1 <span class="kw">Hacer</span>
+        <span class="kw">Si</span> i MOD 2 = 0 <span class="kw">Entonces</span>
+            pares &lt;- pares + 1;         <span class="cmt">// 2) contar solo si es par</span>
+        <span class="kw">FinSi</span>
+    <span class="kw">FinPara</span>
+    <span class="kw">Escribir</span> <span class="str">"Cantidad de pares: "</span>, pares;   <span class="cmt">// 3) mostrar</span>
+<span class="kw">FinAlgoritmo</span></code></pre>
+            <ul class="explain">
+                <li><code class="inline">MOD</code> devuelve el resto de la división. Si
+                    <code class="inline">i MOD 2 = 0</code>, el número es par.</li>
+                <li>El contador <code class="inline">pares</code> aumenta solo cuando la condición se cumple.
+                    Al terminar el <code class="inline">Para</code>, contiene la cantidad total.</li>
+            </ul>
+            <div class="note">
+                <strong>💡 ¿0 o 1?</strong> Si tu objetivo es <strong>contar ocurrencias</strong>
+                (cuántos hay), empezá en <strong>0</strong>. Si querés <strong>numerar</strong> elementos
+                (1.º, 2.º, 3.º…), podés empezar en 1 y decidir si incrementás antes o después de mostrar.
+                Para un conteo, arrancar en 1 suma uno de más y el resultado queda mal.
+            </div>
+            <p class="concept"><strong>Contador vs. acumulador (diferencia clave):</strong></p>
+            <ul class="explain">
+                <li><strong>Contador:</strong> suma siempre lo mismo, generalmente 1.
+                    <code class="inline">c &lt;- c + 1;</code></li>
+                <li><strong>Acumulador:</strong> suma un valor que cambia en cada vuelta.
+                    <code class="inline">total &lt;- total + precio;</code></li>
+                <li>El contador responde <em>“¿cuántos?”</em>; el acumulador responde <em>“¿cuánto suman?”</em>.</li>
+            </ul>
+            <p class="concept"><strong>Errores comunes con contadores:</strong></p>
+            <ul class="explain">
+                <li><strong>Inicializar dentro del bucle:</strong> el contador vuelve a 0 en cada vuelta y el total
+                    nunca crece.</li>
+                <li><strong>Incrementar fuera del condicional</strong> cuando solo querés contar algunos casos:
+                    termina contando todas las vueltas.</li>
+                <li><strong>Olvidar la inicialización:</strong> en PSeInt estricto no podés sumar sobre una variable
+                    sin valor base.</li>
+                <li><strong>Mostrar el contador dentro del bucle</strong> cuando querés el total final: mostralo
+                    después del <code class="inline">FinPara</code> o <code class="inline">FinMientras</code>.</li>
             </ul>
             <div class="exercise">
                 <h4>✍️ Ejercicio: contar mayores a 5</h4>
@@ -638,13 +985,22 @@
         <article class="card">
             <h3><span class="num">8</span> Acumulador</h3>
             <p class="concept">
-                Un <strong>acumulador</strong> cambia por <strong>cantidades variables</strong>.
-                Se usa para calcular <strong>sumas totales</strong>: total de una caja, suma de notas, gastos del mes, etc.
+                Un <strong>acumulador</strong> es una variable que va <strong>sumando valores variables</strong>
+                en cada vuelta. Se usa para calcular <strong>totales</strong>: el total de una caja, la suma de
+                notas, los gastos del mes, los puntos de un juego. La diferencia con el contador es que el valor
+                que se suma <strong>no es fijo</strong>: puede ser el precio de cada producto o la nota de cada alumno.
             </p>
             <div class="syntax">
                 <span class="syntax-label">Fórmula clásica</span>
                 acumulador &lt;- acumulador + variable_o_valor;
             </div>
+            <p class="concept"><strong>El acumulador también se usa en tres pasos:</strong></p>
+            <ul class="explain">
+                <li><strong>1. Inicializar en 0 antes del bucle</strong> para las sumas
+                    (en 1 solo si vas a multiplicar).</li>
+                <li><strong>2. Acumular dentro del bucle:</strong> sumar el valor de esta vuelta al total anterior.</li>
+                <li><strong>3. Mostrar o usar el total después del bucle.</strong></li>
+            </ul>
             <pre><code><span class="kw">Algoritmo</span> EjemploAcumulador
     <span class="kw">Definir</span> suma, precio <span class="kw">Como</span> Real;
     suma &lt;- 0;              <span class="cmt">// Inicialización obligatoria</span>
@@ -654,7 +1010,66 @@
 <span class="kw">FinAlgoritmo</span></code></pre>
             <ul class="explain">
                 <li><strong>Línea 3:</strong> el acumulador arranca limpio en 0.</li>
-                <li><strong>Línea 5:</strong> suma el contenido de <code class="inline">precio</code> (15.50) a lo que ya tenía <code class="inline">suma</code>.</li>
+                <li><strong>Línea 5:</strong> suma el contenido de <code class="inline">precio</code> (15.50) a lo
+                    que ya tenía <code class="inline">suma</code>.</li>
+                <li><strong>Línea 6:</strong> muestra el total acumulado.</li>
+            </ul>
+            <p class="concept">
+                Ejemplo completo: una caja que suma los precios de <strong>tres productos</strong>.
+            </p>
+            <pre><code><span class="kw">Algoritmo</span> TotalDeCaja
+    <span class="kw">Definir</span> i <span class="kw">Como</span> Entero;
+    <span class="kw">Definir</span> precio, total <span class="kw">Como</span> Real;
+    total &lt;- 0;                         <span class="cmt">// 1) acumulador en 0</span>
+    <span class="kw">Para</span> i &lt;- 1 <span class="kw">Hasta</span> 3 <span class="kw">Con Paso</span> 1 <span class="kw">Hacer</span>
+        <span class="kw">Escribir</span> <span class="str">"Precio del producto "</span>, i, <span class="str">":"</span>;
+        <span class="kw">Leer</span> precio;
+        total &lt;- total + precio;        <span class="cmt">// 2) acumular el valor leído</span>
+    <span class="kw">FinPara</span>
+    <span class="kw">Escribir</span> <span class="str">"Total a pagar: $"</span>, total;   <span class="cmt">// 3) mostrar el total</span>
+<span class="kw">FinAlgoritmo</span></code></pre>
+            <ul class="explain">
+                <li>En cada vuelta se lee un precio distinto y se suma al total anterior.</li>
+                <li>Al terminar el <code class="inline">Para</code>, <code class="inline">total</code> contiene
+                    la suma de los tres precios.</li>
+                <li>El acumulador <strong>no</strong> se reinicia dentro del bucle: si lo hacés, solo guardarías el
+                    último precio.</li>
+            </ul>
+            <p class="concept">
+                <strong>Contador y acumulador juntos:</strong> para calcular un promedio necesitás las dos cosas.
+            </p>
+            <pre><code><span class="kw">Algoritmo</span> PromedioDeNotas
+    <span class="kw">Definir</span> i <span class="kw">Como</span> Entero;
+    <span class="kw">Definir</span> nota, suma, promedio <span class="kw">Como</span> Real;
+    suma &lt;- 0;                          <span class="cmt">// acumulador</span>
+    <span class="kw">Para</span> i &lt;- 1 <span class="kw">Hasta</span> 4 <span class="kw">Con Paso</span> 1 <span class="kw">Hacer</span>
+        <span class="kw">Escribir</span> <span class="str">"Nota "</span>, i, <span class="str">":"</span>;
+        <span class="kw">Leer</span> nota;
+        suma &lt;- suma + nota;             <span class="cmt">// acumula el valor</span>
+    <span class="kw">FinPara</span>
+    promedio &lt;- suma / 4;               <span class="cmt">// el 4 es la cantidad de notas</span>
+    <span class="kw">Escribir</span> <span class="str">"Promedio: "</span>, promedio;
+<span class="kw">FinAlgoritmo</span></code></pre>
+            <ul class="explain">
+                <li><code class="inline">suma</code> acumula el total de las notas.</li>
+                <li>El promedio se calcula <strong>después</strong> del bucle: total dividido la cantidad de valores.</li>
+                <li>Si la cantidad de vueltas fuera variable, usarías además un contador
+                    (<code class="inline">cantidad &lt;- cantidad + 1</code>) y dividirías por
+                    <code class="inline">cantidad</code> en lugar de por 4.</li>
+            </ul>
+            <div class="note">
+                <strong>💡 Regla práctica:</strong> inicializá en <strong>0</strong> cuando sumás y en
+                <strong>1</strong> cuando multiplicás. Un acumulador de suma que arranca en 1 da todos los
+                resultados corridos en uno.
+            </div>
+            <p class="concept"><strong>Errores comunes con acumuladores:</strong></p>
+            <ul class="explain">
+                <li><strong>Inicializar en 1 una suma:</strong> el total queda siempre uno de más.</li>
+                <li><strong>Reiniciar el acumulador dentro del bucle:</strong> se pierde todo lo sumado antes.</li>
+                <li><strong>Acumular la variable equivocada:</strong> sumar el contador <code class="inline">i</code>
+                    en lugar del precio o la nota.</li>
+                <li><strong>Dividir por cero</strong> al calcular un promedio cuando no se ingresó ningún valor.</li>
+                <li><strong>Mostrar el total dentro del bucle:</strong> estarías mostrando subtotales, no el total final.</li>
             </ul>
             <div class="exercise">
                 <h4>✍️ Ejercicio: sumar del 1 al 10</h4>
@@ -677,6 +1092,15 @@
                 solo ejecuta acciones (mostrar un menú, imprimir un recibo, validar datos).
                 Se usa para <strong>modularizar</strong>: dividir un programa grande en piezas chicas, reutilizables y fáciles de leer.
             </p>
+            <div class="note">
+                <strong>🧩 ¿Para qué modularizar?</strong>
+                <ul>
+                    <li><strong>Reutilizar:</strong> escribís una vez el saludo y lo llamás todas las veces que haga falta.</li>
+                    <li><strong>Ordenar:</strong> el algoritmo principal queda corto y se entiende de un vistazo.</li>
+                    <li><strong>Corregir:</strong> si hay un error en el recibo, lo arreglás en un solo lugar.</li>
+                    <li><strong>Probar:</strong> podés revisar cada pieza por separado antes de unir todo.</li>
+                </ul>
+            </div>
 
             <div class="syntax">
                 <span class="syntax-label">Sintaxis general</span>
@@ -692,6 +1116,21 @@
                 entre paréntesis. Un procedimiento puede tener 0, 1 o varios parámetros.
                 Las variables declaradas dentro del subproceso son <strong>locales</strong>: existen solo ahí adentro.
             </div>
+
+            <p class="concept"><strong>Cómo funciona en PSeInt:</strong></p>
+            <ul class="explain">
+                <li>Los <code class="inline">SubProceso</code> se escriben <strong>fuera</strong> del algoritmo principal,
+                    antes o después, pero no dentro.</li>
+                <li>PSeInt empieza ejecutando el <code class="inline">Algoritmo</code> principal. Los subprocesos
+                    <strong>no se ejecutan solos</strong>: solo cuando los llamás por su nombre.</li>
+                <li>Al llamar, los valores se copian en los parámetros (<strong>paso por valor</strong>). Si el
+                    subproceso modifica un parámetro, la variable original del algoritmo no cambia.</li>
+                <li>Una variable declarada dentro del subproceso es <strong>local</strong>: no existe afuera.
+                    Las del algoritmo principal son <strong>globales</strong> y se pueden ver desde los subprocesos,
+                    pero lo recomendable es pasar los datos como parámetros.</li>
+                <li>El nombre del subproceso se elige como el de una variable: sin espacios, descriptivo y sin
+                    coincidir con palabras reservadas.</li>
+            </ul>
 
             <!-- Ejemplo A -->
             <span class="example-label">Ejemplo A · Sin parámetros</span>
@@ -781,14 +1220,14 @@
     <span class="kw">Escribir</span> <span class="str">"Ingresá tu nombre:"</span>;
     <span class="kw">Leer</span> usuario;
 
-    <span class="kw">Mientras</span> opcion != 0 <span class="kw">Hacer</span>
+    <span class="kw">Mientras</span> opcion &lt;&gt; 0 <span class="kw">Hacer</span>
         MostrarMenu();
         <span class="kw">Leer</span> opcion;
 
-        <span class="kw">Si</span> opcion == 1 <span class="kw">Entonces</span>
+        <span class="kw">Si</span> opcion = 1 <span class="kw">Entonces</span>
             Saludar(usuario);
         <span class="kw">Sino</span>
-            <span class="kw">Si</span> opcion == 2 <span class="kw">Entonces</span>
+            <span class="kw">Si</span> opcion = 2 <span class="kw">Entonces</span>
                 Despedir(usuario);
             <span class="kw">FinSi</span>
         <span class="kw">FinSi</span>
@@ -807,6 +1246,55 @@
                 Una <strong>función</strong> (también subproceso, pero con retorno) calcula un valor y lo devuelve.
                 En PSeInt se declara <code class="inline">SubProceso resultado &lt;- Nombre(...)</code> cuando retorna.
             </div>
+            <p class="concept"><strong>Ejemplo de función que devuelve un valor:</strong></p>
+            <pre><code><span class="kw">SubProceso</span> doble &lt;- CalcularDoble(numero)
+    doble &lt;- numero * 2;
+<span class="kw">FinSubProceso</span>
+
+<span class="kw">Algoritmo</span> DemoFuncion
+    <span class="kw">Definir</span> n, resultado <span class="kw">Como</span> Entero;
+    <span class="kw">Escribir</span> <span class="str">"Ingresá un número:"</span>;
+    <span class="kw">Leer</span> n;
+    resultado &lt;- CalcularDoble(n);   <span class="cmt">// la función devuelve el doble</span>
+    <span class="kw">Escribir</span> <span class="str">"El doble es: "</span>, resultado;
+<span class="kw">FinAlgoritmo</span></code></pre>
+            <ul class="explain">
+                <li><strong>Línea 1:</strong> la parte izquierda de la flecha indica qué variable devuelve la función.</li>
+                <li><strong>Línea 2:</strong> dentro del subproceso se asigna el resultado a esa variable de retorno.</li>
+                <li><strong>Línea 9:</strong> la llamada se usa en una asignación porque produce un valor; un
+                    procedimiento, en cambio, se llama solo: <code class="inline">MostrarMenu();</code>.</li>
+            </ul>
+            <p class="concept"><strong>Procedimiento vs. función:</strong></p>
+            <ul class="explain">
+                <li><strong>Procedimiento:</strong> ejecuta acciones y no devuelve nada. Se llama como una instrucción:
+                    <code class="inline">Saludar("Ana");</code></li>
+                <li><strong>Función:</strong> calcula y devuelve un valor. Se usa dentro de una expresión o asignación:
+                    <code class="inline">resultado &lt;- CalcularDoble(5);</code></li>
+                <li>Ambos se declaran con <code class="inline">SubProceso</code> y se cierran con
+                    <code class="inline">FinSubProceso</code>.</li>
+            </ul>
+            <p class="concept"><strong>Buenas prácticas:</strong></p>
+            <ul class="explain">
+                <li>Un subproceso, una responsabilidad: mostrá un menú, calculá un total o validá un dato, pero no todo junto.</li>
+                <li>Usá nombres claros: <code class="inline">MostrarMenu</code>, <code class="inline">CalcularPromedio</code>,
+                    <code class="inline">ValidarEdad</code>.</li>
+                <li>Pasá los datos como parámetros en lugar de depender de variables globales.</li>
+                <li>No pongas <code class="inline">Leer</code> dentro de un subproceso si el dato lo necesita el algoritmo
+                    principal: es más claro leer afuera y pasar el valor.</li>
+                <li>Mantené el algoritmo principal corto: que <strong>orqueste llamadas</strong> y no repita la lógica
+                    que ya está dentro de cada subproceso.</li>
+            </ul>
+            <p class="concept"><strong>Errores comunes con subprocesos:</strong></p>
+            <ul class="explain">
+                <li><strong>Definirlo pero no llamarlo:</strong> el código existe, pero nunca se ejecuta.</li>
+                <li><strong>Olvidar <code class="inline">FinSubProceso</code></strong> o cerrarlo con
+                    <code class="inline">FinAlgoritmo</code>.</li>
+                <li><strong>Pasar una cantidad distinta de argumentos</strong> a la de parámetros declarados.</li>
+                <li><strong>Usar una variable local fuera del subproceso:</strong> no existe en el algoritmo principal.</li>
+                <li><strong>Confundir parámetro con variable local:</strong> el parámetro llega con un valor desde la llamada;
+                    la variable local se declara adentro.</li>
+                <li><strong>Llamar a una función como si fuera procedimiento</strong> o ignorar el valor que devuelve.</li>
+            </ul>
             <div class="exercise">
                 <h4>✍️ Ejercicio: saludar con un subproceso</h4>
                 <p class="ex-goal">Creá un <code class="inline">SubProceso</code> llamado <code class="inline">MostrarSaludo(nombre)</code> que muestre <em>"Hola, &lt;nombre&gt;"</em>. Llamalo desde el algoritmo principal pasando el valor <strong>"Ana"</strong>.</p>
@@ -1464,10 +1952,10 @@
         ],
         mientras: [
             { d: 'Declara una variable numérica', f: function (c) { return /definir[^\n]*\bcomo\s+(entero|real)/.test(c); } },
-            { d: 'Inicializa la variable en 1', f: function (c) { return /\b[a-z_]\w*\s*<-\s*1\b/.test(c); } },
+            { d: 'Inicializa el contador en 0 o en 1', f: function (c) { return /\b[a-z_]\w*\s*<-\s*[01]\b/.test(c); } },
             { d: 'Usa Mientras … Hacer … FinMientras', f: function (c) { return /\bmientras\b/.test(c) && /\bhacer\b/.test(c) && balanced(c, /\bmientras\b/, /\bfinmientras\b/); } },
-            { d: 'La condición corta en 5 (&lt;= 5, &lt; 6, etc.)', f: function (c) { return /(<=\s*5)|(<\s*6)|(5\s*>=)|(6\s*>)/.test(c); } },
-            { d: 'Incrementa la variable dentro del bucle (x &lt;- x + 1)', f: function (c) { return /([a-z_]\w*)\s*<-\s*\1\s*\+\s*1/.test(c); } },
+            { d: 'La condición corta en 5 (&lt;= 5, &lt; 6, &lt; 5 o &lt;= 4)', f: function (c) { return /(<=\s*5)|(<\s*6)|(<\s*5)|(<=\s*4)|(5\s*>=)|(6\s*>)|(5\s*>)|(4\s*>=)/.test(c); } },
+            { d: 'Incrementa el contador dentro del bucle (x &lt;- x + 1)', f: function (c) { return /mientras[\s\S]*?\b([a-z_]\w*)\s*<-\s*\1\s*\+\s*1[\s\S]*?\bfinmientras\b/.test(c); } },
             { d: 'Muestra el número con Escribir', f: function (c) { return /\bescribir\b/.test(c); } }
         ],
         para: [
