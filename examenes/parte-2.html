@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluación segunda parte · PSeInt · Temas 7 a 9</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="examenes.css">
+</head>
+<body>
+
+<!-- ================= PUERTA DE ACCESO ================= -->
+<div class="acceso" id="acceso">
+    <form class="acceso-caja" id="form-acceso" autocomplete="off">
+        <span class="badge-acceso">Acceso restringido</span>
+        <h1>Evaluación · Segunda parte</h1>
+        <p>Ingresá la clave que te dio el docente para comenzar.</p>
+        <input type="password" id="clave" placeholder="Clave de acceso" required>
+        <button type="submit" class="btn btn-primario" style="width:100%">Entrar</button>
+        <p class="acceso-error" id="acceso-error"></p>
+        <p class="acceso-volver"><a href="index.html">← Volver al portal de exámenes</a></p>
+        <p class="acceso-volver"><a href="https://miusuariohoy.github.io/pseint/">← Volver a la guía PSeInt</a></p>
+    </form>
+</div>
+
+<!-- ================= APP ================= -->
+<div id="app" hidden>
+
+<header class="hero">
+    <div class="contenedor">
+        <span class="badge">Evaluación · Segunda parte · Temas 7 a 9</span>
+        <h1>Bucles y subprocesos</h1>
+        <p class="subtitulo">
+            Bucle Para, bucle Mientras y subprocesos. Una evaluación corta y sencilla:
+            11 consignas, 10 puntos y corrección automática.
+        </p>
+        <div class="nav-rapida">
+            <a href="#parte-a" class="btn-enlace">Parte A · Opción múltiple</a>
+            <a href="#parte-b" class="btn-enlace">Parte B · Salidas</a>
+            <a href="#parte-c" class="btn-enlace">Parte C · Pseudocódigo</a>
+            <a href="#resultado" class="btn-enlace">Resultado</a>
+        </div>
+    </div>
+</header>
+
+<main class="contenedor">
+
+    <!-- ================= INSTRUCCIONES ================= -->
+    <section class="bloque">
+        <div class="tarjeta">
+            <h3>Antes de empezar</h3>
+            <ul>
+                <li>Esta evaluación cubre <strong>solo los temas 7, 8 y 9</strong>: bucle <code>Para</code>, bucle <code>Mientras</code> y subprocesos.</li>
+                <li>Leé cada consigna con atención y respondé <strong>todas</strong> las preguntas.</li>
+                <li>En la <strong>Parte A</strong> marcá una sola opción por pregunta.</li>
+                <li>En la <strong>Parte B</strong> escribí la salida exacta del algoritmo. Si son varios valores, separalos con un espacio.</li>
+                <li>En la <strong>Parte C</strong> escribí el pseudocódigo completo en PSeInt estricto. El corrector revisa la estructura, no ejecuta el algoritmo.</li>
+                <li>Usá <code>Definir ... Como ...;</code>, la flecha <code>&lt;-</code> y cerrá cada estructura con su <code>Fin...</code>.</li>
+                <li>Las consignas son directas: se evalúa que reconozcas y escribas bien las tres estructuras.</li>
+                <li>Podés realizar la evaluación más de una vez. Cada envío queda registrado con tu apellido, nombre, día y hora.</li>
+                <li>Si otra persona va a usar esta computadora, al terminar presioná <strong>Hacer otra evaluación</strong> para dejarla lista.</li>
+            </ul>
+
+            <table class="tabla-puntos">
+                <thead>
+                    <tr><th>Parte</th><th>Consigna</th><th>Puntos</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>A</td><td>6 preguntas de opción múltiple</td><td>6</td></tr>
+                    <tr><td>B</td><td>2 predicciones de salida</td><td>1</td></tr>
+                    <tr><td>C</td><td>3 actividades de pseudocódigo</td><td>3</td></tr>
+                    <tr><td colspan="2"><strong>Total</strong></td><td><strong>10</strong></td></tr>
+                </tbody>
+            </table>
+
+            <div class="datos-alumno">
+                <label>Apellido
+                    <input type="text" id="alumno-apellido" placeholder="Tu apellido" autocomplete="off">
+                </label>
+                <label>Nombre
+                    <input type="text" id="alumno-nombre" placeholder="Tu nombre" autocomplete="off">
+                </label>
+                <label>Curso
+                    <input type="text" id="alumno-curso" placeholder="Ej.: 5.º 2.ª" autocomplete="off">
+                </label>
+                <label>Materia
+                    <input type="text" id="alumno-materia" placeholder="Ej.: Programación" autocomplete="off">
+                </label>
+            </div>
+
+            <p class="nota">
+                Tiempo sugerido: <strong>40 minutos</strong>. Resolvé sin ejecutar los algoritmos:
+                el objetivo es interpretar la lógica del pseudocódigo. Referencia de aprobación: <strong>6/10</strong>.
+            </p>
+        </div>
+    </section>
+
+    <!-- ================= MAPA DE TEMAS ================= -->
+    <section class="bloque">
+        <div class="tarjeta">
+            <h3>Qué se evalúa</h3>
+            <p>Esta segunda parte trabaja únicamente con los tres últimos temas de la guía.</p>
+
+            <div class="tema-lista">
+                <span class="tema-tag">7 · Bucle Para</span>
+                <span class="tema-tag">8 · Bucle Mientras</span>
+                <span class="tema-tag">9 · Subprocesos</span>
+            </div>
+
+            <table class="criterios mapa-temas">
+                <thead>
+                    <tr><th>Tema</th><th>Dónde se evalúa</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Bucle Para</td><td>Parte A · preguntas 1 y 2; Parte B · pregunta 7; Parte C · actividad 1</td></tr>
+                    <tr><td>Bucle Mientras</td><td>Parte A · preguntas 3 y 4; Parte B · pregunta 8; Parte C · actividad 2</td></tr>
+                    <tr><td>Subprocesos</td><td>Parte A · preguntas 5 y 6; Parte C · actividad 3</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- ================= PARTE A ================= -->
+    <section class="bloque" id="parte-a">
+        <div class="encabezado-seccion">
+            <span class="numero-paso">A</span>
+            <div>
+                <h2>Opción múltiple</h2>
+                <p>6 preguntas · 1 punto cada una · marcá una sola respuesta.</p>
+            </div>
+        </div>
+
+        <article class="pregunta mc" data-correcta="b">
+            <p class="enunciado"><span class="num-preg">1</span>
+                ¿Cuándo conviene usar un bucle <code>Para</code>?</p>
+            <div class="opciones">
+                <label data-op="a"><input type="radio" name="a1" value="a"> Cuando no sabemos cuántas vueltas va a dar el programa.</label>
+                <label data-op="b"><input type="radio" name="a1" value="b"> Cuando sabemos la cantidad exacta de vueltas y queremos que PSeInt controle el contador.</label>
+                <label data-op="c"><input type="radio" name="a1" value="c"> Cuando hay que elegir entre dos caminos.</label>
+                <label data-op="d"><input type="radio" name="a1" value="d"> Cuando hay que declarar una variable.</label>
+            </div>
+            <p class="explicacion">El <code>Para</code> se usa cuando la cantidad de repeticiones es <strong>conocida</strong>. PSeInt inicializa, incrementa y corta el contador automáticamente.</p>
+        </article>
+
+        <article class="pregunta mc" data-correcta="b">
+            <p class="enunciado"><span class="num-preg">2</span>
+                ¿Cuántas veces se ejecuta el bloque de este bucle?</p>
+            <pre><code>Para i &lt;- 1 Hasta 5 Con Paso 1 Hacer
+    Escribir i;
+FinPara</code></pre>
+            <div class="opciones">
+                <label data-op="a"><input type="radio" name="a2" value="a"> 4 veces.</label>
+                <label data-op="b"><input type="radio" name="a2" value="b"> 5 veces.</label>
+                <label data-op="c"><input type="radio" name="a2" value="c"> 6 veces.</label>
+                <label data-op="d"><input type="radio" name="a2" value="d"> Infinitas veces.</label>
+            </div>
+            <p class="explicacion">El contador toma los valores 1, 2, 3, 4 y 5. El límite <strong>Hasta 5</strong> se incluye, así que el bloque se ejecuta <strong>5 veces</strong>.</p>
+        </article>
+
+        <article class="pregunta mc" data-correcta="a">
+            <p class="enunciado"><span class="num-preg">3</span>
+                ¿Cuándo se ejecuta el bloque de un <code>Mientras</code>?</p>
+            <div class="opciones">
+                <label data-op="a"><input type="radio" name="a3" value="a"> Mientras la condición sea verdadera.</label>
+                <label data-op="b"><input type="radio" name="a3" value="b"> Una sola vez, siempre.</label>
+                <label data-op="c"><input type="radio" name="a3" value="c"> Siempre 10 veces.</label>
+                <label data-op="d"><input type="radio" name="a3" value="d"> Cuando la condición sea falsa.</label>
+            </div>
+            <p class="explicacion">La condición se revisa <strong>antes</strong> de cada vuelta. Si es verdadera, el bloque se ejecuta; si es falsa desde el principio, no se ejecuta ninguna vez.</p>
+        </article>
+
+        <article class="pregunta mc" data-correcta="d">
+            <p class="enunciado"><span class="num-preg">4</span>
+                ¿Qué falta si un <code>Mientras</code> se repite para siempre?</p>
+            <div class="opciones">
+                <label data-op="a"><input type="radio" name="a4" value="a"> Un <code>FinPara</code>.</label>
+                <label data-op="b"><input type="radio" name="a4" value="b"> Declarar la variable con <code>Definir</code>.</label>
+                <label data-op="c"><input type="radio" name="a4" value="c"> Un <code>Leer</code> antes del bucle.</label>
+                <label data-op="d"><input type="radio" name="a4" value="d"> Actualizar la variable de control dentro del bucle.</label>
+            </div>
+            <p class="explicacion">Todo <code>Mientras</code> necesita que su condición pueda volverse falsa. Si la variable de control no se actualiza dentro del bucle, la condición nunca cambia y el bucle no termina.</p>
+        </article>
+
+        <article class="pregunta mc" data-correcta="b">
+            <p class="enunciado"><span class="num-preg">5</span>
+                ¿Para qué sirve un <code>SubProceso</code>?</p>
+            <div class="opciones">
+                <label data-op="a"><input type="radio" name="a5" value="a"> Para declarar variables globales.</label>
+                <label data-op="b"><input type="radio" name="a5" value="b"> Para dividir el programa en partes reutilizables y fáciles de leer.</label>
+                <label data-op="c"><input type="radio" name="a5" value="c"> Para comparar dos valores y elegir un camino.</label>
+                <label data-op="d"><input type="radio" name="a5" value="d"> Para repetir una cantidad exacta de veces.</label>
+            </div>
+            <p class="explicacion">Un subproceso <strong>modulariza</strong>: agrupa una tarea con nombre propio y permite reutilizarla desde el algoritmo principal.</p>
+        </article>
+
+        <article class="pregunta mc" data-correcta="c">
+            <p class="enunciado"><span class="num-preg">6</span>
+                Si existe <code>SubProceso Saludar(nombre)</code>, ¿qué hace la instrucción <code>Saludar("Ana");</code>?</p>
+            <div class="opciones">
+                <label data-op="a"><input type="radio" name="a6" value="a"> Declara una variable llamada <code>Ana</code>.</label>
+                <label data-op="b"><input type="radio" name="a6" value="b"> Muestra el texto <code>nombre</code> sin ejecutar el subproceso.</label>
+                <label data-op="c"><input type="radio" name="a6" value="c"> Ejecuta el subproceso y le pasa <code>"Ana"</code> al parámetro <code>nombre</code>.</label>
+                <label data-op="d"><input type="radio" name="a6" value="d"> Produce un error porque los subprocesos no se llaman.</label>
+            </div>
+            <p class="explicacion">La llamada ejecuta el subproceso. El valor <code>"Ana"</code> se copia en el parámetro <code>nombre</code>, que se comporta como una variable local.</p>
+        </article>
+    </section>
+
+    <!-- ================= PARTE B ================= -->
+    <section class="bloque" id="parte-b">
+        <div class="encabezado-seccion">
+            <span class="numero-paso">B</span>
+            <div>
+                <h2>Predicción de salidas</h2>
+                <p>2 algoritmos · 0,5 puntos cada uno · escribí lo que muestra cada uno.</p>
+            </div>
+        </div>
+
+        <article class="pregunta salida" data-aceptadas="1 2 3 4">
+            <p class="enunciado"><span class="num-preg">7</span>
+                ¿Qué muestra este algoritmo?</p>
+            <pre><code>Definir i Como Entero;
+Para i &lt;- 1 Hasta 4 Con Paso 1 Hacer
+    Escribir i;
+FinPara</code></pre>
+            <label class="campo-salida">Salida:
+                <input type="text" id="b1" autocomplete="off" placeholder="Separá los valores con espacios">
+            </label>
+            <p class="explicacion">El <code>Para</code> recorre 1, 2, 3 y 4. La salida es <strong>1 2 3 4</strong>.</p>
+        </article>
+
+        <article class="pregunta salida" data-aceptadas="3 2 1">
+            <p class="enunciado"><span class="num-preg">8</span>
+                ¿Qué muestra este algoritmo?</p>
+            <pre><code>Definir i Como Entero;
+i &lt;- 3;
+Mientras i &gt;= 1 Hacer
+    Escribir i;
+    i &lt;- i - 1;
+FinMientras</code></pre>
+            <label class="campo-salida">Salida:
+                <input type="text" id="b2" autocomplete="off" placeholder="Separá los valores con espacios">
+            </label>
+            <p class="explicacion">Muestra 3, luego 2 y luego 1. Cuando <code>i</code> llega a 0, la condición <code>i &gt;= 1</code> es falsa y el bucle termina. La salida es <strong>3 2 1</strong>.</p>
+        </article>
+    </section>
+
+    <!-- ================= CRITERIOS PARTE C ================= -->
+    <section class="bloque">
+        <div class="tarjeta">
+            <h3>Cómo se corrige la Parte C</h3>
+            <p>Cada actividad vale <strong>1 punto</strong> y se evalúa con una lista de requisitos. Si falta un requisito, se descuenta la parte proporcional. El corrector revisa la <strong>estructura</strong> del pseudocódigo; no ejecuta el programa.</p>
+            <table class="criterios">
+                <thead>
+                    <tr><th>Se revisa</th><th>Ejemplo</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Bucle Para completo</td><td><code>Para i &lt;- 2 Hasta 10 Con Paso 2 Hacer ... FinPara</code></td></tr>
+                    <tr><td>Bucle Mientras completo</td><td><code>Mientras numero &lt;&gt; 0 Hacer ... FinMientras</code></td></tr>
+                    <tr><td>Actualización de la variable de control</td><td><code>i &lt;- i + 1;</code> · <code>Leer numero;</code></td></tr>
+                    <tr><td>Subproceso con parámetro</td><td><code>SubProceso MostrarDoble(numero) ... FinSubProceso</code></td></tr>
+                    <tr><td>Llamada al subproceso</td><td><code>MostrarDoble(5);</code></td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:24px;">Antes de enviar</h3>
+            <ul class="checklist">
+                <li>Declaré todas las variables con su tipo.</li>
+                <li>Cerré cada <code>Para</code> con <code>FinPara</code>.</li>
+                <li>Cerré cada <code>Mientras</code> con <code>FinMientras</code>.</li>
+                <li>Me aseguré de que el <code>Mientras</code> pueda terminar.</li>
+                <li>Cerré el <code>SubProceso</code> con <code>FinSubProceso</code> y lo llamé desde el algoritmo.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ================= PARTE C ================= -->
+    <section class="bloque" id="parte-c">
+        <div class="encabezado-seccion">
+            <span class="numero-paso">C</span>
+            <div>
+                <h2>Actividades de pseudocódigo</h2>
+                <p>3 actividades · 1 punto cada una · se revisa la estructura del código.</p>
+            </div>
+        </div>
+
+        <article class="pregunta codigo" data-puntos="1">
+            <p class="enunciado"><span class="num-preg">9</span>
+                Mostrá los <strong>números pares del 2 al 10</strong> usando un bucle <code>Para</code>
+                con paso 2. Cada número debe mostrarse con <code>Escribir</code>.</p>
+            <p class="tema-lista"><span class="tema-tag">Bucle Para</span><span class="tema-tag">Leer / Escribir</span></p>
+            <details class="pista">
+                <summary>Ver pista</summary>
+                <p>Declará <code>i</code> como <code>Entero</code>. Escribí <code>Para i &lt;- 2 Hasta 10 Con Paso 2 Hacer</code>, mostrá <code>i</code> y cerrá con <code>FinPara</code>.</p>
+            </details>
+            <textarea class="editor" id="c1" spellcheck="false" placeholder="Algoritmo NumerosPares&#10;    Definir i Como Entero;&#10;    Para i &lt;- 2 Hasta 10 Con Paso 2 Hacer&#10;        Escribir i;&#10;    FinPara&#10;FinAlgoritmo"></textarea>
+            <div class="resultado-codigo" id="res-c1"></div>
+            <details class="solucion">
+                <summary>Ver una solución de referencia</summary>
+                <pre><code>Algoritmo NumerosPares
+    Definir i Como Entero;
+    Para i &lt;- 2 Hasta 10 Con Paso 2 Hacer
+        Escribir i;
+    FinPara
+FinAlgoritmo</code></pre>
+            </details>
+        </article>
+
+        <article class="pregunta codigo" data-puntos="1">
+            <p class="enunciado"><span class="num-preg">10</span>
+                Pedí números hasta que el usuario ingrese <strong>0</strong>. Contá cuántos números
+                <strong>distintos de 0</strong> se ingresaron y mostrá el total. Usá un <code>Mientras</code>.
+                Para no contar el 0, podés usar un <code>Si</code> dentro del bucle
+                o leer el primer número antes del <code>Mientras</code>.</p>
+            <p class="tema-lista"><span class="tema-tag">Bucle Mientras</span><span class="tema-tag">Condicional</span><span class="tema-tag">Contador</span></p>
+            <details class="pista">
+                <summary>Ver pista</summary>
+                <p>Declará <code>numero</code> y <code>contador</code> como <code>Entero</code>. Inicializá <code>contador &lt;- 0;</code>. Si usás un <code>Si</code> dentro del bucle, inicializá también <code>numero &lt;- 1;</code> para que la condición del <code>Mientras</code> tenga un valor. Repetí mientras <code>numero &lt;&gt; 0</code>, leé <code>numero</code> y contá solo si es distinto de 0.</p>
+            </details>
+            <textarea class="editor" id="c2" spellcheck="false" placeholder="Algoritmo ContarNumeros&#10;    Definir numero, contador Como Entero;&#10;    contador &lt;- 0;&#10;    numero &lt;- 1;&#10;    Mientras numero &lt;&gt; 0 Hacer&#10;        Leer numero;&#10;        Si numero &lt;&gt; 0 Entonces&#10;            contador &lt;- contador + 1;&#10;        FinSi&#10;    FinMientras&#10;    Escribir ...&#10;FinAlgoritmo"></textarea>
+            <div class="resultado-codigo" id="res-c2"></div>
+            <details class="solucion">
+                <summary>Ver una solución de referencia</summary>
+                <pre><code>Algoritmo ContarNumeros
+    Definir numero, contador Como Entero;
+    contador &lt;- 0;
+    numero &lt;- 1;
+    Mientras numero &lt;&gt; 0 Hacer
+        Escribir "Ingresá un número (0 para terminar):";
+        Leer numero;
+        Si numero &lt;&gt; 0 Entonces
+            contador &lt;- contador + 1;
+        FinSi
+    FinMientras
+    Escribir "Cantidad de números: ", contador;
+FinAlgoritmo</code></pre>
+            </details>
+        </article>
+
+        <article class="pregunta codigo" data-puntos="1">
+            <p class="enunciado"><span class="num-preg">11</span>
+                Creá un <strong>SubProceso</strong> llamado <code>MostrarDoble(numero)</code> que
+                reciba un número y muestre su doble. Llamalo desde el algoritmo principal
+                con <code>5</code> y con <code>8</code>.</p>
+            <p class="tema-lista"><span class="tema-tag">SubProceso</span><span class="tema-tag">Parámetros</span><span class="tema-tag">Leer / Escribir</span></p>
+            <details class="pista">
+                <summary>Ver pista</summary>
+                <p>Declará <code>SubProceso MostrarDoble(numero)</code> y cerralo con <code>FinSubProceso</code>. Dentro, mostrá <code>numero * 2</code>. En el algoritmo principal, llamá a <code>MostrarDoble(5);</code> y a <code>MostrarDoble(8);</code>.</p>
+            </details>
+            <textarea class="editor" id="c3" spellcheck="false" placeholder="SubProceso MostrarDoble(numero)&#10;    Escribir ...&#10;FinSubProceso&#10;&#10;Algoritmo Dobles&#10;    MostrarDoble(5);&#10;    MostrarDoble(8);&#10;FinAlgoritmo"></textarea>
+            <div class="resultado-codigo" id="res-c3"></div>
+            <details class="solucion">
+                <summary>Ver una solución de referencia</summary>
+                <pre><code>SubProceso MostrarDoble(numero)
+    Escribir numero * 2;
+FinSubProceso
+
+Algoritmo Dobles
+    MostrarDoble(5);
+    MostrarDoble(8);
+FinAlgoritmo</code></pre>
+            </details>
+        </article>
+    </section>
+
+    <!-- ================= RESULTADO ================= -->
+    <div class="acciones no-print">
+        <button type="button" class="btn btn-primario" id="btn-corregir">✅ Corregir y enviar</button>
+        <button type="button" class="btn btn-secundario" id="btn-reiniciar">🔄 Reiniciar</button>
+        <button type="button" class="btn btn-secundario" id="btn-imprimir">🖨️ Imprimir</button>
+    </div>
+
+    <div class="aviso-envio" id="aviso-envio" role="status"></div>
+
+    <section class="resultado" id="resultado" aria-live="polite">
+        <div class="puntaje-grande"><span id="puntaje-total">0</span><small> / <span id="puntaje-max">10</span> puntos</small></div>
+        <div class="barra"><div class="barra-fill" id="barra-fill"></div></div>
+        <p id="mensaje">Corregí la evaluación para ver tu puntaje.</p>
+        <div class="desglose" id="desglose"></div>
+        <div class="resumen-errores" id="resumen-errores"></div>
+        <p class="nota no-print" id="nota-resultado" style="display:none;">
+            Las respuestas correctas y las soluciones de referencia ya están visibles en cada consigna.
+        </p>
+        <p class="estado-envio" id="estado-envio"></p>
+        <div class="enviar-fallback no-print" id="enviar-fallback">
+            <button type="button" class="btn btn-secundario btn-chico" id="btn-copiar">📋 Copiar resultado</button>
+            <button type="button" class="btn btn-secundario btn-chico" id="btn-descargar">⬇️ Descargar comprobante</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>Evaluación segunda parte · PSeInt · Temas 7 a 9 · 10 puntos · <a href="index.html">Portal de exámenes</a></p>
+    </footer>
+
+</main>
+</div>
+
+<script src="config.js?v=1"></script>
+<script src="config-parte-2.js?v=1"></script>
+<script src="app-parte.js?v=1"></script>
+</body>
+</html>

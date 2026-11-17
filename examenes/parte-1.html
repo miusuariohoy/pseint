@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluación primera parte · PSeInt · Temas 1 a 6</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="examenes.css">
+</head>
+<body>
+
+<!-- ================= PUERTA DE ACCESO ================= -->
+<div class="acceso" id="acceso">
+    <form class="acceso-caja" id="form-acceso" autocomplete="off">
+        <span class="badge-acceso">Acceso restringido</span>
+        <h1>Evaluación · Primera parte</h1>
+        <p>Ingresá la clave que te dio el docente para comenzar.</p>
+        <input type="password" id="clave" placeholder="Clave de acceso" required>
+        <button type="submit" class="btn btn-primario" style="width:100%">Entrar</button>
+        <p class="acceso-error" id="acceso-error"></p>
+        <p class="acceso-volver"><a href="index.html">← Volver al portal de exámenes</a></p>
+        <p class="acceso-volver"><a href="https://miusuariohoy.github.io/pseint/">← Volver a la guía PSeInt</a></p>
+    </form>
+</div>
+
+<!-- ================= APP ================= -->
+<div id="app" hidden>
+
+<header class="hero">
+    <div class="contenedor">
+        <span class="badge">Evaluación · Primera parte · Temas 1 a 6</span>
+        <h1>Fundamentos y primeras estructuras</h1>
+        <p class="subtitulo">
+            Programación estructurada, variables y tipos, Leer/Escribir, condicionales,
+            contador y acumulador. 12 consignas, 10 puntos y corrección automática.
+        </p>
+        <div class="nav-rapida">
+            <a href="#parte-a" class="btn-enlace">Parte A · Opción múltiple</a>
+            <a href="#parte-b" class="btn-enlace">Parte B · Salidas</a>
+            <a href="#parte-c" class="btn-enlace">Parte C · Pseudocódigo</a>
+            <a href="#resultado" class="btn-enlace">Resultado</a>
+        </div>
+    </div>
+</header>
+
+<main class="contenedor">
+
+    <!-- ================= INSTRUCCIONES ================= -->
+    <section class="bloque">
+        <div class="tarjeta">
+            <h3>Antes de empezar</h3>
+            <ul>
+                <li>Esta evaluación cubre <strong>solo los temas 1 a 6</strong>: programación estructurada, variables y tipos, Leer/Escribir, condicionales, contador y acumulador.</li>
+                <li>Leé cada consigna con atención y respondé <strong>todas</strong> las preguntas.</li>
+                <li>En la <strong>Parte A</strong> marcá una sola opción por pregunta.</li>
+                <li>En la <strong>Parte B</strong> escribí la salida exacta del algoritmo. Si son varios valores, separalos con un espacio.</li>
+                <li>En la <strong>Parte C</strong> escribí el pseudocódigo completo en PSeInt estricto. El corrector revisa la estructura, no ejecuta el algoritmo.</li>
+                <li>Usá <code>Definir ... Como ...;</code>, la flecha <code>&lt;-</code> y cerrá cada estructura con su <code>Fin...</code>.</li>
+                <li>En esta parte <strong>no se evalúan</strong> los bucles <code>Para</code>, <code>Mientras</code> ni los subprocesos.</li>
+                <li>Podés realizar la evaluación más de una vez. Cada envío queda registrado con tu apellido, nombre, día y hora.</li>
+                <li>Si otra persona va a usar esta computadora, al terminar presioná <strong>Hacer otra evaluación</strong> para dejarla lista.</li>
+            </ul>
+
+            <table class="tabla-puntos">
+                <thead>
+                    <tr><th>Parte</th><th>Consigna</th><th>Puntos</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>A</td><td>5 preguntas de opción múltiple</td><td>5</td></tr>
+                    <tr><td>B</td><td>4 predicciones de salida</td><td>2</td></tr>
+                    <tr><td>C</td><td>3 actividades de pseudocódigo</td><td>3</td></tr>
+                    <tr><td colspan="2"><strong>Total</strong></td><td><strong>10</strong></td></tr>
+                </tbody>
+            </table>
+
+            <div class="datos-alumno">
+                <label>Apellido
+                    <input type="text" id="alumno-apellido" placeholder="Tu apellido" autocomplete="off">
+                </label>
+                <label>Nombre
+                    <input type="text" id="alumno-nombre" placeholder="Tu nombre" autocomplete="off">
+                </label>
+                <label>Curso
+                    <input type="text" id="alumno-curso" placeholder="Ej.: 5.º 2.ª" autocomplete="off">
+                </label>
+                <label>Materia
+                    <input type="text" id="alumno-materia" placeholder="Ej.: Programación" autocomplete="off">
+                </label>
+            </div>
+
+            <p class="nota">
+                Tiempo sugerido: <strong>50 minutos</strong>. Resolvé sin ejecutar los algoritmos:
+                el objetivo es interpretar la lógica del pseudocódigo. Referencia de aprobación: <strong>6/10</strong>.
+            </p>
+        </div>
+    </section>
+
+    <!-- ================= MAPA DE TEMAS ================= -->
+    <section class="bloque">
+        <div class="tarjeta">
+            <h3>Qué se evalúa</h3>
+            <p>Esta primera parte trabaja únicamente con los seis primeros temas de la guía.</p>
+
+            <div class="tema-lista">
+                <span class="tema-tag">1 · Programación estructurada</span>
+                <span class="tema-tag">2 · Variables y tipos</span>
+                <span class="tema-tag">3 · Leer / Escribir</span>
+                <span class="tema-tag">4 · Condicionales</span>
+                <span class="tema-tag">5 · Contador</span>
+                <span class="tema-tag">6 · Acumulador</span>
+            </div>
+
+            <table class="criterios mapa-temas">
+                <thead>
+                    <tr><th>Tema</th><th>Dónde se evalúa</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Programación estructurada</td><td>Parte A · pregunta 1</td></tr>
+                    <tr><td>Variables y tipos de datos</td><td>Parte A · pregunta 2; Parte C · actividades 1, 2 y 3</td></tr>
+                    <tr><td>Leer / Escribir</td><td>Parte A · pregunta 3; Parte B · pregunta 9; Parte C · actividad 1</td></tr>
+                    <tr><td>Condicionales</td><td>Parte A · pregunta 4; Parte B · preguntas 6 y 7; Parte C · actividades 1 y 2</td></tr>
+                    <tr><td>Contador</td><td>Parte A · pregunta 5; Parte B · pregunta 7; Parte C · actividad 2</td></tr>
+                    <tr><td>Acumulador</td><td>Parte A · pregunta 5; Parte B · pregunta 8; Parte C · actividad 3</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- ================= PARTE A ================= -->
+    <section class="bloque" id="parte-a">
+        <div class="encabezado-seccion">
+            <span class="numero-paso">A</span>
+            <div>
+                <h2>Opción múltiple</h2>
+                <p>5 preguntas · 1 punto cada una · marcá una sola respuesta.</p>
+            </div>
+        </div>
+
+        <article class="pregunta mc" data-correcta="b">
+            <p class="enunciado"><span class="num-preg">1</span>
+                ¿Cuáles son las <strong>tres estructuras básicas</strong> de la programación estructurada?</p>
+            <div class="opciones">
+                <label data-op="a"><input type="radio" name="a1" value="a"> Variables, constantes y operadores.</label>
+                <label data-op="b"><input type="radio" name="a1" value="b"> Secuencia, selección e iteración.</label>
+                <label data-op="c"><input type="radio" name="a1" value="c"> Leer, Escribir y Definir.</label>
+                <label data-op="d"><input type="radio" name="a1" value="d"> Subprocesos, parámetros y funciones.</label>
+            </div>
+            <p class="explicacion">La programación estructurada se organiza con <strong>secuencia</strong> (una instrucción tras otra), <strong>selección</strong> (Si–Entonces) e <strong>iteración</strong> (Mientras / Para).</p>
+        </article>
+
+        <article class="pregunta mc" data-correcta="d">
+            <p class="enunciado"><span class="num-preg">2</span>
+                Para guardar el <strong>precio de un producto con decimales</strong>, ¿cuál declaración es correcta en PSeInt estricto?</p>
+            <div class="opciones">
+                <label data-op="a"><input type="radio" name="a2" value="a"> <code>Definir precio Como Entero;</code></label>
+                <label data-op="b"><input type="radio" name="a2" value="b"> <code>precio &lt;- Real;</code></label>
+                <label data-op="c"><input type="radio" name="a2" value="c"> <code>Definir Real Como precio;</code></label>
+                <label data-op="d"><input type="radio" name="a2" value="d"> <code>Definir precio Como Real;</code></label>
+            </div>
+            <p class="explicacion"><code>Real</code> almacena números con parte decimal. <code>Entero</code> solo guarda números sin decimales. La forma correcta es <code>Definir nombre Como Tipo;</code>.</p>
+        </article>
+
+        <article class="pregunta mc" data-correcta="a">
+            <p class="enunciado"><span class="num-preg">3</span>
+                ¿Qué ocurre cuando el programa ejecuta <code>Leer edad;</code>?</p>
+            <div class="opciones">
+                <label data-op="a"><input type="radio" name="a3" value="a"> Se detiene y guarda en <code>edad</code> el valor que escribe el usuario.</label>
+                <label data-op="b"><input type="radio" name="a3" value="b"> Muestra en pantalla el valor de <code>edad</code>.</label>
+                <label data-op="c"><input type="radio" name="a3" value="c"> Declara la variable <code>edad</code> como entero.</label>
+                <label data-op="d"><input type="radio" name="a3" value="d"> Borra el contenido anterior de <code>edad</code>.</label>
+            </div>
+            <p class="explicacion"><code>Leer</code> es una instrucción de <strong>entrada</strong>: espera que el usuario escriba un dato y lo almacena en la variable. Para mostrar información se usa <code>Escribir</code>.</p>
+        </article>
+
+        <article class="pregunta mc" data-correcta="b">
+            <p class="enunciado"><span class="num-preg">4</span>
+                ¿Qué estructura permite elegir entre <strong>dos caminos</strong> según una condición?</p>
+            <div class="opciones">
+                <label data-op="a"><input type="radio" name="a4" value="a"> <code>Para ... Hasta ... FinPara</code>, porque repite una cantidad fija de veces.</label>
+                <label data-op="b"><input type="radio" name="a4" value="b"> <code>Si ... Entonces ... Sino ... FinSi</code>, porque ejecuta una rama u otra.</label>
+                <label data-op="c"><input type="radio" name="a4" value="c"> <code>Definir ... Como ...;</code>, porque declara variables.</label>
+                <label data-op="d"><input type="radio" name="a4" value="d"> <code>SubProceso ... FinSubProceso</code>, porque divide el programa en partes.</label>
+            </div>
+            <p class="explicacion">El <code>Si</code> evalúa una condición: si es verdadera ejecuta la rama del <code>Entonces</code>; si es falsa, la rama del <code>Sino</code>.</p>
+        </article>
+
+        <article class="pregunta mc" data-correcta="b">
+            <p class="enunciado"><span class="num-preg">5</span>
+                ¿Cuál de estas instrucciones corresponde a un <strong>contador</strong>?</p>
+            <div class="opciones">
+                <label data-op="a"><input type="radio" name="a5" value="a"> <code>total &lt;- total + precio;</code></label>
+                <label data-op="b"><input type="radio" name="a5" value="b"> <code>c &lt;- c + 1;</code></label>
+                <label data-op="c"><input type="radio" name="a5" value="c"> <code>Leer c;</code></label>
+                <label data-op="d"><input type="radio" name="a5" value="d"> <code>Definir c Como Entero;</code></label>
+            </div>
+            <p class="explicacion">Un <strong>contador</strong> suma siempre una cantidad fija, normalmente 1 (<code>c &lt;- c + 1</code>). Un <strong>acumulador</strong> suma un valor variable (<code>total &lt;- total + precio</code>).</p>
+        </article>
+    </section>
+
+    <!-- ================= PARTE B ================= -->
+    <section class="bloque" id="parte-b">
+        <div class="encabezado-seccion">
+            <span class="numero-paso">B</span>
+            <div>
+                <h2>Predicción de salidas</h2>
+                <p>4 algoritmos · 0,5 puntos cada uno · escribí lo que muestra cada uno.</p>
+            </div>
+        </div>
+
+        <article class="pregunta salida" data-aceptadas="Aprobado">
+            <p class="enunciado"><span class="num-preg">6</span>
+                ¿Qué muestra este algoritmo?</p>
+            <pre><code>Definir nota Como Entero;
+nota &lt;- 7;
+Si nota &gt;= 6 Entonces
+    Escribir "Aprobado";
+Sino
+    Escribir "Desaprobado";
+FinSi</code></pre>
+            <label class="campo-salida">Salida:
+                <input type="text" id="b1" autocomplete="off" placeholder="Escribí la salida">
+            </label>
+            <p class="explicacion">7 es mayor o igual que 6, así que la condición es verdadera y se ejecuta la rama del <code>Entonces</code>: la salida es <strong>Aprobado</strong>.</p>
+        </article>
+
+        <article class="pregunta salida" data-aceptadas="2">
+            <p class="enunciado"><span class="num-preg">7</span>
+                ¿Qué muestra este algoritmo?</p>
+            <pre><code>Definir n1, n2, n3, aprobados Como Entero;
+n1 &lt;- 8;
+n2 &lt;- 4;
+n3 &lt;- 10;
+aprobados &lt;- 0;
+Si n1 &gt;= 6 Entonces
+    aprobados &lt;- aprobados + 1;
+FinSi
+Si n2 &gt;= 6 Entonces
+    aprobados &lt;- aprobados + 1;
+FinSi
+Si n3 &gt;= 6 Entonces
+    aprobados &lt;- aprobados + 1;
+FinSi
+Escribir aprobados;</code></pre>
+            <label class="campo-salida">Salida:
+                <input type="text" id="b2" autocomplete="off" placeholder="Escribí la salida">
+            </label>
+            <p class="explicacion">El contador arranca en 0. Suma 1 con la nota 8, no suma con la nota 4 y suma 1 con la nota 10. La salida es <strong>2</strong>.</p>
+        </article>
+
+        <article class="pregunta salida" data-aceptadas="75.5|75,5|75.50|75,50">
+            <p class="enunciado"><span class="num-preg">8</span>
+                ¿Qué muestra este algoritmo?</p>
+            <pre><code>Definir precio1, precio2, total Como Real;
+precio1 &lt;- 50;
+precio2 &lt;- 25.5;
+total &lt;- 0;
+total &lt;- total + precio1;
+total &lt;- total + precio2;
+Escribir total;</code></pre>
+            <label class="campo-salida">Salida:
+                <input type="text" id="b3" autocomplete="off" placeholder="Escribí la salida">
+            </label>
+            <p class="explicacion">El acumulador arranca en 0 y suma 50, luego 25.5. La salida es <strong>75.5</strong>.</p>
+        </article>
+
+        <article class="pregunta salida" data-aceptadas="Ana tiene 21 años|ana tiene 21 anos|Ana tiene 21 anos">
+            <p class="enunciado"><span class="num-preg">9</span>
+                ¿Qué muestra este algoritmo?</p>
+            <pre><code>Definir nombre Como Caracter;
+Definir edad Como Entero;
+nombre &lt;- "Ana";
+edad &lt;- 20;
+Escribir nombre, " tiene ", edad + 1, " años";</code></pre>
+            <label class="campo-salida">Salida:
+                <input type="text" id="b4" autocomplete="off" placeholder="Escribí la salida">
+            </label>
+            <p class="explicacion">Se muestra el contenido de <code>nombre</code>, el texto entre comillas y el resultado de <code>edad + 1</code> (21). La salida es <strong>Ana tiene 21 años</strong>.</p>
+        </article>
+    </section>
+
+    <!-- ================= CRITERIOS PARTE C ================= -->
+    <section class="bloque">
+        <div class="tarjeta">
+            <h3>Cómo se corrige la Parte C</h3>
+            <p>Cada actividad vale <strong>1 punto</strong> y se evalúa con una lista de requisitos. Si falta un requisito, se descuenta la parte proporcional. El corrector revisa la <strong>estructura</strong> del pseudocódigo; no ejecuta el programa.</p>
+            <table class="criterios">
+                <thead>
+                    <tr><th>Se revisa</th><th>Ejemplo</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Declaración de variables con tipo</td><td><code>Definir edad Como Entero;</code></td></tr>
+                    <tr><td>Declaración de texto y decimales</td><td><code>Definir nombre Como Caracter;</code> · <code>Definir precio Como Real;</code></td></tr>
+                    <tr><td>Entrada y salida</td><td><code>Leer edad;</code> · <code>Escribir edad;</code></td></tr>
+                    <tr><td>Condicional completo</td><td><code>Si ... Entonces ... Sino ... FinSi</code></td></tr>
+                    <tr><td>Contadores inicializados</td><td><code>aprobados &lt;- 0;</code> · <code>aprobados &lt;- aprobados + 1;</code></td></tr>
+                    <tr><td>Acumuladores inicializados</td><td><code>total &lt;- 0;</code> · <code>total &lt;- total + precio;</code></td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top:24px;">Antes de enviar</h3>
+            <ul class="checklist">
+                <li>Declaré todas las variables con su tipo.</li>
+                <li>Cerré cada <code>Si</code> con <code>FinSi</code>.</li>
+                <li>Inicialicé el contador y el acumulador antes de usarlos.</li>
+                <li>Verifiqué que el incremento del contador esté dentro del <code>Si</code>.</li>
+                <li>Revisé que las salidas coincidan con lo pedido.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ================= PARTE C ================= -->
+    <section class="bloque" id="parte-c">
+        <div class="encabezado-seccion">
+            <span class="numero-paso">C</span>
+            <div>
+                <h2>Actividades de pseudocódigo</h2>
+                <p>3 actividades · 1 punto cada una · se revisa la estructura del código.</p>
+            </div>
+        </div>
+
+        <article class="pregunta codigo" data-puntos="1">
+            <p class="enunciado"><span class="num-preg">10</span>
+                Leé el <strong>nombre</strong> de un producto y su <strong>precio</strong>.
+                Si el precio es <strong>mayor a 1000</strong>, mostrá <code>&lt;nombre&gt; es caro</code>;
+                si no, <code>&lt;nombre&gt; es económico</code>.
+                Usá <code>Si … Entonces … Sino … FinSi</code>.</p>
+            <p class="tema-lista"><span class="tema-tag">Variables</span><span class="tema-tag">Leer / Escribir</span><span class="tema-tag">Condicional</span></p>
+            <details class="pista">
+                <summary>Ver pista</summary>
+                <p>Declará <code>nombre</code> como <code>Caracter</code> y <code>precio</code> como <code>Real</code>. Leé los dos datos antes del <code>Si</code>. En cada rama, combiná el nombre con el texto usando comas dentro de <code>Escribir</code>.</p>
+            </details>
+            <textarea class="editor" id="c1" spellcheck="false" placeholder="Algoritmo PrecioProducto&#10;    Definir ...&#10;    Leer ...&#10;    Si ... Entonces&#10;    Sino&#10;    FinSi&#10;FinAlgoritmo"></textarea>
+            <div class="resultado-codigo" id="res-c1"></div>
+            <details class="solucion">
+                <summary>Ver una solución de referencia</summary>
+                <pre><code>Algoritmo PrecioProducto
+    Definir nombre Como Caracter;
+    Definir precio Como Real;
+    Escribir "Ingresá el nombre del producto:";
+    Leer nombre;
+    Escribir "Ingresá el precio:";
+    Leer precio;
+    Si precio &gt; 1000 Entonces
+        Escribir nombre, " es caro";
+    Sino
+        Escribir nombre, " es económico";
+    FinSi
+FinAlgoritmo</code></pre>
+            </details>
+        </article>
+
+        <article class="pregunta codigo" data-puntos="1">
+            <p class="enunciado"><span class="num-preg">11</span>
+                <strong>Sin usar <code>Para</code> ni <code>Mientras</code></strong>, asigná
+                <code>nota1 &lt;- 7;</code>, <code>nota2 &lt;- 3;</code> y <code>nota3 &lt;- 9;</code>.
+                Con <strong>tres <code>Si</code></strong>, contá en <code>aprobados</code> cuántas notas son
+                <strong>mayores o iguales a 6</strong>. Inicializá el contador en 0 y mostrá el total.</p>
+            <p class="tema-lista"><span class="tema-tag">Variables</span><span class="tema-tag">Condicional</span><span class="tema-tag">Contador</span></p>
+            <details class="pista">
+                <summary>Ver pista</summary>
+                <p>Declará <code>nota1</code>, <code>nota2</code>, <code>nota3</code> y <code>aprobados</code> como <code>Entero</code>. Asigná las tres notas, inicializá <code>aprobados &lt;- 0;</code> y escribí un <code>Si nota1 &gt;= 6 Entonces aprobados &lt;- aprobados + 1; FinSi</code> por cada nota.</p>
+            </details>
+            <textarea class="editor" id="c2" spellcheck="false" placeholder="Algoritmo ContarAprobados&#10;    Definir ...&#10;    nota1 &lt;- 7;&#10;    nota2 &lt;- 3;&#10;    nota3 &lt;- 9;&#10;    aprobados &lt;- 0;&#10;    Si ... Entonces&#10;        aprobados &lt;- aprobados + 1;&#10;    FinSi&#10;    ...&#10;    Escribir ...&#10;FinAlgoritmo"></textarea>
+            <div class="resultado-codigo" id="res-c2"></div>
+            <details class="solucion">
+                <summary>Ver una solución de referencia</summary>
+                <pre><code>Algoritmo ContarAprobados
+    Definir nota1, nota2, nota3, aprobados Como Entero;
+    nota1 &lt;- 7;
+    nota2 &lt;- 3;
+    nota3 &lt;- 9;
+    aprobados &lt;- 0;
+    Si nota1 &gt;= 6 Entonces
+        aprobados &lt;- aprobados + 1;
+    FinSi
+    Si nota2 &gt;= 6 Entonces
+        aprobados &lt;- aprobados + 1;
+    FinSi
+    Si nota3 &gt;= 6 Entonces
+        aprobados &lt;- aprobados + 1;
+    FinSi
+    Escribir "Aprobados: ", aprobados;
+FinAlgoritmo</code></pre>
+            </details>
+        </article>
+
+        <article class="pregunta codigo" data-puntos="1">
+            <p class="enunciado"><span class="num-preg">12</span>
+                <strong>Sin usar <code>Para</code> ni <code>Mientras</code></strong>, asigná
+                <code>precio1 &lt;- 100;</code>, <code>precio2 &lt;- 250.50;</code> y
+                <code>precio3 &lt;- 49.50;</code>. Acumulá los tres precios en <code>total</code>
+                (inicializado en 0) y mostrá el total.</p>
+            <p class="tema-lista"><span class="tema-tag">Variables</span><span class="tema-tag">Acumulador</span><span class="tema-tag">Leer / Escribir</span></p>
+            <details class="pista">
+                <summary>Ver pista</summary>
+                <p>Declará <code>precio1</code>, <code>precio2</code>, <code>precio3</code> y <code>total</code> como <code>Real</code>. Inicializá <code>total &lt;- 0;</code> y sumá cada precio con <code>total &lt;- total + precio1;</code>, y lo mismo para los otros dos. Al final, mostrá <code>total</code>.</p>
+            </details>
+            <textarea class="editor" id="c3" spellcheck="false" placeholder="Algoritmo TotalDeCaja&#10;    Definir ...&#10;    precio1 &lt;- 100;&#10;    precio2 &lt;- 250.50;&#10;    precio3 &lt;- 49.50;&#10;    total &lt;- 0;&#10;    total &lt;- total + precio1;&#10;    ...&#10;    Escribir ...&#10;FinAlgoritmo"></textarea>
+            <div class="resultado-codigo" id="res-c3"></div>
+            <details class="solucion">
+                <summary>Ver una solución de referencia</summary>
+                <pre><code>Algoritmo TotalDeCaja
+    Definir precio1, precio2, precio3, total Como Real;
+    precio1 &lt;- 100;
+    precio2 &lt;- 250.50;
+    precio3 &lt;- 49.50;
+    total &lt;- 0;
+    total &lt;- total + precio1;
+    total &lt;- total + precio2;
+    total &lt;- total + precio3;
+    Escribir "Total a pagar: $", total;
+FinAlgoritmo</code></pre>
+            </details>
+        </article>
+    </section>
+
+    <!-- ================= RESULTADO ================= -->
+    <div class="acciones no-print">
+        <button type="button" class="btn btn-primario" id="btn-corregir">✅ Corregir y enviar</button>
+        <button type="button" class="btn btn-secundario" id="btn-reiniciar">🔄 Reiniciar</button>
+        <button type="button" class="btn btn-secundario" id="btn-imprimir">🖨️ Imprimir</button>
+    </div>
+
+    <div class="aviso-envio" id="aviso-envio" role="status"></div>
+
+    <section class="resultado" id="resultado" aria-live="polite">
+        <div class="puntaje-grande"><span id="puntaje-total">0</span><small> / <span id="puntaje-max">10</span> puntos</small></div>
+        <div class="barra"><div class="barra-fill" id="barra-fill"></div></div>
+        <p id="mensaje">Corregí la evaluación para ver tu puntaje.</p>
+        <div class="desglose" id="desglose"></div>
+        <div class="resumen-errores" id="resumen-errores"></div>
+        <p class="nota no-print" id="nota-resultado" style="display:none;">
+            Las respuestas correctas y las soluciones de referencia ya están visibles en cada consigna.
+        </p>
+        <p class="estado-envio" id="estado-envio"></p>
+        <div class="enviar-fallback no-print" id="enviar-fallback">
+            <button type="button" class="btn btn-secundario btn-chico" id="btn-copiar">📋 Copiar resultado</button>
+            <button type="button" class="btn btn-secundario btn-chico" id="btn-descargar">⬇️ Descargar comprobante</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>Evaluación primera parte · PSeInt · Temas 1 a 6 · 10 puntos · <a href="index.html">Portal de exámenes</a></p>
+    </footer>
+
+</main>
+</div>
+
+<script src="config.js?v=1"></script>
+<script src="config-parte-1.js?v=1"></script>
+<script src="app-parte.js?v=1"></script>
+</body>
+</html>
