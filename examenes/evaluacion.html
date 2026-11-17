@@ -124,11 +124,11 @@
                     <tr><td>Algoritmos y programación estructurada</td><td>Parte A · pregunta 1</td></tr>
                     <tr><td>Variables y tipos de datos</td><td>Parte A · pregunta 2; Parte C · actividades 1 y 2</td></tr>
                     <tr><td>Leer / Escribir</td><td>Parte A · pregunta 3; Parte C · actividades 1, 2 y 3</td></tr>
-                    <tr><td>Condicionales</td><td>Parte B · pregunta 6; Parte C · actividades 1 y 2</td></tr>
+                    <tr><td>Condicionales</td><td>Parte B · pregunta 6; Parte C · actividad 1</td></tr>
                     <tr><td>Mientras</td><td>Parte B · pregunta 7; Parte C · actividad 2</td></tr>
-                    <tr><td>Para</td><td>Parte B · pregunta 8</td></tr>
+                    <tr><td>Para</td><td>Parte A · pregunta 4; Parte B · pregunta 8</td></tr>
                     <tr><td>Contador</td><td>Parte A · pregunta 5; Parte C · actividad 2</td></tr>
-                    <tr><td>Acumulador</td><td>Parte A · pregunta 5</td></tr>
+                    <tr><td>Acumulador</td><td>Parte C · actividad 2</td></tr>
                     <tr><td>Subprocesos</td><td>Parte B · pregunta 9; Parte C · actividad 3</td></tr>
                 </tbody>
             </table>
@@ -145,64 +145,64 @@
             </div>
         </div>
 
-        <article class="pregunta mc" data-correcta="b">
-            <p class="enunciado"><span class="num-preg">1</span>
-                ¿Cuáles son las <strong>tres estructuras básicas</strong> de la programación estructurada?</p>
-            <div class="opciones">
-                <label data-op="a"><input type="radio" name="a1" value="a"> Variables, constantes y operadores.</label>
-                <label data-op="b"><input type="radio" name="a1" value="b"> Secuencia, selección e iteración.</label>
-                <label data-op="c"><input type="radio" name="a1" value="c"> Leer, Escribir y Definir.</label>
-                <label data-op="d"><input type="radio" name="a1" value="d"> Subprocesos, parámetros y funciones.</label>
-            </div>
-            <p class="explicacion">La programación estructurada se organiza con <strong>secuencia</strong> (una instrucción tras otra), <strong>selección</strong> (Si–Entonces) e <strong>iteración</strong> (Mientras / Para).</p>
-        </article>
-
-        <article class="pregunta mc" data-correcta="d">
-            <p class="enunciado"><span class="num-preg">2</span>
-                Para guardar el <strong>precio de un producto con decimales</strong>, ¿cuál declaración es correcta en PSeInt estricto?</p>
-            <div class="opciones">
-                <label data-op="a"><input type="radio" name="a2" value="a"> <code>Definir precio Como Entero;</code></label>
-                <label data-op="b"><input type="radio" name="a2" value="b"> <code>precio &lt;- Real;</code></label>
-                <label data-op="c"><input type="radio" name="a2" value="c"> <code>Definir Real Como precio;</code></label>
-                <label data-op="d"><input type="radio" name="a2" value="d"> <code>Definir precio Como Real;</code></label>
-            </div>
-            <p class="explicacion"><code>Real</code> almacena números con parte decimal. <code>Entero</code> solo guarda números sin decimales. La forma correcta es <code>Definir nombre Como Tipo;</code>.</p>
-        </article>
-
         <article class="pregunta mc" data-correcta="a">
-            <p class="enunciado"><span class="num-preg">3</span>
-                ¿Qué ocurre cuando el programa ejecuta <code>Leer edad;</code>?</p>
+            <p class="enunciado"><span class="num-preg">1</span>
+                ¿Qué orden respeta un algoritmo bien estructurado?</p>
             <div class="opciones">
-                <label data-op="a"><input type="radio" name="a3" value="a"> Se detiene y guarda en <code>edad</code> el valor que escribe el usuario.</label>
-                <label data-op="b"><input type="radio" name="a3" value="b"> Muestra en pantalla el valor de <code>edad</code>.</label>
-                <label data-op="c"><input type="radio" name="a3" value="c"> Declara la variable <code>edad</code> como entero.</label>
-                <label data-op="d"><input type="radio" name="a3" value="d"> Borra el contenido anterior de <code>edad</code>.</label>
+                <label data-op="a"><input type="radio" name="a1" value="a"> Declarar variables, procesar datos y mostrar resultados.</label>
+                <label data-op="b"><input type="radio" name="a1" value="b"> Mostrar resultados, procesar datos y declarar variables.</label>
+                <label data-op="c"><input type="radio" name="a1" value="c"> Leer datos, borrar variables y repetir sin condición.</label>
+                <label data-op="d"><input type="radio" name="a1" value="d"> Escribir, Leer y Definir en cualquier orden.</label>
             </div>
-            <p class="explicacion"><code>Leer</code> es una instrucción de <strong>entrada</strong>: espera que el usuario escriba un dato y lo almacena en la variable. Para mostrar información se usa <code>Escribir</code>.</p>
+            <p class="explicacion">Un algoritmo estructurado avanza en pasos claros: <strong>declarar</strong>, <strong>procesar</strong> y <strong>comunicar</strong> el resultado.</p>
+        </article>
+
+        <article class="pregunta mc" data-correcta="b">
+            <p class="enunciado"><span class="num-preg">2</span>
+                ¿Qué tipo conviene para guardar el <strong>promedio de notas</strong>?</p>
+            <div class="opciones">
+                <label data-op="a"><input type="radio" name="a2" value="a"> <code>Entero</code></label>
+                <label data-op="b"><input type="radio" name="a2" value="b"> <code>Real</code></label>
+                <label data-op="c"><input type="radio" name="a2" value="c"> <code>Caracter</code></label>
+                <label data-op="d"><input type="radio" name="a2" value="d"> <code>Logico</code></label>
+            </div>
+            <p class="explicacion">El promedio puede tener decimales, por eso se guarda como <code>Real</code>.</p>
+        </article>
+
+        <article class="pregunta mc" data-correcta="b">
+            <p class="enunciado"><span class="num-preg">3</span>
+                Para pedir la edad y guardarla, ¿qué par de instrucciones se usa?</p>
+            <div class="opciones">
+                <label data-op="a"><input type="radio" name="a3" value="a"> <code>Leer "Edad:"; Escribir edad;</code></label>
+                <label data-op="b"><input type="radio" name="a3" value="b"> <code>Escribir "Edad:"; Leer edad;</code></label>
+                <label data-op="c"><input type="radio" name="a3" value="c"> <code>Definir "Edad:"; Leer edad;</code></label>
+                <label data-op="d"><input type="radio" name="a3" value="d"> <code>Escribir edad; Leer "Edad:";</code></label>
+            </div>
+            <p class="explicacion">Primero se muestra el mensaje con <code>Escribir</code> y después se guarda el dato con <code>Leer</code>.</p>
         </article>
 
         <article class="pregunta mc" data-correcta="c">
             <p class="enunciado"><span class="num-preg">4</span>
-                ¿Qué estructura conviene para mostrar un menú y repetirlo <strong>hasta que el usuario elija Salir</strong>?</p>
+                ¿Cuántas veces se ejecuta el bloque de <code>Para i &lt;- 3 Hasta 7 Con Paso 1 Hacer</code>?</p>
             <div class="opciones">
-                <label data-op="a"><input type="radio" name="a4" value="a"> <code>Para</code>, porque siempre se repite una cantidad fija de veces.</label>
-                <label data-op="b"><input type="radio" name="a4" value="b"> <code>Si</code>, porque permite elegir entre dos caminos.</label>
-                <label data-op="c"><input type="radio" name="a4" value="c"> <code>Mientras</code>, porque la cantidad de repeticiones no se conoce de antemano.</label>
-                <label data-op="d"><input type="radio" name="a4" value="d"> <code>SubProceso</code>, porque permite dividir el programa en partes.</label>
+                <label data-op="a"><input type="radio" name="a4" value="a"> 3 veces</label>
+                <label data-op="b"><input type="radio" name="a4" value="b"> 4 veces</label>
+                <label data-op="c"><input type="radio" name="a4" value="c"> 5 veces</label>
+                <label data-op="d"><input type="radio" name="a4" value="d"> 7 veces</label>
             </div>
-            <p class="explicacion">El <code>Mientras</code> es un bucle <strong>indeterminado</strong>: se repite mientras la condición sea verdadera. El <code>Para</code> se usa cuando se conoce la cantidad de vueltas.</p>
+            <p class="explicacion">El contador toma los valores 3, 4, 5, 6 y 7. El límite <code>Hasta</code> se incluye: son <strong>5 vueltas</strong>.</p>
         </article>
 
-        <article class="pregunta mc" data-correcta="b">
+        <article class="pregunta mc" data-correcta="a">
             <p class="enunciado"><span class="num-preg">5</span>
-                En la instrucción <code>total &lt;- total + precio;</code>, ¿qué papel cumple <code>total</code>?</p>
+                En <code>visitas &lt;- visitas + 1;</code>, ¿qué papel cumple <code>visitas</code>?</p>
             <div class="opciones">
-                <label data-op="a"><input type="radio" name="a5" value="a"> Es un contador, porque siempre suma 1.</label>
-                <label data-op="b"><input type="radio" name="a5" value="b"> Es un acumulador, porque suma un valor que puede cambiar en cada vuelta.</label>
-                <label data-op="c"><input type="radio" name="a5" value="c"> Es una constante, porque su valor no cambia.</label>
-                <label data-op="d"><input type="radio" name="a5" value="d"> Es el índice del <code>Para</code>.</label>
+                <label data-op="a"><input type="radio" name="a5" value="a"> Es un contador, porque aumenta de a 1.</label>
+                <label data-op="b"><input type="radio" name="a5" value="b"> Es un acumulador, porque suma un precio.</label>
+                <label data-op="c"><input type="radio" name="a5" value="c"> Es una constante, porque nunca cambia.</label>
+                <label data-op="d"><input type="radio" name="a5" value="d"> Es el parámetro de un subproceso.</label>
             </div>
-            <p class="explicacion">Un <strong>acumulador</strong> suma valores variables (<code>total &lt;- total + precio</code>). Un <strong>contador</strong> suma una cantidad fija, normalmente 1 (<code>c &lt;- c + 1</code>).</p>
+            <p class="explicacion">Un <strong>contador</strong> suma una cantidad fija (normalmente 1). El acumulador suma valores que pueden cambiar.</p>
         </article>
     </section>
 
@@ -216,64 +216,64 @@
             </div>
         </div>
 
-        <article class="pregunta salida" data-aceptadas="Desaprobado">
+        <article class="pregunta salida" data-aceptadas="Calor">
             <p class="enunciado"><span class="num-preg">6</span>
                 ¿Qué muestra este algoritmo?</p>
-            <pre><code>Definir nota Como Real;
-nota &lt;- 5.5;
-Si nota &gt;= 6 Entonces
-    Escribir "Aprobado";
+            <pre><code>Definir temperatura Como Entero;
+temperatura &lt;- 31;
+Si temperatura &gt; 30 Entonces
+    Escribir "Calor";
 Sino
-    Escribir "Desaprobado";
+    Escribir "Templado";
 FinSi</code></pre>
             <label class="campo-salida">Salida:
                 <input type="text" id="b1" autocomplete="off" placeholder="Escribí la salida">
             </label>
-            <p class="explicacion">5.5 es menor que 6, así que la condición es falsa y se ejecuta la rama del <code>Sino</code>: la salida es <strong>Desaprobado</strong>.</p>
+            <p class="explicacion">31 es mayor que 30: se ejecuta la rama del <code>Entonces</code> y la salida es <strong>Calor</strong>.</p>
         </article>
 
-        <article class="pregunta salida" data-aceptadas="4 3 2 1">
+        <article class="pregunta salida" data-aceptadas="2 4 6">
             <p class="enunciado"><span class="num-preg">7</span>
                 ¿Qué muestra este algoritmo?</p>
             <pre><code>Definir i Como Entero;
-i &lt;- 4;
-Mientras i &gt;= 1 Hacer
+i &lt;- 2;
+Mientras i &lt; 8 Hacer
     Escribir i;
-    i &lt;- i - 1;
+    i &lt;- i + 2;
 FinMientras</code></pre>
             <label class="campo-salida">Salida:
-                <input type="text" id="b2" autocomplete="off" placeholder="Separá los valores con espacios">
+                <input type="text" id="b2" autocomplete="off" placeholder="Escribí la salida">
             </label>
-            <p class="explicacion">Muestra 4, luego 3, luego 2 y luego 1. Cuando <code>i</code> llega a 0, la condición <code>i &gt;= 1</code> es falsa y el bucle termina. La salida es <strong>4 3 2 1</strong>.</p>
+            <p class="explicacion">El <code>Mientras</code> muestra 2, 4 y 6. Al llegar a 8, la condición se vuelve falsa.</p>
         </article>
 
-        <article class="pregunta salida" data-aceptadas="2 4 6 8">
+        <article class="pregunta salida" data-aceptadas="10 8 6 4">
             <p class="enunciado"><span class="num-preg">8</span>
                 ¿Qué muestra este algoritmo?</p>
             <pre><code>Definir i Como Entero;
-Para i &lt;- 2 Hasta 8 Con Paso 2 Hacer
+Para i &lt;- 10 Hasta 4 Con Paso -2 Hacer
     Escribir i;
 FinPara</code></pre>
             <label class="campo-salida">Salida:
-                <input type="text" id="b3" autocomplete="off" placeholder="Separá los valores con espacios">
+                <input type="text" id="b3" autocomplete="off" placeholder="Escribí la salida">
             </label>
-            <p class="explicacion">El <code>Para</code> comienza en 2, avanza de 2 en 2 y se detiene en 8 (incluido). La salida es <strong>2 4 6 8</strong>.</p>
+            <p class="explicacion">El paso negativo hace que el <code>Para</code> descienda de 10 a 4 de dos en dos.</p>
         </article>
 
-        <article class="pregunta salida" data-aceptadas="12">
+        <article class="pregunta salida" data-aceptadas="Listo">
             <p class="enunciado"><span class="num-preg">9</span>
                 ¿Qué muestra este algoritmo?</p>
-            <pre><code>SubProceso MostrarDoble(numero)
-    Escribir numero * 2;
+            <pre><code>SubProceso Avisar(mensaje)
+    Escribir mensaje;
 FinSubProceso
 
 Algoritmo Prueba
-    MostrarDoble(6);
+    Avisar("Listo");
 FinAlgoritmo</code></pre>
             <label class="campo-salida">Salida:
                 <input type="text" id="b4" autocomplete="off" placeholder="Escribí la salida">
             </label>
-            <p class="explicacion">El subproceso recibe <code>6</code> en el parámetro <code>numero</code> y muestra <code>6 * 2 = 12</code>. La salida es <strong>12</strong>.</p>
+            <p class="explicacion">El subproceso recibe <code>"Listo"</code> en el parámetro <code>mensaje</code> y lo muestra.</p>
         </article>
     </section>
 
@@ -291,14 +291,14 @@ FinAlgoritmo</code></pre>
                     <tr><td>Entrada y salida</td><td><code>Leer edad;</code> · <code>Escribir edad;</code></td></tr>
                     <tr><td>Condicional completo</td><td><code>Si ... Entonces ... Sino ... FinSi</code></td></tr>
                     <tr><td>Bucle completo</td><td><code>Mientras ... Hacer ... FinMientras</code></td></tr>
-                    <tr><td>Contadores inicializados</td><td><code>mayores &lt;- 0;</code> · <code>menores &lt;- 0;</code></td></tr>
-                    <tr><td>Subproceso con parámetro y llamada</td><td><code>SubProceso Saludar(nombre)</code> · <code>Saludar("Ana");</code></td></tr>
+                    <tr><td>Contadores y acumuladores inicializados</td><td><code>aprobadas &lt;- 0;</code> · <code>suma &lt;- 0;</code></td></tr>
+                    <tr><td>Subproceso con parámetro y llamada</td><td><code>SubProceso MostrarCuadrado(numero)</code> · <code>MostrarCuadrado(3);</code></td></tr>
                 </tbody>
             </table>
 
             <h3 style="margin-top:24px;">Antes de enviar</h3>
             <ul class="checklist">
-                <li>Declaré todas las variables con su tipo.</li>
+                <li>Declaré todas las variables con su tipo e inicialicé los contadores antes de usarlos.</li>
                 <li>Cerré cada <code>Si</code>, <code>Mientras</code>, <code>Para</code> y <code>SubProceso</code>.</li>
                 <li>Inicialicé los contadores antes de usarlos.</li>
                 <li>Probé mentalmente el algoritmo con un caso chico.</li>
@@ -319,29 +319,24 @@ FinAlgoritmo</code></pre>
 
         <article class="pregunta codigo" data-ejercicio="c1">
             <p class="enunciado"><span class="num-preg">10</span>
-                Leé el <strong>nombre</strong> y la <strong>edad</strong> de una persona. Si tiene 18 años o más,
-                mostrá <code>&lt;nombre&gt; es mayor de edad</code>; si no, <code>&lt;nombre&gt; es menor de edad</code>.
-                Usá <code>Si … Entonces … Sino … FinSi</code>.</p>
+                Leé una <strong>temperatura</strong>. Si es 30 o más, mostrá <code>Alta</code>; si no, mostrá <code>Normal</code>. Usá <code>Si … Entonces … Sino … FinSi</code>.</p>
             <p class="tema-lista"><span class="tema-tag">Variables</span><span class="tema-tag">Leer / Escribir</span><span class="tema-tag">Condicional</span></p>
             <details class="pista">
                 <summary>Ver pista</summary>
-                <p>Declará <code>nombre</code> como <code>Caracter</code> y <code>edad</code> como <code>Entero</code>. Leé los dos datos antes del <code>Si</code>. En cada rama, combiná el nombre con el texto usando comas dentro de <code>Escribir</code>.</p>
+                <p>Declará <code>temperatura</code> como <code>Real</code>, leela antes del <code>Si</code> y escribí un mensaje distinto en cada rama.</p>
             </details>
-            <textarea class="editor" id="c1" spellcheck="false" placeholder="Algoritmo EdadPersona&#10;    Definir ...&#10;    Leer ...&#10;    Si ... Entonces&#10;    Sino&#10;    FinSi&#10;FinAlgoritmo"></textarea>
+            <textarea class="editor" id="c1" spellcheck="false" placeholder="Algoritmo ControlTemperatura&#10;    Definir ...&#10;    Leer ...&#10;    Si ... Entonces&#10;    Sino&#10;    FinSi&#10;FinAlgoritmo"></textarea>
             <div class="resultado-codigo" id="res-c1"></div>
             <details class="solucion">
                 <summary>Ver una solución de referencia</summary>
-                <pre><code>Algoritmo EdadPersona
-    Definir nombre Como Caracter;
-    Definir edad Como Entero;
-    Escribir "Ingresá el nombre:";
-    Leer nombre;
-    Escribir "Ingresá la edad:";
-    Leer edad;
-    Si edad &gt;= 18 Entonces
-        Escribir nombre, " es mayor de edad";
+                <pre><code>Algoritmo ControlTemperatura
+    Definir temperatura Como Real;
+    Escribir "Ingresá la temperatura:";
+    Leer temperatura;
+    Si temperatura &gt;= 30 Entonces
+        Escribir "Alta";
     Sino
-        Escribir nombre, " es menor de edad";
+        Escribir "Normal";
     FinSi
 FinAlgoritmo</code></pre>
             </details>
@@ -349,60 +344,55 @@ FinAlgoritmo</code></pre>
 
         <article class="pregunta codigo" data-ejercicio="c2">
             <p class="enunciado"><span class="num-preg">11</span>
-                Pedí exactamente <strong>10 edades</strong> usando un <code>Mientras</code>.
-                Contá cuántas son <strong>mayores de 16</strong> y cuántas <strong>no</strong>.
-                Mostrá los dos totales. Usá <code>mayores</code>, <code>menores</code> e
-                <code>i</code> como contador.</p>
-            <p class="tema-lista"><span class="tema-tag">Mientras</span><span class="tema-tag">Condicional</span><span class="tema-tag">Contador</span></p>
+                Pedí <strong>5 notas</strong> con un <code>Mientras</code>. Contá cuántas son mayores o iguales que 6 en <code>aprobadas</code> y sumá todas en <code>suma</code>. Mostrá ambos resultados.</p>
+            <p class="tema-lista"><span class="tema-tag">Mientras</span><span class="tema-tag">Contador</span><span class="tema-tag">Acumulador</span></p>
             <details class="pista">
                 <summary>Ver pista</summary>
-                <p>Inicializá <code>mayores</code>, <code>menores</code> e <code>i</code> antes del bucle (<code>i</code> en 1). Repetí mientras <code>i &lt;= 10</code>: leé la edad, usá <code>Si … Entonces … Sino … FinSi</code> para decidir en qué contador sumar y, al final de cada vuelta, incrementá <code>i &lt;- i + 1;</code>.</p>
+                <p>Inicializá <code>aprobadas</code> y <code>suma</code> en 0, repetí 5 vueltas con <code>i</code>, leé cada nota, sumala siempre y aumentá <code>aprobadas</code> solo si corresponde.</p>
             </details>
-            <textarea class="editor" id="c2" spellcheck="false" placeholder="Algoritmo ContarEdades&#10;    Definir ...&#10;    mayores &lt;- 0;&#10;    menores &lt;- 0;&#10;    i &lt;- 1;&#10;    Mientras i &lt;= 10 Hacer&#10;        Leer ...&#10;        Si ... Entonces&#10;        Sino&#10;        FinSi&#10;        i &lt;- i + 1;&#10;    FinMientras&#10;    Escribir ...&#10;FinAlgoritmo"></textarea>
+            <textarea class="editor" id="c2" spellcheck="false" placeholder="Algoritmo ResumenNotas&#10;    Definir ...&#10;    aprobadas &lt;- 0;&#10;    suma &lt;- 0;&#10;    i &lt;- 1;&#10;    Mientras i &lt;= 5 Hacer&#10;        Leer ...&#10;        ...&#10;        i &lt;- i + 1;&#10;    FinMientras&#10;    Escribir ...&#10;FinAlgoritmo"></textarea>
             <div class="resultado-codigo" id="res-c2"></div>
             <details class="solucion">
                 <summary>Ver una solución de referencia</summary>
-                <pre><code>Algoritmo ContarEdades
-    Definir edad, mayores, menores, i Como Entero;
-    mayores &lt;- 0;
-    menores &lt;- 0;
+                <pre><code>Algoritmo ResumenNotas
+    Definir nota, aprobadas, suma, i Como Entero;
+    aprobadas &lt;- 0;
+    suma &lt;- 0;
     i &lt;- 1;
-    Mientras i &lt;= 10 Hacer
-        Escribir "Ingresá una edad:";
-        Leer edad;
-        Si edad &gt; 16 Entonces
-            mayores &lt;- mayores + 1;
-        Sino
-            menores &lt;- menores + 1;
+    Mientras i &lt;= 5 Hacer
+        Escribir "Ingresá una nota:";
+        Leer nota;
+        suma &lt;- suma + nota;
+        Si nota &gt;= 6 Entonces
+            aprobadas &lt;- aprobadas + 1;
         FinSi
         i &lt;- i + 1;
     FinMientras
-    Escribir "Mayores de 16: ", mayores;
-    Escribir "No mayores de 16: ", menores;
+    Escribir "Aprobadas: ", aprobadas;
+    Escribir "Suma: ", suma;
 FinAlgoritmo</code></pre>
             </details>
         </article>
 
         <article class="pregunta codigo" data-ejercicio="c3">
             <p class="enunciado"><span class="num-preg">12</span>
-                Creá un <strong>SubProceso</strong> llamado <code>Saludar(nombre)</code> que
-                reciba un nombre y muestre <code>Hola, &lt;nombre&gt;</code>. Llamalo desde el
-                algoritmo principal con <code>"Ana"</code>.</p>
-            <p class="tema-lista"><span class="tema-tag">SubProceso</span><span class="tema-tag">Leer / Escribir</span></p>
+                Creá el subproceso <code>MostrarCuadrado(numero)</code> que muestre el cuadrado del número. Llamalo desde el algoritmo principal con <code>3</code> y con <code>4</code>.</p>
+            <p class="tema-lista"><span class="tema-tag">SubProceso</span><span class="tema-tag">Parámetros</span><span class="tema-tag">Leer / Escribir</span></p>
             <details class="pista">
                 <summary>Ver pista</summary>
-                <p>Declará <code>SubProceso Saludar(nombre)</code> y cerralo con <code>FinSubProceso</code>. Dentro, mostrá el saludo con <code>Escribir "Hola, ", nombre;</code>. En el algoritmo principal, llamá a <code>Saludar("Ana");</code>.</p>
+                <p>Dentro del subproceso mostrá <code>numero * numero</code>. Después, en el algoritmo principal, hacé dos llamadas con los valores pedidos.</p>
             </details>
-            <textarea class="editor" id="c3" spellcheck="false" placeholder="SubProceso Saludar(nombre)&#10;    Escribir ...&#10;FinSubProceso&#10;&#10;Algoritmo Saludo&#10;    Saludar(&quot;Ana&quot;);&#10;FinAlgoritmo"></textarea>
+            <textarea class="editor" id="c3" spellcheck="false" placeholder="SubProceso MostrarCuadrado(numero)&#10;    Escribir ...&#10;FinSubProceso&#10;&#10;Algoritmo Prueba&#10;    ...&#10;FinAlgoritmo"></textarea>
             <div class="resultado-codigo" id="res-c3"></div>
             <details class="solucion">
                 <summary>Ver una solución de referencia</summary>
-                <pre><code>SubProceso Saludar(nombre)
-    Escribir "Hola, ", nombre;
+                <pre><code>SubProceso MostrarCuadrado(numero)
+    Escribir numero * numero;
 FinSubProceso
 
-Algoritmo Saludo
-    Saludar("Ana");
+Algoritmo Prueba
+    MostrarCuadrado(3);
+    MostrarCuadrado(4);
 FinAlgoritmo</code></pre>
             </details>
         </article>

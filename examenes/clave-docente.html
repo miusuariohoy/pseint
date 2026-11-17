@@ -18,284 +18,382 @@
         <span class="badge">Material docente · PSeInt</span>
         <h1>Clave, soluciones y rúbrica</h1>
         <p class="subtitulo">
-            Evaluación y recuperatorio de Programación Estructurada.
+            Evaluación, recuperatorio y evaluaciones por parte de Programación Estructurada.
             Este material no debería compartirse con los alumnos antes de rendir.
         </p>
         <div class="nav-rapida">
-            <a href="index.html" class="btn-enlace">← Portal de exámenes</a>
-            <a href="evaluacion.html" class="btn-enlace">Evaluación</a>
-            <a href="recuperatorio.html" class="btn-enlace">Recuperatorio</a>
+            <a href="index.html" class="btn-enlace">Volver al portal</a>
+            <a href="#resumen" class="btn-enlace">Resumen</a>
+            <a href="#evaluacion" class="btn-enlace">Evaluación</a>
+            <a href="#recuperatorio" class="btn-enlace">Recuperatorio</a>
+            <a href="#parte-1" class="btn-enlace">Primera parte</a>
+            <a href="#parte-2" class="btn-enlace">Segunda parte</a>
+            <a href="#rubrica" class="btn-enlace">Rúbrica</a>
         </div>
     </div>
 </header>
 
 <main class="contenedor">
 
-    <section class="bloque">
-        <div class="aviso-docente">
-            <strong>Uso docente.</strong> Esta página contiene las respuestas correctas y las soluciones completas.
-            Si la publicás en el mismo sitio que los exámenes, cualquier alumno puede abrirla. En ese caso,
-            no la enlaces desde el portal o retirala antes de rendir.
+    <section class="bloque" id="resumen">
+        <div class="encabezado-seccion">
+            <span class="numero-paso">★</span>
+            <div>
+                <h2>Resumen de las cuatro instancias</h2>
+                <p>Los mismos temas trabajados con consignas distintas. Todas valen 10 puntos.</p>
+            </div>
         </div>
-
-        <div class="tarjeta">
-            <h3>Resumen de las dos instancias</h3>
-            <table class="criterios">
-                <thead>
-                    <tr><th>Instancia</th><th>Identificador</th><th>Clave</th><th>Estructura</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td>Evaluación</td><td><code>pseint-eval-2026</code></td><td><code>pseint</code></td><td>5 opción múltiple + 4 salidas + 3 programas</td></tr>
-                    <tr><td>Recuperatorio</td><td><code>pseint-recu-2026</code></td><td><code>pseint-recu</code></td><td>5 opción múltiple + 4 salidas + 3 programas</td></tr>
-                </tbody>
-            </table>
-            <p class="nota">
-                Las claves se pueden cambiar en <code>config-evaluacion.js</code> y
-                <code>config-recuperatorio.js</code>. La aprobación de referencia es <strong>6/10</strong>.
-            </p>
-        </div>
+        <table class="criterios tabla-clave">
+            <thead>
+                <tr><th>Instancia</th><th>Identificador</th><th>Clave de acceso</th><th>Estructura</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Evaluación completa</td><td><code>pseint-eval-2026</code></td><td><code>pseint</code></td><td>5 opción múltiple + 4 salidas + 3 programas</td></tr>
+                <tr><td>Recuperatorio</td><td><code>pseint-recu-2026</code></td><td><code>pseint-recu</code></td><td>5 opción múltiple + 4 salidas + 3 programas</td></tr>
+                <tr><td>Primera parte · Temas 1 a 6</td><td><code>pseint-parte-1</code></td><td><code>pseint</code></td><td>5 opción múltiple + 4 salidas + 3 programas</td></tr>
+                <tr><td>Segunda parte · Temas 7 a 9</td><td><code>pseint-parte-2</code></td><td><code>pseint</code></td><td>6 opción múltiple + 2 salidas + 3 programas</td></tr>
+            </tbody>
+        </table>
+        <p class="nota">
+            Las claves se pueden cambiar en <code>config-evaluacion.js</code>,
+            <code>config-recuperatorio.js</code>, <code>config-parte-1.js</code> y
+            <code>config-parte-2.js</code>. Los requisitos de corrección de la Parte C
+            están en esos mismos archivos, en <code>window.CONFIG.EJERCICIOS</code>.
+        </p>
     </section>
 
-    <!-- ================= EVALUACIÓN ================= -->
-    <section class="bloque">
+    <section class="bloque" id="evaluacion">
         <div class="encabezado-seccion">
-            <span class="numero-paso">A</span>
+            <span class="numero-paso">★</span>
             <div>
-                <h2>Evaluación · clave y soluciones</h2>
-                <p>12 consignas · 10 puntos</p>
+                <h2>Evaluación completa · clave y soluciones</h2>
+                <p><a href="evaluacion.html">Abrir la evaluación</a> · identificador <code>pseint-eval-2026</code> · clave <code>pseint</code></p>
             </div>
         </div>
 
-        <div class="tarjeta">
-            <h3>Parte A · Opción múltiple (5 puntos)</h3>
-            <table class="criterios tabla-clave">
-                <thead>
-                    <tr><th>N.º</th><th>Respuesta correcta</th><th>Explicación breve</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td>1</td><td class="respuesta-correcta">B · Secuencia, selección e iteración.</td><td>Son las tres estructuras básicas de la programación estructurada.</td></tr>
-                    <tr><td>2</td><td class="respuesta-correcta">D · <code>Definir precio Como Real;</code></td><td><code>Real</code> permite decimales; <code>Entero</code> no.</td></tr>
-                    <tr><td>3</td><td class="respuesta-correcta">A · Se detiene y guarda el valor que escribe el usuario.</td><td><code>Leer</code> es entrada; <code>Escribir</code> es salida.</td></tr>
-                    <tr><td>4</td><td class="respuesta-correcta">C · <code>Mientras</code></td><td>La cantidad de repeticiones no se conoce de antemano.</td></tr>
-                    <tr><td>5</td><td class="respuesta-correcta">B · Acumulador</td><td>Suma un valor variable, no una cantidad fija.</td></tr>
-                </tbody>
-            </table>
-        </div>
+        <h3>Parte A · Opción múltiple (5 puntos)</h3>
+        <table class="criterios tabla-clave">
+            <thead><tr><th>N.º</th><th>Respuesta correcta</th><th>Por qué</th></tr></thead>
+            <tbody>
+                <tr><td>1</td><td class="respuesta-correcta">Declarar variables, procesar datos y mostrar resultados.</td><td>Un algoritmo estructurado avanza en pasos claros: declarar , procesar y comunicar el resultado.</td></tr>
+                <tr><td>2</td><td class="respuesta-correcta">Real</td><td>El promedio puede tener decimales, por eso se guarda como Real .</td></tr>
+                <tr><td>3</td><td class="respuesta-correcta">Escribir "Edad:"; Leer edad;</td><td>Primero se muestra el mensaje con Escribir y después se guarda el dato con Leer .</td></tr>
+                <tr><td>4</td><td class="respuesta-correcta">5 veces</td><td>El contador toma los valores 3, 4, 5, 6 y 7. El límite Hasta se incluye: son 5 vueltas .</td></tr>
+                <tr><td>5</td><td class="respuesta-correcta">Es un contador, porque aumenta de a 1.</td><td>Un contador suma una cantidad fija (normalmente 1). El acumulador suma valores que pueden cambiar.</td></tr>
+            </tbody>
+        </table>
 
-        <div class="tarjeta">
-            <h3>Parte B · Predicción de salidas (2 puntos)</h3>
-            <table class="criterios tabla-clave">
-                <thead>
-                    <tr><th>N.º</th><th>Salida esperada</th><th>Explicación breve</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td>6</td><td class="respuesta-correcta"><code>Desaprobado</code></td><td>5.5 &lt; 6: se ejecuta la rama <code>Sino</code>.</td></tr>
-                    <tr><td>7</td><td class="respuesta-correcta"><code>4 3 2 1</code></td><td>El <code>Mientras</code> desciende de 4 a 1.</td></tr>
-                    <tr><td>8</td><td class="respuesta-correcta"><code>2 4 6 8</code></td><td><code>Para</code> con inicio 2, fin 8 y paso 2.</td></tr>
-                    <tr><td>9</td><td class="respuesta-correcta"><code>12</code></td><td>El subproceso recibe 6 y muestra <code>6 * 2</code>.</td></tr>
-                </tbody>
-            </table>
-        </div>
+        <h3>Parte B · Predicción de salidas (2 puntos)</h3>
+        <table class="criterios tabla-clave">
+            <thead><tr><th>N.º</th><th>Salida esperada</th><th>Por qué</th></tr></thead>
+            <tbody>
+                <tr><td>6</td><td class="respuesta-correcta"><code>Calor</code></td><td>31 es mayor que 30: se ejecuta la rama del Entonces y la salida es Calor .</td></tr>
+                <tr><td>7</td><td class="respuesta-correcta"><code>2 4 6</code></td><td>El Mientras muestra 2, 4 y 6. Al llegar a 8, la condición se vuelve falsa.</td></tr>
+                <tr><td>8</td><td class="respuesta-correcta"><code>10 8 6 4</code></td><td>El paso negativo hace que el Para descienda de 10 a 4 de dos en dos.</td></tr>
+                <tr><td>9</td><td class="respuesta-correcta"><code>Listo</code></td><td>El subproceso recibe "Listo" en el parámetro mensaje y lo muestra.</td></tr>
 
-        <div class="tarjeta">
-            <h3>Parte C · Soluciones (3 puntos)</h3>
+            </tbody>
+        </table>
 
-            <h4>Actividad 1 · Nombre y edad</h4>
-            <pre><code>Algoritmo EdadPersona
-    Definir nombre Como Caracter;
-    Definir edad Como Entero;
-    Escribir "Ingresá el nombre:";
-    Leer nombre;
-    Escribir "Ingresá la edad:";
-    Leer edad;
-    Si edad &gt;= 18 Entonces
-        Escribir nombre, " es mayor de edad";
+        <h3>Parte C · Soluciones (3 puntos)</h3>
+        <h4>Actividad 1</h4>
+        <p>Leé una temperatura . Si es 30 o más, mostrá Alta ; si no, mostrá Normal . Usá Si … Entonces … Sino … FinSi .</p>
+        <pre><code>Algoritmo ControlTemperatura
+    Definir temperatura Como Real;
+    Escribir "Ingresá la temperatura:";
+    Leer temperatura;
+    Si temperatura &gt;= 30 Entonces
+        Escribir "Alta";
     Sino
-        Escribir nombre, " es menor de edad";
+        Escribir "Normal";
     FinSi
 FinAlgoritmo</code></pre>
-            <p><strong>Requisitos:</strong> algoritmo completo, <code>nombre</code> como Caracter, <code>edad</code> como Entero, dos lecturas, <code>Si/Sino/FinSi</code>, comparación con 18 y mensajes con el nombre.</p>
-
-            <h4>Actividad 2 · 10 edades: mayores y no mayores de 16</h4>
-            <pre><code>Algoritmo ContarEdades
-    Definir edad, mayores, menores, i Como Entero;
-    mayores &lt;- 0;
-    menores &lt;- 0;
+        <h4>Actividad 2</h4>
+        <p>Pedí 5 notas con un Mientras . Contá cuántas son mayores o iguales que 6 en aprobadas y sumá todas en suma . Mostrá ambos resultados.</p>
+        <pre><code>Algoritmo ResumenNotas
+    Definir nota, aprobadas, suma, i Como Entero;
+    aprobadas &lt;- 0;
+    suma &lt;- 0;
     i &lt;- 1;
-    Mientras i &lt;= 10 Hacer
-        Escribir "Ingresá una edad:";
-        Leer edad;
-        Si edad &gt; 16 Entonces
-            mayores &lt;- mayores + 1;
-        Sino
-            menores &lt;- menores + 1;
+    Mientras i &lt;= 5 Hacer
+        Escribir "Ingresá una nota:";
+        Leer nota;
+        suma &lt;- suma + nota;
+        Si nota &gt;= 6 Entonces
+            aprobadas &lt;- aprobadas + 1;
         FinSi
         i &lt;- i + 1;
     FinMientras
-    Escribir "Mayores de 16: ", mayores;
-    Escribir "No mayores de 16: ", menores;
+    Escribir "Aprobadas: ", aprobadas;
+    Escribir "Suma: ", suma;
 FinAlgoritmo</code></pre>
-            <p><strong>Requisitos:</strong> variables enteras, dos contadores y <code>i</code> inicializados, <code>Mientras i &lt;= 10</code>, lectura de la edad dentro del bucle, <code>Si/Sino/FinSi</code> con <code>edad &gt; 16</code>, incremento de cada contador en su rama, incremento de <code>i</code> y salida de ambos totales.</p>
-
-            <h4>Actividad 3 · SubProceso Saludar</h4>
-            <pre><code>SubProceso Saludar(nombre)
-    Escribir "Hola, ", nombre;
+        <h4>Actividad 3</h4>
+        <p>Creá el subproceso MostrarCuadrado(numero) que muestre el cuadrado del número. Llamalo desde el algoritmo principal con 3 y con 4 .</p>
+        <pre><code>SubProceso MostrarCuadrado(numero)
+    Escribir numero * numero;
 FinSubProceso
 
-Algoritmo Saludo
-    Saludar("Ana");
+Algoritmo Prueba
+    MostrarCuadrado(3);
+    MostrarCuadrado(4);
 FinAlgoritmo</code></pre>
-            <p><strong>Requisitos:</strong> <code>SubProceso Saludar(nombre)</code> y <code>FinSubProceso</code>, saludo con <code>Escribir</code> que incluya el parámetro, algoritmo principal completo y llamada <code>Saludar("Ana")</code>.</p>
-        </div>
     </section>
 
-    <!-- ================= RECUPERATORIO ================= -->
-    <section class="bloque">
+    <section class="bloque" id="recuperatorio">
         <div class="encabezado-seccion">
-            <span class="numero-paso">B</span>
+            <span class="numero-paso">★</span>
             <div>
                 <h2>Recuperatorio · clave y soluciones</h2>
-                <p>12 consignas · 10 puntos</p>
+                <p><a href="recuperatorio.html">Abrir la evaluación</a> · identificador <code>pseint-recu-2026</code> · clave <code>pseint-recu</code></p>
             </div>
         </div>
 
-        <div class="tarjeta">
-            <h3>Parte A · Opción múltiple (5 puntos)</h3>
-            <table class="criterios tabla-clave">
-                <thead>
-                    <tr><th>N.º</th><th>Respuesta correcta</th><th>Explicación breve</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td>1</td><td class="respuesta-correcta">C · <code>Si ... Entonces ... FinSi</code></td><td>Es la estructura de selección.</td></tr>
-                    <tr><td>2</td><td class="respuesta-correcta">A · <code>Caracter</code></td><td>Almacena texto; los otros son numéricos o lógicos.</td></tr>
-                    <tr><td>3</td><td class="respuesta-correcta">D · <code>Escribir "Hola";</code></td><td>Es la instrucción de salida.</td></tr>
-                    <tr><td>4</td><td class="respuesta-correcta">B · <code>Mientras</code></td><td>Bucle indeterminado que depende de una condición.</td></tr>
-                    <tr><td>5</td><td class="respuesta-correcta">C · Contador</td><td>Suma una cantidad fija, normalmente 1.</td></tr>
-                </tbody>
-            </table>
-        </div>
+        <h3>Parte A · Opción múltiple (5 puntos)</h3>
+        <table class="criterios tabla-clave">
+            <thead><tr><th>N.º</th><th>Respuesta correcta</th><th>Por qué</th></tr></thead>
+            <tbody>
+                <tr><td>1</td><td class="respuesta-correcta">Si … Entonces … Sino … FinSi</td><td>La selección elige entre dos caminos según una condición. Para y Mientras son iteraciones.</td></tr>
+                <tr><td>2</td><td class="respuesta-correcta">Entero</td><td>La edad se expresa con números enteros, así que se declara como Entero .</td></tr>
+                <tr><td>3</td><td class="respuesta-correcta">Escribir total;</td><td>Escribir es la instrucción de salida: muestra en pantalla el contenido de la variable.</td></tr>
+                <tr><td>4</td><td class="respuesta-correcta">Mientras , porque depende de una condición.</td><td>No se sabe cuántos datos vendrán: el Mientras repite mientras la condición siga siendo verdadera.</td></tr>
+                <tr><td>5</td><td class="respuesta-correcta">Un acumulador, porque suma un valor variable.</td><td>El acumulador suma valores que pueden cambiar ( precio ). El contador suma siempre lo mismo.</td></tr>
+            </tbody>
+        </table>
 
-        <div class="tarjeta">
-            <h3>Parte B · Predicción de salidas (2 puntos)</h3>
-            <table class="criterios tabla-clave">
-                <thead>
-                    <tr><th>N.º</th><th>Salida esperada</th><th>Explicación breve</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td>6</td><td class="respuesta-correcta"><code>Menor</code></td><td>17 &lt; 18: se ejecuta la rama <code>Sino</code>.</td></tr>
-                    <tr><td>7</td><td class="respuesta-correcta"><code>1 2 3 4</code></td><td>El <code>Mientras</code> asciende de 1 a 4.</td></tr>
-                    <tr><td>8</td><td class="respuesta-correcta"><code>5 4 3 2 1</code></td><td><code>Para</code> con paso negativo.</td></tr>
-                    <tr><td>9</td><td class="respuesta-correcta"><code>2 4 6</code></td><td>El subproceso muestra 2×1, 2×2 y 2×3.</td></tr>
-                </tbody>
-            </table>
-        </div>
+        <h3>Parte B · Predicción de salidas (2 puntos)</h3>
+        <table class="criterios tabla-clave">
+            <thead><tr><th>N.º</th><th>Salida esperada</th><th>Por qué</th></tr></thead>
+            <tbody>
+                <tr><td>6</td><td class="respuesta-correcta"><code>Menor</code></td><td>15 es menor que 18: la condición es falsa y se ejecuta el Sino . La salida es Menor .</td></tr>
+                <tr><td>7</td><td class="respuesta-correcta"><code>5 3 1</code></td><td>El Mientras muestra 5, 3 y 1. Con 0 la condición deja de cumplirse.</td></tr>
+                <tr><td>8</td><td class="respuesta-correcta"><code>1 3 5</code></td><td>El Para empieza en 1, avanza de 2 en 2 y se detiene en 5.</td></tr>
+                <tr><td>9</td><td class="respuesta-correcta"><code>5</code></td><td>El subproceso recibe a = 2 y b = 3 , y muestra 2 + 3 = 5 .</td></tr>
 
-        <div class="tarjeta">
-            <h3>Parte C · Soluciones (3 puntos)</h3>
+            </tbody>
+        </table>
 
-            <h4>Actividad 1 · Producto y precio</h4>
-            <pre><code>Algoritmo PrecioProducto
-    Definir producto Como Caracter;
-    Definir precio Como Real;
-    Escribir "Ingresá el producto:";
-    Leer producto;
-    Escribir "Ingresá el precio:";
-    Leer precio;
-    Si precio &gt; 1000 Entonces
-        Escribir producto, ": precio alto";
+        <h3>Parte C · Soluciones (3 puntos)</h3>
+        <h4>Actividad 1</h4>
+        <p>Leé una estatura en metros. Si es menor que 1.60, mostrá Baja ; si no, mostrá Alta . Usá Si … Entonces … Sino … FinSi .</p>
+        <pre><code>Algoritmo ClasificarEstatura
+    Definir estatura Como Real;
+    Escribir "Ingresá la estatura:";
+    Leer estatura;
+    Si estatura &lt; 1.60 Entonces
+        Escribir "Baja";
     Sino
-        Escribir producto, ": precio accesible";
+        Escribir "Alta";
     FinSi
 FinAlgoritmo</code></pre>
-            <p><strong>Requisitos:</strong> <code>producto</code> como Caracter, <code>precio</code> como Real, dos lecturas, <code>Si/Sino/FinSi</code>, comparación con 1000 y mensajes con el nombre del producto.</p>
-
-            <h4>Actividad 2 · 10 edades: mayores y no mayores de 16</h4>
-            <pre><code>Algoritmo ContarEdades
-    Definir edad, mayores, menores, i Como Entero;
+        <h4>Actividad 2</h4>
+        <p>Pedí 6 edades con un Mientras . Contá en mayores cuántas son 18 o más y sumá todas en suma . Mostrá los dos totales.</p>
+        <pre><code>Algoritmo ResumenEdades
+    Definir edad, mayores, suma, i Como Entero;
     mayores &lt;- 0;
-    menores &lt;- 0;
+    suma &lt;- 0;
     i &lt;- 1;
-    Mientras i &lt;= 10 Hacer
+    Mientras i &lt;= 6 Hacer
         Escribir "Ingresá una edad:";
         Leer edad;
-        Si edad &gt; 16 Entonces
+        suma &lt;- suma + edad;
+        Si edad &gt;= 18 Entonces
             mayores &lt;- mayores + 1;
-        Sino
-            menores &lt;- menores + 1;
         FinSi
         i &lt;- i + 1;
     FinMientras
-    Escribir "Mayores de 16: ", mayores;
-    Escribir "No mayores de 16: ", menores;
+    Escribir "Mayores: ", mayores;
+    Escribir "Suma: ", suma;
 FinAlgoritmo</code></pre>
-            <p><strong>Requisitos:</strong> variables enteras, dos contadores y <code>i</code> inicializados, <code>Mientras i &lt;= 10</code>, lectura de la edad dentro del bucle, <code>Si/Sino/FinSi</code> con <code>edad &gt; 16</code>, incremento de cada contador en su rama, incremento de <code>i</code> y salida de ambos totales.</p>
-
-            <h4>Actividad 3 · SubProceso Saludar</h4>
-            <pre><code>SubProceso Saludar(nombre)
-    Escribir "Hola, ", nombre;
+        <h4>Actividad 3</h4>
+        <p>Creá el subproceso MostrarMitad(numero) que muestre la mitad del número. Llamalo desde el algoritmo principal con 8 y con 10 .</p>
+        <pre><code>SubProceso MostrarMitad(numero)
+    Escribir numero / 2;
 FinSubProceso
 
-Algoritmo Saludo
-    Saludar("Ana");
+Algoritmo Prueba
+    MostrarMitad(8);
+    MostrarMitad(10);
 FinAlgoritmo</code></pre>
-            <p><strong>Requisitos:</strong> <code>SubProceso Saludar(nombre)</code> y <code>FinSubProceso</code>, saludo con <code>Escribir</code> que incluya el parámetro, algoritmo principal completo y llamada <code>Saludar("Ana")</code>.</p>
-        </div>
     </section>
 
-    <!-- ================= RÚBRICA ================= -->
-    <section class="bloque">
+    <section class="bloque" id="parte-1">
         <div class="encabezado-seccion">
-            <span class="numero-paso">C</span>
+            <span class="numero-paso">★</span>
             <div>
-                <h2>Rúbrica de puntaje</h2>
-                <p>Cómo se distribuyen los 10 puntos</p>
+                <h2>Primera parte · Temas 1 a 6 · clave y soluciones</h2>
+                <p><a href="parte-1.html">Abrir la evaluación</a> · identificador <code>pseint-parte-1</code> · clave <code>pseint</code></p>
             </div>
         </div>
 
-        <div class="tarjeta">
-            <table class="criterios">
-                <thead>
-                    <tr><th>Parte</th><th>Criterio</th><th>Puntaje</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td>A · Opción múltiple</td><td>1 punto por respuesta correcta; sin puntaje parcial.</td><td>5</td></tr>
-                    <tr><td>B · Salidas</td><td>0,5 puntos por salida exacta. Se aceptan espacios o comas entre valores.</td><td>2</td></tr>
-                    <tr><td>C · Programas</td><td>1 punto por actividad, distribuido entre los requisitos de estructura. Se otorga puntaje proporcional.</td><td>3</td></tr>
-                    <tr><td colspan="2"><strong>Total</strong></td><td><strong>10</strong></td></tr>
-                </tbody>
-            </table>
+        <h3>Parte A · Opción múltiple (5 puntos)</h3>
+        <table class="criterios tabla-clave">
+            <thead><tr><th>N.º</th><th>Respuesta correcta</th><th>Por qué</th></tr></thead>
+            <tbody>
+                <tr><td>1</td><td class="respuesta-correcta">Usa pasos claros, selección e iteración cuando hace falta.</td><td>La programación estructurada organiza el problema en secuencia , selección e iteración .</td></tr>
+                <tr><td>2</td><td class="respuesta-correcta">Definir activo Como Logico;</td><td>El tipo Logico solo admite Verdadero o Falso .</td></tr>
+                <tr><td>3</td><td class="respuesta-correcta">Muestra el texto en pantalla.</td><td>Escribir es salida: muestra el texto o el valor de una variable.</td></tr>
+                <tr><td>4</td><td class="respuesta-correcta">Si … Entonces … Sino … FinSi</td><td>El Si evalúa la condición y ejecuta el Entonces o el Sino .</td></tr>
+                <tr><td>5</td><td class="respuesta-correcta">veces &lt;- veces + 1;</td><td>El contador suma siempre lo mismo: 1 . La opción con precio sería un acumulador.</td></tr>
+            </tbody>
+        </table>
 
-            <h3 style="margin-top:24px;">Errores frecuentes</h3>
-            <ul>
-                <li><strong>No declarar variables</strong> o declararlas con un tipo incorrecto.</li>
-                <li><strong>Olvidar el <code>FinSi</code>, <code>FinMientras</code>, <code>FinPara</code> o <code>FinSubProceso</code>.</strong></li>
-                <li><strong>No inicializar los contadores</strong> antes del bucle.</li>
-                <li><strong>No incrementar el contador del <code>Mientras</code></strong>, lo que produce un bucle infinito.</li>
-                <li><strong>Usar <code>=</code> en lugar de <code>&lt;-</code></strong> para asignar.</li>
-                <li><strong>Comparar con <code>=</code> cuando se necesita <code>&lt;&gt;</code></strong> (distinto).</li>
-                <li><strong>No llamar al subproceso</strong> desde el algoritmo principal.</li>
-                <li><strong>Confundir contador con acumulador</strong>: el contador suma 1; el acumulador suma un valor variable.</li>
-            </ul>
+        <h3>Parte B · Predicción de salidas (2 puntos)</h3>
+        <table class="criterios tabla-clave">
+            <thead><tr><th>N.º</th><th>Salida esperada</th><th>Por qué</th></tr></thead>
+            <tbody>
+                <tr><td>6</td><td class="respuesta-correcta"><code>Recupera</code></td><td>4 es menor que 6: se ejecuta el Sino . La salida es Recupera .</td></tr>
+                <tr><td>7</td><td class="respuesta-correcta"><code>2</code></td><td>Solo b y c superan 5: el contador queda en 2 .</td></tr>
+                <tr><td>8</td><td class="respuesta-correcta"><code>35</code></td><td>El acumulador suma 10 + 20 + 5. La salida es 35 .</td></tr>
+                <tr><td>9</td><td class="respuesta-correcta"><code>Luis:20</code></td><td>Se muestra el nombre, dos puntos y el resultado de 14 + 6 : Luis:20 .</td></tr>
 
-            <h3 style="margin-top:24px;">Observaciones para la corrección</h3>
-            <ul>
-                <li>La actividad 2 pide los nombres <code>mayores</code>, <code>menores</code> e <code>i</code>. Si el alumno usa otros nombres coherentes, el docente puede revisar el código manualmente.</li>
-                <li>Se aceptan <code>Caracter</code> o <code>Cadena</code> para textos.</li>
-                <li>Se aceptan <code>Mientras i &lt;= 10</code>, <code>Mientras i &lt; 11</code>, <code>Mientras i &lt; 10</code> o <code>Mientras i &lt;= 9</code> para el bucle fijo de 10 vueltas, con <code>i</code> inicializado en 0 o en 1.</li>
-                <li>Se toleran errores de tipeo menores en los nombres declarados (por ejemplo <code>menore</code> por <code>menores</code>).</li>
-                <li>Se aceptan <code>Si edad &gt;= 16</code>, <code>Si edad &gt; 16</code>, <code>Si 16 &lt; edad</code> o <code>Si edad &gt;= 17</code> para mayores de 16.</li>
-                <li>La lectura de la edad tiene que estar <strong>dentro</strong> del <code>Mientras</code>; si está afuera se cuenta la misma edad en todas las vueltas.</li>
-                <li>Las variables pueden declararse todas juntas o en varias líneas con <code>Definir</code>.</li>
-                <li>No se distinguen mayúsculas y minúsculas: <code>MIENTRAS</code>, <code>Mientras</code> y <code>mientras</code> son equivalentes.</li>
-                <li><code>Proceso … FinProceso</code> es equivalente a <code>Algoritmo … FinAlgoritmo</code>.</li>
-                <li>El corrector revisa estructura con expresiones regulares; no ejecuta el pseudocódigo. Ante una solución alternativa válida, el docente puede revisar el código manualmente.</li>
-            </ul>
-        </div>
+            </tbody>
+        </table>
+
+        <h3>Parte C · Soluciones (3 puntos)</h3>
+        <h4>Actividad 1</h4>
+        <p>Leé las horas trabajadas . Si son 40 o más, mostrá Completo ; si no, mostrá Parcial . Usá Si … Entonces … Sino … FinSi .</p>
+        <pre><code>Algoritmo Jornada
+    Definir horas Como Entero;
+    Escribir "Ingresá las horas:";
+    Leer horas;
+    Si horas &gt;= 40 Entonces
+        Escribir "Completo";
+    Sino
+        Escribir "Parcial";
+    FinSi
+FinAlgoritmo</code></pre>
+        <h4>Actividad 2</h4>
+        <p>Sin usar Para ni Mientras , asigná e1 <- 17; , e2 <- 20; y e3 <- 15; . Con tres Si , contá en adultos cuántas edades son 18 o más y mostrá el total.</p>
+        <pre><code>Algoritmo ContarAdultos
+    Definir e1, e2, e3, adultos Como Entero;
+    e1 &lt;- 17;
+    e2 &lt;- 20;
+    e3 &lt;- 15;
+    adultos &lt;- 0;
+    Si e1 &gt;= 18 Entonces
+        adultos &lt;- adultos + 1;
+    FinSi
+    Si e2 &gt;= 18 Entonces
+        adultos &lt;- adultos + 1;
+    FinSi
+    Si e3 &gt;= 18 Entonces
+        adultos &lt;- adultos + 1;
+    FinSi
+    Escribir "Adultos: ", adultos;
+FinAlgoritmo</code></pre>
+        <h4>Actividad 3</h4>
+        <p>Sin usar bucles, asigná g1 <- 12.5; , g2 <- 7.5; y g3 <- 20; . Acumulá los tres gastos en total (inicializado en 0) y mostrá el resultado.</p>
+        <pre><code>Algoritmo TotalGastos
+    Definir g1, g2, g3, total Como Real;
+    g1 &lt;- 12.5;
+    g2 &lt;- 7.5;
+    g3 &lt;- 20;
+    total &lt;- 0;
+    total &lt;- total + g1;
+    total &lt;- total + g2;
+    total &lt;- total + g3;
+    Escribir "Total: ", total;
+FinAlgoritmo</code></pre>
     </section>
 
-    <footer>
-        <p>Clave docente · PSeInt · <a href="index.html">Volver al portal</a></p>
-    </footer>
+    <section class="bloque" id="parte-2">
+        <div class="encabezado-seccion">
+            <span class="numero-paso">★</span>
+            <div>
+                <h2>Segunda parte · Temas 7 a 9 · clave y soluciones</h2>
+                <p><a href="parte-2.html">Abrir la evaluación</a> · identificador <code>pseint-parte-2</code> · clave <code>pseint</code></p>
+            </div>
+        </div>
+
+        <h3>Parte A · Opción múltiple (6 puntos)</h3>
+        <table class="criterios tabla-clave">
+            <thead><tr><th>N.º</th><th>Respuesta correcta</th><th>Por qué</th></tr></thead>
+            <tbody>
+                <tr><td>1</td><td class="respuesta-correcta">Cuenta hacia atrás restando 1.</td><td>El paso puede ser negativo: el contador desciende hasta llegar al límite Hasta .</td></tr>
+                <tr><td>2</td><td class="respuesta-correcta">3 veces</td><td>El contador toma 0, 3 y 6. Son 3 vueltas .</td></tr>
+                <tr><td>3</td><td class="respuesta-correcta">numero &lt;&gt; 0</td><td><> significa “distinto de”. El bucle sigue mientras el número no sea 0.</td></tr>
+                <tr><td>4</td><td class="respuesta-correcta">Actualizar la variable de control dentro del bucle.</td><td>La condición debe poder volverse falsa. Por eso hay que modificar la variable controlada en cada vuelta.</td></tr>
+                <tr><td>5</td><td class="respuesta-correcta">Un valor que el subproceso recibe al ser llamado.</td><td>El parámetro se declara entre paréntesis y recibe el valor enviado en la llamada.</td></tr>
+                <tr><td>6</td><td class="respuesta-correcta">Ejecuta el subproceso con nombre = "Luz" .</td><td>La llamada ejecuta el subproceso y copia el valor enviado en el parámetro.</td></tr>
+            </tbody>
+        </table>
+
+        <h3>Parte B · Predicción de salidas (1 punto)</h3>
+        <table class="criterios tabla-clave">
+            <thead><tr><th>N.º</th><th>Salida esperada</th><th>Por qué</th></tr></thead>
+            <tbody>
+                <tr><td>7</td><td class="respuesta-correcta"><code>4 8 12</code></td><td>El Para recorre 4, 8 y 12. La salida es 4 8 12 .</td></tr>
+                <tr><td>8</td><td class="respuesta-correcta"><code>20 18 16</code></td><td>El Mientras muestra 20, 18 y 16. Al llegar a 14 se detiene.</td></tr>
+
+            </tbody>
+        </table>
+
+        <h3>Parte C · Soluciones (3 puntos)</h3>
+        <h4>Actividad 1</h4>
+        <p>Mostrá los múltiplos de 3 del 3 al 12 usando un bucle Para con paso 3. Cada valor debe ir en un Escribir .</p>
+        <pre><code>Algoritmo MultiplosTres
+    Definir i Como Entero;
+    Para i &lt;- 3 Hasta 12 Con Paso 3 Hacer
+        Escribir i;
+    FinPara
+FinAlgoritmo</code></pre>
+        <h4>Actividad 2</h4>
+        <p>Pedí temperaturas hasta que se ingrese 0 . Contá en cantidad cuántas superan 30 y mostrá el total. Usá un Mientras .</p>
+        <pre><code>Algoritmo ContarCalurosos
+    Definir temperatura, cantidad Como Entero;
+    cantidad &lt;- 0;
+    temperatura &lt;- 1;
+    Mientras temperatura &lt;&gt; 0 Hacer
+        Escribir "Ingresá la temperatura (0 para salir):";
+        Leer temperatura;
+        Si temperatura &gt; 30 Entonces
+            cantidad &lt;- cantidad + 1;
+        FinSi
+    FinMientras
+    Escribir "Temperaturas mayores a 30: ", cantidad;
+FinAlgoritmo</code></pre>
+        <h4>Actividad 3</h4>
+        <p>Creá el subproceso MostrarTriple(numero) que muestre el triple del número. Llamalo desde el algoritmo principal con 2 y con 5 .</p>
+        <pre><code>SubProceso MostrarTriple(numero)
+    Escribir numero * 3;
+FinSubProceso
+
+Algoritmo Prueba
+    MostrarTriple(2);
+    MostrarTriple(5);
+FinAlgoritmo</code></pre>
+    </section>
+
+    <section class="bloque" id="rubrica">
+        <div class="encabezado-seccion">
+            <span class="numero-paso">★</span>
+            <div>
+                <h2>Rúbrica y criterios comunes</h2>
+                <p>El corrector revisa la estructura del pseudocódigo, no lo ejecuta.</p>
+            </div>
+        </div>
+        <table class="criterios tabla-clave">
+            <thead><tr><th>Bloque</th><th>Corrección</th><th>Puntaje</th></tr></thead>
+            <tbody>
+                <tr><td>OPCIÓN MÚLTIPLE</td><td>1 punto por respuesta correcta; sin puntaje parcial.</td><td>5 o 6</td></tr>
+                <tr><td>SALIDAS</td><td>0,5 puntos por salida exacta (se ignoran espacios y mayúsculas).</td><td>1 o 2</td></tr>
+                <tr><td>PSEUDOCÓDIGO</td><td>Cada actividad vale 1 punto y se descuenta de forma proporcional por cada requisito incumplido.</td><td>3</td></tr>
+            </tbody>
+        </table>
+        <ul class="checklist">
+            <li>Se aceptan <code>Algoritmo</code> o <code>Proceso</code> con su cierre correspondiente.</li>
+            <li>Se aceptan formas equivalentes de las condiciones, por ejemplo <code>>= 18</code> o <code>> 17</code> para “18 o más”.</li>
+            <li>En los bucles <code>Mientras</code> se acepta la inicialización del control en 0 o en 1 cuando el número de vueltas es el mismo.</li>
+            <li>En las salidas se aceptan números con coma o con punto decimal.</li>
+            <li>Ante una solución alternativa válida que el corrector no reconozca, el docente puede revisar el código manualmente y ajustar la nota.</li>
+        </ul>
+        <p class="nota">
+            Los errores frecuentes son: olvidar el <code>FinSi</code>, <code>FinMientras</code>,
+            <code>FinPara</code> o <code>FinSubProceso</code>; no inicializar contadores y
+            acumuladores; confundir <code>Leer</code> con <code>Escribir</code>; y usar
+            <code>Mientras</code> donde el enunciado pide <code>Para</code> (o al revés).
+        </p>
+    </section>
 
 </main>
 

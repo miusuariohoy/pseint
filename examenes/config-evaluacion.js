@@ -98,73 +98,69 @@ window.CONFIG.PUNTOS_EJERCICIO = 1;
         /* Actividad 1 · Variables + Leer + condicional. */
         c1: [
             { d: 'Empieza con Algoritmo (o Proceso) y cierra con FinAlgoritmo (o FinProceso)', f: function (c) { return cierraAlgoritmo(c); } },
-            { d: 'Declara nombre como Caracter', f: function (c) { return declaracionTexto(c, 'nombre'); } },
-            { d: 'Declara edad como Entero', f: function (c) { return declaracion(c, 'edad', 'entero'); } },
-            { d: 'Lee el nombre y la edad', f: function (c) { return leeDos(c, 'nombre', 'edad'); } },
+            { d: 'Declara temperatura como Real', f: function (c) { return declaracion(c, 'temperatura', 'real'); } },
+            { d: 'Lee la temperatura', f: function (c) { return /\bleer\s+temperatura\b/.test(c); } },
             { d: 'Usa Si ... Entonces ... Sino ... FinSi', f: function (c) { return usaSiCompleto(c); } },
-            { d: 'Compara la edad con 18', f: function (c) {
-                return /edad\s*>=\s*18/.test(c) || /edad\s*>\s*17/.test(c) || /18\s*<=\s*edad/.test(c);
+            { d: 'Compara la temperatura con 30', f: function (c) {
+                return /temperatura\s*>=\s*30/.test(c) || /temperatura\s*>\s*29/.test(c) ||
+                       /30\s*<=\s*temperatura/.test(c);
             } },
-            { d: 'Muestra el nombre y los mensajes "mayor" y "menor"', f: function (c) {
-                var nombreEnSalida = /escribir[^\n]*nombre[^\n]*(mayor|menor)/.test(c) ||
-                                     /escribir[^\n]*(mayor|menor)[^\n]*nombre/.test(c);
-                return nombreEnSalida && /mayor/.test(c) && /menor/.test(c);
+            { d: 'Muestra los mensajes "Alta" y "Normal"', f: function (c) {
+                return /alta/i.test(c) && /normal/i.test(c) && /escribir/.test(c);
             } }
         ],
 
-        /* Actividad 2 · Mientras fijo de 10 vueltas + condicional + dos contadores. */
+        /* Actividad 2 · Mientras de 5 vueltas + contador y acumulador. */
         c2: [
             { d: 'Empieza con Algoritmo (o Proceso) y cierra con FinAlgoritmo (o FinProceso)', f: function (c) { return cierraAlgoritmo(c); } },
-            { d: 'Declara edad, mayores, menores e i como Entero', f: function (c) {
-                return ['edad', 'mayores', 'menores', 'i'].every(function (n) {
+            { d: 'Declara nota, aprobadas, suma e i como Entero', f: function (c) {
+                return ['nota', 'aprobadas', 'suma', 'i'].every(function (n) {
                     return declaracion(c, n, 'entero');
                 });
             } },
-            { d: 'Inicializa mayores y menores en 0', f: function (c) {
-                return /\bmayores\s*<-\s*0/.test(c) && /\bmenores\s*<-\s*0/.test(c);
+            { d: 'Inicializa aprobadas y suma en 0', f: function (c) {
+                return /\baprobadas\s*<-\s*0/.test(c) && /\bsuma\s*<-\s*0/.test(c);
             } },
-            { d: 'Inicializa el contador i en 0 o en 1', f: function (c) {
-                return /\bi\s*<-\s*[01]\b/.test(c);
+            { d: 'Inicializa i en 1', f: function (c) { return /\bi\s*<-\s*1\b/.test(c); } },
+            { d: 'Repite 5 vueltas con Mientras', f: function (c) {
+                return /mientras\s*\(?\s*i\s*(?:<=\s*5|<\s*6)\s*\)?/.test(c);
             } },
-            { d: 'Repite 10 vueltas con Mientras (i <= 10, i < 11, i < 10 o i <= 9)', f: function (c) {
-                return /mientras\s*\(?\s*i\s*(?:<=\s*10|<\s*11|<\s*10|<\s*=\s*9)\s*\)?/.test(c);
+            { d: 'Lee una nota dentro del Mientras', f: function (c) {
+                return /mientras[\s\S]*?\bleer\s+nota\b[\s\S]*?\bfinmientras\b/.test(c);
             } },
-            { d: 'Lee una edad dentro del Mientras', f: function (c) {
-                return /mientras[\s\S]*?\bleer\s+edad\b[\s\S]*?\bfinmientras\b/.test(c);
+            { d: 'Acumula todas las notas en suma', f: function (c) {
+                return /\bsuma\s*<-\s*suma\s*\+\s*nota\b/.test(c);
             } },
-            { d: 'Usa Si/Sino y cuenta en mayores según la edad (16 o más)', f: function (c) {
-                var condicion = '(?:\\(?\\s*edad\\s*>=\\s*16\\s*\\)?|' +
-                                '\\(?\\s*edad\\s*>\\s*16\\s*\\)?|' +
-                                '\\(?\\s*16\\s*<\\s*edad\\s*\\)?|' +
-                                '\\(?\\s*edad\\s*>=\\s*17\\s*\\)?)';
-                return usaSiCompleto(c) && incrementaDentroDeSi(c, condicion);
-            } },
-            { d: 'Cuenta en menores la rama del Sino', f: function (c) {
-                return incrementaDentroDeSino(c, 'menores');
+            { d: 'Cuenta en aprobadas las notas mayores o iguales que 6', f: function (c) {
+                var condicion = '(?:\\(?\\s*nota\\s*>=\\s*6\\s*\\)?|' +
+                                '\\(?\\s*nota\\s*>\\s*5\\s*\\)?|' +
+                                '\\(?\\s*6\\s*<=\\s*nota\\s*\\)?)';
+                return incrementaDentroDeSi(c, condicion);
             } },
             { d: 'Incrementa i y cierra con FinMientras', f: function (c) {
                 return /\bi\s*<-\s*i\s*\+\s*1\b/.test(c) && /finmientras/.test(c);
             } },
-            { d: 'Muestra los totales de mayores y menores', f: function (c) {
-                return /escribir[^;\n]*mayores/.test(c) && /escribir[^;\n]*menores/.test(c);
+            { d: 'Muestra los totales de aprobadas y suma', f: function (c) {
+                return /escribir[^;\n]*aprobadas/.test(c) && /escribir[^;\n]*suma/.test(c);
             } }
         ],
 
-        /* Actividad 3 · SubProceso simple con parámetro y llamada. */
+        /* Actividad 3 · SubProceso con parámetro y dos llamadas. */
         c3: [
-            { d: 'Declara SubProceso Saludar(nombre)', f: function (c) {
-                return /subproceso\s+saludar\s*\(\s*nombre\s*\)/.test(c);
+            { d: 'Declara SubProceso MostrarCuadrado(numero)', f: function (c) {
+                return /subproceso\s+mostrarcuadrado\s*\(\s*numero\s*\)/.test(c);
             } },
             { d: 'Cierra el subproceso con FinSubProceso', f: function (c) { return /finsubproceso/.test(c); } },
-            { d: 'Muestra "Hola" con Escribir', f: function (c) {
-                return /escribir[^\n]*hola/.test(c);
-            } },
-            { d: 'Incluye el parámetro nombre en el mensaje', f: function (c) {
-                return /escribir[^\n]*\bnombre\b/.test(c);
+            { d: 'Muestra el cuadrado con el parámetro numero', f: function (c) {
+                return /escribir[^\n]*\bnumero\b[^\n]*\*[^\n]*\bnumero\b/.test(c) ||
+                       /escribir[^\n]*\bnumero\s*\^\s*2\b/.test(c);
             } },
             { d: 'Empieza con Algoritmo (o Proceso) y cierra con FinAlgoritmo (o FinProceso)', f: function (c) { return cierraAlgoritmo(c); } },
-            { d: 'Llama a Saludar("Ana") desde el algoritmo principal', f: function (c) {
-                return /saludar\s*\(\s*["']ana["']\s*\)/.test(c) && cierraAlgoritmo(c);
+            { d: 'Llama a MostrarCuadrado(3) desde el algoritmo principal', f: function (c) {
+                return /mostrarcuadrado\s*\(\s*3\s*\)/.test(c);
+            } },
+            { d: 'Llama a MostrarCuadrado(4) desde el algoritmo principal', f: function (c) {
+                return /mostrarcuadrado\s*\(\s*4\s*\)/.test(c);
             } }
         ]
     };

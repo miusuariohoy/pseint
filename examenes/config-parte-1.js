@@ -76,74 +76,69 @@ window.CONFIG.CLAVE_ACCESO = 'pseint';
         /* Actividad 1 · Variables + Leer + condicional. */
         c1: [
             { d: 'Empieza con Algoritmo (o Proceso) y cierra con FinAlgoritmo (o FinProceso)', f: function (c) { return cierraAlgoritmo(c); } },
-            { d: 'Declara nombre como Caracter', f: function (c) { return declaracionTexto(c, 'nombre'); } },
-            { d: 'Declara precio como Real', f: function (c) { return declaracion(c, 'precio', 'real'); } },
-            { d: 'Lee el nombre y el precio', f: function (c) { return leeDos(c, 'nombre', 'precio'); } },
+            { d: 'Declara horas como Entero', f: function (c) { return declaracion(c, 'horas', 'entero'); } },
+            { d: 'Lee las horas', f: function (c) { return /\bleer\s+horas\b/.test(c); } },
             { d: 'Usa Si ... Entonces ... Sino ... FinSi', f: function (c) { return usaSiCompleto(c); } },
-            { d: 'Compara el precio con 1000', f: function (c) {
-                return /si\s+[^\n]*precio\s*(>=|>)\s*1000/.test(c) ||
-                       /si\s+[^\n]*1000\s*(<=|<)\s*precio/.test(c);
+            { d: 'Compara las horas con 40', f: function (c) {
+                return /horas\s*>=\s*40/.test(c) || /horas\s*>\s*39/.test(c) || /40\s*<=\s*horas/.test(c);
             } },
-            { d: 'Muestra el nombre con el mensaje "caro"', f: function (c) {
-                return /escribir[^\n]*nombre[^\n]*caro/.test(c);
-            } },
-            { d: 'Muestra el nombre con el mensaje "económico"', f: function (c) {
-                return /escribir[^\n]*nombre[^\n]*econ[oó]mic/.test(c);
+            { d: 'Muestra los mensajes "Completo" y "Parcial"', f: function (c) {
+                return /completo/i.test(c) && /parcial/i.test(c) && /escribir/.test(c);
             } }
         ],
 
         /* Actividad 2 · Contador sin bucles. */
         c2: [
             { d: 'Empieza con Algoritmo (o Proceso) y cierra con FinAlgoritmo (o FinProceso)', f: function (c) { return cierraAlgoritmo(c); } },
-            { d: 'Declara nota1, nota2, nota3 y aprobados como Entero', f: function (c) {
-                return ['nota1', 'nota2', 'nota3', 'aprobados'].every(function (n) {
+            { d: 'Declara e1, e2, e3 y adultos como Entero', f: function (c) {
+                return ['e1', 'e2', 'e3', 'adultos'].every(function (n) {
                     return declaracion(c, n, 'entero');
                 });
             } },
-            { d: 'Inicializa aprobados en 0', f: function (c) { return /\baprobados\s*<-\s*0\b/.test(c); } },
-            { d: 'Asigna las tres notas: 7, 3 y 9', f: function (c) {
-                return /\bnota1\s*<-\s*7\b/.test(c) &&
-                       /\bnota2\s*<-\s*3\b/.test(c) &&
-                       /\bnota3\s*<-\s*9\b/.test(c);
+            { d: 'Inicializa adultos en 0', f: function (c) { return /\badultos\s*<-\s*0\b/.test(c); } },
+            { d: 'Asigna las tres edades: 17, 20 y 15', f: function (c) {
+                return /\be1\s*<-\s*17\b/.test(c) &&
+                       /\be2\s*<-\s*20\b/.test(c) &&
+                       /\be3\s*<-\s*15\b/.test(c);
             } },
             { d: 'Usa tres bloques Si ... FinSi', f: function (c) {
                 return cuenta(c, /\bsi\b/g) >= 3 && cuenta(c, /\bfinsi\b/g) >= 3;
             } },
-            { d: 'Cada Si compara una nota con 6 (mayor o igual)', f: function (c) {
-                return cuenta(c, /si\s+[^\n]*nota[123]\s*>=\s*6/g) >= 3 ||
-                       cuenta(c, /si\s+[^\n]*nota[123]\s*>\s*5\b/g) >= 3 ||
-                       cuenta(c, /si\s+[^\n]*6\s*<=\s*nota[123]/g) >= 3;
+            { d: 'Cada Si compara una edad con 18 (mayor o igual)', f: function (c) {
+                return cuenta(c, /si\s+[^\n]*e[123]\s*>=\s*18/g) >= 3 ||
+                       cuenta(c, /si\s+[^\n]*e[123]\s*>\s*17\b/g) >= 3 ||
+                       cuenta(c, /si\s+[^\n]*18\s*<=\s*e[123]/g) >= 3;
             } },
-            { d: 'Incrementa aprobados tres veces', f: function (c) {
-                return cuenta(c, /aprobados\s*<-\s*aprobados\s*\+\s*1/g) >= 3;
+            { d: 'Incrementa adultos tres veces', f: function (c) {
+                return cuenta(c, /adultos\s*<-\s*adultos\s*\+\s*1/g) >= 3;
             } },
-            { d: 'Muestra el total con Escribir aprobados', f: function (c) {
-                return /escribir[^;\n]*\baprobados\b/.test(c);
+            { d: 'Muestra el total con Escribir adultos', f: function (c) {
+                return /escribir[^;\n]*\badultos\b/.test(c);
             } }
         ],
 
         /* Actividad 3 · Acumulador sin bucles. */
         c3: [
             { d: 'Empieza con Algoritmo (o Proceso) y cierra con FinAlgoritmo (o FinProceso)', f: function (c) { return cierraAlgoritmo(c); } },
-            { d: 'Declara precio1, precio2, precio3 y total como Real', f: function (c) {
-                return ['precio1', 'precio2', 'precio3', 'total'].every(function (n) {
+            { d: 'Declara g1, g2, g3 y total como Real', f: function (c) {
+                return ['g1', 'g2', 'g3', 'total'].every(function (n) {
                     return declaracion(c, n, 'real');
                 });
             } },
             { d: 'Inicializa total en 0', f: function (c) { return /\btotal\s*<-\s*0\b/.test(c); } },
-            { d: 'Asigna los tres precios: 100, 250.50 y 49.50', f: function (c) {
-                return /\bprecio1\s*<-\s*100\b/.test(c) &&
-                       /\bprecio2\s*<-\s*250[.,]50\b/.test(c) &&
-                       /\bprecio3\s*<-\s*49[.,]50\b/.test(c);
+            { d: 'Asigna los tres gastos: 12.5, 7.5 y 20', f: function (c) {
+                return /\bg1\s*<-\s*12[.,]5\b/.test(c) &&
+                       /\bg2\s*<-\s*7[.,]5\b/.test(c) &&
+                       /\bg3\s*<-\s*20\b/.test(c);
             } },
-            { d: 'Acumula precio1 en total', f: function (c) {
-                return /\btotal\s*<-\s*total\s*\+\s*precio1\b/.test(c);
+            { d: 'Acumula g1 en total', f: function (c) {
+                return /\btotal\s*<-\s*total\s*\+\s*g1\b/.test(c);
             } },
-            { d: 'Acumula precio2 en total', f: function (c) {
-                return /\btotal\s*<-\s*total\s*\+\s*precio2\b/.test(c);
+            { d: 'Acumula g2 en total', f: function (c) {
+                return /\btotal\s*<-\s*total\s*\+\s*g2\b/.test(c);
             } },
-            { d: 'Acumula precio3 en total', f: function (c) {
-                return /\btotal\s*<-\s*total\s*\+\s*precio3\b/.test(c);
+            { d: 'Acumula g3 en total', f: function (c) {
+                return /\btotal\s*<-\s*total\s*\+\s*g3\b/.test(c);
             } },
             { d: 'Muestra el total con Escribir', f: function (c) {
                 return /escribir[^;\n]*\btotal\b/.test(c);

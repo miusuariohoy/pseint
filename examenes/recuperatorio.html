@@ -125,11 +125,11 @@
                     <tr><td>Algoritmos y programación estructurada</td><td>Parte A · pregunta 1</td></tr>
                     <tr><td>Variables y tipos de datos</td><td>Parte A · pregunta 2; Parte C · actividades 1 y 2</td></tr>
                     <tr><td>Leer / Escribir</td><td>Parte A · pregunta 3; Parte C · actividades 1, 2 y 3</td></tr>
-                    <tr><td>Condicionales</td><td>Parte B · pregunta 6; Parte C · actividades 1 y 2</td></tr>
-                    <tr><td>Mientras</td><td>Parte B · pregunta 7; Parte C · actividad 2</td></tr>
-                    <tr><td>Para</td><td>Parte B · preguntas 8 y 9</td></tr>
-                    <tr><td>Contador</td><td>Parte A · pregunta 5; Parte C · actividad 2</td></tr>
-                    <tr><td>Acumulador</td><td>Parte A · pregunta 5 (se distingue de contador)</td></tr>
+                    <tr><td>Condicionales</td><td>Parte B · pregunta 6; Parte C · actividad 1</td></tr>
+                    <tr><td>Mientras</td><td>Parte A · pregunta 4; Parte B · pregunta 7; Parte C · actividad 2</td></tr>
+                    <tr><td>Para</td><td>Parte B · pregunta 8</td></tr>
+                    <tr><td>Contador</td><td>Parte C · actividad 2</td></tr>
+                    <tr><td>Acumulador</td><td>Parte A · pregunta 5; Parte C · actividad 2</td></tr>
                     <tr><td>Subprocesos</td><td>Parte B · pregunta 9; Parte C · actividad 3</td></tr>
                 </tbody>
             </table>
@@ -146,64 +146,64 @@
             </div>
         </div>
 
-        <article class="pregunta mc" data-correcta="c">
+        <article class="pregunta mc" data-correcta="b">
             <p class="enunciado"><span class="num-preg">1</span>
-                ¿Cuál de estas estructuras es una <strong>selección</strong>?</p>
+                ¿Cuál de estas opciones es un ejemplo de <strong>selección</strong>?</p>
             <div class="opciones">
-                <label data-op="a"><input type="radio" name="a1" value="a"> <code>Mientras ... FinMientras</code></label>
-                <label data-op="b"><input type="radio" name="a1" value="b"> <code>Leer ...</code></label>
-                <label data-op="c"><input type="radio" name="a1" value="c"> <code>Si ... Entonces ... FinSi</code></label>
-                <label data-op="d"><input type="radio" name="a1" value="d"> <code>Definir ... Como ...</code></label>
+                <label data-op="a"><input type="radio" name="a1" value="a"> <code>Para i &lt;- 1 Hasta 5 Hacer</code></label>
+                <label data-op="b"><input type="radio" name="a1" value="b"> <code>Si … Entonces … Sino … FinSi</code></label>
+                <label data-op="c"><input type="radio" name="a1" value="c"> <code>Mientras … Hacer … FinMientras</code></label>
+                <label data-op="d"><input type="radio" name="a1" value="d"> <code>Definir edad Como Entero;</code></label>
             </div>
-            <p class="explicacion">La <strong>selección</strong> elige entre dos o más caminos según una condición. <code>Mientras</code> es una iteración; <code>Leer</code> y <code>Definir</code> son instrucciones simples.</p>
+            <p class="explicacion">La selección elige entre dos caminos según una condición. <code>Para</code> y <code>Mientras</code> son iteraciones.</p>
         </article>
 
         <article class="pregunta mc" data-correcta="a">
             <p class="enunciado"><span class="num-preg">2</span>
-                ¿Qué tipo de dato conviene para guardar el <strong>nombre de un producto</strong>?</p>
+                ¿Qué tipo conviene para guardar la <strong>edad</strong> de una persona?</p>
             <div class="opciones">
-                <label data-op="a"><input type="radio" name="a2" value="a"> <code>Caracter</code></label>
-                <label data-op="b"><input type="radio" name="a2" value="b"> <code>Entero</code></label>
-                <label data-op="c"><input type="radio" name="a2" value="c"> <code>Real</code></label>
+                <label data-op="a"><input type="radio" name="a2" value="a"> <code>Entero</code></label>
+                <label data-op="b"><input type="radio" name="a2" value="b"> <code>Real</code></label>
+                <label data-op="c"><input type="radio" name="a2" value="c"> <code>Caracter</code></label>
                 <label data-op="d"><input type="radio" name="a2" value="d"> <code>Logico</code></label>
             </div>
-            <p class="explicacion"><code>Caracter</code> almacena texto. <code>Entero</code> y <code>Real</code> son numéricos; <code>Logico</code> solo admite <code>Verdadero</code> o <code>Falso</code>.</p>
-        </article>
-
-        <article class="pregunta mc" data-correcta="d">
-            <p class="enunciado"><span class="num-preg">3</span>
-                ¿Cuál instrucción <strong>muestra un mensaje en pantalla</strong>?</p>
-            <div class="opciones">
-                <label data-op="a"><input type="radio" name="a3" value="a"> <code>Leer "Hola";</code></label>
-                <label data-op="b"><input type="radio" name="a3" value="b"> <code>Definir "Hola" Como Caracter;</code></label>
-                <label data-op="c"><input type="radio" name="a3" value="c"> <code>Hola &lt;- "Escribir";</code></label>
-                <label data-op="d"><input type="radio" name="a3" value="d"> <code>Escribir "Hola";</code></label>
-            </div>
-            <p class="explicacion"><code>Escribir</code> es la instrucción de <strong>salida</strong>. <code>Leer</code> es de entrada y necesita una variable; las otras opciones no son instrucciones válidas.</p>
-        </article>
-
-        <article class="pregunta mc" data-correcta="b">
-            <p class="enunciado"><span class="num-preg">4</span>
-                ¿Cuál es un bucle <strong>indeterminado</strong>, que no sabe de antemano cuántas veces se repetirá?</p>
-            <div class="opciones">
-                <label data-op="a"><input type="radio" name="a4" value="a"> <code>Para</code></label>
-                <label data-op="b"><input type="radio" name="a4" value="b"> <code>Mientras</code></label>
-                <label data-op="c"><input type="radio" name="a4" value="c"> <code>Si</code></label>
-                <label data-op="d"><input type="radio" name="a4" value="d"> <code>SubProceso</code></label>
-            </div>
-            <p class="explicacion"><code>Mientras</code> depende de una condición que puede cambiar. <code>Para</code> tiene inicio, fin y paso conocidos. <code>Si</code> no repite y <code>SubProceso</code> agrupa instrucciones.</p>
+            <p class="explicacion">La edad se expresa con números enteros, así que se declara como <code>Entero</code>.</p>
         </article>
 
         <article class="pregunta mc" data-correcta="c">
-            <p class="enunciado"><span class="num-preg">5</span>
-                En <code>contador &lt;- contador + 1;</code>, ¿qué tipo de variable es <code>contador</code>?</p>
+            <p class="enunciado"><span class="num-preg">3</span>
+                ¿Qué instrucción muestra el valor calculado en <code>total</code>?</p>
             <div class="opciones">
-                <label data-op="a"><input type="radio" name="a5" value="a"> Un acumulador, porque suma valores variables.</label>
-                <label data-op="b"><input type="radio" name="a5" value="b"> Una constante, porque no cambia.</label>
-                <label data-op="c"><input type="radio" name="a5" value="c"> Un contador, porque aumenta siempre en una cantidad fija.</label>
+                <label data-op="a"><input type="radio" name="a3" value="a"> <code>Leer total;</code></label>
+                <label data-op="b"><input type="radio" name="a3" value="b"> <code>Definir total;</code></label>
+                <label data-op="c"><input type="radio" name="a3" value="c"> <code>Escribir total;</code></label>
+                <label data-op="d"><input type="radio" name="a3" value="d"> <code>total &lt;- Leer;</code></label>
+            </div>
+            <p class="explicacion"><code>Escribir</code> es la instrucción de salida: muestra en pantalla el contenido de la variable.</p>
+        </article>
+
+        <article class="pregunta mc" data-correcta="d">
+            <p class="enunciado"><span class="num-preg">4</span>
+                ¿Qué bucle conviene para seguir leyendo datos <strong>hasta que aparezca -1</strong>?</p>
+            <div class="opciones">
+                <label data-op="a"><input type="radio" name="a4" value="a"> <code>Para</code>, porque conoce el final.</label>
+                <label data-op="b"><input type="radio" name="a4" value="b"> <code>Si</code>, porque elige una rama.</label>
+                <label data-op="c"><input type="radio" name="a4" value="c"> <code>SubProceso</code>, porque agrupa instrucciones.</label>
+                <label data-op="d"><input type="radio" name="a4" value="d"> <code>Mientras</code>, porque depende de una condición.</label>
+            </div>
+            <p class="explicacion">No se sabe cuántos datos vendrán: el <code>Mientras</code> repite mientras la condición siga siendo verdadera.</p>
+        </article>
+
+        <article class="pregunta mc" data-correcta="b">
+            <p class="enunciado"><span class="num-preg">5</span>
+                En <code>total &lt;- total + precio;</code>, ¿qué es <code>total</code>?</p>
+            <div class="opciones">
+                <label data-op="a"><input type="radio" name="a5" value="a"> Un contador, porque suma 1.</label>
+                <label data-op="b"><input type="radio" name="a5" value="b"> Un acumulador, porque suma un valor variable.</label>
+                <label data-op="c"><input type="radio" name="a5" value="c"> Una constante, porque no se modifica.</label>
                 <label data-op="d"><input type="radio" name="a5" value="d"> Un parámetro formal.</label>
             </div>
-            <p class="explicacion">El <strong>contador</strong> suma 1 en cada vuelta. El <strong>acumulador</strong> suma valores que pueden cambiar, por ejemplo <code>total &lt;- total + precio</code>.</p>
+            <p class="explicacion">El <strong>acumulador</strong> suma valores que pueden cambiar (<code>precio</code>). El contador suma siempre lo mismo.</p>
         </article>
     </section>
 
@@ -221,63 +221,60 @@
             <p class="enunciado"><span class="num-preg">6</span>
                 ¿Qué muestra este algoritmo?</p>
             <pre><code>Definir edad Como Entero;
-edad &lt;- 17;
+edad &lt;- 15;
 Si edad &gt;= 18 Entonces
-    Escribir "Mayor";
+    Escribir "Adulto";
 Sino
     Escribir "Menor";
 FinSi</code></pre>
             <label class="campo-salida">Salida:
                 <input type="text" id="b1" autocomplete="off" placeholder="Escribí la salida">
             </label>
-            <p class="explicacion">17 es menor que 18, así que la condición es falsa y se ejecuta la rama del <code>Sino</code>: la salida es <strong>Menor</strong>.</p>
+            <p class="explicacion">15 es menor que 18: la condición es falsa y se ejecuta el <code>Sino</code>. La salida es <strong>Menor</strong>.</p>
         </article>
 
-        <article class="pregunta salida" data-aceptadas="1 2 3 4">
+        <article class="pregunta salida" data-aceptadas="5 3 1">
             <p class="enunciado"><span class="num-preg">7</span>
                 ¿Qué muestra este algoritmo?</p>
             <pre><code>Definir i Como Entero;
-i &lt;- 1;
-Mientras i &lt;= 4 Hacer
+i &lt;- 5;
+Mientras i &gt; 0 Hacer
     Escribir i;
-    i &lt;- i + 1;
+    i &lt;- i - 2;
 FinMientras</code></pre>
             <label class="campo-salida">Salida:
-                <input type="text" id="b2" autocomplete="off" placeholder="Separá los valores con espacios">
+                <input type="text" id="b2" autocomplete="off" placeholder="Escribí la salida">
             </label>
-            <p class="explicacion">Muestra 1, 2, 3 y 4. Cuando <code>i</code> llega a 5, la condición <code>i &lt;= 4</code> es falsa y el bucle termina. La salida es <strong>1 2 3 4</strong>.</p>
+            <p class="explicacion">El <code>Mientras</code> muestra 5, 3 y 1. Con 0 la condición deja de cumplirse.</p>
         </article>
 
-        <article class="pregunta salida" data-aceptadas="5 4 3 2 1">
+        <article class="pregunta salida" data-aceptadas="1 3 5">
             <p class="enunciado"><span class="num-preg">8</span>
                 ¿Qué muestra este algoritmo?</p>
             <pre><code>Definir i Como Entero;
-Para i &lt;- 5 Hasta 1 Con Paso -1 Hacer
+Para i &lt;- 1 Hasta 5 Con Paso 2 Hacer
     Escribir i;
 FinPara</code></pre>
             <label class="campo-salida">Salida:
-                <input type="text" id="b3" autocomplete="off" placeholder="Separá los valores con espacios">
+                <input type="text" id="b3" autocomplete="off" placeholder="Escribí la salida">
             </label>
-            <p class="explicacion">El paso negativo hace que el <code>Para</code> cuente hacia atrás. Muestra 5, 4, 3, 2 y 1. La salida es <strong>5 4 3 2 1</strong>.</p>
+            <p class="explicacion">El <code>Para</code> empieza en 1, avanza de 2 en 2 y se detiene en 5.</p>
         </article>
 
-        <article class="pregunta salida" data-aceptadas="2 4 6">
+        <article class="pregunta salida" data-aceptadas="5">
             <p class="enunciado"><span class="num-preg">9</span>
                 ¿Qué muestra este algoritmo?</p>
-            <pre><code>SubProceso MostrarTabla(numero)
-    Definir i Como Entero;
-    Para i &lt;- 1 Hasta 3 Con Paso 1 Hacer
-        Escribir numero * i;
-    FinPara
+            <pre><code>SubProceso Sumar(a, b)
+    Escribir a + b;
 FinSubProceso
 
 Algoritmo Prueba
-    MostrarTabla(2);
+    Sumar(2, 3);
 FinAlgoritmo</code></pre>
             <label class="campo-salida">Salida:
-                <input type="text" id="b4" autocomplete="off" placeholder="Separá los valores con espacios">
+                <input type="text" id="b4" autocomplete="off" placeholder="Escribí la salida">
             </label>
-            <p class="explicacion">El subproceso recibe <code>2</code> y muestra <code>2 * 1</code>, <code>2 * 2</code> y <code>2 * 3</code>. La salida es <strong>2 4 6</strong>.</p>
+            <p class="explicacion">El subproceso recibe <code>a = 2</code> y <code>b = 3</code>, y muestra <code>2 + 3 = 5</code>.</p>
         </article>
     </section>
 
@@ -295,14 +292,14 @@ FinAlgoritmo</code></pre>
                     <tr><td>Entrada y salida</td><td><code>Leer precio;</code> · <code>Escribir precio;</code></td></tr>
                     <tr><td>Condicional completo</td><td><code>Si ... Entonces ... Sino ... FinSi</code></td></tr>
                     <tr><td>Bucle completo</td><td><code>Mientras ... Hacer ... FinMientras</code></td></tr>
-                    <tr><td>Contadores inicializados</td><td><code>mayores &lt;- 0;</code> · <code>menores &lt;- 0;</code></td></tr>
-                    <tr><td>Subproceso con parámetro y llamada</td><td><code>SubProceso Saludar(nombre)</code> · <code>Saludar("Ana");</code></td></tr>
+                    <tr><td>Contadores y acumuladores inicializados</td><td><code>aprobadas &lt;- 0;</code> · <code>suma &lt;- 0;</code></td></tr>
+                    <tr><td>Subproceso con parámetro y llamada</td><td><code>SubProceso MostrarCuadrado(numero)</code> · <code>MostrarCuadrado(3);</code></td></tr>
                 </tbody>
             </table>
 
             <h3 style="margin-top:24px;">Antes de enviar</h3>
             <ul class="checklist">
-                <li>Declaré todas las variables con su tipo.</li>
+                <li>Declaré todas las variables con su tipo e inicialicé los contadores antes de usarlos.</li>
                 <li>Cerré cada <code>Si</code>, <code>Mientras</code>, <code>Para</code> y <code>SubProceso</code>.</li>
                 <li>Inicialicé los contadores antes de usarlos.</li>
                 <li>Probé mentalmente el algoritmo con un caso chico.</li>
@@ -323,29 +320,24 @@ FinAlgoritmo</code></pre>
 
         <article class="pregunta codigo" data-ejercicio="c1">
             <p class="enunciado"><span class="num-preg">10</span>
-                Leé el <strong>nombre de un producto</strong> y su <strong>precio</strong>. Si el precio es mayor a
-                <code>1000</code>, mostrá <code>&lt;producto&gt;: precio alto</code>; si no,
-                <code>&lt;producto&gt;: precio accesible</code>. Usá <code>Si … Entonces … Sino … FinSi</code>.</p>
-            <p class="tema-lista"><span class="tema-tag verde">Variables</span><span class="tema-tag verde">Leer / Escribir</span><span class="tema-tag verde">Condicional</span></p>
+                Leé una <strong>estatura</strong> en metros. Si es menor que 1.60, mostrá <code>Baja</code>; si no, mostrá <code>Alta</code>. Usá <code>Si … Entonces … Sino … FinSi</code>.</p>
+            <p class="tema-lista"><span class="tema-tag">Variables</span><span class="tema-tag">Leer / Escribir</span><span class="tema-tag">Condicional</span></p>
             <details class="pista">
                 <summary>Ver pista</summary>
-                <p>Declará <code>producto</code> como <code>Caracter</code> y <code>precio</code> como <code>Real</code>. Leé los dos datos antes del <code>Si</code>. En cada rama, combiná el nombre del producto con el texto usando comas dentro de <code>Escribir</code>.</p>
+                <p>Declará <code>estatura</code> como <code>Real</code>, leela y comparala con <code>1.60</code> antes de escribir el mensaje.</p>
             </details>
-            <textarea class="editor" id="c1" spellcheck="false" placeholder="Algoritmo PrecioProducto&#10;    Definir ...&#10;    Leer ...&#10;    Si ... Entonces&#10;    Sino&#10;    FinSi&#10;FinAlgoritmo"></textarea>
+            <textarea class="editor" id="c1" spellcheck="false" placeholder="Algoritmo ClasificarEstatura&#10;    Definir ...&#10;    Leer ...&#10;    Si ... Entonces&#10;    Sino&#10;    FinSi&#10;FinAlgoritmo"></textarea>
             <div class="resultado-codigo" id="res-c1"></div>
             <details class="solucion">
                 <summary>Ver una solución de referencia</summary>
-                <pre><code>Algoritmo PrecioProducto
-    Definir producto Como Caracter;
-    Definir precio Como Real;
-    Escribir "Ingresá el producto:";
-    Leer producto;
-    Escribir "Ingresá el precio:";
-    Leer precio;
-    Si precio &gt; 1000 Entonces
-        Escribir producto, ": precio alto";
+                <pre><code>Algoritmo ClasificarEstatura
+    Definir estatura Como Real;
+    Escribir "Ingresá la estatura:";
+    Leer estatura;
+    Si estatura &lt; 1.60 Entonces
+        Escribir "Baja";
     Sino
-        Escribir producto, ": precio accesible";
+        Escribir "Alta";
     FinSi
 FinAlgoritmo</code></pre>
             </details>
@@ -353,60 +345,55 @@ FinAlgoritmo</code></pre>
 
         <article class="pregunta codigo" data-ejercicio="c2">
             <p class="enunciado"><span class="num-preg">11</span>
-                Pedí exactamente <strong>10 edades</strong> usando un <code>Mientras</code>.
-                Contá cuántas son <strong>mayores de 16</strong> y cuántas <strong>no</strong>.
-                Mostrá los dos totales. Usá <code>mayores</code>, <code>menores</code> e
-                <code>i</code> como contador.</p>
-            <p class="tema-lista"><span class="tema-tag verde">Mientras</span><span class="tema-tag verde">Condicional</span><span class="tema-tag verde">Contador</span></p>
+                Pedí <strong>6 edades</strong> con un <code>Mientras</code>. Contá en <code>mayores</code> cuántas son 18 o más y sumá todas en <code>suma</code>. Mostrá los dos totales.</p>
+            <p class="tema-lista"><span class="tema-tag">Mientras</span><span class="tema-tag">Contador</span><span class="tema-tag">Acumulador</span></p>
             <details class="pista">
                 <summary>Ver pista</summary>
-                <p>Inicializá <code>mayores</code>, <code>menores</code> e <code>i</code> antes del bucle (<code>i</code> en 1). Repetí mientras <code>i &lt;= 10</code>: leé la edad, usá <code>Si … Entonces … Sino … FinSi</code> para decidir en qué contador sumar y, al final de cada vuelta, incrementá <code>i &lt;- i + 1;</code>.</p>
+                <p>Inicializá <code>mayores</code> y <code>suma</code> en 0. Repetí 6 vueltas, leé cada edad, sumala siempre y aumentá <code>mayores</code> solo si corresponde.</p>
             </details>
-            <textarea class="editor" id="c2" spellcheck="false" placeholder="Algoritmo ContarEdades&#10;    Definir ...&#10;    mayores &lt;- 0;&#10;    menores &lt;- 0;&#10;    i &lt;- 1;&#10;    Mientras i &lt;= 10 Hacer&#10;        Leer ...&#10;        Si ... Entonces&#10;        Sino&#10;        FinSi&#10;        i &lt;- i + 1;&#10;    FinMientras&#10;    Escribir ...&#10;FinAlgoritmo"></textarea>
+            <textarea class="editor" id="c2" spellcheck="false" placeholder="Algoritmo ResumenEdades&#10;    Definir ...&#10;    mayores &lt;- 0;&#10;    suma &lt;- 0;&#10;    i &lt;- 1;&#10;    Mientras i &lt;= 6 Hacer&#10;        Leer ...&#10;        ...&#10;        i &lt;- i + 1;&#10;    FinMientras&#10;    Escribir ...&#10;FinAlgoritmo"></textarea>
             <div class="resultado-codigo" id="res-c2"></div>
             <details class="solucion">
                 <summary>Ver una solución de referencia</summary>
-                <pre><code>Algoritmo ContarEdades
-    Definir edad, mayores, menores, i Como Entero;
+                <pre><code>Algoritmo ResumenEdades
+    Definir edad, mayores, suma, i Como Entero;
     mayores &lt;- 0;
-    menores &lt;- 0;
+    suma &lt;- 0;
     i &lt;- 1;
-    Mientras i &lt;= 10 Hacer
+    Mientras i &lt;= 6 Hacer
         Escribir "Ingresá una edad:";
         Leer edad;
-        Si edad &gt; 16 Entonces
+        suma &lt;- suma + edad;
+        Si edad &gt;= 18 Entonces
             mayores &lt;- mayores + 1;
-        Sino
-            menores &lt;- menores + 1;
         FinSi
         i &lt;- i + 1;
     FinMientras
-    Escribir "Mayores de 16: ", mayores;
-    Escribir "No mayores de 16: ", menores;
+    Escribir "Mayores: ", mayores;
+    Escribir "Suma: ", suma;
 FinAlgoritmo</code></pre>
             </details>
         </article>
 
         <article class="pregunta codigo" data-ejercicio="c3">
             <p class="enunciado"><span class="num-preg">12</span>
-                Creá un <strong>SubProceso</strong> llamado <code>Saludar(nombre)</code> que
-                reciba un nombre y muestre <code>Hola, &lt;nombre&gt;</code>. Llamalo desde el
-                algoritmo principal con <code>"Ana"</code>.</p>
-            <p class="tema-lista"><span class="tema-tag verde">SubProceso</span><span class="tema-tag verde">Leer / Escribir</span></p>
+                Creá el subproceso <code>MostrarMitad(numero)</code> que muestre la mitad del número. Llamalo desde el algoritmo principal con <code>8</code> y con <code>10</code>.</p>
+            <p class="tema-lista"><span class="tema-tag">SubProceso</span><span class="tema-tag">Parámetros</span><span class="tema-tag">Leer / Escribir</span></p>
             <details class="pista">
                 <summary>Ver pista</summary>
-                <p>Declará <code>SubProceso Saludar(nombre)</code> y cerralo con <code>FinSubProceso</code>. Dentro, mostrá el saludo con <code>Escribir "Hola, ", nombre;</code>. En el algoritmo principal, llamá a <code>Saludar("Ana");</code>.</p>
+                <p>Dentro del subproceso mostrá <code>numero / 2</code>. En el algoritmo principal hacé las dos llamadas.</p>
             </details>
-            <textarea class="editor" id="c3" spellcheck="false" placeholder="SubProceso Saludar(nombre)&#10;    Escribir ...&#10;FinSubProceso&#10;&#10;Algoritmo Saludo&#10;    Saludar(&quot;Ana&quot;);&#10;FinAlgoritmo"></textarea>
+            <textarea class="editor" id="c3" spellcheck="false" placeholder="SubProceso MostrarMitad(numero)&#10;    Escribir ...&#10;FinSubProceso&#10;&#10;Algoritmo Prueba&#10;    ...&#10;FinAlgoritmo"></textarea>
             <div class="resultado-codigo" id="res-c3"></div>
             <details class="solucion">
                 <summary>Ver una solución de referencia</summary>
-                <pre><code>SubProceso Saludar(nombre)
-    Escribir "Hola, ", nombre;
+                <pre><code>SubProceso MostrarMitad(numero)
+    Escribir numero / 2;
 FinSubProceso
 
-Algoritmo Saludo
-    Saludar("Ana");
+Algoritmo Prueba
+    MostrarMitad(8);
+    MostrarMitad(10);
 FinAlgoritmo</code></pre>
             </details>
         </article>

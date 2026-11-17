@@ -115,9 +115,9 @@
                     <tr><th>Tema</th><th>Dónde se evalúa</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td>Bucle Para</td><td>Parte A · preguntas 1 y 2; Parte B · pregunta 7; Parte C · actividad 1</td></tr>
-                    <tr><td>Bucle Mientras</td><td>Parte A · preguntas 3 y 4; Parte B · pregunta 8; Parte C · actividad 2</td></tr>
-                    <tr><td>Subprocesos</td><td>Parte A · preguntas 5 y 6; Parte C · actividad 3</td></tr>
+                    <tr><td>7 · Bucle Para</td><td>Parte A · pregunta 1; Parte B · pregunta 7; Parte C · actividad 1</td></tr>
+                    <tr><td>8 · Bucle Mientras</td><td>Parte A · preguntas 3 y 4; Parte B · pregunta 8; Parte C · actividad 2</td></tr>
+                    <tr><td>9 · Subprocesos</td><td>Parte A · preguntas 5 y 6; Parte C · actividad 3</td></tr>
                 </tbody>
             </table>
         </div>
@@ -133,79 +133,76 @@
             </div>
         </div>
 
-        <article class="pregunta mc" data-correcta="b">
+        <article class="pregunta mc" data-correcta="c">
             <p class="enunciado"><span class="num-preg">1</span>
-                ¿Cuándo conviene usar un bucle <code>Para</code>?</p>
+                ¿Qué hace <code>Con Paso -1</code> en un bucle <code>Para</code>?</p>
             <div class="opciones">
-                <label data-op="a"><input type="radio" name="a1" value="a"> Cuando no sabemos cuántas vueltas va a dar el programa.</label>
-                <label data-op="b"><input type="radio" name="a1" value="b"> Cuando sabemos la cantidad exacta de vueltas y queremos que PSeInt controle el contador.</label>
-                <label data-op="c"><input type="radio" name="a1" value="c"> Cuando hay que elegir entre dos caminos.</label>
-                <label data-op="d"><input type="radio" name="a1" value="d"> Cuando hay que declarar una variable.</label>
+                <label data-op="a"><input type="radio" name="a1" value="a"> Repite una sola vez.</label>
+                <label data-op="b"><input type="radio" name="a1" value="b"> Cuenta de 1 en 1 hacia arriba.</label>
+                <label data-op="c"><input type="radio" name="a1" value="c"> Cuenta hacia atrás restando 1.</label>
+                <label data-op="d"><input type="radio" name="a1" value="d"> Detiene el programa.</label>
             </div>
-            <p class="explicacion">El <code>Para</code> se usa cuando la cantidad de repeticiones es <strong>conocida</strong>. PSeInt inicializa, incrementa y corta el contador automáticamente.</p>
+            <p class="explicacion">El paso puede ser negativo: el contador desciende hasta llegar al límite <code>Hasta</code>.</p>
         </article>
 
         <article class="pregunta mc" data-correcta="b">
             <p class="enunciado"><span class="num-preg">2</span>
-                ¿Cuántas veces se ejecuta el bloque de este bucle?</p>
-            <pre><code>Para i &lt;- 1 Hasta 5 Con Paso 1 Hacer
-    Escribir i;
-FinPara</code></pre>
+                ¿Cuántas veces se ejecuta <code>Para i &lt;- 0 Hasta 6 Con Paso 3 Hacer</code>?</p>
             <div class="opciones">
-                <label data-op="a"><input type="radio" name="a2" value="a"> 4 veces.</label>
-                <label data-op="b"><input type="radio" name="a2" value="b"> 5 veces.</label>
-                <label data-op="c"><input type="radio" name="a2" value="c"> 6 veces.</label>
-                <label data-op="d"><input type="radio" name="a2" value="d"> Infinitas veces.</label>
+                <label data-op="a"><input type="radio" name="a2" value="a"> 2 veces</label>
+                <label data-op="b"><input type="radio" name="a2" value="b"> 3 veces</label>
+                <label data-op="c"><input type="radio" name="a2" value="c"> 6 veces</label>
+                <label data-op="d"><input type="radio" name="a2" value="d"> 7 veces</label>
             </div>
-            <p class="explicacion">El contador toma los valores 1, 2, 3, 4 y 5. El límite <strong>Hasta 5</strong> se incluye, así que el bloque se ejecuta <strong>5 veces</strong>.</p>
+            <p class="explicacion">El contador toma 0, 3 y 6. Son <strong>3 vueltas</strong>.</p>
         </article>
 
         <article class="pregunta mc" data-correcta="a">
             <p class="enunciado"><span class="num-preg">3</span>
-                ¿Cuándo se ejecuta el bloque de un <code>Mientras</code>?</p>
+                ¿Qué condición mantiene un <code>Mientras</code> hasta que se ingrese 0?</p>
             <div class="opciones">
-                <label data-op="a"><input type="radio" name="a3" value="a"> Mientras la condición sea verdadera.</label>
-                <label data-op="b"><input type="radio" name="a3" value="b"> Una sola vez, siempre.</label>
-                <label data-op="c"><input type="radio" name="a3" value="c"> Siempre 10 veces.</label>
-                <label data-op="d"><input type="radio" name="a3" value="d"> Cuando la condición sea falsa.</label>
+                <label data-op="a"><input type="radio" name="a3" value="a"> <code>numero &lt;&gt; 0</code></label>
+                <label data-op="b"><input type="radio" name="a3" value="b"> <code>numero = 0</code></label>
+                <label data-op="c"><input type="radio" name="a3" value="c"> <code>numero &gt; 0 Hacer</code></label>
+                <label data-op="d"><input type="radio" name="a3" value="d"> <code>Escribir numero;</code></label>
             </div>
-            <p class="explicacion">La condición se revisa <strong>antes</strong> de cada vuelta. Si es verdadera, el bloque se ejecuta; si es falsa desde el principio, no se ejecuta ninguna vez.</p>
+            <p class="explicacion"><code>&lt;&gt;</code> significa “distinto de”. El bucle sigue mientras el número no sea 0.</p>
         </article>
 
         <article class="pregunta mc" data-correcta="d">
             <p class="enunciado"><span class="num-preg">4</span>
-                ¿Qué falta si un <code>Mientras</code> se repite para siempre?</p>
+                ¿Qué se necesita para evitar un <code>Mientras</code> infinito?</p>
             <div class="opciones">
-                <label data-op="a"><input type="radio" name="a4" value="a"> Un <code>FinPara</code>.</label>
-                <label data-op="b"><input type="radio" name="a4" value="b"> Declarar la variable con <code>Definir</code>.</label>
-                <label data-op="c"><input type="radio" name="a4" value="c"> Un <code>Leer</code> antes del bucle.</label>
+                <label data-op="a"><input type="radio" name="a4" value="a"> Cerrar con <code>FinPara</code>.</label>
+                <label data-op="b"><input type="radio" name="a4" value="b"> Declarar otra variable con el mismo nombre.</label>
+                <label data-op="c"><input type="radio" name="a4" value="c"> Escribir el contador antes de leer.</label>
                 <label data-op="d"><input type="radio" name="a4" value="d"> Actualizar la variable de control dentro del bucle.</label>
             </div>
-            <p class="explicacion">Todo <code>Mientras</code> necesita que su condición pueda volverse falsa. Si la variable de control no se actualiza dentro del bucle, la condición nunca cambia y el bucle no termina.</p>
+            <p class="explicacion">La condición debe poder volverse falsa. Por eso hay que modificar la variable controlada en cada vuelta.</p>
         </article>
 
         <article class="pregunta mc" data-correcta="b">
             <p class="enunciado"><span class="num-preg">5</span>
-                ¿Para qué sirve un <code>SubProceso</code>?</p>
+                ¿Qué es un <strong>parámetro</strong> en un subproceso?</p>
             <div class="opciones">
-                <label data-op="a"><input type="radio" name="a5" value="a"> Para declarar variables globales.</label>
-                <label data-op="b"><input type="radio" name="a5" value="b"> Para dividir el programa en partes reutilizables y fáciles de leer.</label>
-                <label data-op="c"><input type="radio" name="a5" value="c"> Para comparar dos valores y elegir un camino.</label>
-                <label data-op="d"><input type="radio" name="a5" value="d"> Para repetir una cantidad exacta de veces.</label>
+                <label data-op="a"><input type="radio" name="a5" value="a"> Un contador que siempre suma 1.</label>
+                <label data-op="b"><input type="radio" name="a5" value="b"> Un valor que el subproceso recibe al ser llamado.</label>
+                <label data-op="c"><input type="radio" name="a5" value="c"> Una variable declarada dentro del algoritmo principal.</label>
+                <label data-op="d"><input type="radio" name="a5" value="d"> Una instrucción de salida.</label>
             </div>
-            <p class="explicacion">Un subproceso <strong>modulariza</strong>: agrupa una tarea con nombre propio y permite reutilizarla desde el algoritmo principal.</p>
+            <p class="explicacion">El parámetro se declara entre paréntesis y recibe el valor enviado en la llamada.</p>
         </article>
 
         <article class="pregunta mc" data-correcta="c">
             <p class="enunciado"><span class="num-preg">6</span>
-                Si existe <code>SubProceso Saludar(nombre)</code>, ¿qué hace la instrucción <code>Saludar("Ana");</code>?</p>
+                Si existe <code>SubProceso MostrarAlumno(nombre)</code>, ¿qué hace <code>MostrarAlumno("Luz");</code>?</p>
             <div class="opciones">
-                <label data-op="a"><input type="radio" name="a6" value="a"> Declara una variable llamada <code>Ana</code>.</label>
-                <label data-op="b"><input type="radio" name="a6" value="b"> Muestra el texto <code>nombre</code> sin ejecutar el subproceso.</label>
-                <label data-op="c"><input type="radio" name="a6" value="c"> Ejecuta el subproceso y le pasa <code>"Ana"</code> al parámetro <code>nombre</code>.</label>
-                <label data-op="d"><input type="radio" name="a6" value="d"> Produce un error porque los subprocesos no se llaman.</label>
+                <label data-op="a"><input type="radio" name="a6" value="a"> Declara una variable llamada Luz.</label>
+                <label data-op="b"><input type="radio" name="a6" value="b"> No hace nada hasta declarar otro subproceso.</label>
+                <label data-op="c"><input type="radio" name="a6" value="c"> Ejecuta el subproceso con <code>nombre = "Luz"</code>.</label>
+                <label data-op="d"><input type="radio" name="a6" value="d"> Borra el parámetro <code>nombre</code>.</label>
             </div>
-            <p class="explicacion">La llamada ejecuta el subproceso. El valor <code>"Ana"</code> se copia en el parámetro <code>nombre</code>, que se comporta como una variable local.</p>
+            <p class="explicacion">La llamada ejecuta el subproceso y copia el valor enviado en el parámetro.</p>
         </article>
     </section>
 
@@ -219,32 +216,32 @@ FinPara</code></pre>
             </div>
         </div>
 
-        <article class="pregunta salida" data-aceptadas="1 2 3 4">
+        <article class="pregunta salida" data-aceptadas="4 8 12">
             <p class="enunciado"><span class="num-preg">7</span>
                 ¿Qué muestra este algoritmo?</p>
             <pre><code>Definir i Como Entero;
-Para i &lt;- 1 Hasta 4 Con Paso 1 Hacer
+Para i &lt;- 4 Hasta 12 Con Paso 4 Hacer
     Escribir i;
 FinPara</code></pre>
             <label class="campo-salida">Salida:
-                <input type="text" id="b1" autocomplete="off" placeholder="Separá los valores con espacios">
+                <input type="text" id="b1" autocomplete="off" placeholder="Escribí la salida">
             </label>
-            <p class="explicacion">El <code>Para</code> recorre 1, 2, 3 y 4. La salida es <strong>1 2 3 4</strong>.</p>
+            <p class="explicacion">El <code>Para</code> recorre 4, 8 y 12. La salida es <strong>4 8 12</strong>.</p>
         </article>
 
-        <article class="pregunta salida" data-aceptadas="3 2 1">
+        <article class="pregunta salida" data-aceptadas="20 18 16">
             <p class="enunciado"><span class="num-preg">8</span>
                 ¿Qué muestra este algoritmo?</p>
             <pre><code>Definir i Como Entero;
-i &lt;- 3;
-Mientras i &gt;= 1 Hacer
+i &lt;- 20;
+Mientras i &gt;= 16 Hacer
     Escribir i;
-    i &lt;- i - 1;
+    i &lt;- i - 2;
 FinMientras</code></pre>
             <label class="campo-salida">Salida:
-                <input type="text" id="b2" autocomplete="off" placeholder="Separá los valores con espacios">
+                <input type="text" id="b2" autocomplete="off" placeholder="Escribí la salida">
             </label>
-            <p class="explicacion">Muestra 3, luego 2 y luego 1. Cuando <code>i</code> llega a 0, la condición <code>i &gt;= 1</code> es falsa y el bucle termina. La salida es <strong>3 2 1</strong>.</p>
+            <p class="explicacion">El <code>Mientras</code> muestra 20, 18 y 16. Al llegar a 14 se detiene.</p>
         </article>
     </section>
 
@@ -258,17 +255,17 @@ FinMientras</code></pre>
                     <tr><th>Se revisa</th><th>Ejemplo</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td>Bucle Para completo</td><td><code>Para i &lt;- 2 Hasta 10 Con Paso 2 Hacer ... FinPara</code></td></tr>
+                    <tr><td>Bucle Para completo</td><td><code>Para i &lt;- 3 Hasta 12 Con Paso 3 Hacer ... FinPara</code></td></tr>
                     <tr><td>Bucle Mientras completo</td><td><code>Mientras numero &lt;&gt; 0 Hacer ... FinMientras</code></td></tr>
                     <tr><td>Actualización de la variable de control</td><td><code>i &lt;- i + 1;</code> · <code>Leer numero;</code></td></tr>
-                    <tr><td>Subproceso con parámetro</td><td><code>SubProceso MostrarDoble(numero) ... FinSubProceso</code></td></tr>
-                    <tr><td>Llamada al subproceso</td><td><code>MostrarDoble(5);</code></td></tr>
+                    <tr><td>Subproceso con parámetro</td><td><code>SubProceso MostrarTriple(numero) ... FinSubProceso</code></td></tr>
+                    <tr><td>Llamada al subproceso</td><td><code>MostrarTriple(2);</code></td></tr>
                 </tbody>
             </table>
 
             <h3 style="margin-top:24px;">Antes de enviar</h3>
             <ul class="checklist">
-                <li>Declaré todas las variables con su tipo.</li>
+                <li>Declaré todas las variables con su tipo e inicialicé los contadores antes de usarlos.</li>
                 <li>Cerré cada <code>Para</code> con <code>FinPara</code>.</li>
                 <li>Cerré cada <code>Mientras</code> con <code>FinMientras</code>.</li>
                 <li>Me aseguré de que el <code>Mientras</code> pueda terminar.</li>
@@ -289,20 +286,19 @@ FinMientras</code></pre>
 
         <article class="pregunta codigo" data-puntos="1">
             <p class="enunciado"><span class="num-preg">9</span>
-                Mostrá los <strong>números pares del 2 al 10</strong> usando un bucle <code>Para</code>
-                con paso 2. Cada número debe mostrarse con <code>Escribir</code>.</p>
+                Mostrá los múltiplos de 3 del 3 al 12 usando un bucle <code>Para</code> con paso 3. Cada valor debe ir en un <code>Escribir</code>.</p>
             <p class="tema-lista"><span class="tema-tag">Bucle Para</span><span class="tema-tag">Leer / Escribir</span></p>
             <details class="pista">
                 <summary>Ver pista</summary>
-                <p>Declará <code>i</code> como <code>Entero</code>. Escribí <code>Para i &lt;- 2 Hasta 10 Con Paso 2 Hacer</code>, mostrá <code>i</code> y cerrá con <code>FinPara</code>.</p>
+                <p>Declará <code>i</code> como <code>Entero</code>. Usá <code>Para i &lt;- 3 Hasta 12 Con Paso 3 Hacer</code>, mostrá <code>i</code> y cerrá con <code>FinPara</code>.</p>
             </details>
-            <textarea class="editor" id="c1" spellcheck="false" placeholder="Algoritmo NumerosPares&#10;    Definir i Como Entero;&#10;    Para i &lt;- 2 Hasta 10 Con Paso 2 Hacer&#10;        Escribir i;&#10;    FinPara&#10;FinAlgoritmo"></textarea>
+            <textarea class="editor" id="c1" spellcheck="false" placeholder="Algoritmo MultiplosTres&#10;    Definir ...&#10;    Para ... Hacer&#10;        Escribir ...&#10;    FinPara&#10;FinAlgoritmo"></textarea>
             <div class="resultado-codigo" id="res-c1"></div>
             <details class="solucion">
                 <summary>Ver una solución de referencia</summary>
-                <pre><code>Algoritmo NumerosPares
+                <pre><code>Algoritmo MultiplosTres
     Definir i Como Entero;
-    Para i &lt;- 2 Hasta 10 Con Paso 2 Hacer
+    Para i &lt;- 3 Hasta 12 Con Paso 3 Hacer
         Escribir i;
     FinPara
 FinAlgoritmo</code></pre>
@@ -311,56 +307,51 @@ FinAlgoritmo</code></pre>
 
         <article class="pregunta codigo" data-puntos="1">
             <p class="enunciado"><span class="num-preg">10</span>
-                Pedí números hasta que el usuario ingrese <strong>0</strong>. Contá cuántos números
-                <strong>distintos de 0</strong> se ingresaron y mostrá el total. Usá un <code>Mientras</code>.
-                Para no contar el 0, podés usar un <code>Si</code> dentro del bucle
-                o leer el primer número antes del <code>Mientras</code>.</p>
+                Pedí temperaturas hasta que se ingrese <code>0</code>. Contá en <code>cantidad</code> cuántas superan 30 y mostrá el total. Usá un <code>Mientras</code>.</p>
             <p class="tema-lista"><span class="tema-tag">Bucle Mientras</span><span class="tema-tag">Condicional</span><span class="tema-tag">Contador</span></p>
             <details class="pista">
                 <summary>Ver pista</summary>
-                <p>Declará <code>numero</code> y <code>contador</code> como <code>Entero</code>. Inicializá <code>contador &lt;- 0;</code>. Si usás un <code>Si</code> dentro del bucle, inicializá también <code>numero &lt;- 1;</code> para que la condición del <code>Mientras</code> tenga un valor. Repetí mientras <code>numero &lt;&gt; 0</code>, leé <code>numero</code> y contá solo si es distinto de 0.</p>
+                <p>Inicializá <code>temperatura</code> con un valor distinto de 0 y <code>cantidad</code> en 0. Repetí mientras <code>temperatura &lt;&gt; 0</code>, leé, contá si supera 30 y actualizá la condición al final.</p>
             </details>
-            <textarea class="editor" id="c2" spellcheck="false" placeholder="Algoritmo ContarNumeros&#10;    Definir numero, contador Como Entero;&#10;    contador &lt;- 0;&#10;    numero &lt;- 1;&#10;    Mientras numero &lt;&gt; 0 Hacer&#10;        Leer numero;&#10;        Si numero &lt;&gt; 0 Entonces&#10;            contador &lt;- contador + 1;&#10;        FinSi&#10;    FinMientras&#10;    Escribir ...&#10;FinAlgoritmo"></textarea>
+            <textarea class="editor" id="c2" spellcheck="false" placeholder="Algoritmo ContarCalurosos&#10;    Definir ...&#10;    cantidad &lt;- 0;&#10;    temperatura &lt;- 1;&#10;    Mientras temperatura &lt;&gt; 0 Hacer&#10;        Leer ...&#10;        ...&#10;    FinMientras&#10;    Escribir ...&#10;FinAlgoritmo"></textarea>
             <div class="resultado-codigo" id="res-c2"></div>
             <details class="solucion">
                 <summary>Ver una solución de referencia</summary>
-                <pre><code>Algoritmo ContarNumeros
-    Definir numero, contador Como Entero;
-    contador &lt;- 0;
-    numero &lt;- 1;
-    Mientras numero &lt;&gt; 0 Hacer
-        Escribir "Ingresá un número (0 para terminar):";
-        Leer numero;
-        Si numero &lt;&gt; 0 Entonces
-            contador &lt;- contador + 1;
+                <pre><code>Algoritmo ContarCalurosos
+    Definir temperatura, cantidad Como Entero;
+    cantidad &lt;- 0;
+    temperatura &lt;- 1;
+    Mientras temperatura &lt;&gt; 0 Hacer
+        Escribir "Ingresá la temperatura (0 para salir):";
+        Leer temperatura;
+        Si temperatura &gt; 30 Entonces
+            cantidad &lt;- cantidad + 1;
         FinSi
     FinMientras
-    Escribir "Cantidad de números: ", contador;
+    Escribir "Temperaturas mayores a 30: ", cantidad;
 FinAlgoritmo</code></pre>
             </details>
         </article>
 
         <article class="pregunta codigo" data-puntos="1">
             <p class="enunciado"><span class="num-preg">11</span>
-                Creá un <strong>SubProceso</strong> llamado <code>MostrarDoble(numero)</code> que
-                reciba un número y muestre su doble. Llamalo desde el algoritmo principal
-                con <code>5</code> y con <code>8</code>.</p>
+                Creá el subproceso <code>MostrarTriple(numero)</code> que muestre el triple del número. Llamalo desde el algoritmo principal con <code>2</code> y con <code>5</code>.</p>
             <p class="tema-lista"><span class="tema-tag">SubProceso</span><span class="tema-tag">Parámetros</span><span class="tema-tag">Leer / Escribir</span></p>
             <details class="pista">
                 <summary>Ver pista</summary>
-                <p>Declará <code>SubProceso MostrarDoble(numero)</code> y cerralo con <code>FinSubProceso</code>. Dentro, mostrá <code>numero * 2</code>. En el algoritmo principal, llamá a <code>MostrarDoble(5);</code> y a <code>MostrarDoble(8);</code>.</p>
+                <p>Dentro del subproceso mostrá <code>numero * 3</code>. Después hacé las dos llamadas desde el algoritmo principal.</p>
             </details>
-            <textarea class="editor" id="c3" spellcheck="false" placeholder="SubProceso MostrarDoble(numero)&#10;    Escribir ...&#10;FinSubProceso&#10;&#10;Algoritmo Dobles&#10;    MostrarDoble(5);&#10;    MostrarDoble(8);&#10;FinAlgoritmo"></textarea>
+            <textarea class="editor" id="c3" spellcheck="false" placeholder="SubProceso MostrarTriple(numero)&#10;    Escribir ...&#10;FinSubProceso&#10;&#10;Algoritmo Prueba&#10;    ...&#10;FinAlgoritmo"></textarea>
             <div class="resultado-codigo" id="res-c3"></div>
             <details class="solucion">
                 <summary>Ver una solución de referencia</summary>
-                <pre><code>SubProceso MostrarDoble(numero)
-    Escribir numero * 2;
+                <pre><code>SubProceso MostrarTriple(numero)
+    Escribir numero * 3;
 FinSubProceso
 
-Algoritmo Dobles
-    MostrarDoble(5);
-    MostrarDoble(8);
+Algoritmo Prueba
+    MostrarTriple(2);
+    MostrarTriple(5);
 FinAlgoritmo</code></pre>
             </details>
         </article>

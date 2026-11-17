@@ -49,21 +49,21 @@ window.CONFIG.CLAVE_ACCESO = 'pseint';
 
     window.CONFIG.EJERCICIOS = {
 
-        /* Actividad 1 · Bucle Para con paso 2. */
+        /* Actividad 1 · Bucle Para con paso 3. */
         c1: [
             { d: 'Empieza con Algoritmo (o Proceso) y cierra con FinAlgoritmo (o FinProceso)', f: function (c) { return cierraAlgoritmo(c); } },
             { d: 'Declara i como Entero', f: function (c) { return declaracion(c, 'i', 'entero'); } },
             { d: 'Usa un bucle Para con i', f: function (c) {
                 return /para\s+i\s*<-/.test(c);
             } },
-            { d: 'Comienza en 2', f: function (c) {
-                return /para\s+i\s*<-\s*2\b/.test(c);
+            { d: 'Comienza en 3', f: function (c) {
+                return /para\s+i\s*<-\s*3\b/.test(c);
             } },
-            { d: 'Termina en 10 (Hasta 10)', f: function (c) {
-                return /para[^\n]*\bhasta\s*10\b/.test(c);
+            { d: 'Termina en 12 (Hasta 12)', f: function (c) {
+                return /para[^\n]*\bhasta\s*12\b/.test(c);
             } },
-            { d: 'Avanza de 2 en 2 (Con Paso 2)', f: function (c) {
-                return /para[^\n]*\bcon\s+paso\s+2\b/.test(c);
+            { d: 'Avanza de 3 en 3 (Con Paso 3)', f: function (c) {
+                return /para[^\n]*\bcon\s+paso\s+3\b/.test(c);
             } },
             { d: 'Muestra i dentro del bucle', f: function (c) {
                 return /para[\s\S]*?\bescribir[^\n]*\bi\b[\s\S]*?finpara/.test(c);
@@ -76,50 +76,47 @@ window.CONFIG.CLAVE_ACCESO = 'pseint';
         /* Actividad 2 · Mientras con centinela 0 y contador. */
         c2: [
             { d: 'Empieza con Algoritmo (o Proceso) y cierra con FinAlgoritmo (o FinProceso)', f: function (c) { return cierraAlgoritmo(c); } },
-            { d: 'Declara numero y contador como Entero', f: function (c) {
-                return declaracion(c, 'numero', 'entero') && declaracion(c, 'contador', 'entero');
+            { d: 'Declara temperatura y cantidad como Entero', f: function (c) {
+                return declaracion(c, 'temperatura', 'entero') && declaracion(c, 'cantidad', 'entero');
             } },
-            { d: 'Inicializa contador en 0', f: function (c) {
-                return /\bcontador\s*<-\s*0\b/.test(c);
+            { d: 'Inicializa cantidad en 0', f: function (c) {
+                return /\bcantidad\s*<-\s*0\b/.test(c);
             } },
-            { d: 'Usa Mientras con la condición numero <> 0', f: function (c) {
-                return /mientras\s+\(?\s*numero\s*(<>|!=)\s*0/.test(c) ||
-                       /mientras\s+\(?\s*numero\s*>\s*0/.test(c);
+            { d: 'Inicializa temperatura con un valor distinto de 0', f: function (c) {
+                return /\btemperatura\s*<-\s*[1-9]\d*\b/.test(c);
             } },
-            { d: 'Lee numero dentro del Mientras', f: function (c) {
-                return /mientras[\s\S]*?\bleer\s+numero\b[\s\S]*?\bfinmientras\b/.test(c);
+            { d: 'Usa Mientras con la condición temperatura <> 0', f: function (c) {
+                return /mientras\s+\(?\s*temperatura\s*(<>|!=)\s*0/.test(c);
             } },
-            { d: 'Incrementa contador dentro del Mientras', f: function (c) {
-                return /mientras[\s\S]*?\bcontador\s*<-\s*contador\s*\+\s*1[\s\S]*?\bfinmientras\b/.test(c);
+            { d: 'Lee temperatura dentro del Mientras', f: function (c) {
+                return /mientras[\s\S]*?\bleer\s+temperatura\b[\s\S]*?\bfinmientras\b/.test(c);
             } },
-            { d: 'No cuenta el 0: usa Si o lee el primer número antes del Mientras', f: function (c) {
-                var conSi = /si[\s\S]*?\bcontador\s*<-\s*contador\s*\+\s*1[\s\S]*?\bfinsi\b/.test(c);
-                var antes = /\bleer\s+numero\b[\s\S]*?\bmientras\b/.test(c);
-                return conSi || antes;
+            { d: 'Cuenta en cantidad las temperaturas mayores que 30', f: function (c) {
+                return /si[\s\S]*?temperatura\s*>\s*30[\s\S]*?\bcantidad\s*<-\s*cantidad\s*\+\s*1[\s\S]*?\bfinsi\b/.test(c);
             } },
-            { d: 'Cierra con FinMientras y muestra el contador', f: function (c) {
-                return /\bfinmientras\b[\s\S]*?escribir[^;\n]*\bcontador\b/.test(c);
+            { d: 'Cierra con FinMientras y muestra la cantidad', f: function (c) {
+                return /\bfinmientras\b[\s\S]*?escribir[^;\n]*\bcantidad\b/.test(c);
             } }
         ],
 
         /* Actividad 3 · SubProceso con parámetro y dos llamadas. */
         c3: [
-            { d: 'Declara SubProceso MostrarDoble(numero)', f: function (c) {
-                return /subproceso\s+mostrardoble\s*\(\s*numero\s*\)/.test(c);
+            { d: 'Declara SubProceso MostrarTriple(numero)', f: function (c) {
+                return /subproceso\s+mostrartriple\s*\(\s*numero\s*\)/.test(c);
             } },
             { d: 'Cierra el subproceso con FinSubProceso', f: function (c) {
                 return /\bfinsubproceso\b/.test(c);
             } },
-            { d: 'Muestra el doble (numero * 2 o numero + numero)', f: function (c) {
-                return /escribir[^\n]*numero\s*\*\s*2/.test(c) ||
-                       /escribir[^\n]*numero\s*\+\s*numero/.test(c);
+            { d: 'Muestra el triple (numero * 3 o numero + numero + numero)', f: function (c) {
+                return /escribir[^\n]*numero\s*\*\s*3/.test(c) ||
+                       /escribir[^\n]*numero\s*\+\s*numero\s*\+\s*numero/.test(c);
             } },
             { d: 'Empieza con Algoritmo (o Proceso) y cierra con FinAlgoritmo (o FinProceso)', f: function (c) { return cierraAlgoritmo(c); } },
-            { d: 'Llama a MostrarDoble(5) desde el algoritmo principal', f: function (c) {
-                return /mostrardoble\s*\(\s*5\s*\)/.test(c);
+            { d: 'Llama a MostrarTriple(2) desde el algoritmo principal', f: function (c) {
+                return /mostrartriple\s*\(\s*2\s*\)/.test(c);
             } },
-            { d: 'Llama a MostrarDoble(8) desde el algoritmo principal', f: function (c) {
-                return /mostrardoble\s*\(\s*8\s*\)/.test(c);
+            { d: 'Llama a MostrarTriple(5) desde el algoritmo principal', f: function (c) {
+                return /mostrartriple\s*\(\s*5\s*\)/.test(c);
             } }
         ]
     };

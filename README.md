@@ -9,7 +9,7 @@ Guía educativa autocontenida sobre **programación estructurada** con PSeInt.
 - Ejercicios autocorregibles en la misma página.
 - Autoevaluación teórica y actividad final con Parte A y Parte B.
 - Panel de progreso con guardado automático en el navegador.
-- **Evaluación en línea** (12 consignas, 10 puntos) con clave del docente.
+- **Evaluaciones en línea** con clave del docente: completa, recuperatorio y dos partes.
 
 ## Evaluación y recuperatorio en línea
 
@@ -17,10 +17,11 @@ El portal de exámenes está en:
 
 `https://miusuariohoy.github.io/pseint/examenes/`
 
-Desde ahí se accede a la **evaluación** y al **recuperatorio** (12 consignas y
-10 puntos cada uno). Se entra con la clave que da el docente. Al corregir, la nota
-y el detalle de las respuestas se guardan automáticamente en el repositorio
-privado `inform`, junto con apellido, nombre, curso, día y hora.
+Desde ahí se accede a la **evaluación**, el **recuperatorio** y las **dos partes**.
+Las cuatro opciones trabajan los mismos temas con consignas distintas. Se entra con
+la clave que da el docente. Al corregir, la nota y el detalle de las respuestas se
+guardan automáticamente en el repositorio privado `inform`, junto con apellido,
+nombre, curso, día y hora.
 
 ## Uso
 

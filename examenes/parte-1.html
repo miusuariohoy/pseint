@@ -118,12 +118,12 @@
                     <tr><th>Tema</th><th>Dónde se evalúa</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td>Programación estructurada</td><td>Parte A · pregunta 1</td></tr>
-                    <tr><td>Variables y tipos de datos</td><td>Parte A · pregunta 2; Parte C · actividades 1, 2 y 3</td></tr>
-                    <tr><td>Leer / Escribir</td><td>Parte A · pregunta 3; Parte B · pregunta 9; Parte C · actividad 1</td></tr>
-                    <tr><td>Condicionales</td><td>Parte A · pregunta 4; Parte B · preguntas 6 y 7; Parte C · actividades 1 y 2</td></tr>
-                    <tr><td>Contador</td><td>Parte A · pregunta 5; Parte B · pregunta 7; Parte C · actividad 2</td></tr>
-                    <tr><td>Acumulador</td><td>Parte A · pregunta 5; Parte B · pregunta 8; Parte C · actividad 3</td></tr>
+                    <tr><td>1 · Programación estructurada</td><td>Parte A · pregunta 1</td></tr>
+                    <tr><td>2 · Variables y tipos</td><td>Parte A · pregunta 2; Parte C · actividades 1 a 3</td></tr>
+                    <tr><td>3 · Leer / Escribir</td><td>Parte A · pregunta 3; Parte B · pregunta 9; Parte C · actividades 1 y 3</td></tr>
+                    <tr><td>4 · Condicionales</td><td>Parte A · pregunta 4; Parte B · pregunta 6; Parte C · actividades 1 y 2</td></tr>
+                    <tr><td>5 · Contador</td><td>Parte A · pregunta 5; Parte B · pregunta 7; Parte C · actividad 2</td></tr>
+                    <tr><td>6 · Acumulador</td><td>Parte B · pregunta 8; Parte C · actividad 3</td></tr>
                 </tbody>
             </table>
         </div>
@@ -139,64 +139,64 @@
             </div>
         </div>
 
-        <article class="pregunta mc" data-correcta="b">
+        <article class="pregunta mc" data-correcta="a">
             <p class="enunciado"><span class="num-preg">1</span>
-                ¿Cuáles son las <strong>tres estructuras básicas</strong> de la programación estructurada?</p>
+                ¿Qué característica define a un algoritmo estructurado?</p>
             <div class="opciones">
-                <label data-op="a"><input type="radio" name="a1" value="a"> Variables, constantes y operadores.</label>
-                <label data-op="b"><input type="radio" name="a1" value="b"> Secuencia, selección e iteración.</label>
-                <label data-op="c"><input type="radio" name="a1" value="c"> Leer, Escribir y Definir.</label>
-                <label data-op="d"><input type="radio" name="a1" value="d"> Subprocesos, parámetros y funciones.</label>
+                <label data-op="a"><input type="radio" name="a1" value="a"> Usa pasos claros, selección e iteración cuando hace falta.</label>
+                <label data-op="b"><input type="radio" name="a1" value="b"> Evita declarar variables y trabaja solo con textos.</label>
+                <label data-op="c"><input type="radio" name="a1" value="c"> Repite instrucciones sin ninguna condición.</label>
+                <label data-op="d"><input type="radio" name="a1" value="d"> Depende de que el usuario conozca el lenguaje.</label>
             </div>
-            <p class="explicacion">La programación estructurada se organiza con <strong>secuencia</strong> (una instrucción tras otra), <strong>selección</strong> (Si–Entonces) e <strong>iteración</strong> (Mientras / Para).</p>
+            <p class="explicacion">La programación estructurada organiza el problema en <strong>secuencia</strong>, <strong>selección</strong> e <strong>iteración</strong>.</p>
+        </article>
+
+        <article class="pregunta mc" data-correcta="c">
+            <p class="enunciado"><span class="num-preg">2</span>
+                ¿Qué declaración guarda un valor <code>Verdadero</code> o <code>Falso</code>?</p>
+            <div class="opciones">
+                <label data-op="a"><input type="radio" name="a2" value="a"> <code>Definir activo Como Entero;</code></label>
+                <label data-op="b"><input type="radio" name="a2" value="b"> <code>Definir activo Como Real;</code></label>
+                <label data-op="c"><input type="radio" name="a2" value="c"> <code>Definir activo Como Logico;</code></label>
+                <label data-op="d"><input type="radio" name="a2" value="d"> <code>Definir activo Como Caracter;</code></label>
+            </div>
+            <p class="explicacion">El tipo <code>Logico</code> solo admite <code>Verdadero</code> o <code>Falso</code>.</p>
         </article>
 
         <article class="pregunta mc" data-correcta="d">
-            <p class="enunciado"><span class="num-preg">2</span>
-                Para guardar el <strong>precio de un producto con decimales</strong>, ¿cuál declaración es correcta en PSeInt estricto?</p>
-            <div class="opciones">
-                <label data-op="a"><input type="radio" name="a2" value="a"> <code>Definir precio Como Entero;</code></label>
-                <label data-op="b"><input type="radio" name="a2" value="b"> <code>precio &lt;- Real;</code></label>
-                <label data-op="c"><input type="radio" name="a2" value="c"> <code>Definir Real Como precio;</code></label>
-                <label data-op="d"><input type="radio" name="a2" value="d"> <code>Definir precio Como Real;</code></label>
-            </div>
-            <p class="explicacion"><code>Real</code> almacena números con parte decimal. <code>Entero</code> solo guarda números sin decimales. La forma correcta es <code>Definir nombre Como Tipo;</code>.</p>
-        </article>
-
-        <article class="pregunta mc" data-correcta="a">
             <p class="enunciado"><span class="num-preg">3</span>
-                ¿Qué ocurre cuando el programa ejecuta <code>Leer edad;</code>?</p>
+                ¿Qué hace la instrucción <code>Escribir "Hola";</code>?</p>
             <div class="opciones">
-                <label data-op="a"><input type="radio" name="a3" value="a"> Se detiene y guarda en <code>edad</code> el valor que escribe el usuario.</label>
-                <label data-op="b"><input type="radio" name="a3" value="b"> Muestra en pantalla el valor de <code>edad</code>.</label>
-                <label data-op="c"><input type="radio" name="a3" value="c"> Declara la variable <code>edad</code> como entero.</label>
-                <label data-op="d"><input type="radio" name="a3" value="d"> Borra el contenido anterior de <code>edad</code>.</label>
+                <label data-op="a"><input type="radio" name="a3" value="a"> Guarda "Hola" en una variable.</label>
+                <label data-op="b"><input type="radio" name="a3" value="b"> Declara una variable llamada Hola.</label>
+                <label data-op="c"><input type="radio" name="a3" value="c"> Espera que el usuario escriba algo.</label>
+                <label data-op="d"><input type="radio" name="a3" value="d"> Muestra el texto en pantalla.</label>
             </div>
-            <p class="explicacion"><code>Leer</code> es una instrucción de <strong>entrada</strong>: espera que el usuario escriba un dato y lo almacena en la variable. Para mostrar información se usa <code>Escribir</code>.</p>
+            <p class="explicacion"><code>Escribir</code> es salida: muestra el texto o el valor de una variable.</p>
         </article>
 
         <article class="pregunta mc" data-correcta="b">
             <p class="enunciado"><span class="num-preg">4</span>
-                ¿Qué estructura permite elegir entre <strong>dos caminos</strong> según una condición?</p>
+                ¿Qué estructura elige una rama según una condición?</p>
             <div class="opciones">
-                <label data-op="a"><input type="radio" name="a4" value="a"> <code>Para ... Hasta ... FinPara</code>, porque repite una cantidad fija de veces.</label>
-                <label data-op="b"><input type="radio" name="a4" value="b"> <code>Si ... Entonces ... Sino ... FinSi</code>, porque ejecuta una rama u otra.</label>
-                <label data-op="c"><input type="radio" name="a4" value="c"> <code>Definir ... Como ...;</code>, porque declara variables.</label>
-                <label data-op="d"><input type="radio" name="a4" value="d"> <code>SubProceso ... FinSubProceso</code>, porque divide el programa en partes.</label>
+                <label data-op="a"><input type="radio" name="a4" value="a"> <code>Definir … Como …;</code></label>
+                <label data-op="b"><input type="radio" name="a4" value="b"> <code>Si … Entonces … Sino … FinSi</code></label>
+                <label data-op="c"><input type="radio" name="a4" value="c"> <code>Escribir …;</code></label>
+                <label data-op="d"><input type="radio" name="a4" value="d"> <code>Leer …;</code></label>
             </div>
-            <p class="explicacion">El <code>Si</code> evalúa una condición: si es verdadera ejecuta la rama del <code>Entonces</code>; si es falsa, la rama del <code>Sino</code>.</p>
+            <p class="explicacion">El <code>Si</code> evalúa la condición y ejecuta el <code>Entonces</code> o el <code>Sino</code>.</p>
         </article>
 
-        <article class="pregunta mc" data-correcta="b">
+        <article class="pregunta mc" data-correcta="a">
             <p class="enunciado"><span class="num-preg">5</span>
-                ¿Cuál de estas instrucciones corresponde a un <strong>contador</strong>?</p>
+                ¿Qué instrucción aumenta un contador en una unidad?</p>
             <div class="opciones">
-                <label data-op="a"><input type="radio" name="a5" value="a"> <code>total &lt;- total + precio;</code></label>
-                <label data-op="b"><input type="radio" name="a5" value="b"> <code>c &lt;- c + 1;</code></label>
-                <label data-op="c"><input type="radio" name="a5" value="c"> <code>Leer c;</code></label>
-                <label data-op="d"><input type="radio" name="a5" value="d"> <code>Definir c Como Entero;</code></label>
+                <label data-op="a"><input type="radio" name="a5" value="a"> <code>veces &lt;- veces + 1;</code></label>
+                <label data-op="b"><input type="radio" name="a5" value="b"> <code>total &lt;- total + precio;</code></label>
+                <label data-op="c"><input type="radio" name="a5" value="c"> <code>Escribir veces;</code></label>
+                <label data-op="d"><input type="radio" name="a5" value="d"> <code>Definir veces Como Entero;</code></label>
             </div>
-            <p class="explicacion">Un <strong>contador</strong> suma siempre una cantidad fija, normalmente 1 (<code>c &lt;- c + 1</code>). Un <strong>acumulador</strong> suma un valor variable (<code>total &lt;- total + precio</code>).</p>
+            <p class="explicacion">El contador suma siempre lo mismo: <code>1</code>. La opción con <code>precio</code> sería un acumulador.</p>
         </article>
     </section>
 
@@ -210,74 +210,73 @@
             </div>
         </div>
 
-        <article class="pregunta salida" data-aceptadas="Aprobado">
+        <article class="pregunta salida" data-aceptadas="Recupera">
             <p class="enunciado"><span class="num-preg">6</span>
                 ¿Qué muestra este algoritmo?</p>
             <pre><code>Definir nota Como Entero;
-nota &lt;- 7;
+nota &lt;- 4;
 Si nota &gt;= 6 Entonces
     Escribir "Aprobado";
 Sino
-    Escribir "Desaprobado";
+    Escribir "Recupera";
 FinSi</code></pre>
             <label class="campo-salida">Salida:
                 <input type="text" id="b1" autocomplete="off" placeholder="Escribí la salida">
             </label>
-            <p class="explicacion">7 es mayor o igual que 6, así que la condición es verdadera y se ejecuta la rama del <code>Entonces</code>: la salida es <strong>Aprobado</strong>.</p>
+            <p class="explicacion">4 es menor que 6: se ejecuta el <code>Sino</code>. La salida es <strong>Recupera</strong>.</p>
         </article>
 
         <article class="pregunta salida" data-aceptadas="2">
             <p class="enunciado"><span class="num-preg">7</span>
                 ¿Qué muestra este algoritmo?</p>
-            <pre><code>Definir n1, n2, n3, aprobados Como Entero;
-n1 &lt;- 8;
-n2 &lt;- 4;
-n3 &lt;- 10;
-aprobados &lt;- 0;
-Si n1 &gt;= 6 Entonces
-    aprobados &lt;- aprobados + 1;
+            <pre><code>Definir a, b, c, cuenta Como Entero;
+a &lt;- 3;
+b &lt;- 6;
+c &lt;- 9;
+cuenta &lt;- 0;
+Si a &gt; 5 Entonces
+    cuenta &lt;- cuenta + 1;
 FinSi
-Si n2 &gt;= 6 Entonces
-    aprobados &lt;- aprobados + 1;
+Si b &gt; 5 Entonces
+    cuenta &lt;- cuenta + 1;
 FinSi
-Si n3 &gt;= 6 Entonces
-    aprobados &lt;- aprobados + 1;
+Si c &gt; 5 Entonces
+    cuenta &lt;- cuenta + 1;
 FinSi
-Escribir aprobados;</code></pre>
+Escribir cuenta;</code></pre>
             <label class="campo-salida">Salida:
                 <input type="text" id="b2" autocomplete="off" placeholder="Escribí la salida">
             </label>
-            <p class="explicacion">El contador arranca en 0. Suma 1 con la nota 8, no suma con la nota 4 y suma 1 con la nota 10. La salida es <strong>2</strong>.</p>
+            <p class="explicacion">Solo <code>b</code> y <code>c</code> superan 5: el contador queda en <strong>2</strong>.</p>
         </article>
 
-        <article class="pregunta salida" data-aceptadas="75.5|75,5|75.50|75,50">
+        <article class="pregunta salida" data-aceptadas="35">
             <p class="enunciado"><span class="num-preg">8</span>
                 ¿Qué muestra este algoritmo?</p>
-            <pre><code>Definir precio1, precio2, total Como Real;
-precio1 &lt;- 50;
-precio2 &lt;- 25.5;
+            <pre><code>Definir total Como Entero;
 total &lt;- 0;
-total &lt;- total + precio1;
-total &lt;- total + precio2;
+total &lt;- total + 10;
+total &lt;- total + 20;
+total &lt;- total + 5;
 Escribir total;</code></pre>
             <label class="campo-salida">Salida:
                 <input type="text" id="b3" autocomplete="off" placeholder="Escribí la salida">
             </label>
-            <p class="explicacion">El acumulador arranca en 0 y suma 50, luego 25.5. La salida es <strong>75.5</strong>.</p>
+            <p class="explicacion">El acumulador suma 10 + 20 + 5. La salida es <strong>35</strong>.</p>
         </article>
 
-        <article class="pregunta salida" data-aceptadas="Ana tiene 21 años|ana tiene 21 anos|Ana tiene 21 anos">
+        <article class="pregunta salida" data-aceptadas="Luis:20">
             <p class="enunciado"><span class="num-preg">9</span>
                 ¿Qué muestra este algoritmo?</p>
             <pre><code>Definir nombre Como Caracter;
 Definir edad Como Entero;
-nombre &lt;- "Ana";
-edad &lt;- 20;
-Escribir nombre, " tiene ", edad + 1, " años";</code></pre>
+nombre &lt;- "Luis";
+edad &lt;- 14;
+Escribir nombre, ":", edad + 6;</code></pre>
             <label class="campo-salida">Salida:
                 <input type="text" id="b4" autocomplete="off" placeholder="Escribí la salida">
             </label>
-            <p class="explicacion">Se muestra el contenido de <code>nombre</code>, el texto entre comillas y el resultado de <code>edad + 1</code> (21). La salida es <strong>Ana tiene 21 años</strong>.</p>
+            <p class="explicacion">Se muestra el nombre, dos puntos y el resultado de <code>14 + 6</code>: <strong>Luis:20</strong>.</p>
         </article>
     </section>
 
@@ -295,14 +294,14 @@ Escribir nombre, " tiene ", edad + 1, " años";</code></pre>
                     <tr><td>Declaración de texto y decimales</td><td><code>Definir nombre Como Caracter;</code> · <code>Definir precio Como Real;</code></td></tr>
                     <tr><td>Entrada y salida</td><td><code>Leer edad;</code> · <code>Escribir edad;</code></td></tr>
                     <tr><td>Condicional completo</td><td><code>Si ... Entonces ... Sino ... FinSi</code></td></tr>
-                    <tr><td>Contadores inicializados</td><td><code>aprobados &lt;- 0;</code> · <code>aprobados &lt;- aprobados + 1;</code></td></tr>
-                    <tr><td>Acumuladores inicializados</td><td><code>total &lt;- 0;</code> · <code>total &lt;- total + precio;</code></td></tr>
+                    <tr><td>Contadores inicializados</td><td><code>adultos &lt;- 0;</code> · <code>adultos &lt;- adultos + 1;</code></td></tr>
+                    <tr><td>Acumuladores inicializados</td><td><code>total &lt;- 0;</code> · <code>total &lt;- total + g1;</code></td></tr>
                 </tbody>
             </table>
 
             <h3 style="margin-top:24px;">Antes de enviar</h3>
             <ul class="checklist">
-                <li>Declaré todas las variables con su tipo.</li>
+                <li>Declaré todas las variables con su tipo e inicialicé los contadores antes de usarlos.</li>
                 <li>Cerré cada <code>Si</code> con <code>FinSi</code>.</li>
                 <li>Inicialicé el contador y el acumulador antes de usarlos.</li>
                 <li>Verifiqué que el incremento del contador esté dentro del <code>Si</code>.</li>
@@ -323,30 +322,24 @@ Escribir nombre, " tiene ", edad + 1, " años";</code></pre>
 
         <article class="pregunta codigo" data-puntos="1">
             <p class="enunciado"><span class="num-preg">10</span>
-                Leé el <strong>nombre</strong> de un producto y su <strong>precio</strong>.
-                Si el precio es <strong>mayor a 1000</strong>, mostrá <code>&lt;nombre&gt; es caro</code>;
-                si no, <code>&lt;nombre&gt; es económico</code>.
-                Usá <code>Si … Entonces … Sino … FinSi</code>.</p>
+                Leé las <strong>horas trabajadas</strong>. Si son 40 o más, mostrá <code>Completo</code>; si no, mostrá <code>Parcial</code>. Usá <code>Si … Entonces … Sino … FinSi</code>.</p>
             <p class="tema-lista"><span class="tema-tag">Variables</span><span class="tema-tag">Leer / Escribir</span><span class="tema-tag">Condicional</span></p>
             <details class="pista">
                 <summary>Ver pista</summary>
-                <p>Declará <code>nombre</code> como <code>Caracter</code> y <code>precio</code> como <code>Real</code>. Leé los dos datos antes del <code>Si</code>. En cada rama, combiná el nombre con el texto usando comas dentro de <code>Escribir</code>.</p>
+                <p>Declará <code>horas</code> como <code>Entero</code>, leela y comparala con 40 en el <code>Si</code>.</p>
             </details>
-            <textarea class="editor" id="c1" spellcheck="false" placeholder="Algoritmo PrecioProducto&#10;    Definir ...&#10;    Leer ...&#10;    Si ... Entonces&#10;    Sino&#10;    FinSi&#10;FinAlgoritmo"></textarea>
+            <textarea class="editor" id="c1" spellcheck="false" placeholder="Algoritmo Jornada&#10;    Definir ...&#10;    Leer ...&#10;    Si ... Entonces&#10;    Sino&#10;    FinSi&#10;FinAlgoritmo"></textarea>
             <div class="resultado-codigo" id="res-c1"></div>
             <details class="solucion">
                 <summary>Ver una solución de referencia</summary>
-                <pre><code>Algoritmo PrecioProducto
-    Definir nombre Como Caracter;
-    Definir precio Como Real;
-    Escribir "Ingresá el nombre del producto:";
-    Leer nombre;
-    Escribir "Ingresá el precio:";
-    Leer precio;
-    Si precio &gt; 1000 Entonces
-        Escribir nombre, " es caro";
+                <pre><code>Algoritmo Jornada
+    Definir horas Como Entero;
+    Escribir "Ingresá las horas:";
+    Leer horas;
+    Si horas &gt;= 40 Entonces
+        Escribir "Completo";
     Sino
-        Escribir nombre, " es económico";
+        Escribir "Parcial";
     FinSi
 FinAlgoritmo</code></pre>
             </details>
@@ -354,64 +347,58 @@ FinAlgoritmo</code></pre>
 
         <article class="pregunta codigo" data-puntos="1">
             <p class="enunciado"><span class="num-preg">11</span>
-                <strong>Sin usar <code>Para</code> ni <code>Mientras</code></strong>, asigná
-                <code>nota1 &lt;- 7;</code>, <code>nota2 &lt;- 3;</code> y <code>nota3 &lt;- 9;</code>.
-                Con <strong>tres <code>Si</code></strong>, contá en <code>aprobados</code> cuántas notas son
-                <strong>mayores o iguales a 6</strong>. Inicializá el contador en 0 y mostrá el total.</p>
+                Sin usar <code>Para</code> ni <code>Mientras</code>, asigná <code>e1 &lt;- 17;</code>, <code>e2 &lt;- 20;</code> y <code>e3 &lt;- 15;</code>. Con tres <code>Si</code>, contá en <code>adultos</code> cuántas edades son 18 o más y mostrá el total.</p>
             <p class="tema-lista"><span class="tema-tag">Variables</span><span class="tema-tag">Condicional</span><span class="tema-tag">Contador</span></p>
             <details class="pista">
                 <summary>Ver pista</summary>
-                <p>Declará <code>nota1</code>, <code>nota2</code>, <code>nota3</code> y <code>aprobados</code> como <code>Entero</code>. Asigná las tres notas, inicializá <code>aprobados &lt;- 0;</code> y escribí un <code>Si nota1 &gt;= 6 Entonces aprobados &lt;- aprobados + 1; FinSi</code> por cada nota.</p>
+                <p>Declará <code>e1</code>, <code>e2</code>, <code>e3</code> y <code>adultos</code> como <code>Entero</code>. Inicializá <code>adultos</code> en 0 y sumá 1 en cada <code>Si</code> que cumpla.</p>
             </details>
-            <textarea class="editor" id="c2" spellcheck="false" placeholder="Algoritmo ContarAprobados&#10;    Definir ...&#10;    nota1 &lt;- 7;&#10;    nota2 &lt;- 3;&#10;    nota3 &lt;- 9;&#10;    aprobados &lt;- 0;&#10;    Si ... Entonces&#10;        aprobados &lt;- aprobados + 1;&#10;    FinSi&#10;    ...&#10;    Escribir ...&#10;FinAlgoritmo"></textarea>
+            <textarea class="editor" id="c2" spellcheck="false" placeholder="Algoritmo ContarAdultos&#10;    Definir ...&#10;    adultos &lt;- 0;&#10;    ...&#10;    Si e1 &gt;= 18 Entonces&#10;    FinSi&#10;    Escribir ...&#10;FinAlgoritmo"></textarea>
             <div class="resultado-codigo" id="res-c2"></div>
             <details class="solucion">
                 <summary>Ver una solución de referencia</summary>
-                <pre><code>Algoritmo ContarAprobados
-    Definir nota1, nota2, nota3, aprobados Como Entero;
-    nota1 &lt;- 7;
-    nota2 &lt;- 3;
-    nota3 &lt;- 9;
-    aprobados &lt;- 0;
-    Si nota1 &gt;= 6 Entonces
-        aprobados &lt;- aprobados + 1;
+                <pre><code>Algoritmo ContarAdultos
+    Definir e1, e2, e3, adultos Como Entero;
+    e1 &lt;- 17;
+    e2 &lt;- 20;
+    e3 &lt;- 15;
+    adultos &lt;- 0;
+    Si e1 &gt;= 18 Entonces
+        adultos &lt;- adultos + 1;
     FinSi
-    Si nota2 &gt;= 6 Entonces
-        aprobados &lt;- aprobados + 1;
+    Si e2 &gt;= 18 Entonces
+        adultos &lt;- adultos + 1;
     FinSi
-    Si nota3 &gt;= 6 Entonces
-        aprobados &lt;- aprobados + 1;
+    Si e3 &gt;= 18 Entonces
+        adultos &lt;- adultos + 1;
     FinSi
-    Escribir "Aprobados: ", aprobados;
+    Escribir "Adultos: ", adultos;
 FinAlgoritmo</code></pre>
             </details>
         </article>
 
         <article class="pregunta codigo" data-puntos="1">
             <p class="enunciado"><span class="num-preg">12</span>
-                <strong>Sin usar <code>Para</code> ni <code>Mientras</code></strong>, asigná
-                <code>precio1 &lt;- 100;</code>, <code>precio2 &lt;- 250.50;</code> y
-                <code>precio3 &lt;- 49.50;</code>. Acumulá los tres precios en <code>total</code>
-                (inicializado en 0) y mostrá el total.</p>
+                Sin usar bucles, asigná <code>g1 &lt;- 12.5;</code>, <code>g2 &lt;- 7.5;</code> y <code>g3 &lt;- 20;</code>. Acumulá los tres gastos en <code>total</code> (inicializado en 0) y mostrá el resultado.</p>
             <p class="tema-lista"><span class="tema-tag">Variables</span><span class="tema-tag">Acumulador</span><span class="tema-tag">Leer / Escribir</span></p>
             <details class="pista">
                 <summary>Ver pista</summary>
-                <p>Declará <code>precio1</code>, <code>precio2</code>, <code>precio3</code> y <code>total</code> como <code>Real</code>. Inicializá <code>total &lt;- 0;</code> y sumá cada precio con <code>total &lt;- total + precio1;</code>, y lo mismo para los otros dos. Al final, mostrá <code>total</code>.</p>
+                <p>Declará los cuatro valores como <code>Real</code>. Sumá cada gasto con <code>total &lt;- total + g1;</code> y sus equivalentes.</p>
             </details>
-            <textarea class="editor" id="c3" spellcheck="false" placeholder="Algoritmo TotalDeCaja&#10;    Definir ...&#10;    precio1 &lt;- 100;&#10;    precio2 &lt;- 250.50;&#10;    precio3 &lt;- 49.50;&#10;    total &lt;- 0;&#10;    total &lt;- total + precio1;&#10;    ...&#10;    Escribir ...&#10;FinAlgoritmo"></textarea>
+            <textarea class="editor" id="c3" spellcheck="false" placeholder="Algoritmo TotalGastos&#10;    Definir ...&#10;    total &lt;- 0;&#10;    ...&#10;    Escribir ...&#10;FinAlgoritmo"></textarea>
             <div class="resultado-codigo" id="res-c3"></div>
             <details class="solucion">
                 <summary>Ver una solución de referencia</summary>
-                <pre><code>Algoritmo TotalDeCaja
-    Definir precio1, precio2, precio3, total Como Real;
-    precio1 &lt;- 100;
-    precio2 &lt;- 250.50;
-    precio3 &lt;- 49.50;
+                <pre><code>Algoritmo TotalGastos
+    Definir g1, g2, g3, total Como Real;
+    g1 &lt;- 12.5;
+    g2 &lt;- 7.5;
+    g3 &lt;- 20;
     total &lt;- 0;
-    total &lt;- total + precio1;
-    total &lt;- total + precio2;
-    total &lt;- total + precio3;
-    Escribir "Total a pagar: $", total;
+    total &lt;- total + g1;
+    total &lt;- total + g2;
+    total &lt;- total + g3;
+    Escribir "Total: ", total;
 FinAlgoritmo</code></pre>
             </details>
         </article>
